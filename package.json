@@ -1,0 +1,21 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Documentation for CSfive",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.33",
+    "vue": "^3.2.45"
+  },
+  "main": "index.js",
+  "keywords": [
+    "csfive",
+    "docs"
+  ],
+  "author": "csfive",
+  "license": "MIT"
+}
