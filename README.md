@@ -10,6 +10,11 @@
 CSfive 组织的内容仓库，关于 CS 入门、学习和资源整合等，具体请移步主页：https://csfive.netlify.app/
 
 
+## 贡献历史
+
+![Alt](https://repobeats.axiom.co/api/embed/f22a705ce127e5a5b9ecf42fbda8ce7b56309c25.svg "Repobeats analytics image")
+
+
 ## 如何贡献
 
 本文档使用 VitePress 搭建，文章皆为 markdown 格式位于 `docs` 文件夹下，你可以直接在 Github 上编辑该文件进行 PR 或克隆到本地修改。
@@ -33,6 +38,4 @@ pnpm run dev
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
-
-Copyright © 2022-PRESENT CSfive
+[MIT License](https://opensource.org/licenses/MIT) Copyright © 2022-PRESENT CSfive
