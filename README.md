@@ -7,18 +7,18 @@
 
 <br>
 
-CSfive 组织的内容仓库，关注 CS 入门、学习和资源整合等。
-
-关于本文档的详细介绍、目标与规划等，请移步主页：
+CSfive 组织的内容仓库，关于 CS 入门、学习和资源整合等，具体请移步主页：https://csfive.netlify.app/
 
 
 ## 如何贡献
 
-本文档由 VitePress 搭建，文章使用 markdown 格式书写，位于 `docs` 文件夹下，你可以直接在 Github 上编辑该文件进行 PR 或克隆到本地修改。
+本文档使用 VitePress 搭建，文章皆为 markdown 格式位于 `docs` 文件夹下，你可以直接在 Github 上编辑该文件进行 PR 或克隆到本地修改。
 
-如果想在本地运行本项目，请克隆后执行以下指令：
+如果想在本地运行本项目，请执行以下指令：
 
-```
+```sh
+git clone https://github.com/csfive/docs
+cd docs
 pnpm i
 pnpm run dev
 ```
