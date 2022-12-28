@@ -2,7 +2,6 @@ export default function () {
     return [
         {
             items: [
-                { text: '项目简介', link: '/cs/intro' },
                 { text: '学习路线', link: '/cs/path' }
             ]
         },

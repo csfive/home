@@ -9,6 +9,7 @@ export default {
     cleanUrls: 'without-subfolders',
 
     head: [
+        // TODO 增加更多
         ['link', { rel: 'icon', href: '/logo.svg' }],
         ['meta', { name: 'keywords', content: 'CSfive, 计算机, 公开课' }],
     ],
@@ -31,7 +32,6 @@ export default {
 
         // TODO 增加搜索功能
         // algolia: {
-            
         // },
 
         socialLinks: [
