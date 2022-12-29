@@ -11,6 +11,7 @@ export default function () {
             // collapsed: true,
             items: [
                 { text: '课程简介', link: '/cs/missing-semester/intro' },
+                { text: '资源汇总', link: '/cs/missing-semester/resource' },
             ]
         },
         {
@@ -19,6 +20,7 @@ export default function () {
             // collapsed: true,
             items: [
                 { text: '课程简介', link: '/cs/cs50x/intro' },
+                { text: '资源汇总', link: '/cs/cs50x/resource' },
             ]
         },
         {
@@ -27,6 +29,7 @@ export default function () {
             // collapsed: true,
             items: [
                 { text: '课程简介', link: '/cs/cs61a/intro' },
+                { text: '资源汇总', link: '/cs/cs61a/resource' },
             ]
         }
     ]
