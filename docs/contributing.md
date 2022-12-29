@@ -7,7 +7,7 @@
 ```sh
 git clone https://github.com/csfive/docs
 cd docs
-pnpm i
+pnpm i  # npm i -g pnpm
 pnpm run dev
 ```
 
