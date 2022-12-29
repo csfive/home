@@ -28,9 +28,11 @@ export default {
             '/cs/': cs(),
         },
 
-        // TODO 增加搜索功能
-        // algolia: {
-        // },
+        algolia: {
+            appId: '02TS8NY1RF',
+            apiKey: '00fb35d8ff81b7843417d67ba0bc4f28',
+            indexName: 'csfive docs',
+        },
 
         socialLinks: [
             { icon: 'github', link: 'https://github.com/csfive' },
