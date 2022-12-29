@@ -6,8 +6,7 @@ titleTemplate: 知识库
 
 hero:
   name: CSfive
-  text: 计算机废物的自学之路
-  # TODO 修改文案
+  text: 计算机废物自学指北
   actions:
     - theme: brand
       text: 开始阅读
@@ -16,8 +15,7 @@ hero:
       text: GitHub
       link: https://github.com/csfive/docs
   image:
-    # TODO 修改 logo
-    src: /logo.svg
+    src: /shushu.png
     alt: logo
 
 features:

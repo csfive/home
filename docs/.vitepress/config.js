@@ -9,7 +9,6 @@ export default {
     cleanUrls: 'without-subfolders',
 
     head: [
-        // TODO 增加更多
         ['link', { rel: 'icon', href: '/logo.svg' }],
         ['meta', { name: 'keywords', content: 'CSfive, 计算机, 公开课' }],
     ],
@@ -23,7 +22,6 @@ export default {
     },
 
     themeConfig: {
-        // logo: '/logo.svg',
         outlineTitle: '大纲',
         nav: nav(),
         sidebar: {
