@@ -14,6 +14,14 @@ export default function () {
             ]
         },
         {
+            text: 'CS50x',
+            collapsible: true,
+            // collapsed: true,
+            items: [
+                { text: '课程简介', link: '/cs/cs50x/intro' },
+            ]
+        },
+        {
             text: 'CS61A',
             collapsible: true,
             // collapsed: true,
