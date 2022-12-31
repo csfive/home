@@ -1,5 +1,6 @@
 import nav from './nav'
 import cs from './cs'
+import sicp from './sicp'
 
 export default {
     title: 'CSfive',
@@ -26,6 +27,7 @@ export default {
         nav: nav(),
         sidebar: {
             '/cs/': cs(),
+            '/sicp-py/': sicp()
         },
 
         algolia: {
