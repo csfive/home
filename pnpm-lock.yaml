@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@giscus/vue': ^2.2.6
   markdown-it-imsize: ^2.0.1
   markdown-it-mark: ^3.0.1
   markdown-it-smartarrows: ^1.0.1
@@ -8,6 +9,7 @@ specifiers:
   vue: ^3.2.45
 
 devDependencies:
+  '@giscus/vue': 2.2.6_vue@3.2.45
   markdown-it-imsize: 2.0.1
   markdown-it-mark: 3.0.1
   markdown-it-smartarrows: 1.0.1
@@ -389,6 +391,23 @@ packages:
     dev: true
     optional: true
 
+  /@giscus/vue/2.2.6_vue@3.2.45:
+    resolution: {integrity: sha512-UHPCzj/D8SMndtyd2iDEeGi7iRFy/43J7OOLi7I6qbQZVtYnhHg024CyufC9nuoRmjGoRFN2QodY3rrEAMiETg==}
+    peerDependencies:
+      vue: '>=3.2.0'
+    dependencies:
+      giscus: 1.2.6
+      vue: 3.2.45
+    dev: true
+
+  /@lit/reactive-element/1.5.0:
+    resolution: {integrity: sha512-fQh9FDK0LPTwDk+0HhSZEtb8K0LTN1wXerwpGrWA+a8tWulYRDLI4vQDWp4GOIsewn0572KYV/oZ3+492D7osA==}
+    dev: true
+
+  /@types/trusted-types/2.0.2:
+    resolution: {integrity: sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==}
+    dev: true
+
   /@types/web-bluetooth/0.0.16:
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
     dev: true
@@ -589,6 +608,12 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
+  /giscus/1.2.6:
+    resolution: {integrity: sha512-VqMWmCdlUk9krX2M3oMgn9/Y6XEbRXRHtfhNTuRn/AdeGOeko54OFEIsizQ/nYWymuUNGZR48KGptCtYL77rtA==}
+    dependencies:
+      lit: 2.5.0
+    dev: true
+
   /has/1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
     engines: {node: '>= 0.4.0'}
@@ -604,6 +629,27 @@ packages:
 
   /jsonc-parser/3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
+    dev: true
+
+  /lit-element/3.2.2:
+    resolution: {integrity: sha512-6ZgxBR9KNroqKb6+htkyBwD90XGRiqKDHVrW/Eh0EZ+l+iC+u+v+w3/BA5NGi4nizAVHGYvQBHUDuSmLjPp7NQ==}
+    dependencies:
+      '@lit/reactive-element': 1.5.0
+      lit-html: 2.5.0
+    dev: true
+
+  /lit-html/2.5.0:
+    resolution: {integrity: sha512-bLHosg1XL3JRUcKdSVI0sLCs0y1wWrj2sqqAN3cZ7bDDPNgmDHH29RV48x6Wz3ZmkxIupaE+z7uXSZ/pXWAO1g==}
+    dependencies:
+      '@types/trusted-types': 2.0.2
+    dev: true
+
+  /lit/2.5.0:
+    resolution: {integrity: sha512-DtnUP6vR3l4Q8nRPPNBD+UxbAhwJPeky+OVbi3pdgMqm0g57xFSl1Sj64D1rIB+nVNdiVVg8YxB0hqKjvdadZA==}
+    dependencies:
+      '@lit/reactive-element': 1.5.0
+      lit-element: 3.2.2
+      lit-html: 2.5.0
     dev: true
 
   /magic-string/0.25.9:
