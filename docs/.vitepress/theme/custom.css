@@ -52,11 +52,44 @@
     --vp-code-tab-active-bar-color: var(--vp-c-brand);
 }
 
+/********************************************************
+*                       <mark>                          *
+********************************************************/
 mark {
     background-color: inherit;
     color: var(--vp-c-text-1);
     text-decoration: underline;
     text-decoration-style: wavy;
-    text-decoration-color: rgb(252, 185, 1);
+    text-decoration-color: #42b883;
     text-underline-offset: 4px;
+}
+
+/********************************************************
+*                        滚动条                         *
+********************************************************/
+
+
+/********************************************************
+*                     Custom fix                        *
+********************************************************/
+.dark .vp-doc a,
+.dark .vp-doc a>code,
+.dark .VPNavBarMenuLink.VPNavBarMenuLink:hover,
+.dark .VPNavBarMenuLink.VPNavBarMenuLink.active,
+.dark .link.link:hover,
+.dark .link.link.active,
+.dark .edit-link-button.edit-link-button,
+.dark .pager-link .title {
+    color: var(--vp-c-brand-lighter);
+}
+
+.dark .vp-doc a:hover,
+.dark .vp-doc a>code:hover {
+    color: var(--vp-c-brand-lightest);
+    opacity: 1;
+}
+
+/* Transition by color instead of opacity */
+.dark .vp-doc .custom-block a {
+    transition: color 0.25s;
 }
