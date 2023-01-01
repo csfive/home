@@ -13,7 +13,7 @@ pnpm run dev
 
 ## 关于排版
 
-请参考 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 和 [中文技术文档写作风格指南](https://github.com/yikeke/zh-style-guide)，在此列出部分规范：
+请参考 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 和 [中文技术文档写作风格指南](https://github.com/yikeke/zh-style-guide) 进行写作，在此列出部分规范：
 
 - 中英文之间需要增加空格
 - 中文与数字之间需要增加空格
@@ -24,9 +24,9 @@ pnpm run dev
 - ...
 
 
-## 关于提交信息
+## 关于 commit messages
 
-请参考 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)，在此列出部分规范：
+请遵守 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) 来规范提交信息，在此列出部分约定：
 
 | 类型     | 描述                     |
 | -------- | ------------------------ |
@@ -44,7 +44,7 @@ pnpm run dev
 
 ## 关于 PR
 
-如果你不知道如何创建 PR ，可以参考 [GitHub Docs](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)。
+如果你不知道如何创建 PR 可以参考 [GitHub 文档](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) 进行学习。
 
 
 ## 关于 Markdown 语法
