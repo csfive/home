@@ -47,4 +47,9 @@ pnpm run dev
 如果你不知道如何创建 PR ，可以参考 [GitHub Docs](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)。
 
 
+## 关于 Markdown 语法
+
+本文档的一些特殊 Markdown 语法请参考 [本文](./markdown) 进行学习。
+
+
 ## TODO
