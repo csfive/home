@@ -1,6 +1,6 @@
 # Markdown
 
-记录本文档里的一些特殊的 Markdown 语法，更多请参考 [VitePress 官方文档](https://vitepress.vuejs.org/guide/markdown)
+本文用于记录本文档使用的 [VitePress](https://vitepress.vuejs.org/guide/markdown) 里的一些特殊 Markdown 语法。
 
 
 ## 生成目录
@@ -121,4 +121,19 @@ pnpm install
 <<< @/snippets/snippet.cs{1,2,4-6 c#}
 ```
 
+## 自定义图片大小
 
+```md
+![test](xx.png =100x200)
+```
+
+## 智能箭头
+
+```md
+-->
+<--
+<-->
+==>
+<==
+<==>
+```

@@ -1,10 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
+  markdown-it-imsize: ^2.0.1
+  markdown-it-mark: ^3.0.1
+  markdown-it-smartarrows: ^1.0.1
   vitepress: 1.0.0-alpha.34
   vue: ^3.2.45
 
 devDependencies:
+  markdown-it-imsize: 2.0.1
+  markdown-it-mark: 3.0.1
+  markdown-it-smartarrows: 1.0.1
   vitepress: 1.0.0-alpha.34
   vue: 3.2.45
 
@@ -604,6 +610,18 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
+    dev: true
+
+  /markdown-it-imsize/2.0.1:
+    resolution: {integrity: sha512-5SH90ademqcR8ifQCBXRCfIR4HGfZZOh5pO0j2TglulfSQH+SBXM4Iw/QlTUbSoUwVZArCYgECoMvktDS2kP3w==}
+    dev: true
+
+  /markdown-it-mark/3.0.1:
+    resolution: {integrity: sha512-HyxjAu6BRsdt6Xcv6TKVQnkz/E70TdGXEFHRYBGLncRE9lBFwDNLVtFojKxjJWgJ+5XxUwLaHXy+2sGBbDn+4A==}
+    dev: true
+
+  /markdown-it-smartarrows/1.0.1:
+    resolution: {integrity: sha512-LwWnlFyLY5ANjLR0a8BuLvQEm4Ri76IavQwqTnpquSiMoE3JXefk5Pu7nD5VKn784bgLqL3sexdt/j8GwuLgOw==}
     dev: true
 
   /nanoid/3.3.4:

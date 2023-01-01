@@ -20,6 +20,11 @@ export default {
             light: 'github-light',
             dark: 'github-dark'
         },
+        config: (md) => {
+            md.use(require('markdown-it-imsize'))
+                .use(require('markdown-it-mark'))
+                .use(require('markdown-it-smartarrows'))
+        }
     },
 
     themeConfig: {
