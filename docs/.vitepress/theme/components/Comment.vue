@@ -15,7 +15,7 @@ const theme = computed(() => isDark.value ? 'transparent_dark' : 'light')
       <div id="giscus">
         <Giscus id="comments" repo="csfive/docs" repoId="R_kgDOIr671A" category="Announcements"
           categoryId="DIC_kwDOIr671M4CTWpS" mapping="pathname" strict="1" reactionsEnabled="1" emitMetadata="0"
-          inputPosition="top" lang="zh-CN" :theme="theme" />
+          inputPosition="top" lang="zh-CN" loading="lazy" :theme="theme" />
       </div>
     </template>
   </Layout>
