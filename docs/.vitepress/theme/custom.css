@@ -51,3 +51,12 @@
     --vp-code-tab-active-text-color: var(--vp-c-text-dark-1);
     --vp-code-tab-active-bar-color: var(--vp-c-brand);
 }
+
+mark {
+    background-color: inherit;
+    color: var(--vp-c-text-1);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: rgb(252, 185, 1);
+    text-underline-offset: 4px;
+}
