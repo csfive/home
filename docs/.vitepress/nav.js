@@ -4,14 +4,14 @@ export default function () {
         { text: 'SICP Python', link: '/sicp-py/1-1' },
         {
             text: '关于',
-            activeMatch: '/contributing',
+            activeMatch: '/about/contributing',
             items: [
-                { text: '项目简介', link: '/project' },
-                { text: '贡献指南', link: '/contributing' },
-                { text: '关于团队', link: '/team' },
+                { text: '项目简介', link: '/about/project' },
+                { text: '贡献指南', link: '/about/contributing' },
+                { text: '关于团队', link: '/about/team' },
                 {
                     items: [
-                        { text: 'Markdown', link: '/markdown' },
+                        { text: 'Markdown', link: '/about/markdown' },
                     ]
                 }
             ]
