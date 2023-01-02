@@ -15,6 +15,18 @@
 ********************************************************/
 
 
+/********************************************************
+*                     Dark Color                        *
+********************************************************/
+/* :root {
+    --vp-c-black: #020202;
+    --vp-c-black-soft: #111111;
+}
+
+.dark {
+    --vp-c-bg-alpha-with-backdrop: rgba(17, 17, 17, 0.6);
+    --vp-c-bg-alpha-without-backdrop: rgba(10, 10, 10, 0.6);
+} */
 
 
 /********************************************************
@@ -41,7 +53,7 @@
     --vp-code-block-color: var(--vp-c-text-dark-1);
     --vp-code-block-bg: var(--vp-c-bg-alt);
 
-    --vp-code-line-highlight-color: rgba(117, 131, 123, 0.5);
+    --vp-code-line-highlight-color: rgba(56, 63, 59, 0.5);
     --vp-code-line-number-color: var(--vp-c-text-dark-3);
 
     --vp-code-tab-text-color: var(--vp-c-text-dark-2);
@@ -96,7 +108,7 @@ mark {
 
 
 /********************************************************
-*                     Custom fix                        *
+*                     Custom Fix                        *
 ********************************************************/
 .dark .vp-doc a,
 .dark .vp-doc a>code,
