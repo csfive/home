@@ -8,6 +8,7 @@ export default function () {
             items: [
                 { text: '项目简介', link: '/project' },
                 { text: '贡献指南', link: '/contributing' },
+                { text: '关于团队', link: '/team' },
                 {
                     items: [
                         { text: 'Markdown', link: '/markdown' },
