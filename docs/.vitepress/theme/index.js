@@ -14,14 +14,7 @@ export default {
     setup() {
         const route = useRoute()
         watch(
-            () => route.path,
-            () => {
-                const pathname = localStorage.getItem('pathname')
-                if (pathname !== route.path) {
-                    localStorage.setItem('pathname', route.path)
-                    location.reload()
-                }
-            }
+            () => route.path
         )
     }
 }
