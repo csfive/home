@@ -4,7 +4,7 @@ export default function () {
             text: '第一章：使用函数构建抽象',
             collapsible: true,
             items: [
-                { text: '1.1 入门', link: '/cs61a-textbook/1-1' },
+                { text: '1.1 开始', link: '/sicp-py/1-1' },
             ]
         },
         {
