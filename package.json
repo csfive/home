@@ -12,7 +12,7 @@
     "markdown-it-imsize": "^2.0.1",
     "markdown-it-mark": "^3.0.1",
     "markdown-it-smartarrows": "^1.0.1",
-    "vitepress": "1.0.0-alpha.34",
+    "vitepress": "1.0.0-alpha.35",
     "vue": "^3.2.45"
   },
   "main": "index.js",
