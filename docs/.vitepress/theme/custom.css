@@ -18,7 +18,7 @@
 /********************************************************
 *                     Dark Color                        *
 ********************************************************/
-/* :root {
+:root {
     --vp-c-black: #020202;
     --vp-c-black-soft: #111111;
 }
@@ -26,7 +26,7 @@
 .dark {
     --vp-c-bg-alpha-with-backdrop: rgba(17, 17, 17, 0.6);
     --vp-c-bg-alpha-without-backdrop: rgba(10, 10, 10, 0.6);
-} */
+}
 
 
 /********************************************************
@@ -74,6 +74,10 @@ mark {
     text-decoration-style: wavy;
     text-decoration-color: var(--vp-c-brand);
     text-underline-offset: 4px;
+}
+
+li mark {
+    text-underline-offset: 2px;
 }
 
 /********************************************************
