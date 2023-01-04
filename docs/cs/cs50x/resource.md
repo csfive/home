@@ -12,7 +12,7 @@
 - [Discord](https://discord.com/invite/cs50)
 
 
-## 参考作业
+## 作业参考
 
 - [2022](https://github.com/mancuoj/CS50x)
 - [Week3 Tideman](https://tideman.netlify.app/)
@@ -20,10 +20,10 @@
 - [Final Project](https://github.com/mancuoj/watchlist)
 
 
-## 参考文档
+## 文档参考
 
 :::tip
-为了避免资源过于繁杂，每类只推荐一个。
+为了避免资源过于繁杂，每类只推荐一个入门教程文档，进阶教程需自行寻找。
 :::
 
 - [阮一峰 C 语言入门教程](https://wangdoc.com/clang/)
@@ -31,3 +31,7 @@
 - [W3Schools SQL 文档](https://www.w3schools.com/sql/sql_ref_keywords.asp)
 - [Python 教程](https://docs.python.org/zh-cn/3/tutorial/index.html)
 - [Flask 入门教程](https://tutorial.helloflask.com/)
+
+## 视频参考
+
+- [2022 中英双语视频](https://www.bilibili.com/video/BV1ER4y157uA)
