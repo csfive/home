@@ -5,6 +5,7 @@ specifiers:
   markdown-it-imsize: ^2.0.1
   markdown-it-mark: ^3.0.1
   markdown-it-smartarrows: ^1.0.1
+  medium-zoom: ^1.0.8
   vitepress: 1.0.0-alpha.35
   vue: ^3.2.45
 
@@ -13,6 +14,7 @@ devDependencies:
   markdown-it-imsize: 2.0.1
   markdown-it-mark: 3.0.1
   markdown-it-smartarrows: 1.0.1
+  medium-zoom: 1.0.8
   vitepress: 1.0.0-alpha.35
   vue: 3.2.45
 
@@ -668,6 +670,10 @@ packages:
 
   /markdown-it-smartarrows/1.0.1:
     resolution: {integrity: sha512-LwWnlFyLY5ANjLR0a8BuLvQEm4Ri76IavQwqTnpquSiMoE3JXefk5Pu7nD5VKn784bgLqL3sexdt/j8GwuLgOw==}
+    dev: true
+
+  /medium-zoom/1.0.8:
+    resolution: {integrity: sha512-CjFVuFq/IfrdqesAXfg+hzlDKu6A2n80ZIq0Kl9kWjoHh9j1N9Uvk5X0/MmN0hOfm5F9YBswlClhcwnmtwz7gA==}
     dev: true
 
   /nanoid/3.3.4:
