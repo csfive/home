@@ -7,7 +7,9 @@
 
 <br>
 
-CSfive 组织的内容仓库，关于 CS 公开课和经典书籍的入门、学习记录和资源整合等，具体请移步主页：https://csfive.netlify.app/
+CSfive 组织的内容仓库，记录关于 CS 公开课的入门、学习记录、中文翻译和资源整合等内容。
+
+具体请移步主页：https://csfive.netlify.app/
 
 
 ## 贡献历史
