@@ -1,6 +1,7 @@
-import nav from './nav'
-import cs from './cs'
-import sicp from './sicp'
+import 导航栏 from './router/导航栏'
+import 公开课 from './router/公开课'
+import sicp from './router/sicp-python'
+import dsp from './router/dead-simple-python'
 
 export default {
     title: 'CSfive',
@@ -29,10 +30,11 @@ export default {
 
     themeConfig: {
         outlineTitle: '大纲',
-        nav: nav(),
+        nav: 导航栏(),
         sidebar: {
-            '/cs/': cs(),
-            '/sicp-py/': sicp()
+            '/cs/': 公开课(),
+            '/sicp-python/': sicp(),
+            '/dead-simple-python/': dsp()
         },
 
         algolia: {

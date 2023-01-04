@@ -2,7 +2,7 @@ import { h, watch } from 'vue'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Comment from './components/Comment.vue'
-import './custom.css'
+import './style/custom.css'
 
 export default {
     ...DefaultTheme,
