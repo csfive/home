@@ -76,7 +76,8 @@ mark {
     text-underline-offset: 4px;
 }
 
-li mark {
+li mark,
+ul mark {
     text-underline-offset: 2px;
 }
 
