@@ -6,7 +6,6 @@ export default function () {
             activeMatch: '/sicp-python/ch1/1-1',
             items: [
                 { text: 'SICP Python', link: '/sicp-python/ch1/1-1' },
-                { text: 'Dead Simple Python', link: '/dead-simple-python/ch1/1-1' },
             ]
         },
         {
