@@ -1,7 +1,6 @@
 import 导航栏 from './router/导航栏'
 import 公开课 from './router/公开课'
 import sicp from './router/sicp-python'
-import dsp from './router/dead-simple-python'
 
 export default {
     title: 'CSfive',
@@ -34,7 +33,6 @@ export default {
         sidebar: {
             '/cs/': 公开课(),
             '/sicp-python/': sicp(),
-            '/dead-simple-python/': dsp()
         },
 
         algolia: {
