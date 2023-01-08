@@ -34,4 +34,4 @@
 
 ## 视频参考
 
-- [2022 中英双语视频](https://www.bilibili.com/video/BV1ER4y157uA)
+- [2022 中英双语字幕](https://www.bilibili.com/video/BV1ER4y157uA)

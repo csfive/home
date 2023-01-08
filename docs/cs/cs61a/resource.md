@@ -16,4 +16,4 @@
 
 ## 视频参考
 
-- [21 Spring 中英双语](https://www.bilibili.com/video/BV1v64y1Q78o)
+- [21 Spring 中英双语字幕](https://www.bilibili.com/video/BV1v64y1Q78o)
