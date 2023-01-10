@@ -1,8 +1,6 @@
 # 资源汇总
 
-:::tip
-课程网站中几乎有你想要的全部资源，在此只列出一些重要部分。
-:::
+> 课程网站中几乎有你想要的全部资源，在此只列出一些重要部分。
 
 - [课程网站](https://cs50.harvard.edu/x)
 - [edX](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)
@@ -22,12 +20,10 @@
 
 ## 文档参考
 
-:::tip
-为了避免资源过于繁杂，每类只推荐一个入门教程文档，进阶教程需自行寻找。
-:::
+> 为了避免资源过于繁杂，每类只推荐一个入门教程文档，进阶教程需自行寻找。
 
 - [阮一峰 C 语言入门教程](https://wangdoc.com/clang/)
-- [前端入门教程](https://developer.mozilla.org/zh-CN/docs/Learn)
+- [MDN 前端入门教程](https://developer.mozilla.org/zh-CN/docs/Learn)
 - [W3Schools SQL 文档](https://www.w3schools.com/sql/sql_ref_keywords.asp)
 - [Python 教程](https://docs.python.org/zh-cn/3/tutorial/index.html)
 - [Flask 入门教程](https://tutorial.helloflask.com/)
