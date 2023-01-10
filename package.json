@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "Documentation for CSfive",
+  "description": "Documentation for csfive",
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",

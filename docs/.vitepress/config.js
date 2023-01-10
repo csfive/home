@@ -11,7 +11,7 @@ export default {
 
     head: [
         ['link', { rel: 'icon', href: '/logo.svg' }],
-        ['meta', { name: 'keywords', content: 'CSfive, 计算机, 公开课' }],
+        ['meta', { name: 'keywords', content: 'csfive, 计算机, 公开课' }],
     ],
 
     markdown: {
