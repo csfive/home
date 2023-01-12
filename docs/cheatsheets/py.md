@@ -1,4 +1,4 @@
-Comprehensive Python Cheatsheet
+Python 小抄
 ===============================
 
 > [原项目链接](https://github.com/gto76/python-cheatsheet)，本站只做部分翻译工作，推荐使用 `Ctrl+F` 进行查找🔎
