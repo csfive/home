@@ -3399,7 +3399,7 @@ from plotly.express import line
 
 #### Displays a line chart of total coronavirus deaths per million grouped by continent:
 
-![Covid Deaths](web/covid_deaths.png)
+![Covid Deaths](/covid_deaths.png)
 <div id="2a950764-39fc-416d-97fe-0a6226a3095f" class="plotly-graph-div" style="height:340px; width:100%;"></div>
 
 ```python
@@ -3418,7 +3418,7 @@ line(df, x='Date', y='Total Deaths per Million', color='Continent').show()
 
 #### Displays a multi-axis line chart of total coronavirus cases and changes in prices of Bitcoin, Dow Jones and gold:
 
-![Covid Cases](web/covid_cases.png)
+![Covid Cases](/covid_cases.png)
 <div id="e23ccacc-a456-478b-b467-7282a2165921" class="plotly-graph-div" style="height:315px; width:100%;"></div>
 
 ```python
