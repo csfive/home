@@ -49,7 +49,4 @@ pnpm run dev
 
 ## 关于 Markdown 语法
 
-本文档的一些特殊 Markdown 语法请参考 [本文](./markdown) 进行学习。
-
-
-## TODO
+本文档的一些特殊 Markdown 语法可以参考 [本文](./markdown) 进行学习。
