@@ -2,10 +2,11 @@ export default function () {
     return [
         { text: '公开课', link: '/cs/path' },
         {
-            text: '翻译',
+            text: '资料',
             activeMatch: '/sicp-python/ch1/1-1',
             items: [
-                { text: 'SICP Python', link: '/sicp-python/ch1/1-1' },
+                { text: 'SICP Python 翻译', link: '/sicp-python/ch1/1-1' },
+                { text: 'Python 小抄', link: '/cheatsheets/py'},
             ]
         },
         {
