@@ -6,7 +6,7 @@ export default function () {
             activeMatch: '/sicp-python/ch1/1-1',
             items: [
                 { text: 'SICP Python 翻译', link: '/sicp-python/ch1/1-1' },
-                { text: 'Python 小抄', link: '/cheatsheets/py'},
+                { text: 'Python 速查表', link: '/cheatsheets/py'},
             ]
         },
         {
