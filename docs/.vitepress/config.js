@@ -11,6 +11,7 @@ export default {
 
     head: [
         ['link', { rel: 'icon', href: '/logo.svg' }],
+        ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css' }],
         ['meta', { name: 'keywords', content: 'csfive, 计算机, 公开课' }],
     ],
 
@@ -24,6 +25,7 @@ export default {
             md.use(require('markdown-it-imsize'))
                 .use(require('markdown-it-mark'))
                 .use(require('markdown-it-smartarrows'))
+                .use(require('markdown-it-texmath'), { engine: require('katex'), delimiters: 'dollars', katexOptions: { macros: { "\\RR": "\\mathbb{R}" } } })
         }
     },
 

@@ -2,18 +2,22 @@ lockfileVersion: 5.4
 
 specifiers:
   '@giscus/vue': ^2.2.6
+  katex: ^0.16.4
   markdown-it-imsize: ^2.0.1
   markdown-it-mark: ^3.0.1
   markdown-it-smartarrows: ^1.0.1
+  markdown-it-texmath: ^1.0.0
   medium-zoom: ^1.0.8
   vitepress: 1.0.0-alpha.43
   vue: ^3.2.45
 
 devDependencies:
   '@giscus/vue': 2.2.6_vue@3.2.45
+  katex: 0.16.4
   markdown-it-imsize: 2.0.1
   markdown-it-mark: 3.0.1
   markdown-it-smartarrows: 1.0.1
+  markdown-it-texmath: 1.0.0
   medium-zoom: 1.0.8
   vitepress: 1.0.0-alpha.43
   vue: 3.2.45
@@ -560,6 +564,11 @@ packages:
     resolution: {integrity: sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==}
     dev: true
 
+  /commander/8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
+    engines: {node: '>= 12'}
+    dev: true
+
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
     dev: true
@@ -633,6 +642,13 @@ packages:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
     dev: true
 
+  /katex/0.16.4:
+    resolution: {integrity: sha512-WudRKUj8yyBeVDI4aYMNxhx5Vhh2PjpzQw1GRu/LVGqL4m1AxwD1GcUp0IMbdJaf5zsjtj8ghP0DOQRYhroNkw==}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+    dev: true
+
   /lit-element/3.2.2:
     resolution: {integrity: sha512-6ZgxBR9KNroqKb6+htkyBwD90XGRiqKDHVrW/Eh0EZ+l+iC+u+v+w3/BA5NGi4nizAVHGYvQBHUDuSmLjPp7NQ==}
     dependencies:
@@ -670,6 +686,10 @@ packages:
 
   /markdown-it-smartarrows/1.0.1:
     resolution: {integrity: sha512-LwWnlFyLY5ANjLR0a8BuLvQEm4Ri76IavQwqTnpquSiMoE3JXefk5Pu7nD5VKn784bgLqL3sexdt/j8GwuLgOw==}
+    dev: true
+
+  /markdown-it-texmath/1.0.0:
+    resolution: {integrity: sha512-4hhkiX8/gus+6e53PLCUmUrsa6ZWGgJW2XCW6O0ASvZUiezIK900ZicinTDtG3kAO2kon7oUA/ReWmpW2FByxg==}
     dev: true
 
   /medium-zoom/1.0.8:
