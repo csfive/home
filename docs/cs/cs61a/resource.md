@@ -9,7 +9,7 @@
 
 ## 作业参考
 
-- [22 Spring](https://github.com/mancuoj/CS61A)
+- [Spring 2022](https://github.com/mancuoj/CS61A)
 
 ## 文档参考
 
@@ -17,4 +17,4 @@
 
 ## 视频参考
 
-- [21 Spring 中英双语字幕](https://www.bilibili.com/video/BV1v64y1Q78o)
+- [Spring 2021 公开课视频 —— 精译中英双语字幕](https://www.bilibili.com/video/BV1v64y1Q78o)
