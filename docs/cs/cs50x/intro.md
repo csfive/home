@@ -4,7 +4,6 @@
 
 - 所属大学：哈佛大学
 - 编程语言：C、Python、SQL、HTML、CSS、JavaScript
-- 先修要求：无
 
 ## 评价
 

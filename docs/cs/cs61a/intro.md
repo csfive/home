@@ -1,11 +1,9 @@
-# CS 61A: Structure and Interpretation of Computer Programs
+# CS61A: Structure and Interpretation of Computer Programs
 
 ## 简介
 
 - 所属大学：加州大学伯克利分校
 - 编程语言：Python、Scheme、SQL
-- 先修要求：无
-
 
 ## 评价
 
