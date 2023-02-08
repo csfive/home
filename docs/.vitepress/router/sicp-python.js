@@ -3,6 +3,7 @@ export default function () {
         {
             text: '第一章：使用函数构建抽象',
             collapsible: true,
+            collapsed: false,
             items: [
                 { text: '1.1 开始', link: '/sicp-python/ch1/1-1' },
                 { text: '1.2 编程要素', link: '/sicp-python/ch1/1-2' },
