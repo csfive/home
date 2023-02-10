@@ -1,7 +1,7 @@
 Python 速查表
 ===============================
 
-> [原项目链接](https://github.com/gto76/python-cheatsheet)，本站只做部分翻译工作，推荐使用 `Ctrl+F` 进行查找🔎
+> [原项目链接](https://github.com/gto76/python-cheatsheet)，推荐使用 `Ctrl+F` 进行查找🔎
 
 
 Main
