@@ -255,7 +255,7 @@ from types import FunctionType, MethodType, LambdaType, GeneratorType, ModuleTyp
 True
 ```
 
-```text
+```
 +------------------+------------+------------+------------+
 |                  |  Iterable  | Collection |  Sequence  |
 +------------------+------------+------------+------------+
@@ -271,7 +271,7 @@ True
 True
 ```
 
-```text
+```
 +--------------------+----------+----------+----------+----------+----------+
 |                    |  Number  |  Complex |   Real   | Rational | Integral |
 +--------------------+----------+----------+----------+----------+----------+
@@ -319,7 +319,7 @@ String
 * **Also: `'lower()'`, `'upper()'`, `'capitalize()'` and `'title()'`.**
 
 ### Property Methods
-```text
+```
 +---------------+----------+----------+----------+----------+----------+
 |               | [ !#$%…] | [a-zA-Z] |  [¼½¾]   |  [²³¹]   |  [0-9]   |
 +---------------+----------+----------+----------+----------+----------+
@@ -431,7 +431,7 @@ Format
 ```
 
 #### Comparison of presentation types:
-```text
+```
 +--------------+----------------+----------------+----------------+----------------+
 |              |    {<float>}   |   {<float>:f}  |   {<float>:e}  |   {<float>:%}  |
 +--------------+----------------+----------------+----------------+----------------+
@@ -445,7 +445,7 @@ Format
 +--------------+----------------+----------------+----------------+----------------+
 ```
 
-```text
+```
 +--------------+----------------+----------------+----------------+----------------+
 |              |  {<float>:.2}  |  {<float>:.2f} |  {<float>:.2e} |  {<float>:.2%} |
 +--------------+----------------+----------------+----------------+----------------+
@@ -1286,7 +1286,7 @@ class MyAbcSequence(abc.Sequence):
 ```
 
 #### Table of required and automatically available special methods:
-```text
+```
 +------------+------------+------------+------------+--------------+
 |            |  Iterable  | Collection |  Sequence  | abc.Sequence |
 +------------+------------+------------+------------+--------------+
@@ -1421,7 +1421,7 @@ error_msg = ''.join(traceback.format_exception(exc_type, <name>, <name>.__traceb
 ```
 
 ### Built-in Exceptions
-```text
+```
 BaseException
  +-- SystemExit                   # Raised by the sys.exit() function.
  +-- KeyboardInterrupt            # Raised when the user hits the interrupt key (ctrl-c).
@@ -1447,7 +1447,7 @@ BaseException
 ```
 
 #### Collections and their exceptions:
-```text
+```
 +-----------+------------+------------+------------+
 |           |    List    |    Set     |    Dict    |
 +-----------+------------+------------+------------+
@@ -1825,7 +1825,7 @@ import csv
 * **`'escapechar'` - Character for escaping quotechars if doublequote is False.**
 
 ### Dialects
-```text
+```
 +------------------+--------------+--------------+--------------+
 |                  |     excel    |   excel-tab  |     unix     |
 +------------------+--------------+--------------+--------------+
@@ -1915,7 +1915,7 @@ from sqlalchemy import create_engine, text
 with <conn>.begin(): ...                        # Exits the block with commit or rollback.
 ```
 
-```text
+```
 +------------+--------------+-----------+-----------------------------------+
 | Dialects   | pip3 install | import    | Dependencies                      |
 +------------+--------------+-----------+-----------------------------------+
@@ -2253,7 +2253,7 @@ type(MyClass) == MyMetaClass         # MyClass is an instance of MyMetaClass.
 type(MyMetaClass) == type            # MyMetaClass is an instance of type.
 ```
 
-```text
+```
 +-------------+-------------+
 |   Classes   | Metaclasses |
 +-------------+-------------|
@@ -2271,7 +2271,7 @@ MyClass.__base__ == object           # MyClass is a subclass of object.
 MyMetaClass.__base__ == type         # MyMetaClass is a subclass of type.
 ```
 
-```text
+```
 +-------------+-------------+
 |   Classes   | Metaclasses |
 +-------------+-------------|
@@ -2582,7 +2582,7 @@ def main():
 main()
 ```
 
-```text
+```
 $ kernprof -lv test.py
 Line #   Hits     Time  Per Hit   % Time  Line Contents
 =======================================================
@@ -2850,7 +2850,7 @@ nframes      = <Wave_read>.getnframes()         # Number of frames.
 * **For all other sizes, the integer should be encoded signed with little-endian byte order.**
 
 ### Sample Values
-```text
+```
 +-----------+-----------+------+-----------+
 | sampwidth |    min    | zero |    max    |
 +-----------+-----------+------+-----------+
@@ -3166,7 +3166,7 @@ x    1
 y    2
 ```
 
-```text
+```
 +-----------------+-------------+-------------+---------------+
 |                 |    'sum'    |   ['sum']   | {'s': 'sum'}  |
 +-----------------+-------------+-------------+---------------+
@@ -3175,7 +3175,7 @@ y    2
 +-----------------+-------------+-------------+---------------+
 ```
 
-```text
+```
 +-----------------+-------------+-------------+---------------+
 |                 |    'rank'   |   ['rank']  | {'r': 'rank'} |
 +-----------------+-------------+-------------+---------------+
@@ -3239,7 +3239,7 @@ b  4  5
 c  6  7
 ```
 
-```text
+```
 +------------------------+---------------+------------+------------+--------------------------+
 |                        |    'outer'    |   'inner'  |   'left'   |       Description        |
 +------------------------+---------------+------------+------------+--------------------------+
@@ -3286,7 +3286,7 @@ a  1  2
 b  3  4
 ```
 
-```text
+```
 +-----------------+-------------+-------------+---------------+
 |                 |    'sum'    |   ['sum']   | {'x': 'sum'}  |
 +-----------------+-------------+-------------+---------------+
@@ -3296,7 +3296,7 @@ b  3  4
 +-----------------+-------------+-------------+---------------+
 ```
 
-```text
+```
 +-----------------+-------------+-------------+---------------+
 |                 |    'rank'   |   ['rank']  | {'x': 'rank'} |
 +-----------------+-------------+-------------+---------------+
@@ -3360,7 +3360,7 @@ c  7  8
    c  7  8  6
 ```
 
-```text
+```
 +-----------------+-------------+-------------+-------------+---------------+
 |                 |    'sum'    |    'rank'   |   ['rank']  | {'x': 'rank'} |
 +-----------------+-------------+-------------+-------------+---------------+
@@ -3400,8 +3400,6 @@ from plotly.express import line
 #### Displays a line chart of total coronavirus deaths per million grouped by continent:
 
 ![Covid Deaths](/covid_deaths.png)
-<div id="2a950764-39fc-416d-97fe-0a6226a3095f" class="plotly-graph-div" style="height:340px; width:100%;"></div>
-
 ```python
 covid = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv',
                     usecols=['iso_code', 'date', 'total_deaths', 'population'])
@@ -3419,7 +3417,6 @@ line(df, x='Date', y='Total Deaths per Million', color='Continent').show()
 #### Displays a multi-axis line chart of total coronavirus cases and changes in prices of Bitcoin, Dow Jones and gold:
 
 ![Covid Cases](/covid_cases.png)
-<div id="e23ccacc-a456-478b-b467-7282a2165921" class="plotly-graph-div" style="height:315px; width:100%;"></div>
 
 ```python
 import pandas as pd
@@ -3553,10 +3550,3 @@ def read_file(filename):
 if __name__ == '__main__':
     main()
 ```
-
-
-Index
------
-* **Only available in the [PDF](https://transactions.sendowl.com/products/78175486/4422834F/view).**
-* **Ctrl+F / ⌘F is usually sufficient.**
-* **Searching `'#<title>'` on the [webpage](https://gto76.github.io/python-cheatsheet/) will limit the search to the titles.**
