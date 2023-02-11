@@ -24,6 +24,15 @@ export default function () {
             ]
         },
         {
+            text: 'CS50P',
+            collapsible: true,
+            collapsed: true,
+            items: [
+                { text: '课程简介', link: '/cs/cs50p/intro' },
+                { text: '资源汇总', link: '/cs/cs50p/resource' },
+            ]
+        },
+        {
             text: 'CS61A',
             collapsible: true,
             collapsed: true,
