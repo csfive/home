@@ -6,12 +6,13 @@
 
 - [MIT Missing Semester](./missing-semester/intro)
 - [Harvard CS50x](./cs50x/intro)
+- [Harvard CS50P](./cs50p/intro)
 - [UCB CS61A](./cs61a/intro)
 - Stanford CS106
 
 ## 数据结构与算法
 
-- UCB CS61B
+- [UCB CS61B](./cs61b/intro)
 - Princeton Algorithm
 - MIT 6.006
 - Stanford CS161
