@@ -6,8 +6,8 @@
         -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
         Helvetica, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
         'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --vp-font-family-mono: 'Dank Mono', 'SF Mono', 'PingFang SC',
-        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --vp-font-family-mono: 'Dank Mono', 'SF Mono',
+        ui-monospace, SFMono-Regular, Menlo, 'PingFang SC', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 /********************************************************
