@@ -4,7 +4,7 @@
 
 - [课程网站](https://cs50.harvard.edu/x)
 - [edX](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)
-- [GitHub](https://github.com/cs50)
+- [GitHub 组织](https://github.com/cs50)
 - [课程文档](https://cs50.readthedocs.io/)
 - [记分册](https://cs50.me/cs50x)
 - [Discord](https://discord.com/invite/cs50)
