@@ -2,9 +2,10 @@
 
 > 课程网站中几乎有你想要的全部资源，在此只列出一些重要部分。
 
-- [课程网站](https://cs50.harvard.edu/python/)
+- [课程网站](https://cs50.harvard.edu/python)
 - [edX](https://www.edx.org/course/cs50s-introduction-to-programming-with-python)
-- [GitHub 组织](https://github.com/cs50)
+- [记分册](https://cs50.me/cs50p)
+- [作业提交记录](https://submit.cs50.io)
 
 ## 作业参考
 
