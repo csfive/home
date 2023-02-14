@@ -17,3 +17,4 @@
 
 ## 视频参考
 
+- [2022 公开课视频 —— 英文原版](https://www.youtube.com/playlist?list=PLhQjrBD2T3817j24-GogXmWqO5Q5vYy0V)

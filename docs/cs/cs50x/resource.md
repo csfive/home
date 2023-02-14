@@ -31,3 +31,4 @@
 ## 视频参考
 
 - [2022 公开课视频 —— 精译中英双语字幕](https://www.bilibili.com/video/BV1ER4y157uA)
+- [2022 公开课视频 —— 英文原版](https://www.youtube.com/playlist?list=PLhQjrBD2T380F_inVRXMIHCqLaNUd7bN4)
