@@ -24,7 +24,7 @@
 - Hebrew Nand2Tetris
 - UCB CS61C
 - CMU 15-213
-- 华科 计算机硬件系统设计
+- [华科大 计算机硬件系统设计](./hust-cpu/intro)
 
 ## 操作系统
 

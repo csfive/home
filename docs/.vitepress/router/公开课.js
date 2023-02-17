@@ -51,7 +51,7 @@ export default function () {
             ]
         },
         {
-            text: '自己动手画CPU',
+            text: '自己动手画 CPU',
             collapsible: true,
             collapsed: true,
             items: [
