@@ -49,6 +49,15 @@ export default function () {
                 { text: '课程简介', link: '/cs/cs61b/intro' },
                 { text: '资源汇总', link: '/cs/cs61b/resource' },
             ]
+        },
+        {
+            text: '自己动手画CPU',
+            collapsible: true,
+            collapsed: true,
+            items: [
+                { text: '课程简介', link: '/cs/hust-cpu/intro' },
+                { text: '资源汇总', link: '/cs/hust-cpu/resource' },
+            ]
         }
     ]
 }
