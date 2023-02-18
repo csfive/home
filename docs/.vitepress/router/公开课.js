@@ -58,6 +58,15 @@ export default function () {
                 { text: '课程简介', link: '/cs/hust-cpu/intro' },
                 { text: '资源汇总', link: '/cs/hust-cpu/resource' },
             ]
-        }
+        },
+        {
+            text: 'CS61C',
+            collapsible: true,
+            collapsed: true,
+            items: [
+                { text: '课程简介', link: '/cs/cs61c/intro' },
+                { text: '资源汇总', link: '/cs/cs61c/resource' },
+            ]
+        },
     ]
 }

@@ -22,7 +22,7 @@
 ## 组成原理和体系结构
 
 - Hebrew Nand2Tetris
-- UCB CS61C
+- [UCB CS61C](./cs61c/intro)
 - CMU 15-213
 - [华科大 计算机硬件系统设计](./hust-cpu/intro)
 
