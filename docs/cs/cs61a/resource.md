@@ -9,7 +9,8 @@
 
 ## 作业参考
 
-- [Spring 2022](https://github.com/mancuoj/CS61A)
+- [Mancuoj - Spring 2022](https://github.com/mancuoj/CS61A)
+- [PKUFlyingPig - Summer 2020](https://github.com/PKUFlyingPig/CS61A)
 
 ## 文档参考
 

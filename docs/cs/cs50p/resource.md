@@ -9,7 +9,7 @@
 
 ## 作业参考
 
-- [2022](https://github.com/mancuoj/CS50P)
+- [Mancuoj - 2022](https://github.com/mancuoj/CS50P)
 
 ## 文档参考
 

@@ -12,7 +12,8 @@
 
 ## 作业参考
 
-- [2022](https://github.com/mancuoj/CS50x)
+- [Mancuoj - 2022](https://github.com/mancuoj/CS50x)
+- [lng205 - 2022](https://github.com/lng205/CS50x2022)
 - [Week3 Tideman](https://tideman.netlify.app/)
 - [Problem Set 8](https://github.com/mancuoj/pset8)
 - [Final Project](https://github.com/mancuoj/watchlist)

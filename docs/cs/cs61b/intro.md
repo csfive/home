@@ -1,4 +1,4 @@
-# CS61B Data Structures
+# CS61B：Data Structures
 
 ## 简介
 
