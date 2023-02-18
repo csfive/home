@@ -18,7 +18,7 @@ export default function () {
             items: [
                 { text: '项目简介', link: '/about/project' },
                 { text: '贡献指南', link: '/about/contributing' },
-                { text: '团队成员', link: '/about/team' },
+                // { text: '团队成员', link: '/about/team' },
                 {
                     items: [
                         { text: 'Markdown', link: '/about/markdown' },
