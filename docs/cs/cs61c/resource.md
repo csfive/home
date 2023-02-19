@@ -1,7 +1,7 @@
 # 资源汇总
 
 - [课程网站](https://cs61c.org/)
-
+- [Starter Code](https://github.com/61c-teach)
 
 ## 作业参考
 
