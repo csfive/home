@@ -7,5 +7,11 @@
 
 ## 作业参考
 
-- [HUST CPU](https://github.com/mancuoj/HUST-CPU)
+- [Mancuoj - HUST CPU](https://github.com/mancuoj/HUST-CPU)
+- [白羽 - 知乎专栏](https://zhuanlan.zhihu.com/p/111441534)
+
+## 文档参考
+
+
+## 视频参考
 
