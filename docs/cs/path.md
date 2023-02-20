@@ -21,10 +21,10 @@
 
 ## 组成原理和体系结构
 
-- Hebrew Nand2Tetris
+- [华科大 计算机硬件系统设计](./hust-cpu/intro)
+- [Hebrew Nand2Tetris](./nand2tetris/intro)
 - [UCB CS61C](./cs61c/intro)
 - CMU 15-213
-- [华科大 计算机硬件系统设计](./hust-cpu/intro)
 
 ## 操作系统
 

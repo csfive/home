@@ -60,6 +60,15 @@ export default function () {
             ]
         },
         {
+            text: 'Nand2Tetris',
+            collapsible: true,
+            collapsed: true,
+            items: [
+                { text: '课程简介', link: '/cs/nand2tetris/intro' },
+                { text: '资源汇总', link: '/cs/nand2tetris/resource' },
+            ]
+        },
+        {
             text: 'CS61C',
             collapsible: true,
             collapsed: true,
