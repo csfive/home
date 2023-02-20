@@ -8,10 +8,11 @@
 ## 作业参考
 
 - [Mancuoj - HUST CPU](https://github.com/mancuoj/HUST-CPU)
-- [白羽 - 知乎专栏](https://zhuanlan.zhihu.com/p/111441534)
 
 ## 文档参考
 
+- [白羽 - 知乎专栏](https://zhuanlan.zhihu.com/p/111441534)
 
 ## 视频参考
 
+- [课程 MOOC 网站](https://www.icourse163.org/course/HUST-1205809816)
