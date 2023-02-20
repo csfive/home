@@ -5,9 +5,9 @@
 
 ## 作业参考
 
-- [PKUFlyingPig - Nand2ToTetris](https://github.com/PKUFlyingPig/NandToTetris)
-- [Mancuoj - Nand2Tetris](https://github.com/mancuoj/nand2tetris)
-- [lng205 - Nand2Tetris](https://github.com/lng205/Nand2Tetris)
+- [PKUFlyingPig](https://github.com/PKUFlyingPig/NandToTetris)
+- [lng205](https://github.com/lng205/Nand2Tetris)
+- [Mancuoj](https://github.com/mancuoj/nand2tetris)
 
 ## 文档参考
 
