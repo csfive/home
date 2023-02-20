@@ -11,9 +11,9 @@ hero:
     - theme: brand
       text: 开始阅读
       link: /cs/path
-    - theme: alt
-      text: GitHub
-      link: https://github.com/csfive/docs
+    # - theme: alt
+    #   text: GitHub
+    #   link: https://github.com/csfive/docs
   image:
     src: /shushu.png
     alt: logo
