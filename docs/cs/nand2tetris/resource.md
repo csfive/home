@@ -1,7 +1,9 @@
 # 资源汇总
 
 - [课程网站](https://www.nand2tetris.org/)
-- [中英文教材仓库自取](https://github.com/mancuoj/nand2tetris)
+- [Starter Code](https://drive.google.com/file/d/1xZzcMIUETv3u3sdpM_oTJSTetpVee3KZ/view)
+- [课内所使用软件的源代码](https://drive.google.com/file/d/1stcWUSeAixCRHWOjc9sgBhq5voSLvun8/view)
+- [Q&A 论坛](http://nand2tetris-questions-and-answers-forum.52.s1.nabble.com/)
 
 ## 作业参考
 
@@ -11,6 +13,7 @@
 
 ## 文档参考
 
+- [中英文教材仓库自取](https://github.com/mancuoj/nand2tetris)
 
 ## 视频参考
 
