@@ -45,6 +45,7 @@ export default {
 
         socialLinks: [
             { icon: 'github', link: 'https://github.com/csfive' },
+            { icon: 'discord', link: 'https://discord.gg/dqZaP5yAHT' },
         ],
 
         editLink: {
