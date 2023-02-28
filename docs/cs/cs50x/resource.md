@@ -1,10 +1,6 @@
 # 资源汇总
 
-> 课程网站中几乎有你想要的全部资源，在此只列出一些重要部分。
-
 - [课程网站](https://cs50.harvard.edu/x)
-- [edX](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)
-- [GitHub 组织](https://github.com/cs50)
 - [课程文档](https://cs50.readthedocs.io/)
 - [记分册](https://cs50.me/cs50x)
 - [Discord](https://discord.com/invite/cs50)
