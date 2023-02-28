@@ -11,7 +11,8 @@
 
 ## 文档参考
 
-- [白羽 - 知乎专栏](https://zhuanlan.zhihu.com/p/111441534)
+- [知乎专栏](https://zhuanlan.zhihu.com/p/111441534)
+- [CSDN 专栏](https://blog.csdn.net/treblez/category_9556299.html)
 - [厨房计时器参考](https://blog.csdn.net/weixin_51693702/article/details/122387340)
 
 ## 视频参考
