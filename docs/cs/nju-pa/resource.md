@@ -1,6 +1,8 @@
 # 资源汇总
 
 - [课程网站](https://nju-projectn.github.io/ics-pa-gitbook/)
+- [GitHub 组织](https://github.com/NJU-ProjectN)
+- [Starter Code](https://github.com/NJU-ProjectN/ics-pa)
 
 ## 作业参考
 
@@ -12,6 +14,9 @@
 - [Linux 入门教程](https://nju-projectn.github.io/ics-pa-gitbook/ics2022/linux.html)
 - [man 入门教程](https://nju-projectn.github.io/ics-pa-gitbook/ics2022/man.html)
 - [Linux C 编程一站式学习](https://docs.huihoo.com/c/linux-c-programming/)
+
+> 以下为官方手册
+
 - [C99 标准](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
 - [GCC 10.3.0 手册](https://gcc.gnu.org/onlinedocs/gcc-10.3.0/gcc.pdf)
 - [GDB 用户手册](https://nju-projectn.github.io/ics-pa-gitbook/ics2022/gdb.html)
