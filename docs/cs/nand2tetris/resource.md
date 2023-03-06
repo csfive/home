@@ -8,8 +8,8 @@
 ## 作业参考
 
 - [PKUFlyingPig](https://github.com/PKUFlyingPig/NandToTetris)
-- [lng205](https://github.com/lng205/Nand2Tetris)
 - [Mancuoj](https://github.com/mancuoj/nand2tetris)
+- [lng205](https://github.com/lng205/Nand2Tetris)
 
 ## 文档参考
 

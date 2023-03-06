@@ -7,10 +7,12 @@
 ## 作业参考
 
 - [Mancuoj - 2022](https://github.com/mancuoj/CS50P)
+- [tomato-clock](https://github.com/coolcode/tomato-clock)
 
 ## 文档参考
 
 - [Python 教程](https://docs.python.org/zh-cn/3/tutorial/index.html)
+- [Python Cheatsheet](../../cheatsheets/py.md)
 
 ## 视频参考
 

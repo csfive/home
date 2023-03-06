@@ -8,12 +8,13 @@
 ## 作业参考
 
 - [Mancuoj - HUST CPU](https://github.com/mancuoj/HUST-CPU)
+- [知乎专栏](https://zhuanlan.zhihu.com/p/111441534)
+- [CSDN 专栏](https://blog.csdn.net/treblez/category_9556299.html)
+- [厨房计时器](https://blog.csdn.net/weixin_51693702/article/details/122387340)
 
 ## 文档参考
 
-- [知乎专栏](https://zhuanlan.zhihu.com/p/111441534)
-- [CSDN 专栏](https://blog.csdn.net/treblez/category_9556299.html)
-- [厨房计时器参考](https://blog.csdn.net/weixin_51693702/article/details/122387340)
+- [计算机组成原理（微课版）](https://book.douban.com/subject/35379794/)
 
 ## 视频参考
 
