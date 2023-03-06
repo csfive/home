@@ -30,7 +30,7 @@
 
 - MIT 6.S081
 - UCB CS162
-- 南大 计算机系统基础
+- [南大 计算机系统基础](./nju-cs/intro)
 - 南大 操作系统设计与实现
 
 ## 网络
@@ -43,3 +43,8 @@
 
 - CMU 15-445
 - Stanford CS346
+
+
+## 人工智能
+
+- [Harvard CS50AI](./cs50ai/intro)

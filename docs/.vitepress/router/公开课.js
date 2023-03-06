@@ -77,5 +77,23 @@ export default function () {
                 { text: '资源汇总', link: '/cs/cs61c/resource' },
             ]
         },
+        {
+            text: '计算机系统基础',
+            collapsible: true,
+            collapsed: true,
+            items: [
+                { text: '课程简介', link: '/cs/nju-pa/intro' },
+                { text: '资源汇总', link: '/cs/nju-pa/resource' },
+            ]
+        },
+        {
+            text: 'CS50 AI',
+            collapsible: true,
+            collapsed: true,
+            items: [
+                { text: '课程简介', link: '/cs/cs50ai/intro' },
+                { text: '资源汇总', link: '/cs/cs50ai/resource' },
+            ]
+        },
     ]
 }
