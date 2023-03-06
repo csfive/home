@@ -87,7 +87,7 @@ export default function () {
             ]
         },
         {
-            text: 'CS50 AI',
+            text: 'CS50AI',
             collapsible: true,
             collapsed: true,
             items: [
