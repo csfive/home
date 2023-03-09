@@ -11,10 +11,13 @@
 - [知乎专栏](https://zhuanlan.zhihu.com/p/111441534)
 - [CSDN 专栏](https://blog.csdn.net/treblez/category_9556299.html)
 - [厨房计时器](https://blog.csdn.net/weixin_51693702/article/details/122387340)
+- [运算器设计](https://blog.csdn.net/m0_46655373/article/details/116245286)
 
 ## 文档参考
 
 - [计算机组成原理（微课版）](https://book.douban.com/subject/35379794/)
+- 王道计算机组成原理考研复习指导
+- [计算机组成与设计（原书第5版）：硬件/软件接口](https://book.douban.com/subject/26604008/)
 
 ## 视频参考
 
