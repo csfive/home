@@ -1,8 +1,9 @@
-# CS61C：Great Ideas in Computer Architecture (Machine Structures)
+# From Nand to Tetris: Building a Modern Computer From First Principles
 
 ## 简介
 
 - 所属大学：希伯来大学
+- 编程语言：HDL、Jack、汇编
 
 ## 评价
 
