@@ -1,6 +1,5 @@
 import 导航栏 from './router/导航栏'
 import 公开课 from './router/公开课'
-import sicp from './router/sicp-python'
 
 export default {
     title: 'CSfive',
@@ -34,7 +33,6 @@ export default {
         nav: 导航栏(),
         sidebar: {
             '/cs/': 公开课(),
-            '/sicp-python/': sicp(),
         },
 
         algolia: {

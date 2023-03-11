@@ -5,7 +5,7 @@ export default function () {
             text: '资料',
             activeMatch: '/sicp-python/ch1/1-1',
             items: [
-                { text: 'SICP Python 翻译【WIP】', link: '/sicp-python/ch1/1-1' },
+                { text: 'SICP Python 翻译', link: '/sicp-python/ch1/1-1' },
                 { text: 'C 速查表', link: '/cheatsheets/c' },
                 { text: 'Python 速查表', link: '/cheatsheets/py' },
                 { text: 'Python 速查表【2】', link: '/cheatsheets/py2' },
