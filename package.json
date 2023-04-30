@@ -3,26 +3,27 @@
   "version": "1.0.0",
   "description": "Documentation for csfive",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "dev": "vitepress dev",
+    "build": "vitepress build"
   },
   "devDependencies": {
     "@giscus/vue": "^2.2.6",
     "katex": "^0.16.4",
-    "markdown-it-texmath": "^1.0.0",
     "markdown-it-imsize": "^2.0.1",
     "markdown-it-mark": "^3.0.1",
     "markdown-it-smartarrows": "^1.0.1",
+    "markdown-it-texmath": "^1.0.0",
     "medium-zoom": "^1.0.8",
     "vitepress": "1.0.0-alpha.75",
     "vue": "^3.2.45"
   },
-  "main": "index.js",
   "keywords": [
     "csfive",
     "docs"
   ],
   "author": "csfive",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lxgw-wenkai-screen-webfont": "^1.7.0"
+  }
 }
