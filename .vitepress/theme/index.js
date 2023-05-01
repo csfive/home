@@ -2,7 +2,9 @@ import { h, onMounted, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import mediumZoom from 'medium-zoom'
-import './custom.css'
+import './rainbow.css'
+import './vars.css'
+import './overrides.css'
 import "@fontsource/ibm-plex-sans"
 import "@fontsource/jetbrains-mono"
 
