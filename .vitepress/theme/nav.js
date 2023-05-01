@@ -6,7 +6,6 @@ export const 导航栏 = [
         items: [
             { text: 'JS 红宝书', link: '/js/1/1' },
             { text: 'ES6 入门', link: '/es6/1' },
-            { text: '现代 JS 教程', link: '/jsinfo/intro' },
             { text: 'SICP Python', link: '/sicp-python/ch1/1-1' },
         ]
     },
@@ -277,14 +276,6 @@ export const ES6入门 = [
             { text: '29. ArrayBuffer', link: '/es6/29' },
             { text: '30. 最新提案', link: '/es6/30' },
             { text: '31. Decorator', link: '/es6/31' },
-        ]
-    },
-]
-
-export const 现代JS教程 = [
-    {
-        items: [
-            { text: '简介', link: '/jsinfo/intro' },
         ]
     },
 ]
