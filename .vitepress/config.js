@@ -1,6 +1,6 @@
-import 导航栏 from './router/导航栏'
-import 公开课 from './router/公开课'
-import 速查表 from './router/速查表'
+import 导航栏 from './theme/导航栏'
+import 公开课 from './theme/公开课'
+import 速查表 from './theme/速查表'
 
 export default {
     title: 'CSfive',

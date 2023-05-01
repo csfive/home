@@ -1,9 +1,11 @@
 import { h, onMounted, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import Comment from './components/Comment.vue'
 import mediumZoom from 'medium-zoom'
-import './style/custom.css'
+import Comment from './Comment.vue'
+import './custom.css'
+import "@fontsource/ibm-plex-sans"
+import "@fontsource/jetbrains-mono"
 
 export default {
     ...DefaultTheme,

@@ -1,17 +1,21 @@
 lockfileVersion: '6.0'
 
-dependencies:
-  lxgw-wenkai-screen-webfont:
-    specifier: ^1.7.0
-    version: 1.7.0
-
 devDependencies:
+  '@fontsource/ibm-plex-sans':
+    specifier: ^4.5.13
+    version: 4.5.13
+  '@fontsource/jetbrains-mono':
+    specifier: ^4.5.12
+    version: 4.5.12
   '@giscus/vue':
     specifier: ^2.2.6
     version: 2.2.6(vue@3.2.45)
   katex:
     specifier: ^0.16.4
     version: 0.16.4
+  lxgw-wenkai-lite-webfont:
+    specifier: ^1.7.0
+    version: 1.7.0
   markdown-it-imsize:
     specifier: ^2.0.1
     version: 2.0.1
@@ -410,6 +414,14 @@ packages:
     dev: true
     optional: true
 
+  /@fontsource/ibm-plex-sans@4.5.13:
+    resolution: {integrity: sha512-7oDAqvuIArnMJck/JBqCnQZwqL4za+5xG+1Gu4enYbGcGqmUPktiuOy1i0N3XrzrNO70ZvsSt1Rdkxr2oemE6Q==}
+    dev: true
+
+  /@fontsource/jetbrains-mono@4.5.12:
+    resolution: {integrity: sha512-LJF1ala1/u+wXZmESFqIk08FA9yGX4/uAAleCHmXUMgEjvNAYFHUQQ7eK5hQQoBOwh99cU5suTrqYqEkgzwzPA==}
+    dev: true
+
   /@giscus/vue@2.2.6(vue@3.2.45):
     resolution: {integrity: sha512-UHPCzj/D8SMndtyd2iDEeGi7iRFy/43J7OOLi7I6qbQZVtYnhHg024CyufC9nuoRmjGoRFN2QodY3rrEAMiETg==}
     peerDependencies:
@@ -753,9 +765,9 @@ packages:
       lit-html: 2.5.0
     dev: true
 
-  /lxgw-wenkai-screen-webfont@1.7.0:
-    resolution: {integrity: sha512-xvfF4V26Mb335xKg3uxljz+V2nq4F5ek0ku9pmyKgT0Dzo/d2rHi7WpnqgvM9mlXAcAKOrxrcDmUZiIs/ZQ9bQ==}
-    dev: false
+  /lxgw-wenkai-lite-webfont@1.7.0:
+    resolution: {integrity: sha512-VcQYNRpdXAxaZsJ18rfT1mmAreGqkIFNZ/9pdVLbT2Tkb+2lLWJDXq4zYxMEk9AcecSnxO31R2LHh5ieLlxjRg==}
+    dev: true
 
   /magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
