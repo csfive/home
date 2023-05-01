@@ -12,7 +12,6 @@
 ## 文档参考
 
 - [Python 教程](https://docs.python.org/zh-cn/3/tutorial/index.html)
-- [Python Cheatsheet](../../cheatsheets/py.md)
 
 ## 视频参考
 

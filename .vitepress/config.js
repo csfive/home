@@ -32,7 +32,6 @@ export default {
         nav: 导航栏,
         sidebar: {
             '/cs/': 公开课,
-            '/cheatsheets/': 速查表,
             '/js/': 红宝书,
             '/es6/': ES6入门,
             '/jsinfo/': 现代JS教程

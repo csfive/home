@@ -7,7 +7,6 @@ export const 导航栏 = [
             { text: 'JS 红宝书', link: '/js/1' },
             { text: 'ES6 入门', link: '/es6/1' },
             { text: '现代 JS 教程', link: '/jsinfo/intro' },
-            { text: '速查表', link: '/cheatsheets/regex' },
             { text: 'SICP Python', link: '/sicp-python/ch1/1-1' },
         ]
     },
@@ -121,18 +120,6 @@ export const 公开课 = [
         items: [
             { text: '课程简介', link: '/cs/cs50ai/intro' },
             { text: '资源汇总', link: '/cs/cs50ai/resource' },
-        ]
-    },
-]
-
-
-export const 速查表 = [
-    {
-        items: [
-            { text: '正则速查表', link: '/cheatsheets/regex' },
-            { text: 'C 速查表', link: '/cheatsheets/c' },
-            { text: 'Python 速查表', link: '/cheatsheets/py' },
-            { text: 'Python 速查表【2】', link: '/cheatsheets/py2' },
         ]
     },
 ]
