@@ -1,4 +1,4 @@
-import { 导航栏, 公开课, 速查表, 红宝书, ES6入门, 现代JS教程 } from './theme/nav'
+import { 导航栏, 公开课, 红宝书, ES6入门, 现代JS教程 } from './theme/nav'
 
 export default {
     title: 'CSfive',
