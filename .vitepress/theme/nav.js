@@ -202,22 +202,6 @@ export const 红宝书 = [
         ]
     },
     {
-        text: '集合引用类型',
-        collapsible: true,
-        collapsed: true,
-        items: [
-            { text: '1. Object', link: '/js/7/1' },
-            { text: '2. Array', link: '/js/7/2' },
-            { text: '3. 定型数组', link: '/js/7/3' },
-            { text: '4. Map', link: '/js/7/4' },
-            { text: '5. WeakMap', link: '/js/7/5' },
-            { text: '6. Set', link: '/js/7/6' },
-            { text: '7. WeakSet', link: '/js/7/7' },
-            { text: '8. 迭代与扩展操作', link: '/js/7/8' },
-            { text: '9. 小结', link: '/js/7/9' },
-        ]
-    },
-    {
         text: '迭代器与生成器',
         collapsible: true,
         collapsed: true,
