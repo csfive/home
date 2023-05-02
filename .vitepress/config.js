@@ -1,4 +1,4 @@
-import { 导航栏, 公开课, 红宝书, ES6入门 } from './theme/nav'
+import { 导航栏, 公开课 } from './theme/nav'
 
 export default {
     title: 'CSfive',
@@ -32,8 +32,6 @@ export default {
         nav: 导航栏,
         sidebar: {
             '/cs/': 公开课,
-            '/js/': 红宝书,
-            '/es6/': ES6入门,
         },
 
         socialLinks: [
