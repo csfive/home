@@ -5,8 +5,8 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.0.0
   '@fontsource/jetbrains-mono':
-    specifier: ^4.5.12
-    version: 4.5.12
+    specifier: ^5.0.0
+    version: 5.0.0
   katex:
     specifier: ^0.16.4
     version: 0.16.4
@@ -415,8 +415,8 @@ packages:
     resolution: {integrity: sha512-kdQZXSKyXufHiDZk5e466RVxgsU/O4Jkjr+51Gs9QiQ6lfkt9O65TJV4IXonRTBb/L9Z6bwDPcae2C/riE42Mw==}
     dev: true
 
-  /@fontsource/jetbrains-mono@4.5.12:
-    resolution: {integrity: sha512-LJF1ala1/u+wXZmESFqIk08FA9yGX4/uAAleCHmXUMgEjvNAYFHUQQ7eK5hQQoBOwh99cU5suTrqYqEkgzwzPA==}
+  /@fontsource/jetbrains-mono@5.0.0:
+    resolution: {integrity: sha512-+urFA/HPgYCzKQLiZbtzWIEyHgoJavVAau9B2mRndqDoPqfoFofEi3tj+VdRyG06ew2L3RTQIoZZLfrS2Fk4iQ==}
     dev: true
 
   /@jridgewell/sourcemap-codec@1.4.15:

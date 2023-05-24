@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@fontsource/ibm-plex-sans": "^5.0.0",
-    "@fontsource/jetbrains-mono": "^4.5.12",
+    "@fontsource/jetbrains-mono": "^5.0.0",
     "katex": "^0.16.4",
     "lxgw-wenkai-lite-webfont": "^1.7.0",
     "markdown-it-imsize": "^2.0.1",
