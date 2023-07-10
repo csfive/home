@@ -6,14 +6,14 @@ settings:
 
 devDependencies:
   '@fontsource/ibm-plex-sans':
-    specifier: ^5.0.2
-    version: 5.0.2
+    specifier: ^5.0.5
+    version: 5.0.5
   '@fontsource/jetbrains-mono':
-    specifier: ^5.0.2
-    version: 5.0.2
+    specifier: ^5.0.5
+    version: 5.0.5
   katex:
-    specifier: ^0.16.7
-    version: 0.16.7
+    specifier: ^0.16.8
+    version: 0.16.8
   lxgw-wenkai-lite-webfont:
     specifier: ^1.7.0
     version: 1.7.0
@@ -440,12 +440,12 @@ packages:
     dev: true
     optional: true
 
-  /@fontsource/ibm-plex-sans@5.0.2:
-    resolution: {integrity: sha512-13On/7J+hMrv/PqOyuggUP/0AnB2cmdnnrHbFfml9RACgK/qiy1OpA9p0bXA/ar7jBPD+rv/cFhiSZOTmgcohw==}
+  /@fontsource/ibm-plex-sans@5.0.5:
+    resolution: {integrity: sha512-QmQ2UdD1/9e49Z5zY0d6Ecd8Q/ByryS/80YJt8Uwn3KAoAT1gUc4/YyjnSlzDv+bSFoXfn5VuPRI5NWSTwrY3g==}
     dev: true
 
-  /@fontsource/jetbrains-mono@5.0.2:
-    resolution: {integrity: sha512-2otc4BSOJ94gFkG4o7fjmARaIcI76wmMIyyY7SbPnM2EqA8lr5I/cu9KofoAUSc5haBJExK6DlWGVMfRGKnDIA==}
+  /@fontsource/jetbrains-mono@5.0.5:
+    resolution: {integrity: sha512-Smuppiu7QzNCatnccTXdUYbxUmEVywklM/hntWKhig0Q+hm7SYzQpNpxCR1Gm8npE8jpaKslhIsBPGuTBGZgdA==}
     dev: true
 
   /@jridgewell/sourcemap-codec@1.4.15:
@@ -717,8 +717,8 @@ packages:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
     dev: true
 
-  /katex@0.16.7:
-    resolution: {integrity: sha512-Xk9C6oGKRwJTfqfIbtr0Kes9OSv6IFsuhFGc7tW4urlpMJtuh+7YhzU6YEG9n8gmWKcMAFzkp7nr+r69kV0zrA==}
+  /katex@0.16.8:
+    resolution: {integrity: sha512-ftuDnJbcbOckGY11OO+zg3OofESlbR5DRl2cmN8HeWeeFIV7wTXvAOx8kEjZjobhA+9wh2fbKeO6cdcA9Mnovg==}
     hasBin: true
     dependencies:
       commander: 8.3.0
@@ -782,8 +782,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /postcss@8.4.24:
-    resolution: {integrity: sha512-M0RzbcI0sO/XJNucsGjvWU9ERWxb/ytp1w6dKtxTKgixdtQDq4rmx/g8W1hnaheq9jgwL/oyEdH5Bc4WwJKMqg==}
+  /postcss@8.4.25:
+    resolution: {integrity: sha512-7taJ/8t2av0Z+sQEvNzCkpDynl0tX3uJMCODi6nT3PfASC7dYCWV9aQ+uiCf+KBD4SEFcu+GvJdGdwzQ6OSjCw==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.6
@@ -860,7 +860,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.18.11
-      postcss: 8.4.24
+      postcss: 8.4.25
       rollup: 3.26.0
     optionalDependencies:
       fsevents: 2.3.2
