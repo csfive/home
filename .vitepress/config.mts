@@ -16,10 +16,11 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: { src: '/logo.svg', width: 24, height: 24 },
-    sidebar: [{ text: '启动', link: '/' }],
+    sidebar: [
+      { text: '启动', link: '/' },
+      { text: 'CS61A', link: '/cs61a' },
+    ],
     socialLinks: [{ icon: 'github', link: 'https://github.com/csfive' }],
-    search: {
-      provider: 'local',
-    },
+    search: { provider: 'local' },
   },
 })
