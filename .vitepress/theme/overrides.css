@@ -1,3 +1,9 @@
+::-webkit-scrollbar,
+::-webkit-scrollbar-horizontal {
+  width: 0px;
+  height: 0px;
+}
+
 .vp-code-group .tabs label {
   background-color: transparent;
 }
