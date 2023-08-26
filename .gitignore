@@ -1,3 +1,5 @@
+.vitepress/cache
+.vitepress/dist
 /coverage
 /src/client/shared.ts
 /src/node/shared.ts
