@@ -4,7 +4,6 @@ export default defineConfig({
   title: 'CS Five',
   description: '计算机废物自学指北',
   srcDir: 'docs',
-  lastUpdated: true,
   cleanUrls: true,
   head: [
     ['link', { rel: 'icon', href: '/logo.svg' }],
