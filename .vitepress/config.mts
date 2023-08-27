@@ -12,14 +12,21 @@ export default defineConfig({
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'en' }],
     ['meta', { name: 'og:site_name', content: 'CS Five' }],
-    ['meta', { name: 'og:image', content: 'https://vitepress.dev/vitepress-og.jpg' }],
-    ['meta', { name: 'twitter:image', content: 'https://vitepress.dev/vitepress-og.jpg' }],
   ],
+  markdown: {
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark',
+    },
+  },
   themeConfig: {
     logo: { src: '/logo.svg', width: 24, height: 24 },
     sidebar: [
       { text: '启动', link: '/' },
-      { text: 'CS61A', link: '/cs61a' },
+      {
+        text: 'CS61A',
+        items: [{ text: 'Python', link: '/cs61a/python' }],
+      },
     ],
     socialLinks: [{ icon: 'github', link: 'https://github.com/csfive' }],
     search: { provider: 'local' },
