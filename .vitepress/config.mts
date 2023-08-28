@@ -2,6 +2,9 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
     title: 'CS Five',
+    titleTemplate: ':title',
+    appearance: 'dark',
+    lang: 'en',
     description: '计算机废物自学指北',
     srcDir: 'docs',
     cleanUrls: true,
