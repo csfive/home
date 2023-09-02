@@ -1,5 +1,11 @@
 # Python Cheat Sheet
 
+:::tip
+For more information, see the [Python documentation](https://docs.python.org/).
+:::
+
+## Hello World
+
 ```py
 print("Hello, World!")
 # Hello, World!
@@ -102,8 +108,15 @@ s[::-1]        # => nocabym
 
 ```py
 # Get the string length
-hello = 'Hello'
-len(hello)  # => 5
+hello = 'Hello' * 5
+len(hello)  # => 25
+```
+
+
+```py
+s = 'spam'
+s in 'I saw spamalot!'           # => True
+s not in 'I saw The Holy Grail!' # => True
 ```
 
 ```py
