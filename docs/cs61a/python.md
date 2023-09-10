@@ -1,22 +1,22 @@
 # Python Cheat Sheet
 
-> For more information, see the [Python documentation](https://docs.python.org/).
+For more information, see the [Python documentation](https://docs.python.org/).
 
-```py
+```python
 print("Hello, World!")
 # Hello, World!
 ```
 
 ## Built-in Data Types
 
-```py
+```python
 hello = 'hello'
 hello = "Hello"
 multi_string = """Hello
 World From Python"""
 ```
 
-```py
+```python
 x = 1    # int
 y = 2.8  # float
 z = 1j   # complex
@@ -25,7 +25,7 @@ print(type(x))
 # <class 'int'>
 ```
 
-```py
+```python
 my_bool = True
 my_bool = False
 
@@ -33,26 +33,49 @@ bool(0)  # => False
 bool(1)  # => True
 ```
 
-```py
+```python
 my_list = ["apple", "banana", "cherry"]
 my_list = [True, False, False]
-my_list = [1, 5, 7, 9, 3]
 my_list = list((1, 5, 7, 9, 3))
+my_list = list(range(1, 11))  # 1~10
+
+my_list = []
+my_list.append(1)
+my_list.append(2)
+my_list.append(3)          # => [1, 2, 3]
+my_list.pop()              # => [1, 2]
+del my_list[0]             # => [2]
+my_list.extend([3, 4, 5])  # => [2, 3, 4, 5]
+my_list + [6, 7, 8]        # => [2, 3, 4, 5, 6, 7, 8]
 ```
 
-```py
+```python
+list(filter(lambda x: x % 2 == 1, range(1, 20)))
+# => [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+[x ** 2 for x in range(1, 11) if x % 2 == 1]
+# => [1, 9, 25, 49, 81]
+
+list(filter(lambda x: x > 5, [3, 4, 5, 6, 7]))
+# => [6, 7]
+
+[x for x in [3, 4, 5, 6, 7] if x > 5]
+# => [6, 7]
+```
+
+```python
 # similar to list, but immutable
 my_tuple = (1, 2, 3)
 my_tuple = tuple((1, 2, 3))
 ```
 
-```py
+```python
 # set of unique values
 my_set = {"a", "b", "c"}
 my_set = set(("a", "b", "c"))
 ```
 
-```py
+```python
 # key-value pairs, JSON like object
 empty_dict = {}
 my_dict = { "one": 1, "two": 2, "three": 3 }
@@ -66,14 +89,14 @@ my_dict["four"]   # => 4
 
 ## Strings
 
-```py
+```python
 # Get the character at position 1 or last
 hello = "Hello"
 hello[0]   # => H
 hello[-1]  # => o
 ```
 
-```py
+```python
 # Loop through the letters in the word "foo"
 for char in "foo":
     print(char)
@@ -82,7 +105,7 @@ for char in "foo":
 # o
 ```
 
-```py
+```python
 #  ┌───┬───┬───┬───┬───┬───┬───┐
 #  | m | y | b | a | c | o | n |
 #  └───┴───┴───┴───┴───┴───┴───┘
@@ -103,28 +126,48 @@ my_str[::2]         # => mbcn
 my_str[::-1]        # => nocabym
 ```
 
-```py
+```python
 # Get the string length
 hello = "Hello" * 5
 len(hello)  # => 25
 ```
 
-```py
+```python
 s = "spam"
 s in "I saw spamalot!'"           # => True
 s not in "I saw The Holy Grail!"  # => True
 ```
 
-```py
+```python
 # Get input data from console
 name = input("Enter your name: ")
 ```
 
-```py
+```python
 "#".join(["a", "b", "c"])  # => a#b#c
 ```
 
 ## F-strings
+
+```python
+name = 'mancuoj'
+f"Hello, {name}"      # => Hello, mancuoj
+
+f'{12345:0>10}'       # fill left => 0000012345
+f'{"text":*<10}'      # fill right => text******
+f'{"text":*^10}'      # fill center => ***test***
+
+# Types
+f'{10:b}'             # binary => 1010
+f'{10:#b}'            # with notation => 0b1010
+f'{200:x}'            # hexadecimal => c8
+f'{65:c}'             # character => A
+
+# Others
+f'{12345:+}'          # => +12345'
+f'{-12345:+}'         # -12345
+
+```
 
 ## Flow Control
 
@@ -132,8 +175,19 @@ name = input("Enter your name: ")
 
 ## Functions
 
-## Lists
-
 ## Modules
+
+## File Handling
+
+## Class
+
+```python
+# Defining
+class MyNewClass:
+  pass
+
+# Instantiation
+my = MyNewClass()
+```
 
 ## Advanced Data Types
