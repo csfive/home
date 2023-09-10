@@ -34,6 +34,7 @@ bool(1)  # => True
 ```
 
 ```python
+# Similar to string
 my_list = ["apple", "banana", "cherry"]
 my_list = [True, False, False]
 my_list = list((1, 5, 7, 9, 3))
@@ -64,19 +65,19 @@ list(filter(lambda x: x > 5, [3, 4, 5, 6, 7]))
 ```
 
 ```python
-# similar to list, but immutable
+# Similar to list, but immutable
 my_tuple = (1, 2, 3)
 my_tuple = tuple((1, 2, 3))
 ```
 
 ```python
-# set of unique values
+# Set of unique values
 my_set = {"a", "b", "c"}
 my_set = set(("a", "b", "c"))
 ```
 
 ```python
-# key-value pairs, JSON like object
+# JSON like object, key-value pairs
 empty_dict = {}
 my_dict = { "one": 1, "two": 2, "three": 3 }
 
@@ -153,9 +154,13 @@ name = input("Enter your name: ")
 name = 'mancuoj'
 f"Hello, {name}"      # => Hello, mancuoj
 
+f'{"text":10}'        # [width] => 'text      '  
 f'{12345:0>10}'       # fill left => 0000012345
 f'{"text":*<10}'      # fill right => text******
 f'{"text":*^10}'      # fill center => ***test***
+
+f'{12345:010}'        # => 0000012345
+f'{-12345:010}'       # => -000012345
 
 # Types
 f'{10:b}'             # binary => 1010
@@ -164,30 +169,226 @@ f'{200:x}'            # hexadecimal => c8
 f'{65:c}'             # character => A
 
 # Others
-f'{12345:+}'          # => +12345'
-f'{-12345:+}'         # -12345
+f'{math.pi:.2f}'      # => 3.14
+f'{1000000:,.2f}'     # => 1,000,000.00
 
+f'{0.25:0%}'          # => 25.000000%
+f'{0.25:.0%}'         # => 25%
+
+f'{12345:+}'          # => +12345
+f'{-12345:+}'         # => -12345
 ```
 
 ## Flow Control
 
+```python
+num = 5
+if num > 10:
+    print("num is totally bigger than 10.")
+elif num < 10:
+    print("num is smaller than 10.")
+else:
+    print("num is indeed 10.")
+```
+
+```python
+# one line
+a = 330
+b = 200
+r = "a" if a > b else "b"
+print(r)    
+# a
+```
+
 ## Loops
+
+```python
+primes = [2, 3, 5, 7]
+for prime in primes:
+    print(prime)
+```
+
+```python
+animals = ["dog", "cat", "mouse"]
+for i, value in enumerate(animals):
+    print(i, value)
+
+# Skip break and continue ...
+```
+
+```python
+# range()
+for i in range(4):
+    print(i)                   # 0 1 2 3
+
+for i in range(4, 8):
+    print(i)                   # 4 5 6 7
+
+for i in range(4, 10, 2):
+    print(i)                   # 4 6 8
+```
+
+```python
+# zip()
+words = ['Mon', 'Tue', 'Wed']
+nums = [1, 2, 3]
+
+for w, n in zip(words, nums):
+    print(f'{n}:{w}, ', end='')
+```
+
+```python
+# for-else
+nums = [60, 70, 30, 110, 90]
+for n in nums:
+    if n > 100:
+        print("%d is bigger than 100" %n)
+        break
+else:
+    print("Not found!")
+```
+
+
 
 ## Functions
 
+```python
+def add(x, y):
+    print(f"x is {x}, y is {y}")
+    return x + y
+
+add(5, 6)
+# => 11
+```
+
+```python
+def varargs(*args):
+    return args
+
+varargs(1, 2, 3)
+# => (1, 2, 3)
+```
+
+```python
+def keyword_args(**kwargs):
+    return kwargs
+
+keyword_args(big="foot", loch="ness")
+# => {"big": "foot", "loch": "ness"}
+```
+
+```python
+# Returning multiple
+def swap(x, y):
+    return y, x
+
+# Default value
+def add(x, y=10):
+    return x + y
+
+# Anonymous functions
+(lambda x: x > 2)(3)
+(lambda x, y: x ** 2 + y ** 2)(2, 1)
+```
+
 ## Modules
 
-## File Handling
+```python
+import math
+math.sqrt(16)  # => 4.0
+```
+
+```python
+from math import ceil, floor
+ceil(3.7)      # => 4.0
+floor(3.7)     # => 3.0
+```
+
+```python
+from math import *
+```
+
+```python
+import math as m
+math.sqrt(16) == m.sqrt(16)
+# => True
+```
+
+```python
+# Functions and attributes
+import math
+dir(math)
+```
 
 ## Class
 
 ```python
-# Defining
-class MyNewClass:
-  pass
+# Defining and method
+class Dog:
+	def bark(self):
+        print("Ham-ham")
 
-# Instantiation
-my = MyNewClass()
+# Class instantiation
+charlie = Dog()  
+charlie.bark()   # Ham-ham
 ```
+
+```python
+# Constructors
+class Animal:
+    def __init__(self, voice):
+        self.voice = voice
+ 
+cat = Animal('Meow')
+print(cat.voice)    # => Meow
+ 
+dog = Animal('Woof') 
+print(dog.voice)    # => Woof
+```
+
+```python
+class ParentClass:
+    def print_test(self):
+        print("Parent Method")
+ 
+class ChildClass(ParentClass):
+    def print_test(self):
+        print("Child Method")
+        # Calls the parent's print_test()
+        super().print_test() 
+
+child_instance = ChildClass()
+child_instance.print_test()
+# Child Method
+# Parent Method
+```
+
+```python
+```
+
+
+
+
+
+
+
+## File Handling
+
+```python
+with open("myfile.txt") as file:
+    for line in file:
+        print(line)
+```
+
+```python
+# With line number
+file = open('myfile.txt', 'r')
+for i, line in enumerate(file, start=1):
+    print(f"Number {i}: {line}")
+```
+
+
+
+
 
 ## Advanced Data Types
