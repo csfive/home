@@ -154,7 +154,7 @@ name = input("Enter your name: ")
 name = 'mancuoj'
 f"Hello, {name}"      # => Hello, mancuoj
 
-f'{"text":10}'        # [width] => 'text      '  
+f'{"text":10}'        # [width] => 'text      '
 f'{12345:0>10}'       # fill left => 0000012345
 f'{"text":*<10}'      # fill right => text******
 f'{"text":*^10}'      # fill center => ***test***
@@ -196,7 +196,7 @@ else:
 a = 330
 b = 200
 r = "a" if a > b else "b"
-print(r)    
+print(r)
 # a
 ```
 
@@ -247,8 +247,6 @@ for n in nums:
 else:
     print("Not found!")
 ```
-
-
 
 ## Functions
 
@@ -329,8 +327,8 @@ class Dog:
         print("Ham-ham")
 
 # Class instantiation
-charlie = Dog()  
-charlie.bark()   # Ham-ham
+charlie = Dog()
+charlie.bark()     # Ham-ham
 ```
 
 ```python
@@ -338,24 +336,25 @@ charlie.bark()   # Ham-ham
 class Animal:
     def __init__(self, voice):
         self.voice = voice
- 
+
+    def __repr__(self):
+        return self.voice
+
 cat = Animal('Meow')
-print(cat.voice)    # => Meow
- 
-dog = Animal('Woof') 
-print(dog.voice)    # => Woof
+print(cat.voice)      # => Meow
+print(cat)            # => Meow
 ```
 
 ```python
 class ParentClass:
     def print_test(self):
         print("Parent Method")
- 
+
 class ChildClass(ParentClass):
     def print_test(self):
         print("Child Method")
         # Calls the parent's print_test()
-        super().print_test() 
+        super().print_test()
 
 child_instance = ChildClass()
 child_instance.print_test()
@@ -364,13 +363,55 @@ child_instance.print_test()
 ```
 
 ```python
+class ParentClass:
+    def print_self(self):
+        print("Parent")
+
+class ChildClass(ParentClass):
+    # overriding
+    def print_self(self):
+        print("Child")
+
+child_instance = ChildClass()
+child_instance.print_self()        # => Child
 ```
 
+```python
+class Animal:
+    def __init__(self, name, legs):
+        self.name = name
+        self.legs = legs
 
+class Dog(Animal):
+    def sound(self):
+        print("Woof!")
 
+Yoki = Dog("Yoki", 4)
+print(Yoki.name)            # => YOKI
+print(Yoki.legs)            # => 4
+Yoki.sound()                # => Woof!
+```
 
+## Exception
 
+```python
+try:
+    raise IndexError("error")
+except IndexError as e:
+    pass
+except (TypeError, NameError):
+    pass
+else:
+    print("All good")
+finally:
+    print("Clean up resources here")
+```
 
+```python
+# User-defined exceptions
+class CustomError(Exception):
+    pass
+```
 
 ## File Handling
 
@@ -387,8 +428,54 @@ for i, line in enumerate(file, start=1):
     print(f"Number {i}: {line}")
 ```
 
+```python
+contents = {"aa": 12, "bb": 21}
+with open("myfile1.txt", "w+") as file:
+    file.write(str(contents))           # write a string
+    file.write(json.dumps(contents))    # write a object
+```
 
+```python
+with open('myfile1.txt', "r+") as file:
+    contents = file.read()              # read a string
+	contents = json.load(file)          # read a object
+```
 
+```python
+import os
 
+os.remove("myfile.txt")
+os.rmdir("myfolder")
+
+# check
+if os.path.exists("myfile.txt"):
+    os.remove("myfile.txt")
+else:
+    print("The file does not exist")
+```
 
 ## Advanced Data Types
+
+```python
+import heapq
+
+my_list = [9, 5, 4, 1, 3, 2]
+heapq.heapify(my_list)               # turn into a min heap
+print(my_list)                       # [1, 3, 2, 5, 9, 4]
+
+heapq.heappush(my_list, 10)
+heapq.heappop(my_list)               # => 1
+```
+
+```python
+from collections import deque
+
+q = deque()
+q = deque([1, 2, 3])
+
+q.append(4)
+q.appendleft(0)           # => deque([0, 1, 2, 3, 4])
+q.pop()                   # 4
+q.popleft()               # 0
+q.rotate(1)               # => deque([3, 1, 2])
+```
