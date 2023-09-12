@@ -1,11 +1,8 @@
 # Python Cheat Sheet
 
-For more information, see the [Python documentation](https://docs.python.org/).
+> For more information, see the [Python documentation](https://docs.python.org/).
 
-```python
-print("Hello, World!")
-# Hello, World!
-```
+[[toc]]
 
 ## Built-in Data Types
 
@@ -475,7 +472,7 @@ q = deque([1, 2, 3])
 
 q.append(4)
 q.appendleft(0)           # => deque([0, 1, 2, 3, 4])
-q.pop()                   # 4
-q.popleft()               # 0
+q.pop()                   # => 4
+q.popleft()               # => 0
 q.rotate(1)               # => deque([3, 1, 2])
 ```
