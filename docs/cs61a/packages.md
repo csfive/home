@@ -36,7 +36,7 @@ python -m pip freeze
 
 > Rye is a comprehensive project and package management solution for Python.
 
-Flask 作者写的一个 All in One 的 Python 一站式管理工具，具体可以看作者发的[视频](https://www.youtube.com/watch?v=q99TYA7LnuA)。
+Flask 作者写的一个 All in One 的 Python 一站式管理工具，具体可以看作者发的 [视频](https://www.youtube.com/watch?v=q99TYA7LnuA)。
 
 ```sh
 curl -sSf https://rye-up.com/get | bash
