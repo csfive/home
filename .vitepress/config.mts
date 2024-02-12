@@ -19,6 +19,7 @@ export default defineConfig({
         items: [
           { text: 'Python 语法入门', link: '/cs61a/python' },
           { text: 'Python 包管理', link: '/cs61a/packages' },
+          { text: '第一章', link: '/cs61a/ch1' },
         ]
       }
     ],
