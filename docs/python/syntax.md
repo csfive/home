@@ -21,10 +21,9 @@
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.inlayHints.variableTypes": true,
   "editor.inlayHints.fontSize": 10,
-  "editor.inlayHints.padding": true,
+  "editor.inlayHints.padding": true
 }
 ```
-
 
 ## 猜数字
 
@@ -39,7 +38,6 @@
 - 模块
 
 <<< @/snippets/guess.py
-
 
 ## 语法示例
 
@@ -64,7 +62,7 @@ multi_string = """Multiline Strings
 Lorem ipsum dolor sit amet,
 consectetur adipiscing elit """
 
-my_bool = True 
+my_bool = True
 my_bool = False
 
 list1 = ["apple", "banana", "cherry"] # 列表
@@ -81,7 +79,6 @@ empty_dict = {}   # 字典，键值对的集合
 dict1 = {"one": 1, "two": 2, "three": 3}
 dict1["one"]   # => 1
 ```
-
 
 ```py
 value = True
@@ -151,17 +148,17 @@ finally:                 # 在所有情况下执行
 ```
 
 ```py
-class Animal: 
+class Animal:
     def __init__(self, name, legs):
         self.name = name
         self.legs = legs
-    
+
     def __repr__(self):
         return self.name
 
     def sound(self):
         print("Sound~")
-        
+
 class Dog(Animal):
     def sound(self):
         print("Woof!")
@@ -173,22 +170,23 @@ print(Yoki.legs) # => 4
 Yoki.sound()     # => Woof!
 ```
 
-
 ## 模块
+
+> 总的来说，模块和包是 Python 中组织和管理代码的基本机制，它们允许你将代码模块化、组织化，从而提高代码的可维护性和重用性。
 
 建议重点看一下 [文档](https://docs.python.org/zh-cn/3/tutorial/modules.html)，这里浅显地总结一下。
 
-- `.py` 文件就是模块，文件名就是模块名，模块内部全局变量 `__name__` 也可以获取模块名
-- 通过 `import xx` 可以导入模块，访问其中的函数，比如上文中我们调用的 `random.randint(1, 100)`
-- 也可以直接导入函数 `from random import randint`
-- 使用 as 起一个别名 `import random as ran`
-- 以 `python xx.py` 运行模块时，会将 `__name__` 赋值为 `__main__`，所以经常见到的 `if __name__ == '__main__':` 语句，可以将模块当作 py 脚本直接执行，也可以在被导入时避免执行
+- 一个 `.py` 文件就是一个模块，文件名即是模块名
+- 在模块内部，使用全局变量 `__name__` 可以获取模块名
+- 通过 `import xx` 可以导入模块，然后访问其中的函数，比如上文中的 `random.randint(1, 100)`
+- 或者直接导入函数 `from random import randint`
+- 函数可以用 as 起一个别名避免重复 `import random as ran`
+- 以 `python xx.py` 运行模块时，会将 `__name__` 赋值为 `__main__`
+- 在主函数中中的 `if __name__ == '__main__':` 语句，本质上就是把模块当作脚本直接执行，也可以在被导入时避免执行
 
-### 包
+## 包
 
-> 总的来说，模块和包是Python中组织和管理代码的基本机制，它们允许你将代码模块化、组织化，从而提高代码的可维护性和重用性。
-
-- 将不同模块组织到一个文件夹中，并创建 `__init__.py` 文件，就是包，文件夹名也就是包名
+- 将不同模块组织到一个文件夹中，创建 `__init__.py`，该文件夹就变成了一个包，文件夹名即是包名
 - `import a.b` 也就是导入 a 包中的 b 模块
 - 包和包之间可以嵌套，可以相对导入
 - 可以通过包管理工具 pip 进行安装导入重用别人的代码，或是上传共享自己的代码

@@ -17,10 +17,10 @@ export default defineConfig({
       {
         text: 'CS61A',
         items: [
-          { text: 'Python 语法入门', link: '/cs61a/py' },
-          { text: 'Python 包管理', link: '/cs61a/py-package' },
-          { text: '第一章小结', link: '/cs61a/ch1' },
-          { text: 'Python 测试', link: '/cs61a/py-test' },
+          { text: '从 0.5 开始的 Python 语法入门', link: '/python/syntax' },
+          { text: 'Python 包管理小结', link: '/python/package' },
+          { text: '起步，CS61A 第一章', link: '/cs61a/ch1' },
+          { text: 'Python 测试简单实践', link: '/python/test' },
         ]
       }
     ],

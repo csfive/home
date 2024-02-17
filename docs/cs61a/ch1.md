@@ -8,7 +8,7 @@
 
 如果你是 Windows 用户，我会无脑推荐你 WSL2 + Windows Terminal + VS Code，方便好用还免费。
 
-## [Lab 00](https://cs61a.org/lab/lab00/)
+## Lab 00
 
 第一次作业，根据提示我们需要先下载提供的 Stater Files 也就是入门文件，点击下载后得到一个压缩包，解压后拖到编辑器里即可。
 
@@ -21,16 +21,16 @@ wget https://cs61a.org/lab/lab00/lab00.zip
 unzip lab00.zip
 ```
 
-:::details 如果你不熟悉这些“奇奇怪怪”的命令行工具
+:::details 如果不熟悉这些“奇奇怪怪”的命令行工具
+
 可以安装一个 [tldr](https://github.com/tldr-pages/tldr?tab=readme-ov-file#how-do-i-use-it) 来获知它们的使用方法：
 
 ```sh
 pip3 install tldr   # 安装
-tldr wget   # 使用
-tldr unzip   
+tldr wget           # 使用
 ```
 
-它会返回一个简单的，基于示例的手册，比如 `wget` 的如下：
+它会返回一个如下的简单的，基于示例的手册：
 
 ```md
 > Download files from the Web.
@@ -69,8 +69,8 @@ tldr unzip
 
 `wget --directory-prefix {{path/to/directory}} --input-file {{URLs.txt}}`
 ```
-:::
 
+:::
 
 ## HW 01
 
