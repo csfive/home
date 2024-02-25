@@ -1,9 +1,15 @@
 {
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build"
+    "build": "vitepress build",
+    "format": "prettier --write ."
   },
   "devDependencies": {
+    "prettier": "^3.2.5",
     "vitepress": "1.0.0-rc.35"
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "all"
   }
 }
