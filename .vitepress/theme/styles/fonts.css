@@ -1,0 +1,30 @@
+@font-face {
+  font-weight: 400;
+  src: url('/fonts/Caslon-Regular.otf') format('woff2');
+  font-family: 'Caslon';
+}
+
+@font-face {
+  font-weight: 700;
+  src: url('/fonts/LibreCaslonText-Bold.ttf') format('woff2');
+  font-family: 'Caslon';
+}
+
+@font-face {
+  font-weight: 400;
+  src: url('/fonts/MonaspaceXenon-Regular.woff') format('woff2');
+  font-family: 'Monaspace Xenon';
+}
+
+@font-face {
+  font-weight: 700;
+  src: url('/fonts/MonaspaceXenon-Bold.woff') format('woff2');
+  font-family: 'Monaspace Xenon';
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/MonaspaceXenon-Italic.woff') format('woff2');
+  font-family: 'Monaspace Xenon';
+}
