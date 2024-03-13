@@ -4,19 +4,12 @@
     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial,
     'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
-  --vp-font-family-mono: 'Monaspace Xenon', ui-monospace, SFMono-Regular,
-    'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-    monospace;
+  --vp-font-family-mono: 'Monaspace Xenon', monospace;
   --vp-doc-top-height: 5rem;
 }
 
 #VPSidebarNav {
   margin-top: var(--vp-doc-top-height);
-}
-
-.main p {
-  font-size: 1.2rem;
-  line-height: 2.2rem;
 }
 
 .main h1 {
@@ -32,6 +25,16 @@
   border-top: 0;
   font-size: 2.2rem;
   line-height: 1.2em;
+}
+
+.main p {
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+}
+
+.main li {
+  font-size: 1.15rem;
+  line-height: 1.9rem;
 }
 
 h2 > a {
