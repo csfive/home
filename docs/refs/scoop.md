@@ -1,10 +1,34 @@
-# Scoop 安装及使用
+# Scoop
 
-## Links
+- [Scoop](https://scoop.sh/#/)，一款还算好用的 windows 软件包管理工具
+- [Proxy](/refs/proxy)，提高下载速度
+- [一个 🌟 挺多的 Scoop Bucket](https://github.com/chawyehsu/dorado)
 
 ## Tips
 
+```powershell
+# 更新所有 app
+scoop update *
+
+# 清除老版本
+scoop cleanup *
+```
+
 ## My List
+
+```powershell
+> scoop bucket list
+
+Name        Source                                        Updated            Manifests
+----        ------                                        -------            ---------
+dorado      https://github.com/chawyehsu/dorado           2024/3/13 8:11:43        256
+extras      https://github.com/ScoopInstaller/Extras      2024/3/13 16:28:54      1993
+games       https://github.com/Calinou/scoop-games        2024/3/13 16:25:35       295
+java        https://github.com/ScoopInstaller/Java        2024/3/13 16:16:56       270
+main        https://github.com/ScoopInstaller/Main        2024/3/13 16:26:02      1310
+nonportable https://github.com/ScoopInstaller/Nonportable 2024/3/13 0:44:20        127
+versions    https://github.com/ScoopInstaller/Versions    2024/3/13 16:30:23       444
+```
 
 ```powershell
 > scoop list
@@ -42,18 +66,4 @@ trash           2.0.0          dorado   2024-03-12 18:54:01
 utools          4.0.1          dorado   2024-03-12 19:25:51
 vscode          1.87.2         extras   2024-03-13 18:47:11
 wechat          3.9.9.43       extras   2024-03-01 20:57:14
-```
-
-```powershell
-> scoop bucket list
-
-Name        Source                                        Updated            Manifests
-----        ------                                        -------            ---------
-dorado      https://github.com/chawyehsu/dorado           2024/3/13 8:11:43        256
-extras      https://github.com/ScoopInstaller/Extras      2024/3/13 16:28:54      1993
-games       https://github.com/Calinou/scoop-games        2024/3/13 16:25:35       295
-java        https://github.com/ScoopInstaller/Java        2024/3/13 16:16:56       270
-main        https://github.com/ScoopInstaller/Main        2024/3/13 16:26:02      1310
-nonportable https://github.com/ScoopInstaller/Nonportable 2024/3/13 0:44:20        127
-versions    https://github.com/ScoopInstaller/Versions    2024/3/13 16:30:23       444
 ```
