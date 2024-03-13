@@ -10,6 +10,10 @@ const PYTHON: DefaultTheme.NavItemWithLink[] = [
 
 const PREFERENCES: DefaultTheme.NavItemWithLink[] = [
   { text: 'WSL', link: '/refs/wsl' },
+  { text: 'Windows Fonts', link: '/refs/fonts' },
+  { text: 'Scoop', link: '/refs/scoop' },
+  { text: 'Rye', link: '/refs/rye' },
+  { text: 'Proxy', link: '/refs/proxy' },
 ]
 
 export default defineConfig({
@@ -23,7 +27,7 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/logo.svg', width: 24, height: 24 },
     nav: [
-      { text: 'CS61A', items: [{ items: CS61A }] },
+      { text: 'CS61A', items: CS61A },
       { text: 'Python', items: PYTHON },
       { text: 'Preferences', items: PREFERENCES },
     ],
