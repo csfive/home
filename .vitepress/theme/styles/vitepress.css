@@ -1,4 +1,100 @@
 :root {
+  --vp-c-brand-1: rgb(184, 132, 1);
+  --vp-c-brand-2: #cea233;
+  --vp-c-brand-3: #b4974e;
+  --vp-c-brand-soft: #e5a60450;
+
+  --vp-c-bg: var(--vp-c-default-1);
+  --vp-c-bg-elv: var(--vp-c-default-2);
+  --vp-c-bg-alt: var(--vp-c-default-2);
+  --vp-c-bg-soft: var(--vp-c-default-soft);
+
+  --vp-c-border: var(--vp-c-divider);
+  --vp-c-gutter: var(--vp-c-divider);
+}
+
+html:not(.dark) {
+  --vp-c-white: var(--vp-c-default-1);
+  --vp-c-default-1: #fcf3d9;
+  --vp-c-default-2: #f8eccf;
+  --vp-c-default-3: #f3e5c3;
+  --vp-c-default-soft: #f6e6bf;
+  --vp-c-divider: #e0d2ac80;
+}
+
+html.dark {
+  --vp-c-text-1: #fcf3d9;
+  --vp-c-text-2: #f8eccf;
+  --vp-c-text-3: #f3e5c3;
+
+  --vp-c-brand-1: #e5a604;
+  --vp-c-brand-2: #cea233;
+  --vp-c-brand-3: #b4974e;
+  --vp-c-brand-soft: #e5a60450;
+
+  --vp-c-default-1: #161514;
+  --vp-c-default-2: #1b1a19;
+  --vp-c-default-3: #252321;
+}
+
+:root {
+  -vp-c-text-1: rgba(42, 40, 47);
+  -vp-c-text-2: rgba(42, 40, 47, 0.78);
+  -vp-c-text-3: rgba(42, 40, 47, 0.56);
+  --black-text-1: rgba(42, 40, 47);
+}
+
+.dark {
+  --vp-c-text-1: rgba(255, 255, 245, 0.86);
+  --vp-c-text-2: rgba(235, 235, 245, 0.6);
+  --vp-c-text-3: rgba(235, 235, 245, 0.38);
+}
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-1);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+}
+
+.dark {
+  --vp-button-brand-text: var(--black-text-1);
+  --vp-button-brand-bg: var(--vp-c-brand-2);
+  --vp-button-brand-hover-text: var(--black-text-1);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-1);
+  --vp-button-brand-active-text: var(--black-text-1);
+  --vp-button-brand-active-bg: var(--vp-c-brand-3);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(72px);
+  }
+}
+
+:root {
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+:root {
   --vp-font-family-base: 'Caslon', 'Microsoft YaHei', 'Chinese Quotes',
     'Inter var', 'Inter', ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial,
@@ -12,6 +108,30 @@
   margin-top: var(--vp-doc-top-height);
 }
 
+.vp-doc div[class*='language-'],
+.vp-code-group .tabs,
+.vp-code-group .tab {
+  border-radius: 0 !important;
+}
+
+.vp-code-group .tabs {
+  background: none;
+}
+
+.vp-code-group .tabs label {
+  line-height: 2rem;
+}
+
+.main p {
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+}
+
+.main li {
+  font-size: 1.1rem;
+  line-height: 1.9rem;
+}
+
 .main h1 {
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -21,20 +141,10 @@
 }
 
 .main h2 {
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
   border-top: 0;
   font-size: 2.2rem;
   line-height: 1.2em;
-}
-
-.main p {
-  font-size: 1.2rem;
-  line-height: 2.2rem;
-}
-
-.main li {
-  font-size: 1.2rem;
-  line-height: 2rem;
 }
 
 h2 > a {
@@ -47,7 +157,7 @@ h2 > a:hover {
 }
 
 .VPSidebarItem.level-0 > .item > .text {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0.5;

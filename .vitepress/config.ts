@@ -22,8 +22,19 @@ export default defineConfig({
   description: '计算机废物自学指北',
   srcDir: 'docs',
   cleanUrls: true,
-  ignoreDeadLinks: true,
+  lang: 'zh-CN',
   head: [['link', { rel: 'icon', href: '/logo.svg' }]],
+  markdown: {
+    theme: {
+      light: 'vitesse-light',
+      dark: 'vitesse-dark',
+    },
+  },
+  vite: {
+    ssr: {
+      noExternal: ['@nolebase/vitepress-plugin-enhanced-readabilities'],
+    },
+  },
   themeConfig: {
     logo: { src: '/logo.svg', width: 24, height: 24 },
     nav: [
