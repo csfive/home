@@ -2,8 +2,8 @@
 
 - [一个链接](https://feiniaoyun01.life/#/register?code=W6Oo9meK)
 - [Scoop](/refs/scoop)，Clash 软件推荐在 Scoop 搜索安装
-- [Continuation of Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev)，一个基于 Tauri 的 GUI
-- [clash 中文网](https://clashcn.com/clash), 备用软件下载
+- [Continuation of Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev)，一个基于 Tauri 的 Clash GUI
+- [Clash 中文网](https://clashcn.com/clash), 软件备用下载网站
 
 ## WSL
 

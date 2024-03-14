@@ -2,7 +2,7 @@
 
 - [Scoop](https://scoop.sh/#/)，一款还算好用的 windows 软件包管理工具
 - [Proxy](/refs/proxy)，提高下载速度
-- [一个 🌟 挺多的 Scoop Bucket](https://github.com/chawyehsu/dorado)
+- [一个 🌟 挺多的非官方 Bucket](https://github.com/chawyehsu/dorado)
 
 ## Tips
 

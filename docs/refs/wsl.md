@@ -5,3 +5,11 @@
 - [Proxy](/refs/proxy)，必备神器
 - [mancuoj/dotfiles](https://github.com/mancuoj/dotfiles)，我的配置文件
 - [WSL 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)，安装后用 `code` 命令打开文件即可无缝联动 VS Code
+
+## ZSH
+
+TODO
+
+## CLI Tools
+
+TODO
