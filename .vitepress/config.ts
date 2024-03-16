@@ -24,19 +24,13 @@ export default defineConfig({
   cleanUrls: true,
   lang: 'zh-CN',
   head: [['link', { rel: 'icon', href: '/logo.svg' }]],
-  markdown: {
-    theme: {
-      light: 'vitesse-light',
-      dark: 'vitesse-dark',
-    },
-  },
   vite: {
     ssr: {
       noExternal: ['@nolebase/vitepress-plugin-enhanced-readabilities'],
     },
   },
   themeConfig: {
-    logo: { src: '/logo.svg', width: 24, height: 24 },
+    logo: { src: '/logo.svg' },
     nav: [
       { text: 'CS61A', items: CS61A },
       { text: 'Python', items: PYTHON },
