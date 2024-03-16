@@ -23,7 +23,6 @@ Name        Source                                        Updated            Man
 ----        ------                                        -------            ---------
 dorado      https://github.com/chawyehsu/dorado           2024/3/13 8:11:43        256
 extras      https://github.com/ScoopInstaller/Extras      2024/3/13 16:28:54      1993
-games       https://github.com/Calinou/scoop-games        2024/3/13 16:25:35       295
 java        https://github.com/ScoopInstaller/Java        2024/3/13 16:16:56       270
 main        https://github.com/ScoopInstaller/Main        2024/3/13 16:26:02      1310
 nonportable https://github.com/ScoopInstaller/Nonportable 2024/3/13 0:44:20        127

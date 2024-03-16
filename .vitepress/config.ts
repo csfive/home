@@ -1,7 +1,7 @@
 import { DefaultTheme, defineConfig } from 'vitepress'
 
 const CS61A: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Guide', link: '/cs61a/' },
+  { text: 'Guide', link: '/cs61a/guide' },
 ]
 
 const PYTHON: DefaultTheme.NavItemWithLink[] = [
@@ -36,16 +36,13 @@ export default defineConfig({
       { text: 'Python', items: PYTHON },
       { text: 'Preferences', items: PREFERENCES },
     ],
-    sidebar: Object.assign(
-      {},
-      {
-        '/': [
-          { text: 'CS61A', items: CS61A },
-          { text: 'Python', items: PYTHON },
-          { text: 'References', items: PREFERENCES },
-        ],
-      },
-    ),
+    sidebar: {
+      '/': [
+        { text: 'CS61A', items: CS61A },
+        { text: 'Python', items: PYTHON },
+        { text: 'References', items: PREFERENCES },
+      ],
+    },
     socialLinks: [{ icon: 'github', link: 'https://github.com/csfive' }],
     search: { provider: 'local' },
   },
