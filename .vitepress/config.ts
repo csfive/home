@@ -4,6 +4,14 @@ const CS61A: DefaultTheme.NavItemWithLink[] = [
   { text: 'Guide', link: '/cs61a/guide' },
 ]
 
+const CS61B: DefaultTheme.NavItemWithLink[] = [
+  { text: 'Guide', link: '/cs61b/guide' },
+]
+
+const CS61C: DefaultTheme.NavItemWithLink[] = [
+  { text: 'Guide', link: '/cs61c/guide' },
+]
+
 const PYTHON: DefaultTheme.NavItemWithLink[] = [
   { text: 'Syntax', link: '/python/syntax' },
 ]
@@ -38,9 +46,11 @@ export default defineConfig({
     ],
     sidebar: {
       '/': [
-        { text: 'CS61A', items: CS61A },
-        { text: 'Python', items: PYTHON },
-        { text: 'References', items: PREFERENCES },
+        { text: 'CS61A', collapsed: false, items: CS61A },
+        { text: 'CS61B', collapsed: true, items: CS61B },
+        { text: 'CS61C', collapsed: true, items: CS61C },
+        { text: 'Python', collapsed: true, items: PYTHON },
+        { text: 'References', collapsed: true, items: PREFERENCES },
       ],
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/csfive' }],
