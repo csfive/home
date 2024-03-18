@@ -40,7 +40,14 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/logo.svg' },
     nav: [
-      { text: 'CS61A', items: CS61A },
+      {
+        text: 'CS',
+        items: [
+          { text: 'CS61A', items: CS61A },
+          { text: 'CS61B', items: CS61B },
+          { text: 'CS61C', items: CS61C },
+        ],
+      },
       { text: 'Python', items: PYTHON },
       { text: 'Preferences', items: PREFERENCES },
     ],
