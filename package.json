@@ -7,9 +7,9 @@
   },
   "devDependencies": {
     "@mancuoj/prettier-config": "^0.0.3",
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.23.0",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.24.2",
     "prettier": "^3.2.5",
-    "vitepress": "1.0.0-rc.45"
+    "vitepress": "^1.0.1"
   },
   "prettier": "@mancuoj/prettier-config"
 }
