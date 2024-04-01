@@ -1,20 +1,12 @@
 import { DefaultTheme, defineConfig } from 'vitepress'
 
-const CS61A: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Guide', link: '/cs61a/guide' },
-]
+const CS61A: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61a/guide' }]
 
-const CS61B: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Guide', link: '/cs61b/guide' },
-]
+const CS61B: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61b/guide' }]
 
-const CS61C: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Guide', link: '/cs61c/guide' },
-]
+const CS61C: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61c/guide' }]
 
-const PYTHON: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Syntax', link: '/python/syntax' },
-]
+const PYTHON: DefaultTheme.NavItemWithLink[] = [{ text: 'Syntax', link: '/python/syntax' }]
 
 const PREFERENCES: DefaultTheme.NavItemWithLink[] = [
   { text: 'WSL', link: '/refs/wsl' },
