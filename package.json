@@ -6,10 +6,11 @@
     "format": "prettier --cache --write ."
   },
   "devDependencies": {
-    "@mancuoj/prettier-config": "^0.0.3",
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.24.2",
+    "@mancuoj/prettier-config": "^0.1.4",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.27.2",
     "prettier": "^3.2.5",
-    "vitepress": "^1.0.1"
+    "vitepress": "^1.0.2",
+    "vue": "^3.4.21"
   },
   "prettier": "@mancuoj/prettier-config"
 }
