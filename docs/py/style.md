@@ -1,4 +1,4 @@
-# Python Style Guide
+# Python 风格指南
 
 - [Ruff Docs](https://docs.astral.sh/ruff/)
 - [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)

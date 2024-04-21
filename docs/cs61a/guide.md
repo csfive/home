@@ -12,7 +12,7 @@
 - 如果更习惯本地开发，那就用 [Scoop](/refs/scoop) 来解决环境问题
 - Python 环境我会推荐 [Rye](/py/rye) 作为一站式解决方案
 
-## 我的 Python 入门教程
+## Python 入门指北
 
 - [风格指南](/py/style)
-- [基础语法](/py/syntax)
+- [语法基础](/py/syntax)

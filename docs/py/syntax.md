@@ -1,3 +1,3 @@
-# Python 语法入门
+# Python 语法基础
 
 TODO
