@@ -3,14 +3,14 @@
 - [课程官网](https://cs61a.org/)
 - [课程备份](https://inst.eecs.berkeley.edu/~cs61a/fa22/)，URL 末尾 fa22 代表 22 秋季，以此类推，如果想学 23 春季改成 sp23 就好了
 - [课程视频 Spring 2023](https://www.bilibili.com/video/BV1s3411G7yM/)
-- [教材：Composing Programs](https://www.composingprograms.com/)
+- [Textbook: Composing Programs](https://www.composingprograms.com/)
 - [教材中文翻译](https://composingprograms.netlify.app/)，更推荐看英文原版
 
 ## Windows Setup
 
 - 环境首选 [WSL](/refs/wsl)，编辑器首选 VS Code
-- 如果更习惯本地开发，那就用 [Scoop](/refs/scoop) 来解决环境问题
-- Python 环境我会推荐 [Rye](/py/rye) 作为一站式解决方案
+- 如果更习惯 Windows 开发，那就用 [Scoop](/refs/scoop) 包管理器来解决环境问题
+- 另外为了避免 Python 环境冲突，我会推荐使用 [Rye](/py/rye) 作为一站式解决方案
 
 ## Python Tutorial
 
