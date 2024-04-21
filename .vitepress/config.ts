@@ -32,6 +32,12 @@ export default defineConfig({
       noExternal: ['@nolebase/vitepress-plugin-enhanced-readabilities'],
     },
   },
+  markdown: {
+    math: true,
+    image: {
+      lazyLoading: true,
+    },
+  },
   themeConfig: {
     logo: { src: '/logo.svg' },
     nav: [
