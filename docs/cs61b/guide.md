@@ -1,1 +1,1 @@
-# CS61B 课程指北
+# CS61B Guide

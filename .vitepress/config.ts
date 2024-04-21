@@ -46,7 +46,6 @@ export default defineConfig({
         items: [
           { text: 'CS61A', items: CS61A },
           { text: 'CS61B', items: CS61B },
-          { text: 'CS61C', items: CS61C },
         ],
       },
       { text: 'Python', items: PYTHON },
@@ -56,8 +55,7 @@ export default defineConfig({
       '/': [
         { text: 'CS61A', collapsed: false, items: CS61A },
         { text: 'Python', collapsed: false, items: PYTHON },
-        // { text: 'CS61B', collapsed: true, items: CS61B },
-        // { text: 'CS61C', collapsed: true, items: CS61C },
+        { text: 'CS61B', collapsed: true, items: CS61B },
         { text: 'References', collapsed: false, items: PREFERENCES },
       ],
     },
