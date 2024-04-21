@@ -2,7 +2,7 @@
 
 - [课程官网](https://cs61a.org/)
 - [课程备份](https://inst.eecs.berkeley.edu/~cs61a/fa22/)，URL 末尾 fa22 代表 22 秋季，以此类推，如果想学 23 春季改成 sp23 就好了
-- [61A 视频合辑](https://www.youtube.com/@JohnDeNero/videos)
+- [课程视频 Spring 2023](https://www.bilibili.com/video/BV1s3411G7yM/)
 - [教材：Composing Programs](https://www.composingprograms.com/)
 - [教材中文翻译](https://composingprograms.netlify.app/)，更推荐看英文原版
 
