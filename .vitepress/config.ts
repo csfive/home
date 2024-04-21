@@ -63,5 +63,9 @@ export default defineConfig({
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/csfive' }],
     search: { provider: 'local' },
+    lastUpdated: {
+      text: 'Last Updated',
+      formatOptions: { dateStyle: 'short', timeStyle: 'short' },
+    },
   },
 })
