@@ -33,6 +33,11 @@
   line-height: 2.2rem;
 }
 
+.main blockquote p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
 .main li {
   font-size: 1.2rem;
   line-height: 2rem;
@@ -47,6 +52,7 @@
 }
 
 .main h2 {
+  margin-top: 2rem;
   margin-bottom: 2rem;
   border-top: 0;
   font-size: 2.2rem;

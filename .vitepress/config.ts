@@ -2,17 +2,20 @@ import { DefaultTheme, defineConfig } from 'vitepress'
 
 const CS61A: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61a/guide' }]
 
+const PYTHON: DefaultTheme.NavItemWithLink[] = [
+  { text: 'Style', link: '/py/style' },
+  { text: 'Syntax', link: '/py/syntax' },
+  { text: 'Rye', link: '/py/rye' },
+]
+
 const CS61B: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61b/guide' }]
 
 const CS61C: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61c/guide' }]
-
-const PYTHON: DefaultTheme.NavItemWithLink[] = [{ text: 'Syntax', link: '/python/syntax' }]
 
 const PREFERENCES: DefaultTheme.NavItemWithLink[] = [
   { text: 'WSL', link: '/refs/wsl' },
   { text: 'Windows Fonts', link: '/refs/fonts' },
   { text: 'Scoop', link: '/refs/scoop' },
-  { text: 'Rye', link: '/refs/rye' },
   { text: 'Proxy', link: '/refs/proxy' },
 ]
 
@@ -46,10 +49,10 @@ export default defineConfig({
     sidebar: {
       '/': [
         { text: 'CS61A', collapsed: false, items: CS61A },
-        { text: 'CS61B', collapsed: true, items: CS61B },
-        { text: 'CS61C', collapsed: true, items: CS61C },
-        { text: 'Python', collapsed: true, items: PYTHON },
-        { text: 'References', collapsed: true, items: PREFERENCES },
+        { text: 'Python', collapsed: false, items: PYTHON },
+        // { text: 'CS61B', collapsed: true, items: CS61B },
+        // { text: 'CS61C', collapsed: true, items: CS61C },
+        { text: 'References', collapsed: false, items: PREFERENCES },
       ],
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/csfive' }],

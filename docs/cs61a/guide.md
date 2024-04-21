@@ -10,6 +10,9 @@
 
 - 环境首选 [WSL](/refs/wsl)，编辑器首选 VS Code
 - 如果更习惯本地开发，那就用 [Scoop](/refs/scoop) 来解决环境问题
-- Python 我会推荐 [Rye](/refs/rye) 作为一站式解决方案
+- Python 环境我会推荐 [Rye](/py/rye) 作为一站式解决方案
 
-## Fa22 Lab00
+## 我的 Python 入门教程
+
+- [风格指南](/py/style)
+- [基础语法](/py/syntax)
