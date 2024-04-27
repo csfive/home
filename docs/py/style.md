@@ -74,7 +74,7 @@ _ = "throwaway" # [!code ++]
 ### Others
 
 - Modules (filenames): short, all-lowercase names, and they can contain underscores
-- Python Packages (directionaries): short, all-lowercase names, preferably without underscores
+- Packages (directionaries): short, all-lowercase names, preferably without underscores
 - Variable names are not full descriptors
 - Put details in comments
 - Too specific name might mean too specific code
