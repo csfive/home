@@ -11,7 +11,7 @@
     "markdown-it-mathjax3": "^4.3.2",
     "prettier": "^3.2.5",
     "vitepress": "^1.1.3",
-    "vue": "^3.4.23"
+    "vue": "^3.4.25"
   },
   "prettier": "@mancuoj/prettier-config"
 }
