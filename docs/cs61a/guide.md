@@ -8,9 +8,10 @@
 
 ## Windows Setup
 
-- 环境首选 [WSL](/refs/wsl)，编辑器首选 VS Code
-- 如果更习惯 Windows 开发，那就用 [Scoop](/refs/scoop) 包管理器来解决环境问题
-- 另外为了避免 Python 环境冲突，我会推荐使用 [Rye](/py/rye) 作为一站式解决方案
+- 环境首推 [WSL](/refs/wsl)
+- 编辑器首推 VS Code
+- 更习惯 Windows 本地开发就用 [Scoop](/refs/scoop) 包管理器来解决环境问题
+- 另外为了避免 Python 环境冲突，推荐使用 [Rye](/py/rye) 作为 Python 的一站式解决方案
 
 ## Python Tutorial
 
