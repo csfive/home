@@ -5,6 +5,12 @@
 }
 
 @font-face {
+  font-weight: 700;
+  src: url('/fonts/LibreCaslonText-Bold.ttf') format('woff2');
+  font-family: 'Caslon';
+}
+
+@font-face {
   font-weight: 400;
   src: url('/fonts/MonaspaceXenon-Regular.woff') format('woff2');
   font-family: 'Monaspace Xenon';
