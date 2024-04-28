@@ -43,3 +43,11 @@ def new_board():
 def new_board():
     return [[None for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 ```
+
+## Print the board
+
+为了简化，我们会直接打印在终端内，就像这样：
+
+```shell
+
+```
