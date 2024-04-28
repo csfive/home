@@ -9,8 +9,10 @@
     "@mancuoj/prettier-config": "^0.1.4",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.28.0",
     "markdown-it-mathjax3": "^4.3.2",
+    "mermaid": "^10.9.0",
     "prettier": "^3.2.5",
     "vitepress": "^1.1.3",
+    "vitepress-plugin-mermaid": "^2.0.16",
     "vue": "^3.4.25"
   },
   "prettier": "@mancuoj/prettier-config"
