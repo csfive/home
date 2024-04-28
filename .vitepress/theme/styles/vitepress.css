@@ -8,6 +8,7 @@
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --vp-font-family-mono: 'Monaspace Xenon', monospace;
   --vp-doc-top-height: 5rem;
+  --vp-custom-block-font-size: 1.15rem;
 }
 
 #VPSidebarNav {
