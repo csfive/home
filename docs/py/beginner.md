@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-这是一个简单的井字棋项目，写给那些学了很多语法但不知道下一步该做什么的人。
+一个简单的井字棋项目，写给那些学了很多语法但不知道下一步该做什么的人。
 
 ## Board
 
@@ -40,7 +40,7 @@ def new_board():
     return board
 
 # 使用列表推导式简化以上代码
-def new_board_alt():
+def new_board():
     return [[None for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 ```
 

@@ -17,3 +17,4 @@
 
 - [Style Guide](/py/style)
 - [Syntax Basics](/py/syntax)
+- [Advanced Beginner](/py/beginner)

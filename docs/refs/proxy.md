@@ -4,6 +4,7 @@
 - [Scoop](/refs/scoop)，Clash 软件可以在 Scoop 搜索安装
 - [Continuation of Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev)，一个基于 Tauri 的 Clash GUI
 - [Clash 中文网](https://clashcn.com/clash), 软件备用下载网站
+- [Powershell](/refs/scoop), Make Powershell Great Again
 
 ## WSL
 

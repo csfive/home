@@ -16,6 +16,7 @@ const PREFERENCES: DefaultTheme.NavItemWithLink[] = [
   { text: 'Windows Fonts', link: '/refs/fonts' },
   { text: 'Scoop', link: '/refs/scoop' },
   { text: 'Proxy', link: '/refs/proxy' },
+  { text: 'Powershell', link: '/refs/powershell' },
 ]
 
 const NAV = [
@@ -47,12 +48,24 @@ export default defineConfig({
   cleanUrls: true,
   lang: 'zh-CN',
   head: [['link', { rel: 'icon', href: '/logo.svg' }]],
+
+  vite: {
+    optimizeDeps: {
+      include: ['@nolebase/vitepress-plugin-enhanced-readabilities > @nolebase/ui > @rive-app/canvas'],
+      exclude: ['@nolebase/vitepress-plugin-enhanced-readabilities/client'],
+    },
+    ssr: {
+      noExternal: ['@nolebase/vitepress-plugin-enhanced-readabilities'],
+    },
+  },
+
   markdown: {
     math: true,
     image: {
       lazyLoading: true,
     },
   },
+
   themeConfig: {
     logo: { src: '/logo.svg' },
     nav: NAV,
