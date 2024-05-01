@@ -20,10 +20,16 @@ BOARD_SIZE = 3
 ]
 ```
 
-那么第一个任务就是 `new_board()` 函数，返回一个空棋盘也就是一个 3 ✖️ 3 的全为 `None` 的嵌套列表：
+那么第一个任务就是 `new_board()` 函数，返回一个空棋盘也就是一个 3 ✖️ 3 的全为 `None` 的嵌套列表。
+
+使用 `python3 -m doctest engine.py` 命令来测试你的代码。
 
 ```py
 def new_board():
+    """
+    >>> new_board()
+    [[None, None, None], [None, None, None], [None, None, None]]
+    """
     # 补全它
 ```
 
@@ -48,8 +54,40 @@ def new_board():
 
 ## Render
 
-为了简化，我们会直接打印在终端内，就像这样：
+为了简化，我们会将棋盘 print 到终端内，所以第二个任务是一个 `render_board(board)` 函数，接受棋盘作为参数，然后打印它。
 
-```shell
-
+```py
+def render_board(board):
+    """
+    >>> board = new_board()
+    >>> board[0][0] = "X"
+    >>> board[1][2] = "O"
+    >>> board[2][1] = "X"
+    >>> render_board(board)
+        0 1 2
+       -------
+    0 | X     |
+    1 |     O |
+    2 |   X   |
+       -------
+    """
+    # 补全它
 ```
+
+一个提示：`print()` 函数可以使用 `end` 参数来指定换行符。
+
+::: details 参考
+
+```py
+def render_board(board):
+    print("    0 1 2")
+    print("   -------")
+    for row in range(BOARD_SIZE):
+        print(f"{row} | ", end="")
+        for col in range(BOARD_SIZE):
+            print(board[row][col] or " ", end=" ")
+        print("|")
+    print("   -------")
+```
+
+:::
