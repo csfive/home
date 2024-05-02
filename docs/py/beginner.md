@@ -83,7 +83,7 @@ def get_move(board):
 def get_move(board):
     while True:
         try:
-            move = int(input(f"Enter move (1-{9}): ")) - 1
+            move = int(input("Enter move (1~9): ")) - 1
             if move < 0 or move >= 9:
                 raise ValueError
             if board[move] is not None:
@@ -97,7 +97,7 @@ def get_move(board):
 
 ## Move
 
-任务四：实现 `make_move(board, coord, player)` 函数，在相应位置放置玩家的棋子。
+任务四：实现 `make_move(board, move, player)` 函数，在对应位置放置玩家的棋子。
 
 为了避免数据突变，我们应该返回一个新的棋盘，而不是直接修改原来的棋盘。
 
