@@ -181,10 +181,14 @@ def check_draw(board):
 
 ```py
 def play_game():
-    # 补全它
-
+    # 初始化棋盘
+    # 初始化玩家
+    # 显示棋盘
     while True:
-        # 补全它
+        # 玩家输入
+        # 显示输入后的棋盘
+        # 判定输赢或平局
+        # 切换玩家
 
 if __name__ == "__main__":
     play_game()
