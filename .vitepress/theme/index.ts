@@ -9,7 +9,7 @@ import { h } from 'vue'
 import Layout from './components/Layout.vue'
 import './styles/index.css'
 
-export const Theme: ThemeConfig = {
+export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(Layout, null, {
@@ -17,6 +17,4 @@ export const Theme: ThemeConfig = {
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
     })
   },
-}
-
-export default Theme
+} satisfies ThemeConfig

@@ -184,7 +184,7 @@ def check_draw(board):
     return True
 
 # 使用 any() 函数简化以上代码
-def check_win(board):
+def check_draw(board):
     return not any(None in row for row in board)
 ```
 
