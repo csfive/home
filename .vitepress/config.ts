@@ -3,6 +3,7 @@ import { DefaultTheme, defineConfig } from 'vitepress'
 const CS61A: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61a/guide' }]
 
 const PYTHON: DefaultTheme.NavItemWithLink[] = [
+  { text: 'The Zen of Python', link: '/py/zen' },
   { text: 'Style Guide', link: '/py/style' },
   { text: 'Syntax Basics', link: '/py/syntax' },
   { text: 'Advanced Beginner', link: '/py/beginner' },
