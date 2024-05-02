@@ -212,3 +212,11 @@ def play_game():
 ```
 
 :::
+
+## Random AI
+
+TODO
+
+## Minimax AI
+
+TODO
