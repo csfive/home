@@ -99,8 +99,6 @@ def get_move(board):
 
 任务四：实现 `make_move(board, move, player)` 函数，在对应位置放置玩家的棋子。
 
-为了避免数据突变，我们应该返回一个新的棋盘，而不是直接修改原来的棋盘。
-
 ```py
 def make_move(board, move, player):
     # 补全它
@@ -110,9 +108,7 @@ def make_move(board, move, player):
 
 ```py
 def make_move(board, move, player):
-    new = board.copy()
-    new[move] = player
-    return new
+    board[move] = player
 ```
 
 :::
@@ -203,7 +199,7 @@ def play_game():
     print_board(board)
     while True:
         move = get_move(board)
-        board = make_move(board, move, player)
+        make_move(board, move, player)
         print_board(board)
         winner = check_winner(board)
         if winner:
