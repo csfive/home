@@ -150,3 +150,44 @@ def make_move(board, coord, player):
 ```
 
 :::
+
+## Winner
+
+任务五：检测有无获胜者，如果有，则返回获胜者，否则返回 `None`。
+
+```py
+
+```
+
+## Draw
+
+任务六：如果没有获胜者，则继续检测棋盘是否已经被占满，如果是，则判定为平局。
+
+```py
+def check_draw(board):
+    """
+    >>> board = [['X', 'O', 'X'], ['O', 'X', 'O'], ['O', 'X', 'O']]
+    >>> check_draw(board)
+    True
+    """
+    # 补全它
+```
+
+::: details 参考
+
+```py
+def check_draw(board):
+    for row in board:
+        for cell in row:
+            if cell is None:
+                return False
+    return True
+
+# 使用 any() 函数简化以上代码
+def check_win(board):
+    return not any(None in row for row in board)
+```
+
+:::
+
+## Game Loop
