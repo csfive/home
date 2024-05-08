@@ -10,7 +10,7 @@
     "@nolebase/vitepress-plugin-enhanced-readabilities": "latest",
     "markdown-it-mathjax3": "latest",
     "prettier": "latest",
-    "vitepress": "1.1.3",
+    "vitepress": "latest",
     "vue": "latest"
   },
   "prettier": "@mancuoj/prettier-config"

@@ -1,12 +1,12 @@
+import type { Theme as ThemeConfig } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
+import { h } from 'vue'
 import {
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
-import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
-import type { Theme as ThemeConfig } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import { h } from 'vue'
 import Layout from './components/Layout.vue'
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 import './styles/index.css'
 
 export default {
