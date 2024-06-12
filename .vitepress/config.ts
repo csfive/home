@@ -36,7 +36,7 @@ const SIDEBAR = {
   '/': [
     { text: 'CS61A', collapsed: false, items: CS61A },
     { text: 'Python', collapsed: false, items: PYTHON },
-    { text: 'CS61B', collapsed: true, items: CS61B },
+    { text: 'CS61B', collapsed: false, items: CS61B },
     { text: 'References', collapsed: false, items: PREFERENCES },
   ],
 }

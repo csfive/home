@@ -1,5 +1,5 @@
 import type { Theme as ThemeConfig } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import { h } from 'vue'
 import {
   NolebaseEnhancedReadabilitiesMenu,
