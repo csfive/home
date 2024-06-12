@@ -219,7 +219,22 @@ def play_game():
 
 ## Random AI
 
-TODO
+任务八：实现 AI 随机落子的函数，返回一个随机的棋子位置。
+
+```py
+def get_random_ai_move(board):
+    # 补全它
+```
+
+::: details 参考
+
+```py
+def get_random_ai_move(board):
+    available_moves = [i for i in range(9) if board[i] is None]
+    return random.choice(available_moves)
+```
+
+:::
 
 ## Minimax AI
 
