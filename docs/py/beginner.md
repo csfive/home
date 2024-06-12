@@ -232,6 +232,16 @@ def get_random_ai_move(board):
 def get_random_ai_move(board):
     available_moves = [i for i in range(9) if board[i] is None]
     return random.choice(available_moves)
+
+def play_game():
+    ...
+    while True:
+        if player == "X":
+            move = get_move(board)
+        else:
+            move = get_random_ai_move(board)
+        make_move(board, move, player)
+        ...
 ```
 
 :::
