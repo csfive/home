@@ -249,7 +249,7 @@ def play_game():
 
 ## Minimax AI
 
-任务十：学习并实现 Minimax 算法，实现 AI 的最佳落子。
+任务十：学习 Minimax 算法来实现 AI 的最佳落子。
 
 ```py
 def get_ai_move(board):
