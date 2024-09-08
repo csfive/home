@@ -1,44 +1,7 @@
 import { DefaultTheme, defineConfig } from 'vitepress'
 
-const CS61A: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61a/guide' }]
-
-const PYTHON: DefaultTheme.NavItemWithLink[] = [
-  { text: 'The Zen of Python', link: '/py/zen' },
-  { text: 'Style Guide', link: '/py/style' },
-  { text: 'Syntax Basics', link: '/py/syntax' },
-  { text: 'Advanced Beginner', link: '/py/beginner' },
-  { text: 'Rye', link: '/py/rye' },
-]
-
-const CS61B: DefaultTheme.NavItemWithLink[] = [{ text: 'Guide', link: '/cs61b/guide' }]
-
-const PREFERENCES: DefaultTheme.NavItemWithLink[] = [
-  { text: 'WSL', link: '/refs/wsl' },
-  { text: 'Windows Fonts', link: '/refs/fonts' },
-  { text: 'Scoop', link: '/refs/scoop' },
-  { text: 'Proxy', link: '/refs/proxy' },
-  { text: 'Powershell', link: '/refs/powershell' },
-]
-
-const NAV = [
-  {
-    text: 'CS',
-    items: [
-      { text: 'CS61A', items: CS61A },
-      { text: 'CS61B', items: CS61B },
-    ],
-  },
-  { text: 'Python', items: PYTHON },
-  { text: 'Preferences', items: PREFERENCES },
-]
-
 const SIDEBAR = {
-  '/': [
-    { text: 'CS61A', collapsed: false, items: CS61A },
-    { text: 'Python', collapsed: false, items: PYTHON },
-    { text: 'CS61B', collapsed: false, items: CS61B },
-    { text: 'References', collapsed: false, items: PREFERENCES },
-  ],
+  '/': [{ text: '速通 Python', link: '/crash-python' }],
 }
 
 export default defineConfig({
@@ -69,7 +32,6 @@ export default defineConfig({
 
   themeConfig: {
     logo: { src: '/logo.svg' },
-    nav: NAV,
     sidebar: SIDEBAR,
     socialLinks: [{ icon: 'github', link: 'https://github.com/csfive' }],
     search: { provider: 'local' },
