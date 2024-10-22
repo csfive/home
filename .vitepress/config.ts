@@ -6,7 +6,6 @@ const PYTHON: DefaultTheme.NavItemWithLink[] = [
   { text: 'The Zen of Python', link: '/py/zen' },
   { text: 'Style Guide', link: '/py/style' },
   { text: 'Syntax Basics', link: '/py/syntax' },
-  { text: 'Advanced Beginner', link: '/py/beginner' },
   { text: 'Rye', link: '/py/rye' },
 ]
 

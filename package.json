@@ -13,5 +13,6 @@
     "vitepress": "latest",
     "vue": "latest"
   },
-  "prettier": "@mancuoj/prettier-config"
+  "prettier": "@mancuoj/prettier-config",
+  "packageManager": "pnpm@9.12.2"
 }
