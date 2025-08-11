@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "format": "prettier -w ."
+  },
+  "devDependencies": {
+    "@mancuoj/prettier-config": "^0.5.3",
+    "markdown-it-mathjax3": "^4.3.2",
+    "prettier": "^3.6.2",
+    "vitepress": "^1.6.4"
+  },
+  "prettier": "@mancuoj/prettier-config"
+}
