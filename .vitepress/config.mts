@@ -76,7 +76,7 @@ export default defineConfig({
       {
         defer: '',
         src: 'https://a.mancuoj.me/script.js',
-        'data-website-id': 'c539d121-756d-405e-8402-e3fbb79a812f',
+        'data-website-id': 'dfd65e36-145e-4d2a-a5c5-5bf11eab5c8e',
       },
     ],
   ],
