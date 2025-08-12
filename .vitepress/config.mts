@@ -13,6 +13,7 @@ const sidebar: DefaultTheme.Sidebar = [
 ]
 
 const configs = {
+  sidebar,
   lang: 'zh-CN',
   title: '计算机废物自学指北',
   description: 'csdiy.wiki fork + 一些有用的链接',
@@ -22,8 +23,31 @@ const configs = {
     'https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Medium/result.css',
   googleFont:
     'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap',
-  sidebar,
 }
+
+export default defineConfig({
+  lang: configs.lang,
+  title: configs.title,
+  titleTemplate: ':title',
+  description: configs.description,
+  cleanUrls: true,
+  ignoreDeadLinks: true,
+  lastUpdated: true,
+  markdown: {
+    math: true,
+    image: {
+      lazyLoading: true,
+    },
+  },
+  themeConfig: {
+    logo: '/logo.svg',
+    sidebar: configs.sidebar,
+    socialLinks: [{ icon: 'github', link: `https://github.com/${configs.repo}` }],
+    ...getLabel(),
+  },
+  head: getHead(),
+})
+
 
 function getHead() {
   const head: HeadConfig[] = [['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }]]
@@ -75,26 +99,3 @@ function getLabel(): DefaultTheme.Config {
     },
   }
 }
-
-export default defineConfig({
-  lang: configs.lang,
-  title: configs.title,
-  titleTemplate: ':title',
-  description: configs.description,
-  cleanUrls: true,
-  ignoreDeadLinks: true,
-  lastUpdated: true,
-  markdown: {
-    math: true,
-    image: {
-      lazyLoading: true,
-    },
-  },
-  themeConfig: {
-    logo: '/logo.svg',
-    sidebar: configs.sidebar,
-    socialLinks: [{ icon: 'github', link: `https://github.com/${configs.repo}` }],
-    ...getLabel(),
-  },
-  head: getHead(),
-})
