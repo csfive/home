@@ -10,6 +10,14 @@ const sidebar: DefaultTheme.Sidebar = [
       { text: 'Harvard - CS50P', link: '/cs50p/README' },
     ],
   },
+  {
+    text: '实用工具',
+    collapsed: false,
+    items: [
+      { text: 'Docker', link: '/tools/docker' },
+      { text: 'mise', link: '/tools/mise' },
+    ],
+  },
 ]
 
 const configs = {
