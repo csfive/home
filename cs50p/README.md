@@ -2,10 +2,9 @@
 
 ## 课程简介
 
-- 所属大学：Harvard
-- 先修要求：无
+- 所属大学：Harvard University
 - 编程语言：Python
-- 课程难度：🌟🌟
+- 课程难度：🌟
 - 预计学时：20 + 20 小时
 
 CS50 的番外篇，依旧由 David J. Malan 授课。在该课程中你将学会 Python 的基础与进阶语法，以及各种 “Pythonic” 的编程方法。此外对于 Python 特色的代码库、代码测试以及错误处理，该课程也会较为深入地探究。
@@ -16,7 +15,6 @@ CS50 的番外篇，依旧由 David J. Malan 授课。在该课程中你将学�
 
 - 课程网站：[2022](https://cs50.harvard.edu/python/2022/)
 - 课程视频：[2022](https://www.bilibili.com/video/BV1z5411X7wX)
-- 课程教材：无
 - 课程作业：[2022](https://cs50.harvard.edu/python/2022/)
 
 ## 资源汇总
