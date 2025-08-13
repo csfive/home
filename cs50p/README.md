@@ -2,7 +2,7 @@
 
 ## 课程简介
 
-- 所属大学：Harvard University
+- 所属大学：Harvard
 - 先修要求：无
 - 编程语言：Python
 - 课程难度：🌟🌟
