@@ -8,6 +8,7 @@ const sidebar: DefaultTheme.Sidebar = [
       { text: 'MIT - Missing Semester', link: '/missing-semester/README' },
       { text: 'Harvard - CS50x', link: '/cs50x/README' },
       { text: 'Harvard - CS50P', link: '/cs50p/README' },
+      { text: 'Coursera - Nand2Tetris', link: '/nand2tetris/README' },
     ],
   },
   {
