@@ -14,8 +14,8 @@
 
 ## 课程资源
 
-- 课程网站：[Nand2Tetris I](https://www.coursera.org/learn/build-a-computer/home/week/1), [Nand2Tetris II](https://www.coursera.org/learn/nand2tetris2/home/welcome)
-- 课程视频：详见课程网站
+- 课程视频：[From Nand to Tetris](https://www.nand2tetris.org/)
+- 课程视频：[I](https://www.coursera.org/learn/build-a-computer/home/week/1)、[II](https://www.coursera.org/learn/nand2tetris2/home/welcome)
 - 课程教材：[计算机系统要素：从零开始构建现代计算机][book]
 - 课程作业：10 个 Project 带你造台计算机，具体要求详见课程网站
 
