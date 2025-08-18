@@ -29,7 +29,7 @@ const configs = {
   repo: 'csfive/home',
   umamiId: 'dfd65e36-145e-4d2a-a5c5-5bf11eab5c8e',
   chineseFont:
-    'https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-Medium/result.css',
+    'https://chinese-fonts-cdn.deno.dev/packages/dymh/dist/DouyinSansBold/result.css',
   googleFont:
     'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap',
 }
