@@ -9,6 +9,8 @@ const sidebar: DefaultTheme.Sidebar = [
       { text: 'Harvard - CS50x', link: '/cs50x/README' },
       { text: 'Harvard - CS50P', link: '/cs50p/README' },
       { text: 'Coursera - Nand2Tetris', link: '/nand2tetris/README' },
+      { text: 'Harvard - CS50G', link: '/cs50g/README' },
+      { text: 'Harvard - CS50AI', link: '/cs50ai/README' },
     ],
   },
   {
