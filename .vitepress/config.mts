@@ -14,6 +14,15 @@ const sidebar: DefaultTheme.Sidebar = [
     ],
   },
   {
+    text: '进阶',
+    collapsed: false,
+    items: [
+      { text: 'HUST - CPU', link: '/hust-cpu/README' },
+      { text: 'NJU - PA', link: '/nju-pa/README' },
+      { text: 'NJU - OS', link: '/nju-os/README' },
+    ],
+  },
+  {
     text: '实用工具',
     collapsed: false,
     items: [
@@ -30,8 +39,7 @@ const configs = {
   description: 'csdiy.wiki fork + 一些有用的链接',
   repo: 'csfive/home',
   umamiId: 'dfd65e36-145e-4d2a-a5c5-5bf11eab5c8e',
-  chineseFont:
-    'https://chinese-fonts-cdn.deno.dev/packages/dymh/dist/DouyinSansBold/result.css',
+  chineseFont: 'https://chinese-fonts-cdn.deno.dev/packages/dymh/dist/DouyinSansBold/result.css',
   googleFont:
     'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap',
 }

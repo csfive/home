@@ -18,3 +18,7 @@
 - 课程视频：[2020](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)
 - 课程中文字幕视频：[B 站刘黑黑a（已完结）](https://space.bilibili.com/518734451)
 - 课程作业：一些随堂小练习，具体见课程网站
+
+## 资源汇总
+
+@mancuoj 在学习这门课中用到的所有资源和作业实现都汇总在 [csfive/missing-semester - GitHub](https://github.com/csfive/missing-semester) 中。
