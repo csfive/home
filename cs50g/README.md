@@ -19,4 +19,4 @@
 
 ## 资源汇总
 
-@mancuoj 在学习这门课中用到的所有资源和作业实现都汇总在 [mancuoj/CS50G - GitHub](https://github.com/csfive/CS50G) 中。
+@mancuoj 在学习这门课中用到的所有资源和作业实现都汇总在 [csfive/CS50G - GitHub](https://github.com/csfive/CS50G) 中。
