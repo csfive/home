@@ -5,20 +5,15 @@ const sidebar: DefaultTheme.Sidebar = [
     text: '入门',
     collapsed: false,
     items: [
-      { text: 'MIT Missing Semester', link: '/beginner/missing-semester' },
+      { text: '🚧 MIT Missing Semester', link: '/beginner/missing-semester' },
       { text: 'Harvard CS50x', link: '/beginner/cs50x' },
       { text: 'Harvard CS50P', link: '/beginner/cs50p' },
-      { text: 'Harvard CS50G', link: '/beginner/cs50g' },
-      { text: 'UCB CS61A', link: '/beginner/cs61a' },
-    ],
-  },
-  {
-    text: '基础',
-    collapsed: false,
-    items: [
-      { text: 'HUST CPU', link: '/basic/hust-cpu' },
-      { text: 'Nand2Tetris', link: '/basic/nand2tetris' },
-      { text: 'NJU PA', link: '/basic/nju-pa' },
+      { text: '🚧 Harvard CS50G', link: '/beginner/cs50g' },
+      { text: '⏳ UCB CS61A', link: '/beginner/cs61a' },
+      { text: '🚧 HUST CPU', link: '/beginner/hust-cpu' },
+      { text: '⏳ Nand2Tetris', link: '/beginner/nand2tetris' },
+      { text: '⏳ UCB CS61B', link: '/beginner/cs61b' },
+      { text: '⏳ NJU PA', link: '/beginner/nju-pa' },
     ],
   },
   {
