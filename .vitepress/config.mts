@@ -32,7 +32,7 @@ const configs = {
   title: '计算机废物自学指北',
   description: 'csdiy.wiki fork + 一些有用的链接',
   repo: 'csfive/home',
-  umamiId: '46982dc2-b92e-4e70-8d6c-95eac4f85fdc',
+  umamiId: '',
   chineseFont: 'https://chinese-fonts-cdn.netlify.app/packages/dymh/dist/DouyinSansBold/result.css',
   googleFont:
     'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap',
