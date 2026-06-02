@@ -2,3 +2,23 @@
   --vp-font-family-base: 'Douyin Sans', sans-serif;
   --vp-font-family-mono: 'DM Mono', 'Douyin Sans', monospace;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 5px;
+  border: 2px solid var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-text-3);
+}
