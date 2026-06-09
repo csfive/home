@@ -21,4 +21,4 @@
 
 ## 资源汇总
 
-@mancuoj 在学习这门课中用到的所有资源和作业实现都汇总在 [csfive/missing-semester - GitHub](https://github.com/csfive/missing-semester) 中。
+@mancuoj 在学习这门课中用到的所有资源、作业实现以及课程内容翻译都汇总在 [csfive/missing-semester - GitHub](https://github.com/csfive/missing-semester) 中。
