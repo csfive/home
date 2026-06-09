@@ -3,6 +3,7 @@
 ## 课程简介
 
 - 所属大学：MIT
+- 先修要求：无
 - 编程语言：Shell
 - 课程难度：🌟
 - 预计学时：50 小时
@@ -13,10 +14,10 @@
 
 ## 课程资源
 
-- 课程网站：[2020](https://missing.csail.mit.edu)
-- 课程中文网站: [2020](https://missing-semester-cn.github.io)
-- 课程视频：[2020](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)
-- 课程中文字幕视频：[B 站刘黑黑a（已完结）](https://space.bilibili.com/518734451)
+- 课程网站：[2026](https://missing.csail.mit.edu)，[2020](https://missing.csail.mit.edu/2020/)，[2019](https://missing.csail.mit.edu/2019/)
+- 课程中文网站：[2026](https://missing-semester-cn.github.io)，[2020](https://missing-semester-cn.github.io/2020/)
+- 课程视频：[2026](https://www.youtube.com/playlist?list=PLyzOVJj3bHQunmnnTXrNbZnBaCA-ieK4L)，[2020](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)
+- B 站中文视频：[2026](https://www.bilibili.com/video/BV15qzxBhEsa)，[2022](https://space.bilibili.com/518734451)
 - 课程作业：一些随堂小练习，具体见课程网站
 
 ## 资源汇总
