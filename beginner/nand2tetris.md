@@ -25,4 +25,4 @@
 
 @PKUFlyingPig 在学习这门课中用到的所有资源和作业实现都汇总在 [PKUFlyingPig/NandToTetris - GitHub](https://github.com/PKUFlyingPig/NandToTetris) 中。
 
-@mancuoj 在学习这门课中用到的所有资源和作业实现都汇总在 [csfive/Nand2Tetris - GitHub](https://github.com/csfive/Nand2Tetris) 中。
+@mancuoj 在学习这门课中用到的所有资源、课程笔记以及作业实现都汇总在 [csfive/Nand2Tetris - GitHub](https://github.com/csfive/Nand2Tetris) 中。
