@@ -11,5 +11,8 @@
     "prettier": "^3.6.2",
     "vitepress": "^1.6.4"
   },
-  "prettier": "@mancuoj/prettier-config"
+  "prettier": "@mancuoj/prettier-config",
+  "dependencies": {
+    "v-beautiful-mermaid": "^0.0.3"
+  }
 }

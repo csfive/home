@@ -1,27 +1,22 @@
 import { defineConfig, type DefaultTheme, type HeadConfig } from 'vitepress'
+import { vitepressBeautifulMermaid } from 'v-beautiful-mermaid'
 
 const sidebar: DefaultTheme.Sidebar = [
   {
-    text: '入门',
-    collapsed: false,
+    text: 'ROADMAP',
     items: [
-      { text: '🚧 MIT Missing Semester', link: '/beginner/missing-semester' },
-      { text: 'Harvard CS50x', link: '/beginner/cs50x' },
-      { text: 'Harvard CS50P', link: '/beginner/cs50p' },
-      { text: '🚧 Harvard CS50G', link: '/beginner/cs50g' },
-      { text: 'UCB CS61A', link: '/beginner/cs61a' },
-      { text: '🚧 HUST CPU', link: '/beginner/hust-cpu' },
-      { text: '🚧 Nand2Tetris', link: '/beginner/nand2tetris' },
-      { text: '⏳ UCB CS61B', link: '/beginner/cs61b' },
-      { text: '⏳ NJU PA', link: '/beginner/nju-pa' },
-    ],
-  },
-  {
-    text: '实用工具',
-    collapsed: false,
-    items: [
-      { text: 'Docker', link: '/tools/docker' },
-      { text: 'mise', link: '/tools/mise' },
+      { text: '🚧 MIT Missing Semester', link: '/roadmap/missing-semester' },
+      { text: 'Harvard CS50x', link: '/roadmap/cs50x' },
+      { text: 'Harvard CS50P', link: '/roadmap/cs50p' },
+      { text: '🚧 Harvard CS50G', link: '/roadmap/cs50g' },
+      { text: 'UCB CS61A', link: '/roadmap/cs61a' },
+      { text: '🚧 Nand2Tetris', link: '/roadmap/nand2tetris' },
+      { text: '🚧 HUST CPU', link: '/roadmap/hust-cpu' },
+      { text: '⏳ Cornell CS3110', link: '/roadmap/cs3110' },
+      { text: '⏳ UCB CS61B', link: '/roadmap/cs61b' },
+      { text: '⏳ UCB CS61C', link: '/roadmap/cs61c' },
+      { text: '⏳ NJU PA', link: '/roadmap/nju-pa' },
+      { text: '⏳ NJU OS', link: '/roadmap/nju-os' },
     ],
   },
 ]
@@ -30,9 +25,8 @@ const configs = {
   sidebar,
   lang: 'zh-CN',
   title: '计算机废物自学指北',
-  description: 'csdiy.wiki fork + 一些有用的链接',
+  description: 'csdiy.wiki 的 fork + @mancuoj 的自学路线图',
   repo: 'csfive/home',
-  umamiId: '',
   chineseFont: 'https://chinese-fonts-cdn.netlify.app/packages/dymh/dist/DouyinSansBold/result.css',
   googleFont:
     'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap',
@@ -50,6 +44,9 @@ export default defineConfig({
     math: true,
     image: {
       lazyLoading: true,
+    },
+    config: (md) => {
+      md.use(vitepressBeautifulMermaid)
     },
   },
   themeConfig: {
@@ -70,12 +67,6 @@ function getHead() {
     head.push(['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }])
     head.push(['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }])
     head.push(['link', { rel: 'stylesheet', href: configs.googleFont }])
-  }
-  if (configs.umamiId) {
-    head.push([
-      'script',
-      { defer: '', src: 'https://a.mancuoj.me/script.js', 'data-website-id': configs.umamiId },
-    ])
   }
   return head
 }
