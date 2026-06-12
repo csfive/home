@@ -4,19 +4,20 @@
 
 ```mermaid
 flowchart TD
-      A[MIT Missing Semester] --> B[Harvard CS50x]
+      A[Harvard CS50x] --> B[MIT Missing Semester]
 
       B --> C[Harvard CS50 Python]
 
       C --> E[UCB CS61A]
       D[Harvard CS50 2D Game] --> E
 
-      E --> F[Nand2Tetris]
+      E --> Z[Helsinki Haskell MOOC]
+      Z --> Y[Cornell CS3110]
 
-      F --> J[UCB CS61C]
-      G[UCB CS61B] --> J
-      H[HUST CPU] --> J
+      E --> F[UCB CS61B]
+      E --> I[Nand2Tetris]
 
-      J --> K[NJU PA]
-      K --> L[NJU OS]
+      I --> H[UCB CS61C]
+      G[HUST CPU] --> H
+      F --> H
 ```

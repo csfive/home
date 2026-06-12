@@ -12,6 +12,7 @@ const sidebar: DefaultTheme.Sidebar = [
       { text: 'UCB CS61A', link: '/roadmap/cs61a' },
       { text: '🚧 Nand2Tetris', link: '/roadmap/nand2tetris' },
       { text: '🚧 HUST CPU', link: '/roadmap/hust-cpu' },
+      { text: '⏳ Haskell MOOC', link: '/roadmap/haskell-mooc' },
       { text: '⏳ Cornell CS3110', link: '/roadmap/cs3110' },
       { text: '⏳ UCB CS61B', link: '/roadmap/cs61b' },
       { text: '⏳ UCB CS61C', link: '/roadmap/cs61c' },
