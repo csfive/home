@@ -6,9 +6,9 @@
     "format": "prettier -w ."
   },
   "devDependencies": {
-    "@mancuoj/prettier-config": "^0.5.3",
+    "@mancuoj/prettier-config": "^0.5.4",
     "markdown-it-mathjax3": "^4.3.2",
-    "prettier": "^3.6.2",
+    "prettier": "^3.9.5",
     "vitepress": "^1.6.4"
   },
   "prettier": "@mancuoj/prettier-config",
