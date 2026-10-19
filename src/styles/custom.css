@@ -1,6 +1,8 @@
 /* -------------------------------------------------------------------------
    CS Five theme
    Palette + a global grid background. Everything else stays Starlight default.
+   Accent is CS Five blue, #1f6feb (same as the @mancuoj/prettier-config badges):
+   dark #58a6ff, light #0969da.
    ------------------------------------------------------------------------- */
 
 :root {
@@ -18,10 +20,10 @@
   --sl-color-gray-7: #18181b;
   --sl-color-black: #0a0a0b;
 
-  --sl-color-accent-low: #17202b;
-  --sl-color-accent: #9db8da;
-  --sl-color-accent-high: #c7d8ee;
-  --sl-color-text-accent: #9db8da;
+  --sl-color-accent-low: #0d1b33;
+  --sl-color-accent: #58a6ff;
+  --sl-color-accent-high: #a5d6ff;
+  --sl-color-text-accent: #58a6ff;
 
   --sl-color-text: #f4f4f5;
   --sl-color-text-invert: #0a0a0b;
@@ -29,7 +31,7 @@
   --sl-color-bg-nav: #0a0a0b;
   --sl-color-bg-sidebar: #0a0a0b;
   --sl-color-bg-inline-code: #18181b;
-  --sl-color-bg-accent: #9db8da;
+  --sl-color-bg-accent: #58a6ff;
   --sl-color-hairline-light: #27272a;
   --sl-color-hairline: #27272a;
   --sl-color-hairline-shade: #27272a;
@@ -50,10 +52,10 @@
   --sl-color-gray-7: #fafafa;
   --sl-color-black: #ffffff;
 
-  --sl-color-accent-low: #edf2f8;
-  --sl-color-accent: #4a6fa5;
-  --sl-color-accent-high: #2f4e75;
-  --sl-color-text-accent: #4a6fa5;
+  --sl-color-accent-low: #e8f0fd;
+  --sl-color-accent: #0969da;
+  --sl-color-accent-high: #0550ae;
+  --sl-color-text-accent: #0969da;
 
   --sl-color-text: #111113;
   --sl-color-text-invert: #ffffff;
@@ -61,7 +63,7 @@
   --sl-color-bg-nav: #ffffff;
   --sl-color-bg-sidebar: #ffffff;
   --sl-color-bg-inline-code: #fafafa;
-  --sl-color-bg-accent: #4a6fa5;
+  --sl-color-bg-accent: #0969da;
   --sl-color-hairline-light: #e4e4e7;
   --sl-color-hairline: #e4e4e7;
   --sl-color-hairline-shade: #e4e4e7;
