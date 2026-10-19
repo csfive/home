@@ -1,0 +1,24 @@
+# 华中科技大学计算机硬件系统设计（自己动手画 CPU）
+
+## 课程简介
+
+- 所属大学：华中科技大学
+- 课程难度：🌟🌟🌟
+- 使用工具：Logisim
+- 预计学时：200 小时
+
+如果说 CS50 是带你敲开编程的大门，那么这门课则是带你拆开计算机的“黑盒”。由谭志虎教授团队领衔，本课程是华科计算机专业的镇系基石。你将不再满足于在操作系统上运行程序，而是通过 Logisim 仿真平台，从最基础的门电路开始，亲手绘制出属于你的 MIPS / RISC-V 架构 CPU。
+
+课程不仅涵盖数据表示、运算器设计、存储系统（Cache）等核心理论，更强调“做中学”。你将经历从单周期 CPU 到多周期 CPU，再到高性能五段流水线 CPU 的进阶历程。当你亲手设计的 CPU 成功运行起第一行汇编指令时，那种掌握底层终极奥秘的成就感是任何高级语言开发都无法比拟的。
+
+另外，课程配套了成熟的 Educoder 评测系统，你的每一条连线、每一个逻辑门都会经过自动化测试，确保设计的严谨性。加群还有谭老师亲自答疑，平易近人，有问必回。
+
+## 课程资源
+
+- 课程网站：[MOOC](https://www.icourse163.org/course/HUST-1205809816)，[Bilibili](https://www.bilibili.com/video/BV1jJ411m7Hr/)
+- 课程教材：[计算机组成原理（谭志虎）](https://github.com/csfive/books)
+- 课程作业：[实验框架](https://gitee.com/totalcontrol/hustzc)，[在线测试平台](https://www.educoder.net/paths/hvbz6g9i)
+
+## 资源汇总
+
+@mancuoj 在学习这门课中用到的所有资源和作业实现都汇总在 [csfive/HUST-CPU - GitHub](https://github.com/csfive/HUST-CPU) 中。
