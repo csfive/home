@@ -1,10 +1,17 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { unified } from '@astrojs/markdown-remark';
+import remarkPeleMermaid from './src/plugins/remark-pele-mermaid.js';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://csfive.netlify.app',
+	markdown: {
+		processor: unified({
+			remarkPlugins: [remarkPeleMermaid],
+		}),
+	},
 	integrations: [
 		starlight({
 			title: 'CS Five',

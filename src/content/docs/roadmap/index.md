@@ -3,10 +3,8 @@ title: 路线图
 description: '@mancuoj 的计算机自学路线图'
 ---
 
-import Mermaid from '../../../components/Mermaid.astro';
-
-<Mermaid
-	source={`flowchart TD
+```mermaid
+flowchart TD
       A[Harvard CS50x] --> B[MIT Missing Semester]
 
       B --> C[Harvard CS50 Python]
@@ -23,5 +21,4 @@ import Mermaid from '../../../components/Mermaid.astro';
       I --> H[UCB CS61C]
       G[HUST CPU] --> H
       F --> H
-`}
-/>
+```
