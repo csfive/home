@@ -6,7 +6,7 @@
 :root {
 	color-scheme: dark;
 
-	--grid-line: color-mix(in srgb, #f4f4f5 4%, transparent);
+	--grid-line: color-mix(in srgb, #f4f4f5 4.5%, transparent);
 
 	--sl-color-white: #f4f4f5;
 	--sl-color-gray-1: #e4e4e7;
@@ -38,7 +38,7 @@
 :root[data-theme='light'] {
 	color-scheme: light;
 
-	--grid-line: color-mix(in srgb, #111113 3%, transparent);
+	--grid-line: color-mix(in srgb, #111113 5%, transparent);
 
 	--sl-color-white: #111113;
 	--sl-color-gray-1: #18181b;
@@ -83,11 +83,11 @@ html[data-has-hero] body::before {
 	background-image:
 		linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
 		linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-	background-size: 32px 32px;
+	background-size: 28px 28px;
 	content: '';
 	inset: 0;
-	mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 80%);
-	-webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 80%);
+	mask-image: radial-gradient(ellipse 110% 110% at 50% 0%, #000 0%, rgb(0 0 0 / 0.55) 55%, transparent 100%);
+	-webkit-mask-image: radial-gradient(ellipse 110% 110% at 50% 0%, #000 0%, rgb(0 0 0 / 0.55) 55%, transparent 100%);
 	pointer-events: none;
 	position: fixed;
 	z-index: -1;
