@@ -1,6 +1,5 @@
 ---
 title: 路线图
-description: '@mancuoj 的计算机自学路线图'
 ---
 
 ```mermaid

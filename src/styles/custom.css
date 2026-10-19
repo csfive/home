@@ -4,67 +4,67 @@
    ------------------------------------------------------------------------- */
 
 :root {
-	color-scheme: dark;
+  color-scheme: dark;
 
-	--grid-line: color-mix(in srgb, #f4f4f5 4.5%, transparent);
+  --grid-line: color-mix(in srgb, #f4f4f5 4.5%, transparent);
 
-	--sl-color-white: #f4f4f5;
-	--sl-color-gray-1: #e4e4e7;
-	--sl-color-gray-2: #c4c4c8;
-	--sl-color-gray-3: #9a9aa2;
-	--sl-color-gray-4: #6b6b70;
-	--sl-color-gray-5: #3f3f46;
-	--sl-color-gray-6: #27272a;
-	--sl-color-gray-7: #18181b;
-	--sl-color-black: #0a0a0b;
+  --sl-color-white: #f4f4f5;
+  --sl-color-gray-1: #e4e4e7;
+  --sl-color-gray-2: #c4c4c8;
+  --sl-color-gray-3: #9a9aa2;
+  --sl-color-gray-4: #6b6b70;
+  --sl-color-gray-5: #3f3f46;
+  --sl-color-gray-6: #27272a;
+  --sl-color-gray-7: #18181b;
+  --sl-color-black: #0a0a0b;
 
-	--sl-color-accent-low: #17202b;
-	--sl-color-accent: #9db8da;
-	--sl-color-accent-high: #c7d8ee;
-	--sl-color-text-accent: #9db8da;
+  --sl-color-accent-low: #17202b;
+  --sl-color-accent: #9db8da;
+  --sl-color-accent-high: #c7d8ee;
+  --sl-color-text-accent: #9db8da;
 
-	--sl-color-text: #f4f4f5;
-	--sl-color-text-invert: #0a0a0b;
-	--sl-color-bg: #0a0a0b;
-	--sl-color-bg-nav: #0a0a0b;
-	--sl-color-bg-sidebar: #0a0a0b;
-	--sl-color-bg-inline-code: #18181b;
-	--sl-color-bg-accent: #9db8da;
-	--sl-color-hairline-light: #27272a;
-	--sl-color-hairline: #27272a;
-	--sl-color-hairline-shade: #27272a;
+  --sl-color-text: #f4f4f5;
+  --sl-color-text-invert: #0a0a0b;
+  --sl-color-bg: #0a0a0b;
+  --sl-color-bg-nav: #0a0a0b;
+  --sl-color-bg-sidebar: #0a0a0b;
+  --sl-color-bg-inline-code: #18181b;
+  --sl-color-bg-accent: #9db8da;
+  --sl-color-hairline-light: #27272a;
+  --sl-color-hairline: #27272a;
+  --sl-color-hairline-shade: #27272a;
 }
 
 :root[data-theme='light'] {
-	color-scheme: light;
+  color-scheme: light;
 
-	--grid-line: color-mix(in srgb, #111113 5%, transparent);
+  --grid-line: color-mix(in srgb, #111113 5%, transparent);
 
-	--sl-color-white: #111113;
-	--sl-color-gray-1: #18181b;
-	--sl-color-gray-2: #52525b;
-	--sl-color-gray-3: #6b6b70;
-	--sl-color-gray-4: #a1a1aa;
-	--sl-color-gray-5: #d4d4d8;
-	--sl-color-gray-6: #e4e4e7;
-	--sl-color-gray-7: #fafafa;
-	--sl-color-black: #ffffff;
+  --sl-color-white: #111113;
+  --sl-color-gray-1: #18181b;
+  --sl-color-gray-2: #52525b;
+  --sl-color-gray-3: #6b6b70;
+  --sl-color-gray-4: #a1a1aa;
+  --sl-color-gray-5: #d4d4d8;
+  --sl-color-gray-6: #e4e4e7;
+  --sl-color-gray-7: #fafafa;
+  --sl-color-black: #ffffff;
 
-	--sl-color-accent-low: #edf2f8;
-	--sl-color-accent: #4a6fa5;
-	--sl-color-accent-high: #2f4e75;
-	--sl-color-text-accent: #4a6fa5;
+  --sl-color-accent-low: #edf2f8;
+  --sl-color-accent: #4a6fa5;
+  --sl-color-accent-high: #2f4e75;
+  --sl-color-text-accent: #4a6fa5;
 
-	--sl-color-text: #111113;
-	--sl-color-text-invert: #ffffff;
-	--sl-color-bg: #ffffff;
-	--sl-color-bg-nav: #ffffff;
-	--sl-color-bg-sidebar: #ffffff;
-	--sl-color-bg-inline-code: #fafafa;
-	--sl-color-bg-accent: #4a6fa5;
-	--sl-color-hairline-light: #e4e4e7;
-	--sl-color-hairline: #e4e4e7;
-	--sl-color-hairline-shade: #e4e4e7;
+  --sl-color-text: #111113;
+  --sl-color-text-invert: #ffffff;
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #ffffff;
+  --sl-color-bg-inline-code: #fafafa;
+  --sl-color-bg-accent: #4a6fa5;
+  --sl-color-hairline-light: #e4e4e7;
+  --sl-color-hairline: #e4e4e7;
+  --sl-color-hairline-shade: #e4e4e7;
 }
 
 /* -------------------------------------------------------------------------
@@ -72,25 +72,35 @@
    ------------------------------------------------------------------------- */
 
 html[data-has-hero] {
-	background-color: var(--sl-color-bg);
+  background-color: var(--sl-color-bg);
 }
 
 html[data-has-hero] body {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 html[data-has-hero] body::before {
-	background-image:
-		linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-		linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-	background-size: 28px 28px;
-	content: '';
-	inset: 0;
-	mask-image: radial-gradient(ellipse 110% 110% at 50% 0%, #000 0%, rgb(0 0 0 / 0.55) 55%, transparent 100%);
-	-webkit-mask-image: radial-gradient(ellipse 110% 110% at 50% 0%, #000 0%, rgb(0 0 0 / 0.55) 55%, transparent 100%);
-	pointer-events: none;
-	position: fixed;
-	z-index: -1;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  content: '';
+  inset: 0;
+  mask-image: radial-gradient(
+    ellipse 110% 110% at 50% 0%,
+    #000 0%,
+    rgb(0 0 0 / 0.55) 55%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 110% 110% at 50% 0%,
+    #000 0%,
+    rgb(0 0 0 / 0.55) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
 }
 
 /* -------------------------------------------------------------------------
@@ -98,23 +108,23 @@ html[data-has-hero] body::before {
    ------------------------------------------------------------------------- */
 
 .pele {
-	--pele-bg: var(--sl-color-bg);
-	--pele-fg: var(--sl-color-text);
-	--pele-muted: var(--sl-color-gray-3);
-	--pele-line: var(--sl-color-gray-3);
-	--pele-surface: var(--sl-color-gray-6);
-	--pele-surface-alt: var(--sl-color-gray-5);
-	--pele-border: var(--sl-color-gray-4);
-	--pele-accent: var(--sl-color-accent);
-	--pele-font: var(--sl-font);
-	--pele-font-mono: var(--sl-font-mono);
-	--pele-radius: 4px;
+  --pele-bg: var(--sl-color-bg);
+  --pele-fg: var(--sl-color-text);
+  --pele-muted: var(--sl-color-gray-3);
+  --pele-line: var(--sl-color-gray-3);
+  --pele-surface: var(--sl-color-gray-6);
+  --pele-surface-alt: var(--sl-color-gray-5);
+  --pele-border: var(--sl-color-gray-4);
+  --pele-accent: var(--sl-color-accent);
+  --pele-font: var(--sl-font);
+  --pele-font-mono: var(--sl-font-mono);
+  --pele-radius: 4px;
 }
 
 .pele-diagram {
-	overflow-x: auto;
+  overflow-x: auto;
 }
 
 .pele-diagram .pele {
-	min-width: 560px;
+  min-width: 560px;
 }

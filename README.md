@@ -2,8 +2,6 @@
 
 计算机废物自学指北，@mancuoj 的自学笔记。
 
-## 路线图
-
 ```mermaid
 flowchart TD
       A[Harvard CS50x] --> B[MIT Missing Semester]
