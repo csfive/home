@@ -2,18 +2,24 @@
 
 计算机废物自学指北，@mancuoj 的自学笔记。
 
-基于 [Astro Starlight](https://starlight.astro.build/) 构建。
+## 路线图
 
-## 开发
+```mermaid
+flowchart TD
+      A[Harvard CS50x] --> B[MIT Missing Semester]
 
-```bash
-bun install
-bun dev
-```
+      B --> C[Harvard CS50 Python]
 
-## 构建
+      C --> E[UCB CS61A]
+      D[Harvard CS50 2D Game] --> E
 
-```bash
-bun run build
-bun preview
+      E --> Z[Helsinki Haskell MOOC]
+      Z --> Y[Cornell CS3110]
+
+      E --> F[UCB CS61B]
+      E --> I[Nand2Tetris]
+
+      I --> H[UCB CS61C]
+      G[HUST CPU] --> H
+      F --> H
 ```
