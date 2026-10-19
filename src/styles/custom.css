@@ -68,19 +68,29 @@
 }
 
 /* -------------------------------------------------------------------------
-   Global grid background
+   Grid background — only on pages with a hero (home, 404)
    ------------------------------------------------------------------------- */
 
-html {
+html[data-has-hero] {
 	background-color: var(--sl-color-bg);
+}
+
+html[data-has-hero] body {
+	background-color: transparent;
+}
+
+html[data-has-hero] body::before {
 	background-image:
 		linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
 		linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-	background-size: 24px 24px;
-}
-
-body {
-	background-color: transparent;
+	background-size: 32px 32px;
+	content: '';
+	inset: 0;
+	mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 80%);
+	-webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 80%);
+	pointer-events: none;
+	position: fixed;
+	z-index: -1;
 }
 
 /* -------------------------------------------------------------------------
