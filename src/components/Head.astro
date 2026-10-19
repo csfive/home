@@ -1,0 +1,23 @@
+---
+const { head } = Astro.locals.starlightRoute;
+
+// Starlight uses `build.format: 'preserve'`, which makes canonical and
+// Open Graph URLs include `.html`. Strip it so URLs stay extensionless.
+const cleanUrl = (url: string) => url.replace(/(\/index)?\.html$/, (_, index) => (index ? '/' : ''));
+
+const entries = head.map((entry) => {
+	const attrs = entry.attrs ? { ...entry.attrs } : {};
+
+	if (typeof attrs.href === 'string' && attrs.rel === 'canonical') {
+		attrs.href = cleanUrl(attrs.href);
+	}
+
+	if (typeof attrs.content === 'string' && attrs.property === 'og:url') {
+		attrs.content = cleanUrl(attrs.content);
+	}
+
+	return { ...entry, attrs };
+});
+---
+
+{entries.map(({ tag: Tag, attrs, content }) => <Tag {...attrs} set:html={content} />)}

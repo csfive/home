@@ -7,6 +7,10 @@ import remarkPeleMermaid from './src/plugins/remark-pele-mermaid.js';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://csfive.netlify.app',
+	trailingSlash: 'never',
+	build: {
+		format: 'preserve',
+	},
 	markdown: {
 		processor: unified({
 			remarkPlugins: [remarkPeleMermaid],
@@ -35,6 +39,9 @@ export default defineConfig({
 				baseUrl: 'https://github.com/csfive/home/edit/main/',
 			},
 			customCss: ['./src/styles/custom.css'],
+			components: {
+				Head: './src/components/Head.astro',
+			},
 			head: [
 				{
 					tag: 'link',
@@ -42,8 +49,8 @@ export default defineConfig({
 				},
 			],
 			sidebar: [
-				{ label: '路线图', link: '/roadmap/' },
-				{ label: '笔记', link: '/notes/' },
+				{ label: '路线图', link: '/roadmap' },
+				{ label: '笔记', link: '/notes' },
 			],
 		}),
 	],
