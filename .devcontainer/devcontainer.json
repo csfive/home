@@ -1,7 +1,0 @@
-{
-  "name": "mise-bun",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/roul/devcontainer-features/mise-bun:1": {}
-  }
-}

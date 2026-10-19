@@ -23,3 +23,5 @@ pnpm-debug.log*
 # editor tooling
 .openchamber/
 
+# Local Netlify folder
+.netlify
