@@ -48,7 +48,16 @@ export default defineConfig({
 					attrs: { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' },
 				},
 			],
-			sidebar: [{ label: '路线图', link: '/roadmap' }],
+			sidebar: [
+				{ label: '路线图', link: '/roadmap' },
+				{
+					label: 'CS50 2D',
+					items: [
+						{ label: '总览', link: '/cs50g' },
+						{ autogenerate: { directory: 'cs50g' } },
+					],
+				},
+			],
 		}),
 	],
 });
