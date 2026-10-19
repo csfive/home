@@ -1,0 +1,27 @@
+---
+title: 路线图
+description: '@mancuoj 的计算机自学路线图'
+---
+
+import Mermaid from '../../../components/Mermaid.astro';
+
+<Mermaid
+	source={`flowchart TD
+      A[Harvard CS50x] --> B[MIT Missing Semester]
+
+      B --> C[Harvard CS50 Python]
+
+      C --> E[UCB CS61A]
+      D[Harvard CS50 2D Game] --> E
+
+      E --> Z[Helsinki Haskell MOOC]
+      Z --> Y[Cornell CS3110]
+
+      E --> F[UCB CS61B]
+      E --> I[Nand2Tetris]
+
+      I --> H[UCB CS61C]
+      G[HUST CPU] --> H
+      F --> H
+`}
+/>

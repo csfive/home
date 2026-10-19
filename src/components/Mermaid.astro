@@ -1,0 +1,13 @@
+---
+import { render } from 'pele';
+
+interface Props {
+	/** Mermaid diagram source. */
+	source: string;
+}
+
+const { source } = Astro.props;
+const { svg } = render(source);
+---
+
+<div class="pele-diagram" set:html={svg} />

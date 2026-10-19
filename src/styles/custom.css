@@ -16,3 +16,29 @@
 .hero h1 {
 	letter-spacing: -0.02em;
 }
+
+/* Diagrams rendered by Pele inherit the Starlight theme */
+.pele {
+	--pele-bg: var(--sl-color-bg);
+	--pele-fg: var(--sl-color-text);
+	--pele-muted: var(--sl-color-gray-3);
+	--pele-line: var(--sl-color-gray-3);
+	--pele-surface: var(--sl-color-gray-6);
+	--pele-surface-alt: var(--sl-color-gray-5);
+	--pele-border: var(--sl-color-gray-4);
+	--pele-accent: var(--sl-color-accent);
+	--pele-font: var(--sl-font);
+	--pele-font-mono: var(--sl-font-mono);
+	--pele-radius: 6px;
+}
+
+/* Keep diagrams legible on narrow screens instead of shrinking them */
+.pele-diagram {
+	overflow-x: auto;
+	padding-block: 1rem;
+}
+
+.pele-diagram .pele {
+	min-width: 560px;
+}
+
