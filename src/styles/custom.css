@@ -1,0 +1,18 @@
+/* Dark theme */
+:root {
+	--sl-color-accent-low: #3a1722;
+	--sl-color-accent: #ff9fbb;
+	--sl-color-accent-high: #ffdbe5;
+}
+
+/* Light theme */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #ffe3ea;
+	--sl-color-accent: #d63c63;
+	--sl-color-accent-high: #6d1730;
+}
+
+/* Slightly tighter display type on the home page */
+.hero h1 {
+	letter-spacing: -0.02em;
+}

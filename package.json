@@ -1,18 +1,17 @@
 {
+  "name": "csfive-home",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview",
-    "format": "prettier -w ."
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "devDependencies": {
-    "@mancuoj/prettier-config": "^0.5.4",
-    "markdown-it-mathjax3": "^4.3.2",
-    "prettier": "^3.9.5",
-    "vitepress": "^1.6.4"
-  },
-  "prettier": "@mancuoj/prettier-config",
   "dependencies": {
-    "v-beautiful-mermaid": "^0.0.3"
+    "@astrojs/starlight": "^0.42.6",
+    "astro": "^7.2.10",
+    "sharp": "^0.35.3"
   }
 }
