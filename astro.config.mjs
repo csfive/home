@@ -48,10 +48,7 @@ export default defineConfig({
 					attrs: { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' },
 				},
 			],
-			sidebar: [
-				{ label: '路线图', link: '/roadmap' },
-				{ label: '笔记', link: '/notes' },
-			],
+			sidebar: [{ label: '路线图', link: '/roadmap' }],
 		}),
 	],
 });
