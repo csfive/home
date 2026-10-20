@@ -137,7 +137,7 @@ html[data-has-hero] body::before {
    ------------------------------------------------------------------------- */
 
 .cs-link-card {
-  align-items: center;
+  align-items: start;
   border: 1px solid var(--sl-color-gray-5);
   border-radius: 0.5rem;
   box-shadow: var(--sl-shadow-sm);
@@ -176,6 +176,7 @@ html[data-has-hero] body::before {
 }
 
 .cs-link-card__icon {
+  align-self: center;
   color: var(--sl-color-gray-3);
   flex: none;
   height: 1.333em;
@@ -183,9 +184,27 @@ html[data-has-hero] body::before {
 }
 
 .cs-link-card:hover .cs-link-card__icon {
+  align-self: center;
   color: var(--sl-color-white);
 }
 
 [dir='rtl'] .cs-link-card__icon {
   transform: scaleX(-1);
+}
+
+.cs-link-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 50rem) {
+  .cs-link-cards {
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cs-link-cards > .cs-link-card {
+  height: 100%;
 }

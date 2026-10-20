@@ -1,10 +1,13 @@
 /**
- * Render `[title](url "description")` — a paragraph whose only child is a
- * titled link — as a Starlight-style link card.
+ * Render `[title](url "description")` as a Starlight-style link card.
  *
- * Starlight ships `<LinkCard>` as an MDX component, but its styles are
- * component-scoped, so plain HTML from a remark plugin would stay unstyled.
- * The markup here therefore uses `cs-link-card` classes, styled globally in
+ * A paragraph made only of titled links becomes one card per link. Adjacent
+ * such paragraphs are grouped into a single grid, mirroring Starlight's
+ * <LinkCards>: one card stands alone, several sit side by side.
+ *
+ * Starlight ships <LinkCard> as an MDX component whose styles are scoped, so
+ * plain HTML from a remark plugin would stay unstyled. The markup below uses
+ * `cs-link-card` / `cs-link-cards` classes, styled globally in
  * `src/styles/custom.css`. No MDX needed.
  */
 export default function remarkLinkCard() {
@@ -13,49 +16,74 @@ export default function remarkLinkCard() {
   }
 }
 
-function walk(node) {
-  if (!Array.isArray(node.children)) return
+function walk(parent) {
+  if (!Array.isArray(parent.children)) return
 
-  node.children.forEach((child, index) => {
+  const out = []
+  let cards = []
+
+  const flush = () => {
+    if (!cards.length) return
+
+    out.push(cards.length === 1 ? cardNode(cards[0]) : gridNode(cards))
+    cards = []
+  }
+
+  parent.children.forEach((child) => {
     if (child.type === 'paragraph') {
-      const card = toCard(child)
-      if (card) {
-        node.children[index] = card
+      const links = linksIn(child)
+      if (links) {
+        cards.push(...links)
         return
       }
     }
 
+    flush()
     walk(child)
+    out.push(child)
   })
+
+  flush()
+  parent.children = out
 }
 
-function toCard(paragraph) {
+function linksIn(paragraph) {
   const children = paragraph.children.filter(
     (child) => !(child.type === 'text' && child.value.trim() === ''),
   )
 
-  if (children.length !== 1) return
+  if (children.length === 0) return null
+  if (!children.every((child) => child.type === 'link' && child.title)) return null
 
-  const [link] = children
-  if (link.type !== 'link' || !link.title) return
+  return children
+}
 
+function cardNode(link) {
+  return { type: 'html', value: cardHtml(link) }
+}
+
+function gridNode(links) {
+  return {
+    type: 'html',
+    value: `<div class="cs-link-cards">${links.map(cardHtml).join('')}</div>`,
+  }
+}
+
+function cardHtml(link) {
   const description = link.title.trim()
   const descriptionHtml = description
     ? `<span class="cs-link-card__description">${escapeHtml(description)}</span>`
     : ''
 
-  return {
-    type: 'html',
-    value: [
-      `<a class="cs-link-card" href="${escapeHtml(link.url)}">`,
-      '<span class="cs-link-card__body">',
-      `<span class="cs-link-card__title">${inlineToHtml(link.children)}</span>`,
-      descriptionHtml,
-      '</span>',
-      `<svg class="cs-link-card__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${RIGHT_ARROW}</svg>`,
-      '</a>',
-    ].join(''),
-  }
+  return [
+    `<a class="cs-link-card" href="${escapeHtml(link.url)}">`,
+    '<span class="cs-link-card__body">',
+    `<span class="cs-link-card__title">${inlineToHtml(link.children)}</span>`,
+    descriptionHtml,
+    '</span>',
+    `<svg class="cs-link-card__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${RIGHT_ARROW}</svg>`,
+    '</a>',
+  ].join('')
 }
 
 function inlineToHtml(nodes) {
