@@ -10,8 +10,6 @@ slug: cs50g/00
 
 ## 环境
 
-### 安装
-
 ```sh
 brew install --cask love
 brew install stylua
@@ -28,7 +26,7 @@ love 00-pong            # 从仓库根目录跑某一周
 cd 00-pong && love .    # 或者在项目目录里跑
 ```
 
-### 编辑器
+### VS Code
 
 ```sh
 code --install-extension sumneko.lua
@@ -119,34 +117,6 @@ local function minmax(a, b)
 end
 ```
 
-### 模块
-
-一个文件就是一个模块。
-
-写法 A：文件里定义全局，课程代码用这种。
-
-```lua
--- Paddle.lua
-Paddle = Class{}
-
--- main.lua
-require 'Paddle'   -- 自动找 Paddle.lua，不用写扩展名
--- 其实是一个函数调用，不过单字符串参数可以省略括号
-```
-
-`Class{}` 是课程里的 OOP 工具，讲到 Paddle 时再补。
-
-写法 B：返回一个表，更推荐，避免全局污染。
-
-```lua
--- Paddle.lua
-local Paddle = {}
-return Paddle
-
--- main.lua
-local Paddle = require 'Paddle'
-```
-
 ### 条件与循环
 
 ```lua
@@ -176,6 +146,32 @@ end
 repeat
     -- ...
 until cond
+```
+
+### 模块
+
+一个文件就是一个模块。
+
+写法 A：文件里定义全局，课程代码用这种。
+
+```lua
+-- Paddle.lua
+Paddle = Class{}
+
+-- main.lua
+require 'Paddle'   -- 自动找 Paddle.lua，不用写扩展名
+-- 其实是一个函数调用，不过单字符串参数可以省略括号
+```
+
+写法 B：返回一个表，更推荐，避免全局污染。
+
+```lua
+-- Paddle.lua
+local Paddle = {}
+return Paddle
+
+-- main.lua
+local Paddle = require 'Paddle'
 ```
 
 ## LÖVE 基础
@@ -241,7 +237,7 @@ VIRTUAL_HEIGHT = 243
 
 ## push
 
-push 是个单文件库（[Ulydev/push](https://github.com/Ulydev/push/tree/dev)，`push.lua` 和 `main.lua` 放同级），负责算缩放比和偏移，把虚拟坐标映射到窗口，窗口缩放时重算。
+[Ulydev/push](https://github.com/Ulydev/push/tree/dev) 是个单文件库（`push.lua` 和 `main.lua` 放同级），负责算缩放比和偏移，把虚拟坐标映射到窗口，窗口缩放时重算。
 
 ```lua
 push = require 'push'
@@ -265,61 +261,94 @@ function love.resize(w, h)
 end
 ```
 
-- `push.start()` / `push.finish()` 只包 `love.draw`，`love.update` 里不用
-- 窗口缩放要把 `love.resize` 转发给 `push.resize`，否则画面会错位
-- 鼠标坐标用 `push.toGame(x, y)`
+- `push.start()` / `push.finish()` 只包 `love.draw`
 - `upscale = 'normal'` 等比缩放，16:9 正好铺满；`pixel-perfect` 只按整数倍（黑边大），`stretched` 拉伸变形
-- 课程用的是 dev 分支（v1.0）：点号调用、3 个参数。[master](https://github.com/Ulydev/push) 是冒号 + 5 参数，别混
+- 窗口缩放要把 `love.resize` 转发给 `push.resize`，否则画面会错位
 
 ## 采样与滤镜
 
-### 过滤原理
-
-窗口 1280×720、虚拟画面 432×243，放大由显卡完成：
-
-1. 屏幕上每个像素，反算出它在虚拟画面里的位置 `(u, v)`
-2. 按 `(u, v)` 去画面里取颜色
-3. 把颜色写到屏幕像素
-
-第 2 步就是过滤（filter）。texel 是「纹理像素」，可以理解成画面上的一个点。
-
-- 只取最近的 1 个 texel → `nearest`，边缘是硬的
-- 取周围 4 个 texel 加权平均 → `linear`，边缘出现过渡色
-
-所以过滤不是「放大算法」，是「采样算法」。
-
-### nearest vs linear
-
-|           | nearest              | linear               |
-| --------- | -------------------- | -------------------- |
-| 取色      | 最近的 1 个 texel    | 周围 4 个 texel 加权 |
-| 边缘      | 硬，方块感           | 软，渐变             |
-| 适合      | 像素画、低分辨率放大 | 照片、3D 贴图        |
-| LÖVE 写法 | `'nearest'`          | `'linear'`（默认）   |
-
-像素画误用 linear，每个方块边缘会多出 1~2px 的过渡色，像隔了层毛玻璃。
-
-### 怎么设置
+432×243 的画面放大到 1280×720，文字和图片都会遇到「纹理被放大」的情况。LÖVE 默认线性插值，所以不设这一行，像素字就是糊的：
 
 ```lua
--- 全局默认：影响之后创建的所有 Image、Canvas、Font
 love.graphics.setDefaultFilter('nearest', 'nearest')
-
--- 单个对象：只改自己
-image:setFilter('nearest', 'nearest')
 ```
 
-- 只对之后创建的资源生效，已经建好的不会变
-- 放在 `love.load` 最前面，早于 `newImage` / `newCanvas` / `newFont`
-- 字体也吃这个默认值，字形图集在 `newFont` 时就定下来了
-- 矩形、线是矢量绘制，不受滤镜影响；Pong 里只有文字受影响
-- 像素画不要开 mipmap（`{ mipmaps = true }`），缩小采样会糊
+### 放大之后为什么会糊
 
-### 2.96 倍的副作用
+push 默认不建 canvas，`push.start()` 里直接把绘制放大：
 
-1280 ÷ 432 = 2.962…，243 × 2.962 = 720，刚好铺满，但不是整数倍。
+```lua
+love.graphics.translate(offset.x, offset.y)   -- 居中
+love.graphics.scale(scale.x, scale.y)         -- 1280 / 432 ≈ 2.96
+```
 
-同一个源像素在屏幕上占 2 或 3 个物理像素，交替出现。nearest 保证「不糊」，但保证不了「每个像素一样大」。
+三类东西受影响的方式不同：
 
-- 整数倍只有 2 倍可行（864×486），四周留黑边；3 倍要 1296×729，高度超出 720
-- `upscale = 'normal'` 接受轻微不均匀：静态看不出来，移动时偶尔有像素抖动
+| 画的东西             | 会糊吗 | 原因                         |
+| -------------------- | ------ | ---------------------------- |
+| `rectangle` / `line` | 不会   | 几何图形，直接光栅化         |
+| `print` / `printf`   | 会     | 字体是图集纹理，画字就是贴图 |
+| `newImage`           | 会     | 本身就是纹理                 |
+
+纹理像素（texel）和屏幕像素不是 1:1 时，GPU 要决定每个屏幕像素取什么颜色：
+
+- 放大：1 个 texel 铺满好几个屏幕像素
+- 缩小：好几个 texel 挤进 1 个屏幕像素
+
+两种取法：
+
+- `nearest`：直接取最近的 1 个 texel，边缘硬，是像素块
+- `linear`：取周围 4 个 texel 加权平均，边缘渐变，发糊
+
+放大 3 倍时，nearest 把 1 个 texel 复制成 3×3 的纯色块，linear 在块与块之间插出渐变。
+
+### 两个参数与默认值
+
+```lua
+love.graphics.setDefaultFilter(min, mag, anisotropy)
+```
+
+| 参数         | 什么时候生效               | 取值                     | 默认       |
+| ------------ | -------------------------- | ------------------------ | ---------- |
+| `min`        | 纹理被缩小                 | `'linear'` / `'nearest'` | `'linear'` |
+| `mag`        | 纹理被放大（省略同 `min`） | 同上                     | `'linear'` |
+| `anisotropy` | 斜视角的清晰度             | 数字                     | `1`        |
+
+默认 `linear` / `linear`，不设就是糊的。
+
+- 窗口比虚拟分辨率大 → `mag` 生效，Pong 里主要是它
+- 窗口拖得比虚拟分辨率小 → `min` 生效，`nearest` 会闪烁
+- 折中：`setDefaultFilter('linear', 'nearest')`，缩小平滑、放大锐利
+- `anisotropy` 只对 3D 斜视角有意义，2D 正交镜头下保持 1
+
+查当前值：`print(love.graphics.getDefaultFilter())` → `linear  linear  1`。
+
+### 必须在建资源之前设置
+
+纹理在创建时把「当时的默认值」复制一份，所以顺序反了不会报错，只是不生效：
+
+```lua
+function love.load()
+    love.graphics.setDefaultFilter('nearest', 'nearest')  -- 先设
+
+    smallFont = love.graphics.newFont('font.ttf', 8)      -- 后建 → nearest
+    scoreFont = love.graphics.newFont('font.ttf', 32)
+end
+```
+
+字体、图片、canvas 都是纹理，都吃这个默认值。只想改一张：
+
+```lua
+local img = love.graphics.newImage('player.png')
+img:setFilter('nearest', 'nearest')
+print(img:getFilter())   --> nearest  nearest  1
+```
+
+### 非整数倍带来的不均匀
+
+1280 ÷ 432 = 2.962…，不是整数倍，同一个源像素在屏幕上占 2 或 3 个物理像素，交替出现。
+
+nearest 保证不糊，但保证不了每个像素一样大，看文字笔画会略有粗细。
+
+- 想均匀：`upscale = 'pixel-perfect'`，缩放比 floor 成 2 倍（864×486），四周黑边
+- 想铺满：`upscale = 'normal'`，接受轻微不均匀
