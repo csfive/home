@@ -1,12 +1,12 @@
 ---
 title: Pong
-description: 哈佛 CS50G 第一讲 Pong 笔记：Lua 速成，LÖVE 循环，虚拟分辨率和最近邻过滤。
+description: 哈佛 CS50G 第一讲笔记
 sidebar:
   order: 0
 slug: cs50g/00
 ---
 
-## Lua 速成
+## Lua 语法速成
 
 ```lua
 -- 全局变量（不带 local），跨文件可见
@@ -100,7 +100,7 @@ local Paddle = require 'Paddle'
 处理输入 → 更新状态 → 渲染 → 下一帧
 ```
 
-LÖVE 自己维护一个主循环，我们只需要实现几个**回调函数**：
+love 自己会维护一个主循环，我们只需要实现几个**回调函数**：
 
 ```lua
 function love.load()      end       -- 启动时执行一次：初始化
@@ -112,16 +112,15 @@ function love.resize(w, h) end      -- 窗口尺寸变化时执行
 
 ## 最小可运行
 
-不能直接运行单个 `.lua` 文件，`love` 只接受一个目录或 `.love/.zip` 包。
+```sh
+# love 只接受一个目录或 .love/.zip 包
+# dir 目录须包含 main.lua 当做入口
+love dir
+```
 
-目录必须包含 `main.lua` 当做入口，且该文件必须在顶层，不能放子目录，其它 `.lua` 文件必须被 `require`。
-
-```lua
-WINDOW_WIDTH = 1280
-WINDOW_HEIGHT = 720
-
+```lua title="main.lua"
 function love.load()
-    love.window.setMode(WINDOW_WIDTH, WINDOW_HEIGHT, {
+    love.window.setMode(1280, 720, {
         fullscreen = false,
         resizable = false,
         vsync = true,            -- 垂直同步，避免画面撕裂
@@ -130,9 +129,9 @@ end
 
 function love.draw()
     love.graphics.printf(
-        'Hello Pong!',
+        'Hello World!',
         0,                       -- x，坐标系从左上角开始，向右向下
-        WINDOW_HEIGHT / 2 - 6,   -- y
+        WINDOW_HEIGHT / 2,       -- y
         WINDOW_WIDTH,            -- 居中用的宽度
         'center'
     )
@@ -145,8 +144,6 @@ end
 
 复古质感，游戏内按 432×243 这样的「虚拟分辨率」思考和计算，渲染时整体放大到 1280×720。
 
-不是严格整数倍，但留一点余量视觉上完全没问题。
-
 ```lua
 push = require 'push'
 
@@ -156,7 +153,7 @@ function love.load()
     push:setupScreen(432, 243, { upscale = 'normal' })
 end
 
--- resizable 为 true 时，每次调整窗口都要重新计算
+-- 每次调整窗口要重新计算
 function love.resize(w, h)
     push:resize(w, h)
 end

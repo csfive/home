@@ -1,5 +1,6 @@
 ---
 title: 路线图
+description: 计算机废物自学指北，@mancuoj 的自学路线图
 ---
 
 ```mermaid
