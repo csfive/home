@@ -51,7 +51,7 @@ export default defineConfig({
       sidebar: [
         { label: '路线图', link: '/roadmap' },
         {
-          label: 'CS50 2D',
+          label: 'CS50 2D Game',
           items: [{ autogenerate: { directory: 'cs50g' } }],
         },
       ],
