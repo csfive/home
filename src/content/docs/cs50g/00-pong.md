@@ -81,6 +81,7 @@ repeat ... until cond
 -- Paddle.lua
 Paddle = Class{}
 -- main.lua
+-- 其实是一个函数调用 require('Paddle')，不过单字符串参数可以省略括号
 require 'Paddle'   -- 自动找 Paddle.lua，不用写扩展名
 
 
@@ -115,30 +116,45 @@ function love.resize(w, h) end      -- 窗口尺寸变化时执行
 ```sh
 # love 只接受一个目录或 .love/.zip 包
 # dir 目录须包含 main.lua 当做入口
+# cd dir && love .
 love dir
 ```
 
 ```lua title="main.lua"
+WINDOW_WIDTH = 1280
+WINDOW_HEIGHT = 720
+
 function love.load()
-    love.window.setMode(1280, 720, {
+    love.window.setMode(WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
         resizable = false,
-        vsync = true,            -- 垂直同步，避免画面撕裂
+        vsync = true, -- 垂直同步，避免画面撕裂
     })
 end
 
 function love.draw()
     love.graphics.printf(
         'Hello World!',
-        0,                       -- x，坐标系从左上角开始，向右向下
-        WINDOW_HEIGHT / 2,       -- y
-        WINDOW_WIDTH,            -- 居中用的宽度
+        0, -- x，坐标系从左上角开始，向右向下
+        WINDOW_HEIGHT / 2, -- y
+        WINDOW_WIDTH, -- 居中用的宽度
         'center'
     )
 end
 ```
 
 ## LÖVE with VS Code
+
+```sh
+brew install love
+brew install stylua
+
+# 插件
+code --install-extension sumneko.lua                            # LuaLS：补全/诊断/格式化
+code --install-extension JohnnyMorganz.stylua                   # 格式化
+```
+
+具体配置可以查看仓库 [csfive/CS50G](https://github.com/csfive/CS50G)
 
 ## 虚拟分辨率与 [push](https://github.com/Ulydev/push)
 
