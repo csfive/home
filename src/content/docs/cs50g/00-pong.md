@@ -1,7 +1,9 @@
 ---
 title: Pong
+description: 哈佛 CS50G 第一讲 Pong 笔记：Lua 速成，LÖVE 循环，虚拟分辨率和最近邻过滤。
 sidebar:
   order: 0
+slug: cs50g/00
 ---
 
 ## Lua 速成
@@ -168,4 +170,4 @@ end
 
 ## 最近邻过滤
 
-## `:` 调用语法糖
+## 冒号调用语法糖
