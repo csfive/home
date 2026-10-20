@@ -130,3 +130,62 @@ html[data-has-hero] body::before {
 .pele-diagram .pele {
   min-width: 560px;
 }
+
+/* -------------------------------------------------------------------------
+   Link card — rendered from `[title](url "description")` by
+   src/plugins/remark-link-card.js, mirroring Starlight's <LinkCard>.
+   ------------------------------------------------------------------------- */
+
+.cs-link-card {
+  align-items: center;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  box-shadow: var(--sl-shadow-sm);
+  color: inherit;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr auto;
+  padding: 1rem;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.cs-link-card:hover {
+  background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+  border-color: var(--sl-color-gray-2);
+}
+
+.cs-link-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cs-link-card__title {
+  color: var(--sl-color-white);
+  font-size: var(--sl-text-lg);
+  font-weight: 600;
+  line-height: var(--sl-line-height-headings);
+}
+
+.cs-link-card__description {
+  color: var(--sl-color-gray-3);
+  line-height: 1.5;
+}
+
+.cs-link-card__icon {
+  color: var(--sl-color-gray-3);
+  flex: none;
+  height: 1.333em;
+  width: 1.333em;
+}
+
+.cs-link-card:hover .cs-link-card__icon {
+  color: var(--sl-color-white);
+}
+
+[dir='rtl'] .cs-link-card__icon {
+  transform: scaleX(-1);
+}

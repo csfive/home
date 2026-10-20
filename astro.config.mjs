@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config'
 import starlight from '@astrojs/starlight'
 import { unified } from '@astrojs/markdown-remark'
 import remarkPeleMermaid from './src/plugins/remark-pele-mermaid.js'
+import remarkLinkCard from './src/plugins/remark-link-card.js'
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,7 +14,7 @@ export default defineConfig({
   },
   markdown: {
     processor: unified({
-      remarkPlugins: [remarkPeleMermaid],
+      remarkPlugins: [remarkLinkCard, remarkPeleMermaid],
     }),
   },
   integrations: [
