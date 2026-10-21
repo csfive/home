@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight'
 import { unified } from '@astrojs/markdown-remark'
 import remarkPeleMermaid from './src/plugins/remark-pele-mermaid.js'
 import remarkLinkCard from './src/plugins/remark-link-card.js'
+import remarkGithubAlerts from './src/plugins/remark-github-alerts.js'
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +15,7 @@ export default defineConfig({
   },
   markdown: {
     processor: unified({
-      remarkPlugins: [remarkLinkCard, remarkPeleMermaid],
+      remarkPlugins: [remarkGithubAlerts, remarkLinkCard, remarkPeleMermaid],
     }),
   },
   integrations: [
@@ -47,6 +48,21 @@ export default defineConfig({
         {
           tag: 'link',
           attrs: { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' },
+        },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'preconnect',
+            href: 'https://chinese-fonts-cdn.netlify.app',
+            crossorigin: 'anonymous',
+          },
+        },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'stylesheet',
+            href: 'https://chinese-fonts-cdn.netlify.app/packages/dymh/dist/DouyinSansBold/result.css',
+          },
         },
       ],
       sidebar: [
