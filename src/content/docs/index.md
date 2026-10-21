@@ -2,7 +2,6 @@
 title: 计算机废物自学指北
 description: 计算机废物自学指北，@mancuoj 的自学笔记
 template: splash
-editUrl: false
 hero:
   title: CS Five
   tagline: 计算机废物自学指北，@mancuoj 的自学笔记
