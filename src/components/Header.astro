@@ -9,15 +9,6 @@ import ThemeSelect from 'virtual:starlight/components/ThemeSelect'
 
 const shouldRenderSearch =
   config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro'
-
-const nav = [
-  { label: '路线图', href: '/roadmap', match: '/roadmap' },
-  { label: 'Missing Semester', href: '/ms/00', match: '/ms' },
-  { label: 'CS50 Games', href: '/cs50g/00', match: '/cs50g' },
-]
-
-const path = Astro.url.pathname
-const isActive = (match: string) => path === match || path.startsWith(`${match}/`)
 ---
 
 <div class="header">
@@ -25,19 +16,6 @@ const isActive = (match: string) => path === match || path.startsWith(`${match}/
     <SiteTitle />
   </div>
   <div class="sl-flex k-header-main">
-    <nav class="k-nav" aria-label="主导航">
-      {
-        nav.map((item) => (
-          <a
-            href={item.href}
-            class:list={{ 'is-active': isActive(item.match) }}
-            aria-current={isActive(item.match) ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        ))
-      }
-    </nav>
     {shouldRenderSearch && <Search />}
   </div>
   <div class="sl-hidden md:sl-flex print:hidden right-group">

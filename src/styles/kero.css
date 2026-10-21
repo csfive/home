@@ -181,27 +181,6 @@ header.header {
   min-width: 0;
 }
 
-.k-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  min-width: 0;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.k-nav a {
-  color: var(--k-text-2);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.15s ease;
-}
-
-.k-nav a:hover,
-.k-nav a.is-active {
-  color: var(--k-text);
-}
-
 .k-header-main site-search {
   display: contents;
 }
@@ -775,16 +754,6 @@ button.sl-menu-button:has(~ :popover-open) {
 :root[data-theme='light'] button.sl-menu-button {
   background: transparent;
   color: var(--k-text);
-}
-
-@media (max-width: 72rem) {
-  :root {
-    --sl-content-pad-x: 3rem;
-  }
-
-  .k-nav {
-    display: none;
-  }
 }
 
 @media (max-width: 50rem) {
