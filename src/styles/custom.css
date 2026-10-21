@@ -145,7 +145,7 @@ html[data-has-hero] body::before {
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 1fr auto;
-  margin-block-end: 1.5rem;
+  margin-block: 1.5rem;
   padding: 1rem;
   text-decoration: none;
   transition:
@@ -197,7 +197,7 @@ html[data-has-hero] body::before {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
-  margin-block-end: 1.5rem;
+  margin-block: 1.5rem;
 }
 
 @media (min-width: 50rem) {
@@ -209,7 +209,7 @@ html[data-has-hero] body::before {
 
 .cs-link-cards > .cs-link-card {
   height: 100%;
-  margin-block-end: 0;
+  margin-block: 0;
 }
 
 /* -------------------------------------------------------------------------
