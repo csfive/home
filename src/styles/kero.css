@@ -886,6 +886,10 @@ button.sl-menu-button:has(~ :popover-open) {
     background: transparent;
   }
 
+  button[data-open-modal] > kbd {
+    display: none;
+  }
+
   .pagination-links {
     margin-top: 3rem;
   }
