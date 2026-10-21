@@ -1,0 +1,22 @@
+---
+const { entry, sidebar } = Astro.locals.starlightRoute
+
+type SidebarEntry = (typeof sidebar)[number]
+
+const hasCurrent = (entries: SidebarEntry[]): boolean =>
+  entries.some((item) => (item.type === 'link' ? item.isCurrent : hasCurrent(item.entries)))
+
+const findSection = (entries: SidebarEntry[]): string | undefined => {
+  for (const item of entries) {
+    if (item.type !== 'group') continue
+    if (hasCurrent(item.entries)) return item.label
+    const nested = findSection(item.entries)
+    if (nested) return nested
+  }
+}
+
+const section = findSection(sidebar)
+---
+
+{section && <p class="k-eyebrow">{section}</p>}
+<h1 id="_top">{entry.data.title}</h1>

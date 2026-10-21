@@ -1,80 +1,14 @@
 /* -------------------------------------------------------------------------
-   CS Five theme
-   Palette + a global grid background. Everything else stays Starlight default.
-   Accent is CS Five blue, #1f6feb (same as the @mancuoj/prettier-config badges):
-   dark #58a6ff, light #0969da.
+   CS Five content components
+   Page chrome and design tokens live in kero.css.
    ------------------------------------------------------------------------- */
-
-:root {
-  color-scheme: dark;
-
-  --grid-line: color-mix(in srgb, #f4f4f5 4.5%, transparent);
-
-  --sl-color-white: #f4f4f5;
-  --sl-color-gray-1: #e4e4e7;
-  --sl-color-gray-2: #c4c4c8;
-  --sl-color-gray-3: #9a9aa2;
-  --sl-color-gray-4: #6b6b70;
-  --sl-color-gray-5: #3f3f46;
-  --sl-color-gray-6: #27272a;
-  --sl-color-gray-7: #18181b;
-  --sl-color-black: #0a0a0b;
-
-  --sl-color-accent-low: #0d1b33;
-  --sl-color-accent: #58a6ff;
-  --sl-color-accent-high: #a5d6ff;
-  --sl-color-text-accent: #58a6ff;
-
-  --sl-color-text: #f4f4f5;
-  --sl-color-text-invert: #0a0a0b;
-  --sl-color-bg: #0a0a0b;
-  --sl-color-bg-nav: #0a0a0b;
-  --sl-color-bg-sidebar: #0a0a0b;
-  --sl-color-bg-inline-code: #18181b;
-  --sl-color-bg-accent: #58a6ff;
-  --sl-color-hairline-light: #27272a;
-  --sl-color-hairline: #27272a;
-  --sl-color-hairline-shade: #27272a;
-}
-
-:root[data-theme='light'] {
-  color-scheme: light;
-
-  --grid-line: color-mix(in srgb, #111113 5%, transparent);
-
-  --sl-color-white: #111113;
-  --sl-color-gray-1: #18181b;
-  --sl-color-gray-2: #52525b;
-  --sl-color-gray-3: #6b6b70;
-  --sl-color-gray-4: #a1a1aa;
-  --sl-color-gray-5: #d4d4d8;
-  --sl-color-gray-6: #e4e4e7;
-  --sl-color-gray-7: #fafafa;
-  --sl-color-black: #ffffff;
-
-  --sl-color-accent-low: #e8f0fd;
-  --sl-color-accent: #0969da;
-  --sl-color-accent-high: #0550ae;
-  --sl-color-text-accent: #0969da;
-
-  --sl-color-text: #111113;
-  --sl-color-text-invert: #ffffff;
-  --sl-color-bg: #ffffff;
-  --sl-color-bg-nav: #ffffff;
-  --sl-color-bg-sidebar: #ffffff;
-  --sl-color-bg-inline-code: #fafafa;
-  --sl-color-bg-accent: #0969da;
-  --sl-color-hairline-light: #e4e4e7;
-  --sl-color-hairline: #e4e4e7;
-  --sl-color-hairline-shade: #e4e4e7;
-}
 
 /* -------------------------------------------------------------------------
    Grid background — only on pages with a hero (home, 404)
    ------------------------------------------------------------------------- */
 
 html[data-has-hero] {
-  background-color: var(--sl-color-bg);
+  background-color: var(--k-bg);
 }
 
 html[data-has-hero] body {
@@ -110,14 +44,14 @@ html[data-has-hero] body::before {
    ------------------------------------------------------------------------- */
 
 .pele {
-  --pele-bg: var(--sl-color-bg);
-  --pele-fg: var(--sl-color-text);
-  --pele-muted: var(--sl-color-gray-3);
-  --pele-line: var(--sl-color-gray-3);
-  --pele-surface: var(--sl-color-gray-6);
-  --pele-surface-alt: var(--sl-color-gray-5);
-  --pele-border: var(--sl-color-gray-4);
-  --pele-accent: var(--sl-color-accent);
+  --pele-bg: var(--k-bg);
+  --pele-fg: var(--k-text);
+  --pele-muted: var(--k-text-3);
+  --pele-line: var(--k-text-3);
+  --pele-surface: var(--k-stroke-soft);
+  --pele-surface-alt: var(--k-stroke);
+  --pele-border: var(--k-text-3);
+  --pele-accent: var(--k-brand);
   --pele-font: var(--sl-font);
   --pele-font-mono: var(--sl-font-mono);
   --pele-radius: 4px;
@@ -138,15 +72,15 @@ html[data-has-hero] body::before {
 
 .cs-link-card {
   align-items: start;
-  border: 1px solid var(--sl-color-gray-5);
-  border-radius: 0.5rem;
-  box-shadow: var(--sl-shadow-sm);
+  border: 1px solid var(--k-stroke);
+  border-radius: 0.625rem;
+  box-shadow: none;
   color: inherit;
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 1fr auto;
   margin-block: 1.5rem;
-  padding: 1rem;
+  padding: 1rem 1.125rem;
   text-decoration: none;
   transition:
     background-color 0.15s ease,
@@ -154,39 +88,40 @@ html[data-has-hero] body::before {
 }
 
 .cs-link-card:hover {
-  background: var(--sl-color-gray-7, var(--sl-color-gray-6));
-  border-color: var(--sl-color-gray-2);
+  background: var(--k-surface);
+  border-color: var(--k-brand);
 }
 
 .cs-link-card__body {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .cs-link-card__title {
-  color: var(--sl-color-white);
-  font-size: var(--sl-text-lg);
+  color: var(--k-text);
+  font-size: 1rem;
   font-weight: 600;
-  line-height: var(--sl-line-height-headings);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
 .cs-link-card__description {
-  color: var(--sl-color-gray-3);
+  color: var(--k-text-2);
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
 .cs-link-card__icon {
   align-self: center;
-  color: var(--sl-color-gray-3);
+  color: var(--k-text-3);
   flex: none;
-  height: 1.333em;
-  width: 1.333em;
+  height: 1.1em;
+  width: 1.1em;
 }
 
 .cs-link-card:hover .cs-link-card__icon {
-  align-self: center;
-  color: var(--sl-color-white);
+  color: var(--k-brand);
 }
 
 [dir='rtl'] .cs-link-card__icon {
@@ -202,7 +137,7 @@ html[data-has-hero] body::before {
 
 @media (min-width: 50rem) {
   .cs-link-cards {
-    gap: 1.5rem;
+    gap: 1rem;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -210,18 +145,4 @@ html[data-has-hero] body::before {
 .cs-link-cards > .cs-link-card {
   height: 100%;
   margin-block: 0;
-}
-
-/* -------------------------------------------------------------------------
-   Fonts
-   ------------------------------------------------------------------------- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.site-title {
-  font-family: 'Douyin Sans', var(--sl-font-system);
-  font-weight: 700;
 }

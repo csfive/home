@@ -40,29 +40,17 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/csfive/home/edit/main/',
       },
-      customCss: ['./src/styles/custom.css'],
+      customCss: ['./src/styles/kero.css', './src/styles/custom.css'],
       components: {
         Head: './src/components/Head.astro',
+        Header: './src/components/Header.astro',
+        PageTitle: './src/components/PageTitle.astro',
+        Footer: './src/components/Footer.astro',
       },
       head: [
         {
           tag: 'link',
           attrs: { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' },
-        },
-        {
-          tag: 'link',
-          attrs: {
-            rel: 'preconnect',
-            href: 'https://chinese-fonts-cdn.netlify.app',
-            crossorigin: 'anonymous',
-          },
-        },
-        {
-          tag: 'link',
-          attrs: {
-            rel: 'stylesheet',
-            href: 'https://chinese-fonts-cdn.netlify.app/packages/dymh/dist/DouyinSansBold/result.css',
-          },
         },
       ],
       sidebar: [
