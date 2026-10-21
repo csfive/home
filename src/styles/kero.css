@@ -825,6 +825,18 @@ button.sl-menu-button:has(~ :popover-open) {
     --sl-content-pad-x: 1.25rem;
   }
 
+  header.header {
+    padding-inline-end: calc(var(--sl-nav-pad-x) + var(--sl-menu-button-size) + 0.5rem);
+  }
+
+  button.sl-menu-button {
+    color: var(--k-text-2);
+  }
+
+  button.sl-menu-button:hover {
+    color: var(--k-text);
+  }
+
   mobile-starlight-toc nav {
     border-top-color: var(--k-stroke);
     background: var(--k-bg);
@@ -879,12 +891,19 @@ button.sl-menu-button:has(~ :popover-open) {
   }
 
   button[data-open-modal] {
-    width: 2.5rem;
-    max-width: 2.5rem;
+    width: 2rem;
+    max-width: 2rem;
     padding: 0;
     justify-content: center;
-    border-color: transparent;
+    border-color: var(--k-stroke);
+    border-radius: 999px;
     background: transparent;
+    color: var(--k-text-2);
+  }
+
+  button[data-open-modal] svg {
+    width: 1.125rem;
+    height: 1.125rem;
   }
 
   button[data-open-modal] > kbd {
