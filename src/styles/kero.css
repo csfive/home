@@ -496,15 +496,33 @@ h1#_top {
 
 .sl-markdown-content .sl-anchor-link {
   position: absolute;
-  inset-block-start: 0;
+  inset-block-start: 0.25em;
   inset-inline-start: -1em;
   margin: 0;
   padding: 0 0.2em 0 0;
   color: var(--k-brand);
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
   line-height: inherit;
   text-decoration: none;
+}
+
+.sl-markdown-content .sl-heading-wrapper.level-h1 .sl-anchor-link {
+  font-size: 2.5rem;
+}
+
+.sl-markdown-content .sl-heading-wrapper.level-h2 .sl-anchor-link {
+  font-size: 1.75rem;
+}
+
+.sl-markdown-content .sl-heading-wrapper.level-h3 .sl-anchor-link {
+  font-size: 1.25rem;
+}
+
+.sl-markdown-content .sl-heading-wrapper.level-h4 .sl-anchor-link,
+.sl-markdown-content .sl-heading-wrapper.level-h5 .sl-anchor-link,
+.sl-markdown-content .sl-heading-wrapper.level-h6 .sl-anchor-link {
+  font-size: 1rem;
 }
 
 .sl-markdown-content .sl-anchor-link .sl-anchor-icon,
