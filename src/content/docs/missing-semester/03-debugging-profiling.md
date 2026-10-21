@@ -1,7 +1,9 @@
 ---
 title: 调试与性能分析
-description: MIT Missing Semester 第四讲笔记：printf 与日志、gdb、strace、内存检查、perf、火焰图与基准测试。
+description: MIT Missing Semester 第四讲笔记
 sidebar:
   order: 3
 slug: ms/03
 ---
+
+[Debugging and Profiling](https://missing.csail.mit.edu/2026/debugging-profiling/ 'MIT Missing Semester 第四讲：官方讲义、视频和课后练习')

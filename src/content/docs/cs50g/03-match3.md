@@ -1,7 +1,9 @@
 ---
 title: Match 3
-description: 哈佛 CS50G 第四讲笔记
+description: 哈佛 CS50G Week 3 笔记
 sidebar:
   order: 3
 slug: cs50g/03
 ---
+
+[Week 3 · Match 3](https://cs50.harvard.edu/games/weeks/3/ '哈佛 CS50G Week 3 官方课程页面：讲义、slides 和源码')

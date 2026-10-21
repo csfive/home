@@ -1,7 +1,9 @@
 ---
 title: Agentic Coding
-description: MIT Missing Semester 第七讲笔记：Agent 的工作原理、适用场景、隐私边界、代码审阅与常见风险。
+description: MIT Missing Semester 第七讲笔记
 sidebar:
   order: 6
 slug: ms/06
 ---
+
+[Agentic Coding](https://missing.csail.mit.edu/2026/agentic-coding/ 'MIT Missing Semester 第七讲：官方讲义、视频和课后练习')

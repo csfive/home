@@ -1,7 +1,9 @@
 ---
 title: Legend of Zelda
-description: 哈佛 CS50G 第六讲笔记
+description: 哈佛 CS50G Week 5 笔记
 sidebar:
   order: 5
 slug: cs50g/05
 ---
+
+[Week 5 · Legend of Zelda](https://cs50.harvard.edu/games/weeks/5/ '哈佛 CS50G Week 5 官方课程页面：讲义、slides 和源码')

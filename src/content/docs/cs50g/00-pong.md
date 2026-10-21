@@ -1,12 +1,12 @@
 ---
 title: Pong
-description: 哈佛 CS50G 第一讲笔记
+description: 哈佛 CS50G Week 0 笔记
 sidebar:
   order: 0
 slug: cs50g/00
 ---
 
-[Week 0 · Pong](https://cs50.harvard.edu/games/weeks/0/ '哈佛 CS50G 第一讲，官方课程页面：讲义、slides 和源码')
+[Week 0 · Pong](https://cs50.harvard.edu/games/weeks/0/ '哈佛 CS50G Week 0 官方课程页面：讲义、slides 和源码')
 
 ## 环境
 
@@ -239,7 +239,7 @@ VIRTUAL_HEIGHT = 243
 
 [Ulydev/push](https://github.com/Ulydev/push/tree/dev) 是个单文件库（`push.lua` 和 `main.lua` 放同级），负责算缩放比和偏移，把虚拟坐标映射到窗口，窗口缩放时重算。
 
-```lua
+```lua title="main.lua"
 push = require 'push'
 
 function love.load()
@@ -308,11 +308,11 @@ love.graphics.scale(scale.x, scale.y)         -- 1280 / 432 ≈ 2.96
 love.graphics.setDefaultFilter(min, mag, anisotropy)
 ```
 
-| 参数         | 什么时候生效               | 取值                     | 默认       |
-| ------------ | -------------------------- | ------------------------ | ---------- |
-| `min`        | 纹理被缩小                 | `'linear'` / `'nearest'` | `'linear'` |
-| `mag`        | 纹理被放大（省略同 `min`） | 同上                     | `'linear'` |
-| `anisotropy` | 斜视角的清晰度             | 数字                     | `1`        |
+| 参数         | 什么时候生效   | 取值                     | 默认       |
+| ------------ | -------------- | ------------------------ | ---------- |
+| `min`        | 纹理被缩小     | `'linear'` / `'nearest'` | `'linear'` |
+| `mag`        | 纹理被放大     | 同上                     | `'linear'` |
+| `anisotropy` | 斜视角的清晰度 | 数字                     | `1`        |
 
 默认 `linear` / `linear`，不设就是糊的。
 
