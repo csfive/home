@@ -266,6 +266,11 @@ button[data-open-modal] > kbd kbd {
   color: var(--k-text);
 }
 
+.social-icons a svg {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+
 /* Theme picker: one icon button, like the GitHub link, with a small menu. */
 theme-picker {
   position: relative;
@@ -309,8 +314,8 @@ theme-picker[data-mode='dark'] .theme-picker__icon[data-theme-icon='dark'] {
 }
 
 .theme-picker__icon svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
 .theme-picker__menu {
@@ -361,8 +366,8 @@ theme-picker[data-mode='dark'] .theme-picker__icon[data-theme-icon='dark'] {
 
 .theme-picker__option svg {
   flex: none;
-  width: 1rem;
-  height: 1rem;
+  width: 1.0625rem;
+  height: 1.0625rem;
 }
 
 .theme-picker__check {
