@@ -730,48 +730,9 @@ starlight-toc nav a[aria-current='true'] {
   flex-direction: column;
 }
 
-/* ---------- Search dialog ---------- */
-
-dialog {
-  border-color: var(--k-stroke);
-  border-radius: 0.875rem;
-  background: var(--k-bg);
-  box-shadow: 0 24px 64px -16px rgb(0 0 0 / 55%);
-}
-
-@media (min-width: 50rem) {
-  dialog {
-    margin-top: 10vh;
-    border-radius: 0.875rem;
-  }
-
-  .dialog-frame {
-    padding: 0.5rem;
-  }
-}
-
-#starlight__search {
-  --pagefind-ui-primary: var(--k-brand);
-  --pagefind-ui-text: var(--k-text-2);
-  --pagefind-ui-font: var(--sl-font);
-  --pagefind-ui-background: var(--k-bg);
-  --pagefind-ui-border: var(--k-stroke);
-  --pagefind-ui-border-radius: 0.5rem;
-  --pagefind-ui-tag: var(--k-stroke-soft);
-}
-
-#starlight__search .pagefind-ui__search-input {
-  border: 1px solid var(--k-stroke);
-  background: var(--k-bg-soft);
-  color: var(--k-text);
-  outline: none;
-  box-shadow: none;
-}
-
+/* Keep the browser focus ring from painting a blue outline over the theme accent. */
 #starlight__search .pagefind-ui__search-input:focus {
-  border-color: var(--k-brand);
   outline: none;
-  box-shadow: 0 0 0 1px var(--k-brand);
 }
 
 /* ---------- Mobile ---------- */
