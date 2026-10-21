@@ -87,6 +87,11 @@ html[data-has-hero] body::before {
     border-color 0.15s ease;
 }
 
+.sl-markdown-content a.cs-link-card,
+.sl-markdown-content a.cs-link-card:hover {
+  text-decoration: none;
+}
+
 .cs-link-card:hover {
   background: var(--k-surface);
   border-color: var(--k-brand);

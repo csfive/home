@@ -234,7 +234,10 @@ button[data-open-modal] svg {
   height: 14px;
 }
 
-button[data-open-modal] kbd {
+button[data-open-modal] > kbd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.05em;
   padding: 0.05rem 0.35rem;
   border: 1px solid var(--k-stroke);
   border-radius: 0.3125rem;
@@ -243,6 +246,15 @@ button[data-open-modal] kbd {
   font-family: var(--sl-font);
   font-size: 0.6875rem;
   line-height: 1.5;
+}
+
+button[data-open-modal] > kbd kbd {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .right-group {
@@ -696,28 +708,6 @@ starlight-toc nav a[aria-current='true'] {
 .k-footer {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-}
-
-footer .meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-top: 0;
-  color: var(--k-text-3);
-  font-family: var(--sl-font-mono);
-  font-size: 0.6875rem;
-}
-
-footer .meta a {
-  color: var(--k-text-3);
-  text-decoration: none;
-}
-
-footer .meta a:hover {
-  color: var(--k-text);
 }
 
 /* ---------- Search dialog ---------- */

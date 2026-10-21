@@ -37,9 +37,6 @@ export default defineConfig({
           href: 'https://github.com/csfive/home',
         },
       ],
-      editLink: {
-        baseUrl: 'https://github.com/csfive/home/edit/main/',
-      },
       customCss: ['./src/styles/kero.css', './src/styles/custom.css'],
       components: {
         Head: './src/components/Head.astro',
