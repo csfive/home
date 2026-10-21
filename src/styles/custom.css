@@ -88,8 +88,10 @@ html[data-has-hero] body::before {
 }
 
 .sl-markdown-content a.cs-link-card,
-.sl-markdown-content a.cs-link-card:hover {
-  text-decoration: none;
+.sl-markdown-content a.cs-link-card:hover,
+.sl-markdown-content a.cs-link-card:focus,
+.sl-markdown-content a.cs-link-card * {
+  text-decoration: none !important;
 }
 
 .cs-link-card:hover {
