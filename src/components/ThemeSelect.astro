@@ -1,0 +1,146 @@
+---
+import { Icon } from '@astrojs/starlight/components'
+
+const t = Astro.locals.t
+const label = t('themeSelect.accessibleLabel')
+---
+
+<theme-picker class="theme-picker" data-mode="auto">
+  <button
+    type="button"
+    class="theme-picker__button"
+    aria-label={label}
+    aria-haspopup="menu"
+    aria-expanded="false"
+  >
+    <span class="theme-picker__icon" data-theme-icon="auto"><Icon name="laptop" /></span>
+    <span class="theme-picker__icon" data-theme-icon="light"><Icon name="sun" /></span>
+    <span class="theme-picker__icon" data-theme-icon="dark"><Icon name="moon" /></span>
+  </button>
+
+  <div class="theme-picker__menu" role="menu" aria-label={label} hidden>
+    <button
+      type="button"
+      class="theme-picker__option"
+      role="menuitemradio"
+      aria-checked="true"
+      data-theme-value="auto"
+    >
+      <Icon name="laptop" />
+      <span>{t('themeSelect.auto')}</span>
+      <span class="theme-picker__check" aria-hidden="true"></span>
+    </button>
+    <button
+      type="button"
+      class="theme-picker__option"
+      role="menuitemradio"
+      aria-checked="false"
+      data-theme-value="light"
+    >
+      <Icon name="sun" />
+      <span>{t('themeSelect.light')}</span>
+      <span class="theme-picker__check" aria-hidden="true"></span>
+    </button>
+    <button
+      type="button"
+      class="theme-picker__option"
+      role="menuitemradio"
+      aria-checked="false"
+      data-theme-value="dark"
+    >
+      <Icon name="moon" />
+      <span>{t('themeSelect.dark')}</span>
+      <span class="theme-picker__check" aria-hidden="true"></span>
+    </button>
+  </div>
+</theme-picker>
+
+<script>
+  type Theme = 'auto' | 'light' | 'dark'
+
+  const storageKey = 'starlight-theme'
+  const systemTheme = () => (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+
+  const readTheme = (): Theme => {
+    const stored = localStorage.getItem(storageKey)
+    return stored === 'light' || stored === 'dark' ? stored : 'auto'
+  }
+
+  const applyTheme = (theme: Theme) => {
+    document.documentElement.dataset.theme = theme === 'auto' ? systemTheme() : theme
+    if (theme === 'auto') localStorage.removeItem(storageKey)
+    else localStorage.setItem(storageKey, theme)
+    document.dispatchEvent(new CustomEvent('starlight-theme-change'))
+  }
+
+  class ThemePicker extends HTMLElement {
+    private button!: HTMLButtonElement
+    private menu!: HTMLElement
+    private options: HTMLButtonElement[] = []
+
+    connectedCallback() {
+      this.button = this.querySelector<HTMLButtonElement>('.theme-picker__button')!
+      this.menu = this.querySelector<HTMLElement>('.theme-picker__menu')!
+      this.options = [...this.querySelectorAll<HTMLButtonElement>('.theme-picker__option')]
+
+      this.button.addEventListener('click', (event) => {
+        event.stopPropagation()
+        this.menu.hidden ? this.open() : this.close()
+      })
+
+      this.options.forEach((option) => {
+        option.addEventListener('click', () => {
+          applyTheme((option.dataset.themeValue as Theme) ?? 'auto')
+          this.close()
+          this.button.focus()
+        })
+      })
+
+      document.addEventListener('click', (event) => {
+        if (!this.contains(event.target as Node)) this.close()
+      })
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !this.menu.hidden) {
+          this.close()
+          this.button.focus()
+        }
+      })
+
+      document.addEventListener('starlight-theme-change', () => this.sync())
+
+      this.addEventListener('focusout', (event) => {
+        if (!this.contains(event.relatedTarget as Node)) this.close()
+      })
+
+      matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+        if (readTheme() === 'auto') {
+          document.documentElement.dataset.theme = systemTheme()
+        }
+      })
+
+      this.sync()
+    }
+
+    private open() {
+      this.menu.hidden = false
+      this.button.setAttribute('aria-expanded', 'true')
+      this.options.find((option) => option.getAttribute('aria-checked') === 'true')?.focus()
+    }
+
+    private close() {
+      this.menu.hidden = true
+      this.button.setAttribute('aria-expanded', 'false')
+    }
+
+    private sync() {
+      const current = readTheme()
+      this.dataset.mode = current
+      this.options.forEach((option) => {
+        option.setAttribute('aria-checked', String(option.dataset.themeValue === current))
+      })
+    }
+  }
+
+  if (!customElements.get('theme-picker')) customElements.define('theme-picker', ThemePicker)
+</script>

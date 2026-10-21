@@ -249,21 +249,16 @@ button[data-open-modal] > kbd kbd {
   display: none;
 }
 
-.social-icons a,
-starlight-theme-select label {
+.social-icons a {
   display: inline-grid;
   place-items: center;
+  width: 2rem;
   height: 2rem;
   border-radius: 999px;
   color: var(--k-text-2);
   transition:
     color 0.15s ease,
-    background 0.15s ease,
-    border-color 0.15s ease;
-}
-
-.social-icons a {
-  width: 2rem;
+    background 0.15s ease;
 }
 
 .social-icons a:hover {
@@ -271,40 +266,121 @@ starlight-theme-select label {
   color: var(--k-text);
 }
 
-starlight-theme-select label {
-  width: auto;
-  padding: 0 0.625rem;
-  border: 1px solid var(--k-stroke);
+/* Theme picker: one icon button, like the GitHub link, with a small menu. */
+theme-picker {
+  position: relative;
+  display: flex;
 }
 
-starlight-theme-select label:hover {
-  border-color: var(--k-text-3);
-  background: transparent;
-}
-
-starlight-theme-select .label-icon {
-  inset-inline-start: 0.625rem;
-}
-
-starlight-theme-select .caret {
-  inset-inline-end: 0.625rem;
-}
-
-starlight-theme-select select {
-  width: auto;
-  min-width: 3.75rem;
+.theme-picker__button {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
   height: 2rem;
-  margin-inline: 0;
-  padding: 0 1.25rem 0 1.5rem;
+  padding: 0;
   border: 0;
-  background-color: transparent;
+  border-radius: 999px;
+  background: transparent;
   color: var(--k-text-2);
-  font-size: 0.75rem;
-  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
 }
 
-starlight-theme-select svg {
+.theme-picker__button:hover {
+  background: var(--k-pill);
+  color: var(--k-text);
+}
+
+.theme-picker__button:focus-visible {
+  outline: 1px solid var(--k-brand);
+  outline-offset: 2px;
+}
+
+.theme-picker__icon {
+  display: none;
+}
+
+theme-picker[data-mode='auto'] .theme-picker__icon[data-theme-icon='auto'],
+theme-picker[data-mode='light'] .theme-picker__icon[data-theme-icon='light'],
+theme-picker[data-mode='dark'] .theme-picker__icon[data-theme-icon='dark'] {
+  display: flex;
+}
+
+.theme-picker__icon svg {
   width: 1rem;
+  height: 1rem;
+}
+
+.theme-picker__menu {
+  position: absolute;
+  inset-block-start: calc(100% + 0.5rem);
+  inset-inline-end: 0;
+  z-index: 70;
+  min-width: 8.5rem;
+  padding: 0.25rem;
+  border: 1px solid var(--k-stroke);
+  border-radius: 0.625rem;
+  background: var(--k-bg-soft);
+  box-shadow: 0 16px 40px -12px rgb(0 0 0 / 55%);
+}
+
+.theme-picker__menu[hidden] {
+  display: none;
+}
+
+.theme-picker__option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.4rem 0.55rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--k-text-2);
+  font-family: var(--sl-font);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  text-align: start;
+  cursor: pointer;
+}
+
+.theme-picker__option:hover,
+.theme-picker__option:focus-visible {
+  background: var(--k-pill);
+  color: var(--k-text);
+  outline: none;
+}
+
+.theme-picker__option[aria-checked='true'] {
+  background: var(--k-brand-soft);
+  color: var(--k-text);
+}
+
+.theme-picker__option svg {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+}
+
+.theme-picker__check {
+  width: 0.35rem;
+  height: 0.35rem;
+  margin-inline-start: auto;
+  border-radius: 50%;
+  background: var(--k-brand);
+  opacity: 0;
+}
+
+.theme-picker__option[aria-checked='true'] .theme-picker__check {
+  opacity: 1;
+}
+
+.mobile-preferences .theme-picker__menu {
+  inset-block-start: auto;
+  inset-block-end: calc(100% + 0.5rem);
 }
 
 /* ---------- Sidebar ---------- */

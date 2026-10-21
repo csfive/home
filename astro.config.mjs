@@ -43,6 +43,7 @@ export default defineConfig({
         Header: './src/components/Header.astro',
         PageTitle: './src/components/PageTitle.astro',
         Footer: './src/components/Footer.astro',
+        ThemeSelect: './src/components/ThemeSelect.astro',
       },
       head: [
         {
