@@ -512,6 +512,7 @@ theme-picker[data-mode='dark'] .theme-picker__icon[data-theme-icon='dark'] {
 
 .main-pane .content-panel + .content-panel {
   border-top: 0;
+  padding-top: 1rem;
 }
 
 .main-pane .content-panel:last-of-type {

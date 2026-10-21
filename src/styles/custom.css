@@ -94,6 +94,11 @@ html[data-has-hero] body::before {
   text-decoration: none !important;
 }
 
+.sl-markdown-content > .cs-link-card:first-child,
+.sl-markdown-content > .cs-link-cards:first-child {
+  margin-block-start: 0;
+}
+
 .cs-link-card:hover {
   background: var(--k-surface);
   border-color: var(--k-brand);
