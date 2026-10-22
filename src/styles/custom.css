@@ -59,6 +59,36 @@ html[data-has-hero] body::before {
 
 .pele-diagram {
   overflow-x: auto;
+  scrollbar-color: var(--k-stroke) transparent;
+  scrollbar-width: thin;
+}
+
+.pele-diagram::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pele-diagram::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pele-diagram::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--k-stroke);
+}
+
+@media (max-width: 36rem) {
+  .pele-diagram::after {
+    position: sticky;
+    left: 0;
+    display: block;
+    width: max-content;
+    padding-top: 0.75rem;
+    color: var(--k-text-3);
+    content: '横向滑动查看完整路线图 →';
+    font-family: var(--sl-font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+  }
 }
 
 .pele-diagram .pele {

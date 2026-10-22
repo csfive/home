@@ -15,7 +15,7 @@
   --k-stroke-soft: #23271f;
   --k-text: #f4f6f0;
   --k-text-2: #a4ab9b;
-  --k-text-3: #6f7768;
+  --k-text-3: #7e8678;
   --k-brand: #c3ec74;
   --k-brand-bright: #e2ff9e;
   --k-brand-deep: #5f8f1f;
@@ -85,7 +85,7 @@
   --k-stroke-soft: #eef0ea;
   --k-text: #13160f;
   --k-text-2: #5d6356;
-  --k-text-3: #8b9184;
+  --k-text-3: #6b7163;
   --k-brand: #4f7d14;
   --k-brand-bright: #3c610c;
   --k-brand-deep: #5f8f1f;
@@ -480,17 +480,24 @@ theme-picker[data-mode='dark'] .theme-picker__icon[data-theme-icon='dark'] {
     width: 14.5rem;
   }
 
+  /* Starlight fixes the TOC rail and sets `width: 100%`, which resolves
+     against the viewport instead of the 232px rail. Pin it to the rail. */
+  .right-sidebar {
+    inset-inline: auto 0;
+    width: 14.5rem;
+  }
+
   :root[data-has-sidebar][data-has-toc] .main-pane {
     width: calc(100% - 14.5rem);
   }
 }
 
 @media (max-width: 75rem) {
-  .right-sidebar-panel {
+  .right-sidebar-container {
     display: none;
   }
 
-  :root[data-has-sidebar] .main-pane {
+  :root[data-has-sidebar][data-has-toc] .main-pane {
     width: 100%;
   }
 }
@@ -663,6 +670,24 @@ h1#_top {
   box-shadow: none;
 }
 
+.expressive-code pre {
+  scrollbar-color: var(--k-stroke) transparent;
+  scrollbar-width: thin;
+}
+
+.expressive-code pre::-webkit-scrollbar {
+  height: 6px;
+}
+
+.expressive-code pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.expressive-code pre::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--k-stroke);
+}
+
 .expressive-code .frame .header {
   border-bottom: 1px solid var(--k-stroke);
   background: var(--k-surface);
@@ -716,6 +741,11 @@ h1#_top {
 
 .right-sidebar {
   border-inline-start: 1px solid var(--k-stroke);
+  scrollbar-width: none;
+}
+
+.right-sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .right-sidebar-panel {
@@ -841,7 +871,9 @@ button.sl-menu-button:has(~ :popover-open) {
     --sl-content-pad-x: 1.25rem;
   }
 
-  header.header {
+  /* Only pages with a sidebar render the menu toggle; keep the search button
+     on the normal 24px gutter everywhere else. */
+  :root[data-has-sidebar] header.header {
     padding-inline-end: calc(var(--sl-nav-pad-x) + var(--sl-menu-button-size) + 0.5rem);
   }
 

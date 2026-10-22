@@ -16,7 +16,8 @@ const findSection = (entries: SidebarEntry[]): string | undefined => {
 }
 
 const section = findSection(sidebar)
+const isLanding = entry.id === '' && entry.data.template === 'splash'
 ---
 
-{section && <p class="k-eyebrow">{section}</p>}
-<h1 id="_top">{entry.data.title}</h1>
+{!isLanding && section && <p class="k-eyebrow">{section}</p>}
+{!isLanding && <h1 id="_top">{entry.data.title}</h1>}
