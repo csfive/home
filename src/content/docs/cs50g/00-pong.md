@@ -19,7 +19,7 @@ LÖVE 11.5 自带运行时（LuaJIT），不用单独装 Lua。其他平台见 [
 
 ### 跑起来
 
-love 只接受一个目录或 `.love` / `.zip` 包，目录里必须有 `main.lua`：
+`love` 只接受一个目录或 `.love` / `.zip` 包，目录里必须有 `main.lua`：
 
 ```sh
 love 00-pong            # 从仓库根目录跑某一周
@@ -40,14 +40,14 @@ code --install-extension JohnnyMorganz.stylua
 
 ### LuaJIT
 
-LuaJIT 是用汇编实现的 Lua 5.1 兼容运行时，带 JIT。`main.lua` 跑在 LÖVE 内置的 LuaJIT 里。
+LuaJIT 是用 C 和汇编实现的 Lua 5.1 兼容运行时，带 JIT。`main.lua` 跑在 LÖVE 内置的 LuaJIT 里。
 
 LÖVE 11.5 在 ARM 上启动时会执行 `jit.off()`，所以实际是 LuaJIT 的解释器在执行，语义仍是 Lua 5.1，只是没有 JIT 编译。
 
 ```lua
 print(_VERSION)           --> Lua 5.1
 print(jit.version)        --> LuaJIT 2.1.1700008891
-print(jit.arch)           --> arm64
+print(jit.arch)           --> arm64（Apple Silicon）
 
 local jitOn = jit.status()
 print(jitOn)              --> false，JIT 被关掉了
@@ -178,13 +178,13 @@ local Paddle = require 'Paddle'
 
 ### 游戏循环
 
-游戏循环的本质是「翻页动画」：
+游戏循环就是「翻页动画」：
 
 ```
 处理输入 → 更新状态 → 渲染 → 下一帧
 ```
 
-love 自己维护主循环，我们只需要实现几个回调：
+`love` 自己维护主循环，我们只需要实现几个回调：
 
 | 回调                   | 时机         | 用途                                      |
 | ---------------------- | ------------ | ----------------------------------------- |

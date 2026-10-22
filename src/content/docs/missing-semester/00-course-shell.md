@@ -4,8 +4,6 @@ description: MIT Missing Semester 第一讲笔记
 sidebar:
   order: 0
 slug: ms/00
-tableOfContents:
-  maxHeadingLevel: 4
 ---
 
 [Course Overview + Introduction to the Shell](https://missing.csail.mit.edu/2026/course-shell/ 'MIT Missing Semester 第一讲：官方讲义、视频和课后练习')
@@ -22,7 +20,7 @@ tableOfContents:
 
 ### 终端：一块会收发字节的画布
 
-上世纪六七十年代，主机在机房，你桌上放一台 VT100 或电传打字机（ASR-33），一根串口线连过去。
+上世纪六七十年代，主机在机房，你桌上放一台 VT100 或电传打字机（ASR-33），一条串口线连过去。
 
 Terminal 这个词的原意就是「线路的末端」。那台机器**没有任何计算能力**，只做两件事：
 
@@ -71,8 +69,6 @@ ls -la
 4. 执行：`fork` + `exec`，父进程 `wait`
 5. 拿到返回码，打印下一个提示符
 
-下面按这个顺序拆开。
-
 ## 一条命令的旅程
 
 ### 切词：空白不是分隔符那么简单
@@ -96,7 +92,7 @@ python3 -c 'import sys; print(sys.argv[1:])' "hello world"
 # ['hello world']
 ```
 
-Shell 传给程序的不是原始字符串，而是 `argv` 数组。C 的 `argc/argv`、Java 的 `String[] args`、Python 的 `sys.argv` 都是这个东西。
+Shell 传给程序的是 `argv` 数组。C 的 `argc/argv`、Java 的 `String[] args`、Python 的 `sys.argv` 都是这个东西。
 
 ### 引号：告诉 Shell 哪些空白和字符不要碰
 
@@ -169,7 +165,7 @@ printf '[%s]\n' $files
 
 `*` 不是原样传给程序的参数，Shell 会先按文件名展开，再把结果塞进 `argv`。
 
-#### 先看一个目录
+#### 目录示例
 
 ```text
 project/
@@ -332,8 +328,6 @@ else:
 
 ## 打开终端后发生了什么
 
-前面一直在讲 Shell 怎么处理命令。现在回到更底层：这个 Shell 本身是怎么被终端启动的。
-
 点开终端图标，看起来只是多了一个窗口，背后其实有三个角色：
 
 | 角色       | 例子                   | 负责                       |
@@ -346,7 +340,7 @@ else:
 
 ### 先补一个 Unix 世界观：一切皆文件
 
-`stdin` / `stdout` 不是什么特殊通道；在 Shell 和系统调用层面，它们就是**文件描述符**（file descriptor，fd）0/1/2：
+`stdin` / `stdout` / `stderr` 在 Shell 和系统调用层面就是**文件描述符**（file descriptor，fd）0/1/2：
 
 | fd  | 名字   | 默认指向 |
 | --- | ------ | -------- |
@@ -358,7 +352,7 @@ Unix 把很多东西都抽象成文件：普通文件、目录、设备、管道
 
 fd 是进程级的。`fork` 后子进程继承一份 fd 表，`exec` 替换程序但保留 fd。所以 Shell 只要在 `exec` 之前改掉 fd 的指向，命令就会自动继承。
 
-重定向和管道，本质都是这件事：
+重定向和管道，做的都是同一件事：
 
 ```bash
 ls > out.txt      # Shell 把 fd1 指向 out.txt，再 exec ls
@@ -383,7 +377,7 @@ lsof -p $$ -a -d 0,1,2
 
 ### 为什么需要 PTY
 
-Shell 是普通程序，它不知道自己在 GUI 窗口里。它期望 fd 0/1/2 指向一个「终端设备」，这样下面这些东西才工作：
+Shell 是普通程序，它不知道自己在 GUI 窗口里。它期望 fd 0/1/2 指向一个「终端设备」，这样这些功能才工作：
 
 - `isatty(0)` 返回真
 - 行编辑、回显、`Ctrl-C`
@@ -399,7 +393,7 @@ PTY 是一对设备：
 
 从「一切皆文件」的角度看，PTY 只是内核提供的一对设备文件：Shell 的 fd 0/1/2 指向 slave，终端模拟器读写 master。
 
-终端模拟器把字节写到 master，Shell 从 slave 读到；Shell 把输出写到 slave，终端模拟器从 master 读到。它像一根双向管道，但 slave 端多了「终端语义」：行缓冲、回显、信号、窗口大小。
+终端模拟器把字节写到 master，Shell 从 slave 读到。Shell 把输出写到 slave，终端模拟器从 master 读到。它像一个双向管道，但 slave 端多了「终端语义」：行缓冲、回显、信号、窗口大小。
 
 ### 启动顺序
 
@@ -409,7 +403,7 @@ PTY 是一对设备：
 4. 子进程 `exec` 成 Shell
 5. Shell 往 slave 打印提示符，终端模拟器从 master 读到并画出来
 
-很多终端模拟器会用 `forkpty()` 把 1–3 步打包；`exec` Shell 还是后面单独做。
+很多终端模拟器会用 `forkpty()` 把 1 到 3 步打包。`exec` Shell 还是后面单独做。
 
 ### 一次按键的旅程
 
@@ -429,11 +423,9 @@ PTY 是一对设备：
   → 终端模拟器从 master 读到，渲染到窗口
 ```
 
-这里最关键的一点：
-
 - 终端模拟器不知道 `ls` 是什么，它只转发字节
 - Shell 不负责字体、颜色和窗口渲染，它只读写 slave
-- 默认规范模式下，按键先由行规程整理成一行；bash 的 readline 还会接管补全和历史
+- 默认规范模式下，按键先由行规程整理成一行。bash 的 readline 还会接管补全和历史
 
 ### PTY 的两端
 
@@ -447,11 +439,11 @@ tty                          # 当前终端设备，通常是 /dev/pts/N
 ps -p $$ -o tty=,comm=       # 当前 Shell 挂在哪个终端上
 ```
 
-所以 `tty` 打印的不是「哪个窗口」，而是 slave 端的设备名。
+所以 `tty` 打印的是 slave 端的设备名。
 
 ### 行规程：按键在到达 Shell 之前先经过内核
 
-行规程（line discipline）不是独立程序，是内核 TTY 驱动的一部分。它负责把键盘字节整理成 Shell 能读的行。
+行规程（line discipline）属于内核 TTY 驱动。它负责把键盘字节整理成 Shell 能读的行。
 
 默认的规范模式（canonical mode）下，行规程负责这些事：
 
@@ -483,19 +475,204 @@ PTY 的生命周期和终端窗口绑在一起：打开终端时创建，关闭�
 - 进程忽略了 `SIGHUP`：`nohup` 或 `disown -h`
 - 进程的 PTY 不在这个窗口上：`tmux` / `screen` 的 server 持有自己的 PTY，关闭窗口只是断开 client，Shell 仍然挂在 server 的 PTY 上
 
+## 重定向和管道
+
+前面「一切皆文件」那节已经看过：`stdin` / `stdout` / `stderr` 就是 fd 0/1/2，默认都指向终端。程序只读写这三个 fd，Shell 在 `exec` 前改掉它们的指向，就得到重定向和管道。
+
+| 写法                    | fd 变化                | 作用                               |
+| ----------------------- | ---------------------- | ---------------------------------- |
+| `ls > files.txt`        | fd1 → `files.txt`      | 标准输出写入文件，已存在则清空     |
+| `echo new >> notes.txt` | fd1 → `notes.txt` 末尾 | 标准输出追加                       |
+| `wc -l < notes.txt`     | fd0 ← `notes.txt`      | 标准输入从文件读                   |
+| `ls /nope 2> err.txt`   | fd2 → `err.txt`        | 标准错误写入文件                   |
+| `ls \| grep foo`        | 左 fd1 → 右 fd0        | 前一个命令的 stdout 接到后一个命令 |
+
+前四行是重定向，改的是 fd 指向哪个文件。最后一行是管道，改的是 fd 接到另一个进程。
+
+### 重定向是什么
+
+重定向就是 Shell 在启动命令前，把 fd 0/1/2 从终端改到文件。程序只看到 fd，不关心它后面是终端还是文件。
+
+前面表里的四种写法就是这件事：`>` 和 `>>` 改 fd 1，`<` 改 fd 0，`2>` 改 fd 2。以 `cmd > out` 为例，Shell 启动 `cmd` 前把 fd 1 指向 `out`，`cmd` 自己不用打开文件。
+
+### 重定向的顺序与截断
+
+`2>&1` 最容易写错。它让 fd 2 指向 fd 1 当前指向的地方。重定向从左到右执行：
+
+```bash
+cmd > out 2>&1     # fd1 → out，fd2 复制 fd1，两个都进 out
+cmd 2>&1 > out     # fd2 先复制终端，fd1 再指向 out
+```
+
+第二条里，stderr 留在终端，只有 stdout 进 `out`。
+
+`>` 还会在命令启动前就把文件截断。命令随后失败，原内容也回不来。`set -C`（`noclobber`）可以阻止覆盖已有文件，`>|` 强制覆盖。
+
+### 持久重定向
+
+`exec` 改的是 Shell 自己的 fd，常用于脚本里临时重定向：
+
+```bash
+exec 3>&1              # 把 stdout 复制到 fd 3
+exec >log 2>&1         # Shell 的 stdout/stderr 都进 log
+...
+exec >&3 2>&3          # 恢复
+exec 3>&-
+```
+
+0/1/2 只是默认的三个 fd，进程还可以有更多 fd。这里用空闲的 3 暂存 stdout；`exec >&3 2>&3` 从 3 恢复，`exec 3>&-` 把 3 关掉。
+
+### sudo 与重定向
+
+`sudo cmd > /root/out` 里，`>` 是当前用户的 Shell 处理的。Shell 会先打开 `/root/out`，再运行 `sudo`；普通用户通常没有权限，`cmd` 还没开始运行就失败了。
+
+要让 root 处理整条命令，包括重定向：
+
+```bash
+sudo sh -c 'cmd > /root/out'
+```
+
+`sh -c` 把后面整段字符串交给 root 的 Shell，`>` 也就由 root 打开。
+
+### 管道是什么
+
+管道把一个命令的 stdout 直接交给另一个命令的 stdin。pipe 是内核里的一块缓冲区，有两端：读端和写端。
+
+```bash
+ls | grep foo
+```
+
+`ls` 的 stdout 不再打到终端，而是写进一个 pipe；`grep` 的 stdin 从这个 pipe 读。两边同时跑，Shell 不会先把 `ls` 的输出存起来。
+
+`a | b | c` 会接出两个 pipe：
+
+```text
+a: fd1 ──▶ pipe1 写端
+b: fd0 ◀── pipe1 读端
+   fd1 ──▶ pipe2 写端
+c: fd0 ◀── pipe2 读端
+```
+
+Shell 建好 pipe 后，把上一个命令的 stdout 接到写端，下一个命令的 stdin 接到读端，再启动这些命令。父 Shell 关掉多余的 pipe fd，等它们结束。
+
+- 三个进程是并发跑的，不是等 `a` 结束再跑 `b`。
+- 默认只接 fd 1；stderr 还在终端。
+- pipe 有内核缓冲区（Linux 默认 64 KiB）。读得慢，写端会阻塞，形成反压。
+- 所有写端关闭后，读端才读到 EOF。谁漏关写端，读端就会一直等。
+- 读端提前退出，写端会收到 `SIGPIPE`，默认终止，退出码 141。`yes | head -n 3` 就是这种情况。
+
+### 管道的退出状态
+
+`$?` 只看最后一段：
+
+```bash
+false | true
+echo "$?"          # 0
+```
+
+这在脚本里很容易误判：前面的命令失败了，返回值仍然是 0。要看每一段，用 bash 的 `PIPESTATUS`（zsh 是 `pipestatus`）：
+
+```bash
+false | true
+printf '%s\n' "${PIPESTATUS[@]}"   # 1 0
+```
+
+`PIPESTATUS` 会被下一条命令覆盖，所以要先存下来：
+
+```bash
+false | true
+status=("${PIPESTATUS[@]}")
+printf '%s\n' "${status[@]}"
+```
+
+如果想让管道在任意一段失败时返回非零，打开 `pipefail`：
+
+```bash
+set -o pipefail
+false | true
+echo "$?"          # 1
+```
+
+`pipefail` 和 `set -e` 一起用时，`yes | head -n 1` 会因为 `yes` 收到 `SIGPIPE` 而让脚本退出。`grep` 没匹配也返回 1，这类命令要放在 `if` 里，或者显式处理。
+
+### 管道和重定向一起用
+
+`make` 的正常输出走 stdout，错误走 stderr。管道默认只接 stdout，所以 `make | grep error` 会漏掉错误。
+
+把 stderr 并到 stdout，再进管道：
+
+```bash
+make 2>&1 | tee build.log | grep -i error
+```
+
+分三步看：
+
+1. `2>&1` 让 `make` 的 stderr 指向 stdout 当前的目标，也就是后面的 pipe。
+2. `tee build.log` 把收到的内容写一份到 `build.log`，同时继续往 stdout 传。
+3. `grep -i error` 从传下来的内容里筛出包含 `error` 的行。
+
+`2>&1` 的位置很重要：
+
+```bash
+make 2>&1 | tee build.log   # make 的 stderr 进管道
+make | tee build.log 2>&1   # 2>&1 作用在 tee 上，make 的 stderr 还在终端
+```
+
+`tee` 默认覆盖 `build.log`，`tee -a` 追加。
+
+### 缓冲：为什么日志顺序不对
+
+这里的缓冲是程序自己的输出缓冲，不是前面 pipe 的内核缓冲区。很多程序不会每写一次就立刻落到文件，而是先攒在内存缓冲区里：
+
+- stdout 连终端时，遇到换行符 `\n` 就写出去。这叫行缓冲。
+- stdout 连文件或管道时，会先攒一大块，攒满或程序退出才写。这叫全缓冲。
+- stderr 通常不攒，直接写。这叫无缓冲。
+
+所以程序先往 stdout 写 `out`、再往 stderr 写 `err` 时，`out` 可能还在缓冲区里，`err` 已经写进文件。两个流都重定向到同一个文件，log 里就可能先看到 `err`，再看到 `out`：
+
+```bash
+cmd > log 2>&1
+```
+
+重定向顺序没问题，差别在两边写出的时间不同。
+
+想让 log 的顺序更接近程序实际写出的顺序，可以让 stdout 按行刷新：
+
+- `stdbuf -oL cmd`：让使用 stdio 的程序把 stdout 改成行缓冲。
+- `grep --line-buffered`：只让 grep 自己每行输出，不攒着。
+- `unbuffer cmd` / `script`：给程序接一个伪终端，让它以为自己在跟终端说话，从而走行缓冲。
+
+这些办法让 stdout 更早写出来，err 就不会因为缓冲而抢在更早的 out 前面。
+
+但是多个线程或多个进程同时写时，仍然不能保证绝对顺序。
+
+### 延伸
+
+- 进程替换：`diff <(sort a) <(sort b)`；`tee >(gzip > out.gz)` 可以一边保留输出一边压缩。
+- 命名管道：`mkfifo /tmp/p`，一个进程写 `/tmp/p`，另一个进程读。
+- `xargs`：把 stdin 的每一行变成 argv；文件名有空格时用 `find ... -print0 | xargs -0 ...`。
+- `pv`：查看管道吞吐，`cmd | pv | gzip > out.gz`。
+- here-doc / here-string：`cat <<'EOF' ... EOF`、`grep foo <<< "$var"`，数据来自 Shell 而不是文件。
+- `|&`：bash 里等价于 `2>&1 |`，`make |& grep error` 可以直接把 stderr 也接进管道。
+- 多个写者同时写一个 pipe 时，单个 `write` 不超过 `PIPE_BUF`（Linux 通常 4 KiB）才不会交错；更大的写入可能被切开。
+- 交互式 Shell 有 job control 时，整条管道在一个前台进程组里，`Ctrl-C` 的 `SIGINT` 会发给整个进程组。
+
 ## 容易混淆的问题
 
-| 问题                        | 答案                                                              |
-| --------------------------- | ----------------------------------------------------------------- |
-| 终端和 Shell 是一回事吗？   | 不是，终端是窗口，Shell 是里面跑的程序                            |
-| `$SHELL` 是当前 Shell 吗？  | 不一定，它是登录 Shell；交互式 Shell 看 `$0`，更稳的是 `ps -p $$` |
-| `$TERM` 是 Shell 类型吗？   | 不是，是终端能力，比如 `xterm-256color`                           |
-| 终端里只能跑 Shell 吗？     | 不是，也可以直接跑 `vim`、`ssh`、`python`                         |
-| Shell 一定要有终端吗？      | 不用，脚本、CI、`ssh host 'cmd'` 都可以                           |
-| 单引号和双引号一样吗？      | 不一样，单引号全字面，双引号会展开变量和命令替换                  |
-| glob 和正则一样吗？         | 不一样，glob 由 Shell 展开，正则由 `grep`、`sed` 等程序解释       |
-| `cd` 为什么不能是外部程序？ | 子进程改不了父进程的当前目录                                      |
-| `Ctrl-C` 是终端杀进程吗？   | 终端只发字节，内核行规程产生 `SIGINT`，发给前台进程组             |
+| 问题                              | 答案                                                              |
+| --------------------------------- | ----------------------------------------------------------------- |
+| 终端和 Shell 是一回事吗？         | 不是，终端是窗口，Shell 是里面跑的程序                            |
+| `$SHELL` 是当前 Shell 吗？        | 不一定，它是登录 Shell；交互式 Shell 看 `$0`，更稳的是 `ps -p $$` |
+| `$TERM` 是 Shell 类型吗？         | 不是，是终端能力，比如 `xterm-256color`                           |
+| 终端里只能跑 Shell 吗？           | 不是，也可以直接跑 `vim`、`ssh`、`python`                         |
+| Shell 一定要有终端吗？            | 不用，脚本、CI、`ssh host 'cmd'` 都可以                           |
+| 单引号和双引号一样吗？            | 不一样，单引号全字面，双引号会展开变量和命令替换                  |
+| glob 和正则一样吗？               | 不一样，glob 由 Shell 展开，正则由 `grep`、`sed` 等程序解释       |
+| `cd` 为什么不能是外部程序？       | 子进程改不了父进程的当前目录                                      |
+| `Ctrl-C` 是终端杀进程吗？         | 终端只发字节，内核行规程产生 `SIGINT`，发给前台进程组             |
+| 管道两边是同时跑的吗？            | 是，Shell 只负责接 fd，不缓存整段输出                             |
+| `2>&1` 为什么要看顺序？           | 它复制的是当前 fd1 的指向，重定向从左到右执行                     |
+| `pipefail` 和 `PIPESTATUS` 区别？ | `pipefail` 改 `$?`，`PIPESTATUS` 保留每一段状态                   |
 
 ## 常用文本工具
 
