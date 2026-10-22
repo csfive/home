@@ -59,7 +59,9 @@
   --sl-font:
     'Geist Variable', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei',
     sans-serif;
-  --sl-font-mono: 'Geist Mono Variable', ui-monospace, 'SF Mono', Menlo, 'Cascadia Code', monospace;
+  --sl-font-mono:
+    'Geist Mono Variable', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei',
+    ui-monospace, 'SF Mono', Menlo, 'Cascadia Code', monospace;
 
   --sl-nav-height: 4rem;
   --sl-nav-pad-x: 1.5rem;
