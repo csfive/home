@@ -68,11 +68,11 @@ export default defineConfig({
       sidebar: [
         { label: '路线图', link: '/roadmap' },
         {
-          label: 'MIT Missing Semester',
+          label: 'Missing Semester',
           items: [{ autogenerate: { directory: 'missing-semester' } }],
         },
         {
-          label: 'CS50 2D Game',
+          label: 'CS50G',
           items: [{ autogenerate: { directory: 'cs50g' } }],
         },
       ],

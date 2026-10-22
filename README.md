@@ -9,7 +9,7 @@ flowchart TD
       B --> C[Harvard CS50 Python]
 
       C --> E[UCB CS61A]
-      D[Harvard CS50 2D Game] --> E
+      D[Harvard CS50G (2D Game)] --> E
 
       E --> Z[Helsinki Haskell MOOC]
       Z --> Y[Cornell CS3110]
