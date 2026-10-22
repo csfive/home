@@ -70,7 +70,7 @@
   --sl-sidebar-pad-x: 1.25rem;
   --sl-content-width: 47.5rem;
   --sl-content-pad-x: 4rem;
-  --sl-line-height: 1.72;
+  --sl-line-height: 1.8;
   --sl-line-height-headings: 1.2;
   --sl-text-h1: 2.5rem;
 
@@ -528,6 +528,16 @@ theme-picker[data-mode='dark'] .theme-picker__icon[data-theme-icon='dark'] {
   padding-bottom: 2.5rem;
 }
 
+/* Give the article title more air before its first block. Only docs pages
+   have a PageTitle + article split; the 404/home hero layout stays as is. */
+:root[data-has-sidebar] .main-pane .content-panel:first-of-type {
+  padding-bottom: 1.25rem;
+}
+
+:root[data-has-sidebar] .main-pane .content-panel + .content-panel {
+  padding-top: 1.25rem;
+}
+
 .k-eyebrow {
   margin: 0 0 0.75rem;
   color: var(--k-brand);
@@ -574,6 +584,42 @@ h1#_top {
 .sl-markdown-content h4:not(:where(.not-content *)) {
   font-size: 1rem;
   font-weight: 600;
+}
+
+/* Section rhythm: more space before headings, and a clear beat after the
+   heading block before body copy starts. */
+.sl-markdown-content .sl-heading-wrapper.level-h2 {
+  margin-top: 3.5rem;
+}
+
+.sl-markdown-content .sl-heading-wrapper.level-h3 {
+  margin-top: 2.5rem;
+}
+
+.sl-markdown-content .sl-heading-wrapper.level-h4,
+.sl-markdown-content .sl-heading-wrapper.level-h5,
+.sl-markdown-content .sl-heading-wrapper.level-h6 {
+  margin-top: 1.75rem;
+}
+
+.sl-markdown-content .sl-heading-wrapper > :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 0;
+}
+
+.sl-markdown-content
+  .sl-heading-wrapper
+  + :is(
+    p,
+    ul,
+    ol,
+    table,
+    blockquote,
+    .expressive-code,
+    .cs-link-card,
+    .cs-link-cards,
+    .starlight-aside
+  ) {
+  margin-top: 1.75rem;
 }
 
 /* Heading anchors keep Starlight's hover-link behaviour; only recolour them. */
@@ -736,7 +782,12 @@ h1#_top {
 
 /* Props-driven body copy stays readable, headings carry the contrast. */
 .sl-markdown-content p:not(:where(.not-content *)) {
+  margin-block: 1.35em 0;
   color: var(--k-text-2);
+}
+
+.sl-markdown-content > :first-child:not(.sl-heading-wrapper) {
+  margin-top: 0;
 }
 
 /* ---------- Table of contents ---------- */
