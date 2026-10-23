@@ -9,10 +9,10 @@ description: 计算机废物自学指北，@mancuoj 的自学路线图
 flowchart TD
       A[Harvard CS50x] --> B[MIT Missing Semester]
 
-      B --> C[Harvard CS50 Python]
+      B --> C[Harvard CS50P]
 
       C --> E[UCB CS61A]
-      D["Harvard CS50G (2D Game)"] --> E
+      D[Harvard CS50G] --> E
 
       E --> Z[Helsinki Haskell MOOC]
       Z --> Y[Cornell CS3110]
