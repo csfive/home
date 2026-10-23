@@ -2,12 +2,49 @@ import { defineConfig } from 'vitepress'
 import { linkCard } from './plugins/link-card.ts'
 import { mermaid } from './plugins/mermaid.ts'
 
+const sidebar = [
+  { text: '路线图', link: '/' },
+  {
+    text: 'Missing Semester',
+    collapsed: false,
+    items: [
+      { text: '课程概览与 Shell', link: '/ms/00' },
+      { text: '命令行环境', link: '/ms/01' },
+      { text: '开发环境与工具', link: '/ms/02' },
+      { text: '调试与性能分析', link: '/ms/03' },
+      { text: '版本控制与 Git', link: '/ms/04' },
+      { text: '打包与发布', link: '/ms/05' },
+      { text: 'Agentic Coding', link: '/ms/06' },
+      { text: '代码之外', link: '/ms/07' },
+      { text: '代码质量', link: '/ms/08' },
+    ],
+  },
+  {
+    text: 'CS50G',
+    collapsed: false,
+    items: [
+      { text: 'Pong', link: '/cs50g/00' },
+      { text: 'Flappy Bird', link: '/cs50g/01' },
+      { text: 'Breakout', link: '/cs50g/02' },
+      { text: 'Match 3', link: '/cs50g/03' },
+      { text: 'Super Mario Bros.', link: '/cs50g/04' },
+      { text: 'Legend of Zelda', link: '/cs50g/05' },
+      { text: 'Angry Birds', link: '/cs50g/06' },
+      { text: 'Pokémon', link: '/cs50g/07' },
+    ],
+  },
+]
+
 export default defineConfig({
   lang: 'zh-CN',
   title: 'CS Five',
+  titleTemplate: ':title · CS Five',
   description: '计算机废物自学指北，@mancuoj 的自学笔记',
   cleanUrls: true,
+  lastUpdated: true,
+
   head: [['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }]],
+
   sitemap: {
     hostname: 'https://csfive.netlify.app',
   },
@@ -21,47 +58,18 @@ export default defineConfig({
   },
 
   themeConfig: {
+    sidebar,
+
     logo: '/logo.svg',
-    siteTitle: 'CS Five',
+    socialLinks: [{ icon: 'github', link: 'https://github.com/csfive/home' }],
 
-    nav: [
-      { text: '路线图', link: '/roadmap' },
-      { text: 'Missing Semester', link: '/ms/00' },
-      { text: 'CS50G', link: '/cs50g/00' },
-    ],
-
-    sidebar: [
-      { text: '路线图', link: '/roadmap' },
-      {
-        text: 'Missing Semester',
-        collapsed: false,
-        items: [
-          { text: '课程概览与 Shell', link: '/ms/00' },
-          { text: '命令行环境', link: '/ms/01' },
-          { text: '开发环境与工具', link: '/ms/02' },
-          { text: '调试与性能分析', link: '/ms/03' },
-          { text: '版本控制与 Git', link: '/ms/04' },
-          { text: '打包与发布', link: '/ms/05' },
-          { text: 'Agentic Coding', link: '/ms/06' },
-          { text: '代码之外', link: '/ms/07' },
-          { text: '代码质量', link: '/ms/08' },
-        ],
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'short',
       },
-      {
-        text: 'CS50G',
-        collapsed: false,
-        items: [
-          { text: 'Pong', link: '/cs50g/00' },
-          { text: 'Flappy Bird', link: '/cs50g/01' },
-          { text: 'Breakout', link: '/cs50g/02' },
-          { text: 'Match 3', link: '/cs50g/03' },
-          { text: 'Super Mario Bros.', link: '/cs50g/04' },
-          { text: 'Legend of Zelda', link: '/cs50g/05' },
-          { text: 'Angry Birds', link: '/cs50g/06' },
-          { text: 'Pokémon', link: '/cs50g/07' },
-        ],
-      },
-    ],
+    },
 
     outline: { level: [2, 3], label: '目录' },
     docFooter: { prev: '上一篇', next: '下一篇' },
@@ -81,8 +89,6 @@ export default defineConfig({
       linkText: '返回首页',
       linkLabel: '返回首页',
     },
-
-    socialLinks: [{ icon: 'github', link: 'https://github.com/csfive/home' }],
 
     search: {
       provider: 'local',

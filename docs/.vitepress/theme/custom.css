@@ -1,8 +1,5 @@
 /**
  * CS Five palette on top of VitePress defaults.
- *
- * Design tokens and a few content components live here; layout and behaviour
- * stay as VitePress ships them.
  */
 
 :root {
@@ -32,14 +29,6 @@
   --vp-button-brand-text: #ffffff;
   --vp-button-brand-hover-text: #ffffff;
   --vp-button-brand-active-text: #ffffff;
-
-  --vp-home-hero-name-color: var(--vp-c-text-1);
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    rgb(95 143 31 / 28%) 50%,
-    rgb(95 143 31 / 10%) 50%
-  );
-  --vp-home-hero-image-filter: blur(48px);
 }
 
 .dark {
@@ -69,12 +58,6 @@
   --vp-button-brand-text: #13160f;
   --vp-button-brand-hover-text: #13160f;
   --vp-button-brand-active-text: #13160f;
-
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    rgb(195 236 116 / 32%) 50%,
-    rgb(195 236 116 / 10%) 50%
-  );
 }
 
 ::selection {
@@ -83,24 +66,6 @@
 
 .dark ::selection {
   background: rgb(195 236 116 / 30%);
-}
-
-/* VitePress 2 stretches the hero image to fill its 20rem container. Keep the
-   mascot at a size that reads as an icon rather than a full illustration. */
-.VPHero .image-src {
-  width: 10rem;
-  height: 10rem;
-  max-width: 10rem;
-  max-height: 10rem;
-}
-
-@media (min-width: 60rem) {
-  .VPHero .image-src {
-    width: 12rem;
-    height: 12rem;
-    max-width: 12rem;
-    max-height: 12rem;
-  }
 }
 
 /**
