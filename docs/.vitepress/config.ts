@@ -2,29 +2,6 @@ import { defineConfig } from 'vitepress'
 import { linkCard } from './plugins/link-card.ts'
 import { mermaid } from './plugins/mermaid.ts'
 
-const missingSemester = [
-  ['/ms/00', '课程概览与 Shell'],
-  ['/ms/01', '命令行环境'],
-  ['/ms/02', '开发环境与工具'],
-  ['/ms/03', '调试与性能分析'],
-  ['/ms/04', '版本控制与 Git'],
-  ['/ms/05', '打包与发布'],
-  ['/ms/06', 'Agentic Coding'],
-  ['/ms/07', '代码之外'],
-  ['/ms/08', '代码质量'],
-].map(([link, text]) => ({ link, text }))
-
-const cs50g = [
-  ['/cs50g/00', 'Pong'],
-  ['/cs50g/01', 'Flappy Bird'],
-  ['/cs50g/02', 'Breakout'],
-  ['/cs50g/03', 'Match 3'],
-  ['/cs50g/04', 'Super Mario Bros.'],
-  ['/cs50g/05', 'Legend of Zelda'],
-  ['/cs50g/06', 'Angry Birds'],
-  ['/cs50g/07', 'Pokémon'],
-].map(([link, text]) => ({ link, text }))
-
 export default defineConfig({
   lang: 'zh-CN',
   title: 'CS Five',
@@ -55,8 +32,35 @@ export default defineConfig({
 
     sidebar: [
       { text: '路线图', link: '/roadmap' },
-      { text: 'Missing Semester', collapsed: false, items: missingSemester },
-      { text: 'CS50G', collapsed: false, items: cs50g },
+      {
+        text: 'Missing Semester',
+        collapsed: false,
+        items: [
+          { text: '课程概览与 Shell', link: '/ms/00' },
+          { text: '命令行环境', link: '/ms/01' },
+          { text: '开发环境与工具', link: '/ms/02' },
+          { text: '调试与性能分析', link: '/ms/03' },
+          { text: '版本控制与 Git', link: '/ms/04' },
+          { text: '打包与发布', link: '/ms/05' },
+          { text: 'Agentic Coding', link: '/ms/06' },
+          { text: '代码之外', link: '/ms/07' },
+          { text: '代码质量', link: '/ms/08' },
+        ],
+      },
+      {
+        text: 'CS50G',
+        collapsed: false,
+        items: [
+          { text: 'Pong', link: '/cs50g/00' },
+          { text: 'Flappy Bird', link: '/cs50g/01' },
+          { text: 'Breakout', link: '/cs50g/02' },
+          { text: 'Match 3', link: '/cs50g/03' },
+          { text: 'Super Mario Bros.', link: '/cs50g/04' },
+          { text: 'Legend of Zelda', link: '/cs50g/05' },
+          { text: 'Angry Birds', link: '/cs50g/06' },
+          { text: 'Pokémon', link: '/cs50g/07' },
+        ],
+      },
     ],
 
     outline: { level: [2, 3], label: '目录' },
