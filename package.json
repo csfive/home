@@ -1,30 +1,23 @@
 {
   "name": "csfive-home",
-  "type": "module",
   "version": "0.0.1",
+  "devDependencies": {
+    "@mancuoj/prettier-config": "^0.6.0",
+    "@types/markdown-it": "^14.2.0",
+    "pele": "^1.8.0",
+    "prettier": "^3.9.5",
+    "vitepress": "^2.0.0-alpha.20"
+  },
   "packageManager": "bun@1.4.3",
+  "prettier": "@mancuoj/prettier-config",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
+    "dev": "vitepress dev docs",
+    "start": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "bun run format:check && bun run build"
   },
-  "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.3",
-    "@astrojs/starlight": "^0.42.6",
-    "@fontsource-variable/geist": "^5.3.0",
-    "@fontsource-variable/geist-mono": "^5.3.0",
-    "astro": "^7.2.10",
-    "pele": "^1.6.0",
-    "sharp": "^0.35.3"
-  },
-  "devDependencies": {
-    "@mancuoj/prettier-config": "^0.6.0",
-    "prettier": "^3.9.5",
-    "prettier-plugin-astro": "^0.14.1"
-  }
+  "type": "module"
 }

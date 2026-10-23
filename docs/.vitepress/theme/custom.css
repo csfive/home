@@ -1,0 +1,213 @@
+/**
+ * CS Five palette on top of VitePress defaults.
+ *
+ * Design tokens and a few content components live here; layout and behaviour
+ * stay as VitePress ships them.
+ */
+
+:root {
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f4f5f1;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #f7f8f4;
+
+  --vp-c-border: #d4d7cd;
+  --vp-c-divider: #e4e6df;
+  --vp-c-gutter: #e4e6df;
+
+  --vp-c-text-1: #13160f;
+  --vp-c-text-2: #5d6356;
+  --vp-c-text-3: #6b7163;
+
+  --vp-c-gray-1: #c9cec3;
+  --vp-c-gray-2: #dde1d8;
+  --vp-c-gray-3: #eceee7;
+  --vp-c-gray-soft: rgb(19 22 15 / 6%);
+
+  --vp-c-brand-1: #4f7d14;
+  --vp-c-brand-2: #3c610c;
+  --vp-c-brand-3: #4f7d14;
+  --vp-c-brand-soft: rgb(95 143 31 / 12%);
+
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-active-text: #ffffff;
+
+  --vp-home-hero-name-color: var(--vp-c-text-1);
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    rgb(95 143 31 / 28%) 50%,
+    rgb(95 143 31 / 10%) 50%
+  );
+  --vp-home-hero-image-filter: blur(48px);
+}
+
+.dark {
+  --vp-c-bg: #111310;
+  --vp-c-bg-alt: #161915;
+  --vp-c-bg-elv: #191c17;
+  --vp-c-bg-soft: #191c17;
+
+  --vp-c-border: #3a4035;
+  --vp-c-divider: #2a2f27;
+  --vp-c-gutter: #2a2f27;
+
+  --vp-c-text-1: #f4f6f0;
+  --vp-c-text-2: #a4ab9b;
+  --vp-c-text-3: #7e8678;
+
+  --vp-c-gray-1: #3a4035;
+  --vp-c-gray-2: #2f342b;
+  --vp-c-gray-3: #262b23;
+  --vp-c-gray-soft: rgb(244 246 240 / 6%);
+
+  --vp-c-brand-1: #c3ec74;
+  --vp-c-brand-2: #e2ff9e;
+  --vp-c-brand-3: #c3ec74;
+  --vp-c-brand-soft: rgb(195 236 116 / 12%);
+
+  --vp-button-brand-text: #13160f;
+  --vp-button-brand-hover-text: #13160f;
+  --vp-button-brand-active-text: #13160f;
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    rgb(195 236 116 / 32%) 50%,
+    rgb(195 236 116 / 10%) 50%
+  );
+}
+
+::selection {
+  background: rgb(95 143 31 / 22%);
+}
+
+.dark ::selection {
+  background: rgb(195 236 116 / 30%);
+}
+
+/* VitePress 2 stretches the hero image to fill its 20rem container. Keep the
+   mascot at a size that reads as an icon rather than a full illustration. */
+.VPHero .image-src {
+  width: 10rem;
+  height: 10rem;
+  max-width: 10rem;
+  max-height: 10rem;
+}
+
+@media (min-width: 60rem) {
+  .VPHero .image-src {
+    width: 12rem;
+    height: 12rem;
+    max-width: 12rem;
+    max-height: 12rem;
+  }
+}
+
+/**
+ * Link cards — rendered from `[title](url "description")` by
+ * docs/.vitepress/plugins/link-card.ts.
+ */
+
+.vp-doc a.cs-link-card,
+.vp-doc a.cs-link-card:hover,
+.vp-doc a.cs-link-card:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cs-link-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 0.5rem;
+  margin-block: 1.5rem;
+  padding: 1rem 1.125rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 0.625rem;
+  font-weight: 400;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.cs-link-card:hover {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-brand-1);
+}
+
+.cs-link-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cs-link-card__title {
+  color: var(--vp-c-text-1);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.cs-link-card__description {
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.cs-link-card__icon {
+  align-self: center;
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+  color: var(--vp-c-text-3);
+}
+
+.cs-link-card:hover .cs-link-card__icon {
+  color: var(--vp-c-brand-1);
+}
+
+.cs-link-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.cs-link-cards > .cs-link-card {
+  height: 100%;
+  margin-block: 0;
+}
+
+@media (min-width: 50rem) {
+  .cs-link-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/**
+ * Mermaid diagrams are rendered to SVG at build time by Pele.
+ */
+
+.pele {
+  --pele-bg: var(--vp-c-bg);
+  --pele-fg: var(--vp-c-text-1);
+  --pele-muted: var(--vp-c-text-3);
+  --pele-line: var(--vp-c-text-3);
+  --pele-surface: var(--vp-c-bg-soft);
+  --pele-surface-alt: var(--vp-c-bg-alt);
+  --pele-border: var(--vp-c-text-3);
+  --pele-accent: var(--vp-c-brand-1);
+  --pele-font: var(--vp-font-family-base);
+  --pele-font-mono: var(--vp-font-family-mono);
+  --pele-radius: 4px;
+}
+
+.pele-diagram {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.pele-diagram .pele {
+  min-width: 560px;
+}

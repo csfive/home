@@ -1,6 +1,6 @@
 [build]
 command = "bun run build"
-publish = "dist"
+publish = "docs/.vitepress/dist"
 
 [build.environment]
 NODE_VERSION = "22"

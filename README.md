@@ -21,3 +21,13 @@ flowchart TD
       G[HUST CPU] --> H
       F --> H
 ```
+
+## 开发
+
+本站使用 [VitePress](https://vitepress.dev/) 构建。
+
+```sh
+bun install
+bun run dev
+bun run build
+```

@@ -1,6 +1,6 @@
-dist
 node_modules
-.astro
+docs/.vitepress/dist
+docs/.vitepress/cache
 .netlify
 .openchamber
 bun.lock
