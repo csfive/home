@@ -7,7 +7,8 @@
     "@types/node": "^26.6.5",
     "pele": "^1.8.0",
     "prettier": "^3.9.5",
-    "vitepress": "^2.0.0-alpha.20"
+    "vitepress": "^2.0.0-alpha.20",
+    "vitepress-plugin-group-icons": "^1.8.1"
   },
   "packageManager": "bun@1.4.3",
   "prettier": "@mancuoj/prettier-config",

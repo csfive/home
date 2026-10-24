@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { linkCard } from './plugins/link-card.ts'
 import { mermaid } from './plugins/mermaid.ts'
 
@@ -54,7 +55,12 @@ export default defineConfig({
     config(md) {
       md.use(mermaid)
       md.use(linkCard)
+      md.use(groupIconMdPlugin)
     },
+  },
+
+  vite: {
+    plugins: [groupIconVitePlugin()],
   },
 
   themeConfig: {
