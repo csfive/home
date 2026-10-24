@@ -60,7 +60,14 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [groupIconVitePlugin()],
+    plugins: [
+      groupIconVitePlugin({
+        customIcon: {
+          '.sh': 'logos:bash-icon',
+          '.sql': 'vscode-icons:file-type-sql',
+        },
+      }),
+    ],
   },
 
   themeConfig: {
