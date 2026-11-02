@@ -4,7 +4,7 @@ import { linkCard } from './plugins/link-card.ts'
 import { mermaid } from './plugins/mermaid.ts'
 
 const sidebar = [
-  { text: '路线图', link: '/' },
+  { text: '关于', link: '/' },
   {
     text: 'Missing Semester',
     collapsed: false,
