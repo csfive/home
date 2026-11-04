@@ -25,7 +25,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 
 # 课程概览与 Shell
 
-[第 0 讲 · Course Shell](url 'MIT Missing Semester 第 0 讲：官方讲义、视频和课后练习')
+[第 0 讲 · Course Shell](url 'MIT Missing Semester 第 0 讲：视频、讲义和课后练习')
 
 [课后练习答案](url '非官方，仅供参考')
 
@@ -55,5 +55,6 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - `title` 用中文讲名或专有名，和 sidebar、H1 一致。
 - `description` 是 `<课程> 第 N 讲 主题清单`；CS50G 用 `哈佛 CS50G Week N 主题清单`。
 - 还没写提纲的页面把结尾换成 `待整理`，只保留官方页面和课后练习答案两张卡片，不许写「主题清单」。
-- 官方卡片标题只写序号和讲名：`第 N 讲 · <官方讲名>`，CS50G 用 `Week N · <官方讲名>`；课程名放进 `title` 描述里，例如 `'MIT Missing Semester 第 0 讲：官方讲义、视频和课后练习'`。
+- 官方卡片标题只写序号和讲名：`第 N 讲 · <官方讲名>`，CS50G 用 `Week N · <官方讲名>`；课程名放进 `title` 描述里。
+- 官方卡片描述写 `<课程> 第 N 讲：<页面上真正提供的东西>`，按同样顺序罗列：MS 是 `视频、讲义和课后练习`，CS50G 是 `视频、讲义、源码和项目`。
 - 课后练习答案卡片统一叫「课后练习答案」，描述是 `'非官方，仅供参考'`。
