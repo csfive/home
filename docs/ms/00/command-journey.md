@@ -11,13 +11,11 @@ description: MIT Missing Semester 第 0 讲 · 一条命令的旅程
 
 ```mermaid
 flowchart TD
-  A[输入] --> B[花括号展开]
-  B --> C[波浪号展开]
-  C --> D[参数与命令替换]
-  D --> E[切词]
-  E --> F[文件名展开]
-  F --> G[查找程序]
-  G --> H[fork 与 exec]
+  A[输入] --> B[花括号与波浪号展开]
+  B --> C[参数与命令替换]
+  C --> D[切词]
+  D --> E[文件名展开]
+  E --> F[查找并执行]
 ```
 
 | 步骤       | 例子        | 结果                |
