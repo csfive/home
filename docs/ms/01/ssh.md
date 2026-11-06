@@ -5,18 +5,35 @@ description: MIT Missing Semester 第 1 讲 · SSH、密钥与文件传输
 
 # 远程机器
 
-`ssh user@host` 打开一个远端 Shell，连接本身是加密的。它也可以只跑一条命令：`ssh host ls` 把远端 `ls` 的输出带回来，`ssh host 'ls | wc -l'` 则在远端执行整条管道。区别在于引号归谁解释：不带引号时，本地 Shell 先展开并切词，再交给远端；带引号时，整串原样送过去。需要本地变量先展开时，用双引号；需要远端展开时，用单引号。
+SSH 既是登录工具，也是把命令、文件、端口带到另一台机器上的通道。
+
+## 执行命令
+
+| 写法                     | 在哪里执行            |
+| ------------------------ | --------------------- |
+| `ssh host ls`            | 远端 `ls`，本地不展开 |
+| `ssh host 'ls \| wc -l'` | 整条管道在远端        |
+| `ssh host "ls $dir"`     | 本地先展开 `$dir`     |
+| `ssh -t host cmd`        | 分配伪终端            |
+
+引号归属是这里最容易错的地方：双引号本地展开，单引号远端展开。
+
+## 密钥
 
 ```bash
-dir=/tmp
-ssh host "ls $dir"        # 本地展开，远端看到 ls /tmp
-ssh host 'ls $dir'        # 远端展开
-ssh host 'ls | wc -l'     # 整条管道在远端执行
+ssh-keygen -a 100 -t ed25519
+ssh-copy-id -i ~/.ssh/id_ed25519.pub alice@host
 ```
 
-密码登录不如密钥。`ssh-keygen -a 100 -t ed25519` 生成一对密钥，私钥留在本地，公钥用 `ssh-copy-id` 追加到远端的 `~/.ssh/authorized_keys`。服务端只认公钥，客户端用私钥证明自己持有对应的秘密，全程不传私钥。私钥文件权限必须是 600，目录是 700，否则 `ssh` 会拒绝使用；`known_hosts` 记录第一次连接时服务端的指纹，换机器或重装后会报警。
+| 项          | 要求                          |
+| ----------- | ----------------------------- |
+| 私钥权限    | 600                           |
+| `.ssh` 目录 | 700                           |
+| 公钥位置    | 远端 `~/.ssh/authorized_keys` |
+| 主机指纹    | 首次连接写入 `known_hosts`    |
+| passphrase  | 用 `ssh-agent` 缓存           |
 
-`~/.ssh/config` 给主机起别名并预设参数：
+## config
 
 ```ini
 Host vm
@@ -26,18 +43,45 @@ Host vm
     IdentityFile ~/.ssh/id_ed25519
 ```
 
-`Host` 支持通配，`Host *.mit.edu` 可以给一整批机器设默认值。`scp`、`rsync`、`mosh` 都读这份配置。私钥有 passphrase 时，`ssh-agent` 负责在会话里缓存解密后的密钥，`ssh-add` 把密钥加进去，不用每次输入。
+| 字段            | 作用           |
+| --------------- | -------------- |
+| `Host`          | 别名，支持通配 |
+| `HostName`      | 真实地址       |
+| `User` / `Port` | 登录信息       |
+| `IdentityFile`  | 私钥路径       |
+| `LocalForward`  | 本地端口转发   |
+| `ControlMaster` | 复用连接       |
 
-`scp` 和 `rsync` 都能传文件。`rsync` 比 `scp` 多做了增量判断，还支持 `--partial` 续传、`--exclude` 排除和 `-a` 保留权限时间；源路径末尾有没有 `/` 含义不同，`src/` 复制目录内容，`src` 复制目录本身。
+`scp`、`rsync`、`mosh` 都读这份配置。
+
+## 传文件
+
+| 工具    | 特点                 |
+| ------- | -------------------- |
+| `scp`   | 简单，整文件复制     |
+| `rsync` | 增量、可续传、可排除 |
+| `mosh`  | 断线恢复，UDP        |
 
 ```bash
 rsync -av --partial src/ host:/srv/app/
 ```
 
-需要转发端口时，`LocalForward 9999 localhost:8888` 把本地端口接到远端服务上，配合 `ssh -N -f` 可以在后台只做转发、不开 Shell。`-R` 是反方向，`-D` 提供一个 SOCKS 代理。跳板机可以用 `-J jump host`，或者多级 `ProxyJump`。
+`src/` 复制目录内容，`src` 复制目录本身。
 
-连接本身也能复用：`ControlMaster auto` 加 `ControlPath` 让后续的 `ssh`、`scp` 走已经建立的连接，省掉重复握手，批量操作快很多。
+## 端口与跳板
 
-[`mosh`](https://mosh.org/) 是 SSH 的替代品，网络切换或休眠后能恢复会话，适合移动环境；它在 UDP 上自己维护状态，代价是首次连接和端口转发不如 ssh 通用。
+```bash
+ssh -N -f -L 9999:localhost:8888 vm
+ssh -J jump host
+```
 
-远端没有图形界面时，`ssh -X` 可以转发 X11，但现在更常见的是本地编辑器配 SSH 插件，或者直接 `code --remote`。没有 tty 的命令（CI、脚本）不会分配伪终端，需要交互时加 `-t`。
+| 选项 | 作用         |
+| ---- | ------------ |
+| `-L` | 本地端口转发 |
+| `-R` | 远端端口转发 |
+| `-D` | SOCKS 代理   |
+| `-J` | 经过跳板机   |
+| `-N` | 不执行命令   |
+| `-f` | 后台运行     |
+
+没有 tty 的环境不会分配伪终端，需要交互时加 `-t`。

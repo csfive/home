@@ -11,9 +11,9 @@ const sidebar = [
     items: [
       {
         text: '课程概览与 Shell',
-        collapsed: false,
+        collapsed: true,
         items: [
-          { text: '提纲', link: '/ms/00' },
+          { text: '提纲', link: '/ms/00/' },
           { text: '终端与 Shell', link: '/ms/00/terminal' },
           { text: '一条命令的旅程', link: '/ms/00/command-journey' },
           { text: '打开终端后发生了什么', link: '/ms/00/terminal-internals' },
@@ -25,9 +25,9 @@ const sidebar = [
       },
       {
         text: '命令行环境',
-        collapsed: false,
+        collapsed: true,
         items: [
-          { text: '提纲', link: '/ms/01' },
+          { text: '提纲', link: '/ms/01/' },
           { text: '参数与 flag', link: '/ms/01/arguments' },
           { text: '流与管道', link: '/ms/01/streams' },
           { text: '变量与环境', link: '/ms/01/environment' },
