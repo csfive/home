@@ -59,7 +59,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - 不重复官方卡片；开头一句话说明这页讲什么，然后直接进小节。
 - 每个 H2 小节控制在几屏以内，小节标题能独立说明内容。
 
-新增讲次时同步改 `docs/.vitepress/config.ts` 的 sidebar：讲次作为分组、默认 `collapsed: true`，第一项是「提纲」指向 `/NN/`，后面按提纲顺序列子页。
+新增讲次时同步改 `docs/.vitepress/config.ts` 的 sidebar：讲次分组默认 `collapsed: true`，分组标题直接用 `link` 指向 `/NN/`，下面按提纲顺序列子页，不再单列「提纲」项。
 
 元数据与编号：
 
