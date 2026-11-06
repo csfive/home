@@ -176,3 +176,21 @@
 .pele-diagram .pele {
   min-width: 560px;
 }
+
+/* Outline H2s are links to the expanded article; keep heading hierarchy calm. */
+.vp-doc h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vp-doc h2 a:hover {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .pele-diagram .pele {
+    min-width: 0;
+  }
+}

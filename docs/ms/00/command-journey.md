@@ -10,8 +10,14 @@ description: MIT Missing Semester 第 0 讲 · 一条命令的旅程
 ## 展开顺序
 
 ```mermaid
-flowchart LR
-  A[输入] --> B[花括号展开] --> C[波浪号展开] --> D[参数与命令替换] --> E[切词] --> F[文件名展开] --> G[查找程序] --> H[fork 与 exec]
+flowchart TD
+  A[输入] --> B[花括号展开]
+  B --> C[波浪号展开]
+  C --> D[参数与命令替换]
+  D --> E[切词]
+  E --> F[文件名展开]
+  F --> G[查找程序]
+  G --> H[fork 与 exec]
 ```
 
 | 步骤       | 例子        | 结果                |

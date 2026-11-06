@@ -9,7 +9,7 @@ description: 哈佛 CS50G Week 0 主题清单
 
 [课后练习答案](https://github.com/csfive/CS50G/tree/main/00-pong '非官方，仅供参考')
 
-## 环境
+## [环境](/cs50g/00/environment)
 
 - [LÖVE](https://love2d.org/) 与 [StyLua](https://github.com/JohnnyMorganz/StyLua) 的安装
 - `love` 的运行方式：目录或 `.love` 包
@@ -18,7 +18,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - [LuaJIT](https://luajit.org/) 与 Lua 5.1
 - ARM 上的 `jit.off()`
 
-## Lua
+## [Lua](/cs50g/00/lua)
 
 - 全局变量与 `local`
 - 字符串拼接 `..`
@@ -34,7 +34,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - `require` 与模块
 - 全局模块写法与返回表写法
 
-## LÖVE 基础
+## [LÖVE 基础](/cs50g/00/game-loop)
 
 - 游戏循环：输入 → 更新 → 渲染
 - `love.load`、`love.update`、`love.draw`
@@ -47,7 +47,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - 绘制锚点在左上角
 - 帧率与刷新率
 
-## 虚拟分辨率与滤镜
+## [虚拟分辨率与滤镜](/cs50g/00/virtual-resolution)
 
 - 虚拟分辨率 432×243
 - [push](https://github.com/Ulydev/push) 库
@@ -61,7 +61,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - 滤镜必须在建资源之前设
 - 非整数倍缩放的不均匀
 
-## 移动与 Delta Time
+## [移动与 Delta Time](/cs50g/00/delta-time)
 
 - `dt` 是距上一帧的秒数
 - 速度乘 `dt` 才能跨帧率一致
@@ -72,7 +72,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - `math.random` 的范围
 - `and/or` 三元初始化速度
 
-## 面向对象
+## [面向对象](/cs50g/00/oop)
 
 - [Class](https://github.com/vrld/hump/blob/master/class.lua) 库（hump）
 - `init` 构造函数与 `self`
@@ -82,7 +82,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - `main.lua` 只保留调度
 - 全局对象与 `require`
 
-## 碰撞检测
+## [碰撞检测](/cs50g/00/collision)
 
 - AABB：轴对齐包围盒
 - X 轴与 Y 轴的间隙判断
@@ -93,7 +93,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - 碰撞盒的 `line` 模式绘制
 - 碰撞后随机化 `dy`
 
-## 得分与状态机
+## [得分与状态机](/cs50g/00/score-state)
 
 - `gameState`：`start`、`serve`、`play`、`done`
 - 球出界判定
@@ -104,7 +104,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - `done` 后重置比分
 - 状态决定 update 与 draw 的行为
 
-## 音效
+## [音效](/cs50g/00/audio)
 
 - `love.audio.newSource`
 - `static` 与 `stream`
@@ -113,7 +113,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - 音效语义：paddle、wall、score
 - [BFXR](https://www.bfxr.net/) 与 [ChipTone](https://sfbgames.itch.io/chiptone)
 
-## 容易混淆的问题
+## [容易混淆的问题](/cs50g/00/pitfalls)
 
 - `keypressed` 与 `isDown`
 - `dt` 不乘会怎样

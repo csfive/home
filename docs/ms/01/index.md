@@ -9,7 +9,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 
 [课后练习答案](https://github.com/csfive/missing-semester/tree/main/01-command-line-environment '非官方，仅供参考')
 
-## 参数与 flag
+## [参数与 flag](/ms/01/arguments)
 
 - 参数是纯字符串，含义由程序解释
 - `$1`…`$9`、`$#`、`$@`、`$0`
@@ -20,7 +20,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - 可变参数：同一操作作用于多个文件
 - glob 在程序启动前展开成参数
 
-## 流与管道
+## [流与管道](/ms/01/streams)
 
 - 管道中所有进程同时启动
 - stdin、stdout、stderr 的分工
@@ -28,7 +28,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - `>`、`>>`、`<`、`2>`、`&>` 与 `/dev/null`
 - [fzf](https://github.com/junegunn/fzf) 过滤 stdin：`ls | fzf`、`history | fzf`
 
-## 变量与环境
+## [变量与环境](/ms/01/environment)
 
 - `foo=bar` 不能有空格
 - `'` 字面量与 `"` 展开
@@ -41,7 +41,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - `source` 与 `.` 在当前 shell 执行
 - 子 shell 与变量作用域
 
-## 返回码与条件
+## [返回码与条件](/ms/01/return-codes)
 
 - 0 成功、非 0 失败
 - `exit NUM` 与 `$?`
@@ -50,7 +50,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - `if cmd; then` 与 `while read`
 - 返回码 0–255 截断
 
-## 信号与作业控制
+## [信号与作业控制](/ms/01/signals)
 
 - 信号即软件中断
 - `SIGINT`、`SIGQUIT`、`SIGTERM`
@@ -68,7 +68,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - 关闭终端与 `SIGHUP`
 - `trap cleanup EXIT`
 
-## 远程机器
+## [远程机器](/ms/01/ssh)
 
 - `ssh user@host`
 - `ssh host cmd` 的引号归属
@@ -85,7 +85,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - 端口转发：`LocalForward`、`-N -f`
 - [mosh](https://mosh.org/) 的断线恢复
 
-## 终端复用
+## [终端复用](/ms/01/tmux)
 
 - session、window、pane 三层
 - `tmux new -s` 命名 session
@@ -98,7 +98,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - `<C-b> [` 滚屏与复制
 - 远端会话替代 `nohup`
 
-## Shell 定制
+## [Shell 定制](/ms/01/shell-customization)
 
 - dotfile 与隐藏文件约定
 - bash 启动文件：`.bashrc` 与 `.bash_profile`
@@ -117,12 +117,12 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - `$PS1`、补全、语法高亮
 - 终端模拟器：字体、配色、GPU 与 `$TERM`
 
-## AI 在命令行里
+## [AI 在命令行里](/ms/01/ai)
 
 - `llm cmd` 生成命令
 - [llm](https://github.com/simonw/llm) 接管道清洗文本
 
-## 容易混淆的问题
+## [容易混淆的问题](/ms/01/pitfalls)
 
 - `source` 与 `./script.sh`
 - `$?` 与 `$!`

@@ -23,6 +23,8 @@ description: MIT Missing Semester 第 0 讲 · grep、sed、find、awk
 | `awk`            | 按列处理     | `awk -F, '{print $2}'` |
 | `jq`             | 处理 JSON    | `jq '.items[].name'`   |
 
+单条命令解决不了的问题，通常是把其中三四个接成管道。
+
 ## 组合套路
 
 ```bash
@@ -65,6 +67,8 @@ ssh myserver 'journalctl -u sshd -b-1 | grep "Disconnected from"' \
 - 本地：抽取用户名、排序、计数
 
 每一段只做一件事，失败时也容易单独调试。
+
+换现代工具之前，先确认目标机器上装得上；很多服务器只保证 POSIX 那套。
 
 ## 现代替代
 

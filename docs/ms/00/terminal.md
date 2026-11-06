@@ -15,6 +15,8 @@ description: MIT Missing Semester 第 0 讲 · 终端与 Shell
 | 例子 | iTerm2、Alacritty、Ghostty | bash、zsh、fish    |
 | 边界 | 窗口关掉就没了             | 会话里可以有很多个 |
 
+分清这一点，后面两条线就不会混：TTY 的历史属于终端，路径查找和进程启动属于 Shell。
+
 ## 从 TTY 到模拟器
 
 - ASR-33 电传打字机，Teletype 缩写成 TTY
@@ -49,6 +51,8 @@ tput colors
 | `$1`…`$9` | 脚本         | 前九个参数 |
 | `$#`      | 脚本         | 参数个数   |
 | `$@`      | 脚本         | 全部参数   |
+
+这些变量只在脚本或函数里有实际内容；交互式 Shell 里通常为空。
 
 ## 不同 Shell
 

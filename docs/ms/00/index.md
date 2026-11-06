@@ -9,7 +9,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 
 [课后练习答案](https://github.com/csfive/missing-semester/tree/main/00-course-shell '非官方，仅供参考')
 
-## 终端与 Shell
+## [终端与 Shell](/ms/00/terminal)
 
 - 终端与 Shell 的分工
 - 硬件终端：VT100、ASR-33
@@ -20,7 +20,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - 命令、参数与 `argv`
 - 提示符的构成
 
-## 一条命令的旅程
+## [一条命令的旅程](/ms/00/command-journey)
 
 - 切词
 - 引号：单引号、双引号、反斜杠、`$'...'`
@@ -38,7 +38,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - `fork` + `exec` + `wait`
 - `cd`、`export` 为什么必须是内建
 
-## 打开终端后发生了什么
+## [打开终端后发生了什么](/ms/00/terminal-internals)
 
 - 终端、Shell、内核的分工
 - 文件描述符 0/1/2
@@ -54,7 +54,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - 关闭窗口与 `SIGHUP`
 - `nohup`、`disown` 与 `tmux`
 
-## 重定向和管道
+## [重定向和管道](/ms/00/redirection)
 
 - 重定向的本质：改 fd 指向
 - `>`、`>>`、`<`、`2>`、`&>` 与 `/dev/null`
@@ -71,7 +71,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - `stdbuf`、`--line-buffered`、`unbuffer`
 - 案例：sshd 断开连接统计
 
-## bash 编程与脚本
+## [bash 编程与脚本](/ms/00/bash)
 
 - 返回码与 `$?`
 - `&&` 与 `||`
@@ -93,7 +93,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - 反复运行测试的脚本
 - [shellcheck](https://github.com/koalaman/shellcheck)
 
-## 常用文本工具
+## [常用文本工具](/ms/00/text-tools)
 
 - `man`、`--help`、[tldr](https://github.com/tldr-pages/tldr)
 - `cat`、`less`、`head`、`tail`
@@ -105,7 +105,7 @@ description: MIT Missing Semester 第 0 讲 主题清单
 
 [modern-unix](https://github.com/ibraheemdev/modern-unix '常见 Unix 命令的现代替代品合集')
 
-## 容易混淆的问题
+## [容易混淆的问题](/ms/00/pitfalls)
 
 - `$SHELL`、`$0` 与 `ps -p $$`
 - `$TERM` 与终端能力
