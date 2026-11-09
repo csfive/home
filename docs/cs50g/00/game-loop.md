@@ -38,6 +38,8 @@ end
 
 按键名是字符串：`'w'`、`'up'`、`'escape'`、`'return'`。
 
+按 `escape` 时调 `love.event.quit()` 就能退出，不必点窗口的关闭按钮。
+
 ## 坐标系
 
 - 原点在左上角 `(0, 0)`
@@ -63,17 +65,23 @@ love.window.setMode(1280, 720, {
 
 `vsync` 把帧率同步到显示器刷新率，避免画面撕裂。
 
+`love.window.setTitle('Pong')` 改窗口标题，默认是 `Untitled`。`love.timer.getFPS()` 返回整数帧率，直接 `print` 到左上角就能看性能。
+
 ## 绘图
 
 | 调用                                         | 作用              |
 | -------------------------------------------- | ----------------- |
 | `love.graphics.clear(r, g, b, a)`            | 清屏，RGBA 取 0–1 |
 | `love.graphics.rectangle(mode, x, y, w, h)`  | `fill` 或 `line`  |
+| `love.graphics.print(text, x, y)`            | 原样输出，不换行  |
 | `love.graphics.printf(text, x, y, w, align)` | 按宽度对齐文本    |
+| `love.graphics.setColor(r, g, b, a)`         | 之后绘制的颜色    |
 | `love.graphics.newFont(path, size)`          | 创建字体          |
 | `love.graphics.setFont(font)`                | 切换字体          |
 
 颜色要归一化：`40/255, 45/255, 52/255` 就是 Pong 的深灰背景。
+
+`printf` 需要一个宽度才能对齐，`print` 直接按左上角落下，分数这种单行文字用它更省事。`clear` 决定背景色，`setColor` 只影响之后的矩形和文字；画完带颜色的内容要设回 `1, 1, 1, 1`。
 
 ## 锚点
 

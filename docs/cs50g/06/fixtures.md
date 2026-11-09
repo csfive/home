@@ -90,6 +90,8 @@ local wheelA = love.physics.newFixture(body, love.physics.newCircleShape(10), 1)
 
 这些 fixture 共享同一个 body 的位置和旋转，但不会相对转动。真正的车轮需要独立的 body 加关节，见「关节」一页。
 
+同一个 shape 也可以传给多个 fixture；Box2D 会把顶点数据复制到各自的 body，之后互不影响。
+
 ## 常见坑
 
 - 只创建 body 不创建 fixture，物体穿过一切

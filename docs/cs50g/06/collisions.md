@@ -27,6 +27,8 @@ self.world:setCallbacks(beginContact, endContact, preSolve, postSolve)
 - `preSolve` 在求解前触发，可用 `contact:setEnabled(false)` 取消响应
 - `contact:getNormal()` 给出法线，`getPositions()` 给出接触点
 
+课程只实现 `beginContact`，另外三个留空；所有判定都写在接触开始那一刻。
+
 ## 回调里能做什么
 
 - 读两个 fixture 的 `userData`

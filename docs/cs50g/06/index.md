@@ -64,6 +64,7 @@ description: 哈佛 CS50G Week 6 主题清单
 - `body:getWorldPoints(shape:getPoints())`
 - `love.graphics.polygon` 画碰撞盒
 - 精灵用 body 位置与角度绘制
+- 同一 shape 可挂多个 fixture
 
 ## [拖拽与发射](/cs50g/06/launching)
 
@@ -94,6 +95,7 @@ description: 哈佛 CS50G Week 6 主题清单
 - `postSolve` 拿到法向与切向冲量
 - `fixture:getUserData()` 判断类型
 - 两个 fixture 的顺序不固定
+- 只用 `beginContact`，其余留空
 - 回调内禁止增删 body
 - 世界在回调期间被锁定
 - 延迟销毁表在 `update` 后清空
@@ -130,6 +132,7 @@ description: 哈佛 CS50G Week 6 主题清单
 - 每次命中换裂纹贴图
 - 血量归零才进销毁队列
 - 清空敌人即胜利
+- 障碍砸中敌人也算消灭
 - 剩余鸟数可作失败条件
 - 鸟停下或飞出左边界后重置
 - 状态机只有 `start` 与 `play`

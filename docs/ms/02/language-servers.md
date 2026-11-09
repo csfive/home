@@ -18,7 +18,7 @@ flowchart LR
   S -->|诊断通知| E
 ```
 
-这套协议的价值在于解耦。同一个 `gopls` 可以同时服务 VS Code、Neovim、Emacs，编辑器不必为每种语言实现一套解析器。
+这套协议的价值在于解耦。同一个 `gopls` 可以同时服务 VS Code、Neovim、Emacs，编辑器不必为每种语言实现一套解析器。m 个编辑器配 n 种语言，从 m×n 份适配变成 m+n 份。
 
 ## 能力清单
 
@@ -34,6 +34,8 @@ flowchart LR
 | 实时诊断    | `textDocument/publishDiagnostics` |
 
 诊断是 server 主动推送的通知，不是编辑器去问。所以你会看到「刚打开文件就有红线」，那是 server 解析完整个项目的结果，也解释了为什么大仓库第一次打开会卡几秒。
+
+保存时自动补上缺失的 `import`、按字母序整理导入，也是 server 提供的 `codeAction`，编辑器只是把它绑到了保存事件。
 
 ## 装哪个 server
 

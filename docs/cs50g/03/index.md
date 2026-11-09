@@ -62,11 +62,13 @@ description: 哈佛 CS50G Week 3 主题清单
 - `:ease(fn)` 换缓动函数
 - `:limit(n)` 限制执行次数
 - `Timer.clear()` 清空默认组
+- 标题配色计时器离开前 `:remove()`
 - `:remove()` 拆掉单个计时器
 
 ## [交换与匹配](/cs50g/03/matching)
 
 - 光标 `boardHighlightX/Y` 从 0 开始
+- 选中框用 `line` 矩形画
 - `math.max(0, ...)` 与 `math.min(7, ...)` 夹边界
 - 第一次 Enter 选中 `highlightedTile`
 - 再按同一格取消选中
@@ -95,6 +97,7 @@ description: 哈佛 CS50G Week 3 主题清单
 - 顶部剩下的空洞生成新 tile
 - 新 tile 起点 `y = -32` 在屏幕外
 - 函数返回 `tweens` 表而不是自己动
+- 旧块下落与新块入场同一张补间表
 - `Timer.tween(0.25, tilesToFall)`
 - `:finish` 里递归 `calculateMatches`
 - 递归就是连锁反应

@@ -90,6 +90,8 @@ end
 
 LÖVE 在移动端把触摸映射成鼠标事件，所以这一行顺手就支持了手机点屏。如果在桌面端把窗口缩放过，`x`、`y` 是窗口坐标而非虚拟坐标，直接拿来定位会偏；Flappy Bird 只用「有没有点」，绕开了这个换算。
 
+`love.mouse.wasPressed` 和键盘版一样是课程自己挂的：`love.load` 里建 `love.mouse.buttonsPressed = {}`，`love.mousepressed` 里写入 `true`，`update` 末尾清空。
+
 别把 `isDown` 和 `wasPressed` 混用：`isDown` 在按住期间每帧为真，鸟会一路飞上天；跳跃这种单次动作只能用 `wasPressed`。另外键名是固定字符串，回车是 `'return'` 不是 `'enter'`，小键盘回车是 `'kpenter'`，判错就永远触发不了。
 
 - `button` 编号：1 左键、2 右键、3 中键

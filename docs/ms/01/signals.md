@@ -18,6 +18,7 @@ description: MIT Missing Semester 第 1 讲 · 中断、挂起与后台任务
 | `SIGTERM` | `kill`       | 终止               |
 | `SIGKILL` | `kill -9`    | 强制终止，不可捕获 |
 | `SIGSTOP` | `kill -STOP` | 强制暂停，不可捕获 |
+| `SIGCONT` | `kill -CONT` | 继续已暂停的进程   |
 
 ```mermaid
 flowchart LR
@@ -55,6 +56,8 @@ pkill -f python
 | `wait` | 等自己的子进程       |
 
 `wait` 只对当前 Shell 启动的子进程有效，等陌生 PID 用 `kill -0` 轮询或 `timeout`。
+
+`fg` 把挂起的作业调回前台，`bg` 让它在后台继续，两者实际都是给作业发 `SIGCONT`。进程已经不在作业表里时，只能 `kill -CONT PID`。
 
 ## 脱离终端
 

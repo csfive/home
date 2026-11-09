@@ -119,7 +119,7 @@ concurrency:
   cancel-in-progress: true
 ```
 
-再给 job 加 `timeout-minutes`，卡死的任务不会占着额度跑一小时。测试报告、覆盖率 HTML、失败截图用 `actions/upload-artifact` 存下来，事后还能下载。
+再给 job 加 `timeout-minutes`，卡死的任务不会占着额度跑一小时。测试报告、覆盖率 HTML、失败截图用 `actions/upload-artifact` 存下来，事后还能下载；覆盖率也可以上传到 Codecov、Coveralls，PR 页面直接显示增减。
 
 ## 权限与安全
 

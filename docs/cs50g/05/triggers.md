@@ -116,6 +116,8 @@ love.graphics.setStencilTest()
 
 LÖVE 12 取消了传函数的形式，写入前还要 `setColorMask(false, false, false, false)`，否则矩形会同时画到屏幕上。
 
+调试时按 `S` 画出四个遮罩矩形；它们不参与正常渲染，只是把缓冲区的范围可视化。
+
 ## 延伸：顺序与坑
 
 遮罩对绘制顺序极其敏感，弄错就变成整屏消失或毫无效果。

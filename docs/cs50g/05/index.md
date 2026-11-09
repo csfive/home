@@ -25,6 +25,9 @@ description: 哈佛 CS50G Week 5 主题清单
 - 四向分支用 `elseif` 固定优先级
 - 同时按两个方向只走一个轴
 - 状态机：`walk`、`idle`、`swing-sword`
+- 子类先调父类 `EntityWalkState.update`
+- 敌人只有 `walk` 与 `idle`
+- 撞墙后随机换向或待机
 
 ## [实体定义与动画数据](/cs50g/05/entity-defs)
 
@@ -77,6 +80,7 @@ description: 哈佛 CS50G Week 5 主题清单
 - 按 Enter 单步推进生成过程
 - `math.randomseed(os.time())` 换种子
 - 死胡同软锁是已知问题，不算 bug
+- 房间太少时再扫一遍补足
 
 ## [相机与房间切换](/cs50g/05/camera)
 
@@ -111,6 +115,7 @@ description: 哈佛 CS50G Week 5 主题清单
 - 无敌期间每 0.06 秒切一次半透明
 - `health == 0` 切 `game-over`
 - 血量上限 6，一颗心 2 点
+- 挥剑期间锁住移动
 - 挥剑没有冷却，可以连挥
 
 ## [道具、库存与存档](/cs50g/05/items)
@@ -149,6 +154,7 @@ description: 哈佛 CS50G Week 5 主题清单
 - `setStencilTest('less', 1)` 只放行未写值的像素
 - LÖVE 12 换成 `setStencilState` 加 `setColorMask`
 - 遮罩测试结束必须清掉
+- 按 `S` 画出遮罩矩形
 
 ## [容易混淆的问题](/cs50g/05/pitfalls)
 

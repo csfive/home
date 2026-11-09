@@ -43,17 +43,20 @@ awk -F, '{sum += $2} END {print sum}' data.csv
 
 `sort | uniq -c` 是频次统计的固定写法，`uniq` 只处理相邻重复，所以必须先排序。
 
+`sort` 默认按字典序比较整行，`3`、`31`、`4` 会排成 3、31、4；按数值排序要加 `-n`，按某一列排序写 `-k2,2n`。
+
 ## find 与 xargs
 
-| 需求     | 写法                      |
-| -------- | ------------------------- |
-| 按名字   | `find . -name '*.log'`    |
-| 按时间   | `find . -mtime -7`        |
-| 按大小   | `find . -size +100M`      |
-| 逐个执行 | `-exec cmd {} \;`         |
-| 批量执行 | `-print0 \| xargs -0 cmd` |
+| 需求     | 写法                              |
+| -------- | --------------------------------- |
+| 按名字   | `find . -name '*.log'`            |
+| 按时间   | `find . -mtime -7`                |
+| 按大小   | `find . -size +100M`              |
+| 限制深度 | `find . -maxdepth 2 -name '*.py'` |
+| 逐个执行 | `-exec cmd {} \;`                 |
+| 批量执行 | `-print0 \| xargs -0 cmd`         |
 
-文件名可能带空格，`-print0` 加 `xargs -0` 比 `-exec` 更稳。
+`-maxdepth` 必须写在 `-name`、`-mtime` 这类测试条件之前，顺序反了 find 直接报错。文件名可能带空格，`-print0` 加 `xargs -0` 比 `-exec` 更稳。
 
 ## 日志分析
 

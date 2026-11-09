@@ -21,6 +21,8 @@ local world = ' world'   -- 局部
 print(hello .. world)    -- 字符串拼接用 ..
 ```
 
+`..` 只接受字符串和数字；字段可能是 `nil` 时先 `tostring`，否则拼接直接报错。分数用 `print('Score: ' .. tostring(score))` 最稳。
+
 ## 值与真假
 
 - 只有 `nil` 和 `false` 为假，`0` 和空字符串都为真

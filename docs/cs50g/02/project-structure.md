@@ -25,6 +25,8 @@ Breakout 的文件数量已经不适合全部平铺在根目录，目录本身�
 | `src/constants.lua`    | 窗口与虚拟分辨率          |
 | `src/Util.lua`         | quad 生成与 `table.slice` |
 
+`table.slice(t, first, last, step)` 是课程自写的工具：不修改原表，返回 `first` 到 `last` 的新表，缺省范围是 1 到最后。切砖块时用它截取 `GenerateQuads` 结果的前 21 个。
+
 `love.load` 依次做四件事：设滤镜和随机种子、建字体与纹理、切出 quad、建状态机并进入 `start`。`love.resize` 只把尺寸转给 push，其他回调都转给状态机。
 
 `main.lua` 只剩 LÖVE 的五个回调和三个共享渲染函数，`love.load`、`love.update`、`love.draw`、`love.keypressed`、`love.resize` 之外没有游戏逻辑。 状态按文件拆开后，`require` 的路径就是模块边界。`src/Util.lua` 放不依赖游戏状态的函数，状态之间不互相 `require`，全部靠 `gStateMachine:change` 通信。素材包里还有 `blocks.png` 和 `ui.png`，这个版本没有加载。

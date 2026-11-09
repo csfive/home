@@ -59,6 +59,8 @@ self.swordHitbox = Hitbox(hitboxX, hitboxY, hitboxWidth, hitboxHeight)
 
 `swing-sword` 的 `update` 每帧扫一遍房间里的实体，撞上就扣 1 点。
 
+挥剑状态不读移动输入，人物原地挥完这一圈才回 `idle`。
+
 ```lua
 for k, entity in pairs(self.dungeon.currentRoom.entities) do
     if entity:collides(self.swordHitbox) then

@@ -101,6 +101,8 @@ gStateMachine = StateMachine {
 gStateMachine:change('title')
 ```
 
+`love.load` 里一次建好 `small`、`medium`、`flappy`、`huge` 四档字体，标题、倒计时、分数各取所需，`setFont` 只是换引用。
+
 放到表里的是函数而不是实例，这一字之差决定了重开一局时管道、分数、计时器全部归零。如果直接存实例，`PlayState` 的 `pipePairs` 会带着上一局的残留继续跑。
 
 ## 状态之间传数据

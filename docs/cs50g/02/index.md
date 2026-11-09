@@ -20,6 +20,8 @@ description: 哈佛 CS50G Week 2 主题清单
 - `main.lua` 只留 LÖVE 回调
 - `Dependencies.lua` 集中所有 `require`
 - `constants.lua` 存全局常量
+- `src/Util.lua` 放 quad 与 `table.slice`
+- `table.slice` 返回新区间，不改原表
 - `WINDOW_WIDTH` 与 `VIRTUAL_WIDTH` 分开
 - `PADDLE_SPEED` 的值是 200
 - 全局表 `gTextures`、`gFrames`、`gFonts`
@@ -37,6 +39,7 @@ description: 哈佛 CS50G Week 2 主题清单
 - `game-over` 可进 `enter-high-score`
 - `StateMachine:change(name, params)`
 - 状态表里存工厂函数
+- 挡板选择到边界时箭头变灰
 - `change` 先 `exit` 再 `enter`
 - 每次切换都新建状态实例
 - `enterParams` 用来跨状态传数据
@@ -154,6 +157,7 @@ description: 哈佛 CS50G Week 2 主题清单
 - 三字母用 65 到 90 的码
 - `string.char` 转成字符
 - 插入新分时后面的条目下移
+- 从第 10 名往上比出插入位
 - 写回时整表覆盖文件
 
 ## [容易混淆的问题](/cs50g/02/pitfalls)

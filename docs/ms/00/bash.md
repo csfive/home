@@ -42,6 +42,15 @@ grep -q pattern file && echo found
 | `"$@"`    | 每个参数保持独立     |
 | `shift`   | 丢掉第一个参数并左移 |
 
+## 循环
+
+```bash
+for n in 1 2 3; do echo "$n"; done
+for i in $(seq 1 10); do echo "$i"; done
+```
+
+`for` 遍历的是词表，`$(seq 1 10)` 先把数字展开成十个词，再逐个赋给变量。循环体里改文件前先 `echo` 试跑一遍。
+
 ## 脚本骨架
 
 ```bash

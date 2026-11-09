@@ -41,6 +41,7 @@ description: 哈佛 CS50G Week 7 主题清单
 - `BaseState` 提供四个空方法做基类
 - 状态可以自己检测关闭并 `pop`
 - 对话框、菜单、淡入淡出都靠压栈
+- 多 `pop` 空栈黑屏，少 `pop` 卡输入
 - 实际操作栈深只有几层
 
 ## [地图与瓦片](/cs50g/07/tiles)
@@ -96,6 +97,8 @@ description: 哈佛 CS50G Week 7 主题清单
 - 嵌套回调串起「野生的 X 出现了」
 - `BattleMenuState` 给出 Fight 与 Run
 - 速度高者先手
+- 未倒下时双方各攻击一次
+- 战斗贴图滑入后才压台词
 - `firstPokemon`、`secondPokemon` 指针简化调用
 - 伤害 `math.max(1, attack - defense)`
 - `Timer.every` 加 `:limit(6)` 做闪烁

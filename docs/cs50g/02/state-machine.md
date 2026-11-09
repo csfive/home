@@ -101,6 +101,8 @@ function BaseState:render() end
 
 `PaddleSelectState.currentPaddle` 放在 `init`，所以每次进界面都从第一个开始。`EnterHighScoreState` 的 `chars` 是文件级 `local`，上一局输过的字母会留到下一次输入框里；想每次从 `AAA` 开始就把它挪进 `enter`。排查状态 bug 时，先看字段写在哪一层。
 
+左右箭头在 `currentPaddle` 到 1 或 4 时画成灰色，表示这个方向不能再选。
+
 | 位置             | 寿命     | 例子                   |
 | ---------------- | -------- | ---------------------- |
 | 文件顶部 `local` | 整个进程 | `highlighted`、`chars` |

@@ -74,6 +74,8 @@ end
 
 课程的胜利条件很简单：`aliens` 清空。它没有失败判定，鸟可以无限发射，只有敌人全灭才会回到标题。
 
+敌人不只能被鸟直接命中：障碍倒下砸中它，只要接触速度过阈值，同样算消灭。
+
 ```lua
 if self.launchMarker.launched then
     local x, y = self.launchMarker.alien.body:getPosition()

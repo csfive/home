@@ -9,6 +9,8 @@ description: MIT Missing Semester 第 7 讲 主题清单
 
 [课后练习答案](https://github.com/csfive/missing-semester/tree/main/07-beyond-code '非官方，仅供参考')
 
+写代码只占这份工作的一半，另一半是沟通。注释、README、提交信息是单向记录，写给未来的人看；缺陷报告、PR、评审和提问是双向协商，要等对方回应。两种都先从对方的角度删掉多余的信息。
+
 ## [注释写的是为什么](/ms/07/comments)
 
 - 代码回答 what，注释回答 why
@@ -58,6 +60,7 @@ description: MIT Missing Semester 第 7 讲 主题清单
 - 重构与新功能分开提交
 - 无关修复不要搭车
 - `git bisect` 依赖可构建的提交
+- `git bisect run` 用脚本自动二分
 - LLM 只看得到 diff，看不到上下文
 - 让模型反问你缺少的信息
 - Conventional Commits 的 type 前缀
@@ -95,7 +98,9 @@ description: MIT Missing Semester 第 7 讲 主题清单
 - 描述解释为什么需要改
 - 主动标出需要重点看的部分
 - 补上测试方法与取舍
+- 一个 diff 可以拆成多个 PR
 - 维护者接受 PR 等于长期维护
+- 贡献最多的人会被邀请做维护者
 - AI 生成的代码你仍要能解释
 - `git range-diff` 展示改动前后
 
@@ -121,6 +126,7 @@ description: MIT Missing Semester 第 7 讲 主题清单
 
 - 先说出自己的理解再提问
 - 用「这样理解对吗」校准
+- 用一串是/否问题缩小范围
 - 不懂术语当场打断
 - 不知道就说不知道
 - 补上「但我猜」或「我去查」

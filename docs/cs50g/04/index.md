@@ -73,6 +73,8 @@ description: 哈佛 CS50G Week 4 主题清单
 - 落地对齐 `(tile.y - 1) * TILE_SIZE`
 - 再减角色高度得到 `y`
 - 侧面卡墙用 `tile.x` 反推
+- 走路查碰撞前把 `y` 临时上移 1 像素
+- 掉出地图底部即回 `start`
 - 每帧只查 2–4 个格子
 
 ## [关卡生成](/cs50g/04/level-generation)
@@ -109,6 +111,8 @@ description: 哈佛 CS50G Week 4 主题清单
 - `Entity:collides` 是 AABB
 - 游戏级状态复用同一个状态机
 - 状态名拼错会被 `assert` 拦下
+- 落地当帧直接切 `walking` 或 `idle`
+- 敌人状态持有 `player` 引用
 
 ## [游戏对象](/cs50g/04/objects)
 

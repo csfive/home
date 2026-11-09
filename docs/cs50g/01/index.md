@@ -38,6 +38,7 @@ description: 哈佛 CS50G Week 1 主题清单
 - 图片宽度要大于屏宽加回绕点
 - 回绕瞬间断层就是没选对周期
 - `push.start` / `push.finish` 包住整场
+- 鸟的 `x` 不变，前进是滚动错觉
 
 ## [重力与跳跃](/cs50g/01/gravity)
 
@@ -53,6 +54,7 @@ description: 哈佛 CS50G Week 1 主题清单
 - 每帧末尾把按键表清空
 - 不清空就会每帧都触发跳跃
 - `love.mousepressed(x, y, button)` 取左键
+- 自建 `mouse.buttonsPressed` 表
 - 键盘与鼠标任一命中就跳
 - 鸟落在地面高度即判死
 
@@ -104,6 +106,7 @@ description: 哈佛 CS50G Week 1 主题清单
 - `assert` 拦住拼错的状态名
 - `gStateMachine` 全局，任何状态都能切
 - 所有状态共用的绘制留在 `main.lua`
+- `love.load` 预建四档字体
 
 ## [计分与倒计时](/cs50g/01/scoring)
 
@@ -124,6 +127,7 @@ description: 哈佛 CS50G Week 1 主题清单
 - `love.audio.newSource(path, 'static')`
 - 短音效用 `static`，长音乐用 `stream`
 - `sounds` 表按事件名索引
+- 全局表统一加 `g` 前缀
 - `sounds['jump']:play()` 播一次
 - 音乐 `setLooping(true)` 后 `play()`
 - 同一个 source 重播会打断上一次

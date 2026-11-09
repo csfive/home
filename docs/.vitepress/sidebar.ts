@@ -1,5 +1,6 @@
 export const sidebar = [
   { text: '关于', link: '/' },
+  { text: '课程覆盖', link: '/coverage' },
   {
     text: 'Missing Semester',
     collapsed: false,

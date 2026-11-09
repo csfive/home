@@ -35,6 +35,7 @@ description: MIT Missing Semester 第 2 讲 主题清单
 - 左下角显示模式，启动默认 Normal
 - 不用鼠标，也不用方向键
 - `hjkl` 是基本位移
+- 键位按助记命名：`w` 是 word、`b` 是 back
 - `w`、`b`、`e` 按词移动
 - `0`、`^`、`$` 定位行内
 - `H`、`M`、`L` 定位屏幕
@@ -70,6 +71,7 @@ description: MIT Missing Semester 第 2 讲 主题清单
 - 传输用 JSON-RPC，走 stdio 或 socket
 - 补全、悬停文档、跳转定义
 - 查找引用、整理 import、实时诊断
+- 保存时自动补 import
 - 格式化与类型检查也常由 server 提供
 - VS Code 的 Python 扩展依赖 Pylance
 - Go 扩展依赖 `gopls`
@@ -86,9 +88,12 @@ description: MIT Missing Semester 第 2 讲 主题清单
 
 - 三种形态：补全、行内对话、编码 agent
 - 补全只在光标之后生成
+- 补全也会建议先移动光标
 - 注释是补全的提示词
 - 函数名与 docstring 决定补全质量
 - 行内对话能改已经写下的代码
+- 行内对话只改选区，跨位置改动交给 agent
+- 模型在云端推理，离线只能用小模型
 - 选中代码块再描述意图
 - agent 跨文件读写并执行命令
 - Copilot 与 Cursor 是常见入口

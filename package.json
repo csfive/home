@@ -19,7 +19,8 @@
     "preview": "vitepress preview docs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "bun run format:check && bun run build"
+    "check:notes": "node scripts/check-notes.mjs",
+    "check": "bun run check:notes && bun run format:check && bun run build"
   },
   "type": "module"
 }

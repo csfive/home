@@ -55,6 +55,7 @@ description: MIT Missing Semester 第 1 讲 主题清单
 - 信号即软件中断
 - `SIGINT`、`SIGQUIT`、`SIGTERM`
 - `SIGSTOP`、`SIGTSTP`、`SIGHUP`
+- `SIGCONT` 让暂停的进程继续
 - `SIGKILL` 不可捕获
 - `Ctrl-C`、`Ctrl-\`、`Ctrl-Z`
 - 信号由终端发给前台进程组

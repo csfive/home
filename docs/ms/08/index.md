@@ -59,10 +59,13 @@ description: MIT Missing Semester 第 8 讲 主题清单
 - `pytest.raises` 断言异常
 - `monkeypatch` 与 `unittest.mock.patch`
 - mock 数据库、HTTP 等外部依赖
+- `pytest-vcr` 录制并回放真实请求
 - TDD：先写失败的测试
 - 回归测试：修 bug 前先复现
 - 属性测试：Hypothesis 的 `@given`
+- 属性测试只验证写下的性质
 - `coverage run -m pytest` 与 `coverage html`
+- `coverage xml` 喂给 agent 补测试
 - 行覆盖与分支覆盖
 - 覆盖率是下限，不是目标
 
@@ -101,6 +104,7 @@ description: MIT Missing Semester 第 8 讲 主题清单
 - 分支保护配 required checks
 - `secrets` 在 fork PR 中不可用
 - 状态徽章显示在 README
+- 覆盖率上传 Codecov 看趋势
 - 持续部署：构建产物并发布
 
 ## [命令入口](/ms/08/command-runners)
@@ -137,6 +141,7 @@ description: MIT Missing Semester 第 8 讲 主题清单
 - `re.sub` 的替换模板
 - 原始字符串 `r""` 保留反斜杠
 - `grep -E` 与 `grep -P` 的方言
+- Vim 基本正则的 `\+` 与 PCRE 的 `+`
 - `go test -run` 用正则筛测试
 - 不拿正则解析 HTML 与 JSON
 

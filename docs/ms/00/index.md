@@ -19,6 +19,10 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - Shell 的读入循环
 - 命令、参数与 `argv`
 - 提示符的构成
+- 绝对路径与相对路径
+- `.`、`..`、`~`，根目录的 `..` 仍是根
+- `Tab` 补全：单次补全、双次列候选
+- `zoxide` 按访问历史跳目录
 
 ## [一条命令的旅程](/ms/00/command-journey)
 
@@ -98,6 +102,8 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - `man`、`--help`、[tldr](https://github.com/tldr-pages/tldr)
 - `cat`、`less`、`head`、`tail`
 - `sort` 与 `uniq`
+- `sort` 默认字典序，数字比较用 `-n`
+- `find` 的 `-maxdepth` 要写在测试条件之前
 - `grep`
 - `sed`
 - `find`

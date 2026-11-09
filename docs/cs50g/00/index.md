@@ -33,6 +33,7 @@ description: 哈佛 CS50G Week 0 主题清单
 - `and/or` 模拟三元
 - `require` 与模块
 - 全局模块写法与返回表写法
+- `tostring` 把值转成字符串
 
 ## [LÖVE 基础](/cs50g/00/game-loop)
 
@@ -41,11 +42,16 @@ description: 哈佛 CS50G Week 0 主题清单
 - `love.keypressed` 与 `love.keyboard.isDown`
 - 2D 坐标系：原点左上、Y 向下
 - `love.window.setMode` 与 vsync
+- `love.window.setTitle` 设窗口标题
 - `love.graphics.rectangle` 的 `fill` / `line`
 - `love.graphics.clear` 与 RGBA
+- `setColor` 是绘制色，不是清屏色
+- `love.graphics.print` 不给宽度
 - 字体：`newFont` 与 `setFont`
 - 绘制锚点在左上角
 - 帧率与刷新率
+- `love.timer.getFPS` 打印帧率
+- `love.event.quit` 退出游戏
 
 ## [虚拟分辨率与滤镜](/cs50g/00/virtual-resolution)
 
