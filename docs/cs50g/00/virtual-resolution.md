@@ -15,16 +15,28 @@ description: 哈佛 CS50G Week 0 · push 与像素风
 | 放大位图             | 双线性滤镜把像素糊成团 |
 | 虚拟分辨率 + 最近邻  | 像素块清晰，有 CRT 感  |
 
-## 最近邻滤镜
+## linear 与 nearest
+
+放大一张图时，GPU 不是把像素拉长，而是给屏幕上的每个像素去原图里取样。取样点经常落在几个像素中间，取谁、怎么混，就是 filter 决定的。
+
+- `nearest`：取最近的那个像素，不做混合。放大后每个原像素变成一个方块，边缘是硬的。
+- `linear`：取周围四个像素按距离加权平均（双线性插值）。像素之间多出过渡色，放大后发糊。
+
+|           | `nearest`        | `linear`             |
+| --------- | ---------------- | -------------------- |
+| 放大后    | 硬边方块         | 渐变、模糊           |
+| 适合      | 像素画、复古风格 | 照片、需要平滑的场合 |
+| LÖVE 默认 | 否               | 是                   |
+
+`setDefaultFilter(min, mag)` 的两个参数分别是缩小和放大时用的过滤器，Pong 里基本都是放大，两个都写 `nearest`：
 
 ```lua
 love.graphics.setDefaultFilter('nearest', 'nearest')
 ```
 
-- 默认是 `linear`（双线性），放大后模糊
-- `nearest` 保留硬边，做像素风必须
-- 必须在创建字体、图片之前设置，否则资源已经按旧滤镜生成
-- 单个图片也可以 `image:setFilter('nearest', 'nearest')`
+这行要在创建字体、图片之前执行，因为资源创建时就按当时的过滤器定了。
+
+单张图也能用 `image:setFilter('nearest', 'nearest')` 覆盖。
 
 ## push
 
@@ -80,9 +92,3 @@ function love.mousepressed(x, y, button)
     local gx, gy = push.toGame(x, y)
 end
 ```
-
-## 常见坑
-
-- 滤镜在资源创建之后才设，等于没设
-- 非整数倍缩放会让像素宽度不一致，看起来有的粗有的细
-- 忘了 `push.finish()`，后面的 UI 也会被缩放

@@ -48,24 +48,21 @@ description: 哈佛 CS50G Week 0 主题清单
 - `setColor` 是绘制色，不是清屏色
 - `love.graphics.print` 不给宽度
 - 字体：`newFont` 与 `setFont`
-- 绘制锚点在左上角
-- 帧率与刷新率
 - `love.timer.getFPS` 打印帧率
 - `love.event.quit` 退出游戏
 
 ## [虚拟分辨率与滤镜](/cs50g/00/virtual-resolution)
 
-- 虚拟分辨率 432×243
 - [push](https://github.com/Ulydev/push) 库
-- `push.setupScreen`
-- `push.start` / `push.finish`
+- 虚拟分辨率
+- `push.setupScreen` / `push.start` / `push.finish`
 - `upscale`：`normal`、`pixel-perfect`、`stretched`
 - `love.resize` 转发
-- 鼠标坐标转换
 - 最近邻与线性过滤
 - `setDefaultFilter(min, mag)`
 - 滤镜必须在建资源之前设
 - 非整数倍缩放的不均匀
+- 鼠标坐标转换
 
 ## [移动与 Delta Time](/cs50g/00/delta-time)
 
@@ -74,19 +71,15 @@ description: 哈佛 CS50G Week 0 主题清单
 - `love.keyboard.isDown` 连续检测
 - 边界钳制：`math.max` / `math.min`
 - 球的 `dx` / `dy`
-- `math.randomseed(os.time())`
-- `math.random` 的范围
-- `and/or` 三元初始化速度
+- `love.math.random` 与种子
+- 随机数的范围
 
 ## [面向对象](/cs50g/00/oop)
 
 - [Class](https://github.com/vrld/hump/blob/master/class.lua) 库（hump）
 - `init` 构造函数与 `self`
 - 字段与方法
-- 冒号语法 `obj:method()`
-- `Paddle` 与 `Ball` 模块
-- `main.lua` 只保留调度
-- 全局对象与 `require`
+- 冒号语法糖 `obj:method()`
 
 ## [碰撞检测](/cs50g/00/collision)
 
