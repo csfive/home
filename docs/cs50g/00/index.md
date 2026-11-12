@@ -11,18 +11,19 @@ description: 哈佛 CS50G Week 0 主题清单
 
 ## [环境](/cs50g/00/environment)
 
-- [LÖVE](https://love2d.org/) 与 [StyLua](https://github.com/JohnnyMorganz/StyLua) 的安装
+- [LÖVE](https://love2d.org/)
 - `love` 的运行方式：目录或 `.love` 包
 - `main.lua` 是入口
-- VS Code：[LuaLS](https://luals.github.io/) 与 StyLua
+- VS Code：[LuaLS](https://luals.github.io/) 与 [StyLua](https://github.com/JohnnyMorganz/StyLua)
 - [LuaJIT](https://luajit.org/) 与 Lua 5.1
-- ARM 上的 `jit.off()`
+- ARM 上默认关闭的 JIT
 
 ## [Lua](/cs50g/00/lua)
 
 - 全局变量与 `local`
 - 字符串拼接 `..`
-- 单行注释与 `--[[ ]]`
+- `tostring` 把值转成字符串
+- 单行注释与多行注释
 - 真假值：只有 `nil` 和 `false` 为假
 - table：数组、字典、混合
 - 数组下标从 1 开始，长度用 `#`
@@ -33,7 +34,6 @@ description: 哈佛 CS50G Week 0 主题清单
 - `and/or` 模拟三元
 - `require` 与模块
 - 全局模块写法与返回表写法
-- `tostring` 把值转成字符串
 
 ## [LÖVE 基础](/cs50g/00/game-loop)
 

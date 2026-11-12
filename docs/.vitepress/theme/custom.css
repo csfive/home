@@ -69,6 +69,71 @@
 }
 
 /**
+ * Scrollbars — a floating thumb on a transparent track, so the rail never
+ * paints a grey stripe over the page. The transparent border + content-box
+ * clip insets the thumb, which is not possible with the standard properties.
+ * Firefox gets `scrollbar-width: thin`; since it has no hover state there,
+ * it uses the stronger color directly.
+ */
+
+:root {
+  --cs-scrollbar-thumb: rgb(19 22 15 / 16%);
+  --cs-scrollbar-thumb-hover: rgb(19 22 15 / 30%);
+}
+
+.dark {
+  --cs-scrollbar-thumb: rgb(244 246 240 / 18%);
+  --cs-scrollbar-thumb-hover: rgb(244 246 240 / 32%);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 999px;
+  background-color: var(--cs-scrollbar-thumb);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--cs-scrollbar-thumb-hover);
+}
+
+/* Code blocks, tabs, tables and diagrams scroll sideways: shallower rails. */
+.vp-doc div[class*='language-']::-webkit-scrollbar,
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar,
+.vp-code-group .tabs::-webkit-scrollbar,
+.vp-doc table::-webkit-scrollbar,
+.pele-diagram::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.vp-doc div[class*='language-']::-webkit-scrollbar-thumb,
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-thumb,
+.vp-code-group .tabs::-webkit-scrollbar-thumb,
+.vp-doc table::-webkit-scrollbar-thumb,
+.pele-diagram::-webkit-scrollbar-thumb {
+  border-width: 2px;
+}
+
+@supports (-moz-appearance: none) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--cs-scrollbar-thumb-hover) transparent;
+  }
+}
+
+/**
  * Link cards — rendered from `[title](url "description")` by
  * docs/.vitepress/plugins/link-card.ts.
  */

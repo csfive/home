@@ -5,53 +5,28 @@ description: 哈佛 CS50G Week 0 · LÖVE 与 Lua 工具链
 
 # 环境
 
-课程用 Lua 写游戏，用 LÖVE 提供窗口、绘图、输入和音频。环境只需要一个可执行文件和一个 `main.lua`。
-
 ## 工具链
 
-| 工具                                              | 作用                            |
-| ------------------------------------------------- | ------------------------------- |
-| [LÖVE](https://love2d.org/)                       | 2D 运行时，负责窗口、渲染、音频 |
-| LuaJIT                                            | LÖVE 内置的解释器，兼容 Lua 5.1 |
-| [LuaLS](https://luals.github.io/)                 | VS Code 的 Lua 语言服务         |
-| [StyLua](https://github.com/JohnnyMorganz/StyLua) | Lua 格式化工具                  |
+| 工具                                              | 作用                                    |
+| ------------------------------------------------- | --------------------------------------- |
+| [LÖVE](https://love2d.org/)                       | 2D 游戏框架，提供窗口、绘图、输入和音频 |
+| LuaJIT                                            | LÖVE 自带的解释器，兼容 Lua 5.1         |
+| [LuaLS](https://luals.github.io/)                 | VS Code 的 Lua 语言服务                 |
+| [StyLua](https://github.com/JohnnyMorganz/StyLua) | Lua 格式化工具                          |
 
 ## 运行方式
 
-| 方式          | 命令                          |
-| ------------- | ----------------------------- |
-| 拖目录到 LÖVE | 自动执行目录里的 `main.lua`   |
-| 命令行        | `love .`                      |
-| 打包          | 目录压成 `.love`，再交给 LÖVE |
-| VS Code       | Love 2D Support，快捷键运行   |
+| 场景     | 做法               |
+| -------- | ------------------ |
+| 当前目录 | `love .`           |
+| 指定目录 | `love ~/code/pong` |
 
-`main.lua` 是入口，LÖVE 启动后只认这个文件名。
+## LuaJIT
 
-## 项目结构
+LÖVE 内置 LuaJIT，不用另装 Lua。它是 Lua 5.1 的一个实现，主打性能。
 
-```text
-pong/
-├── main.lua
-├── Paddle.lua
-├── Ball.lua
-├── font.ttf
-└── sounds/
-    ├── paddle.wav
-    └── score.wav
-```
+JIT 是 Just-In-Time 的缩写：程序跑起来之后，反复执行的那几段会被编译成机器码，之后直接跑机器码，不用再逐条解释。
 
-`require 'Paddle'` 会自动找 `Paddle.lua`，不用写扩展名。
+语法基本停在 5.1，只额外认 `goto`、`\z` 这几个 5.2 的特性。5.3 的 `//` 和位运算符没有，位运算要走 `bit` 库：`local bit = require('bit')`。
 
-## ARM 上的 LuaJIT
-
-Apple Silicon 上某些 LÖVE 版本会有 JIT 兼容问题，启动时调用 `jit.off()` 可以退回解释器：
-
-```lua
-if jit then jit.off() end
-```
-
-代价是性能下降；只是拿来跑课程示例通常感觉不到。
-
-## 版本
-
-LÖVE 11.x 对应 Lua 5.1 / LuaJIT。不要用 Lua 5.3 的整数语义写代码，课程示例按 5.1 的行为设计。
+ARM 这边，LÖVE 11.4 起才有原生 arm64 包。JIT 编译得在系统里申请一块可执行内存，Apple Silicon 上这块内存不太可靠，11.5 索性把 macOS arm64 的 JIT 默认关了。
