@@ -5,8 +5,6 @@ description: 哈佛 CS50G Week 5 · 实体定义与动画数据
 
 # 实体定义与动画数据
 
-实体不是一个个写死的类，而是一张数据表加一个通用构造函数。换贴图、调速度、加怪物都发生在表里，不碰逻辑。
-
 ## 定义表的结构
 
 `ENTITY_DEFS` 是一个全局常量表，键是实体类型名，值是它的全部属性。全局 + 全大写只是命名约定，Lua 不阻止你改它。
@@ -147,20 +145,14 @@ end
 
 十个怪物的坐标各自独立随机，没有任何防重叠检查，所以小概率会有两只叠在同一处。它能跑，只是看起来像一只。
 
-## 延伸：数据出错怎么查
+数据驱动把错误从编译期推到了运行期，键名写错不会报错，只会 `nil`：`StateMachine:change` 有 `assert`，状态名写错立刻炸；动画名没有断言，写错只会让 `currentAnimation` 变 `nil`；图集编号差一位只会画出隔壁那格。
 
-数据驱动把错误从编译期推到了运行期，键名写错不会报错，只会 `nil`。
-
-- `StateMachine:change` 里有 `assert(self.states[stateName])`，状态名写错会立刻炸
-- 动画名没有断言，`changeAnimation('walk-dwon')` 只会让 `currentAnimation` 变 `nil`
-- 图集编号差一位不会报错，只会画出隔壁那格，用编号脚本核对最省事
-- `print_r(ENTITY_DEFS['player'])` 能把嵌套表整棵打出来，比逐层 `print` 快
+在 `init` 末尾加一道自检，缺资源时早点失败：
 
 ```lua
--- 在 init 里加一道自检，缺资源时早点失败
 for name, anim in pairs(self.animations) do
     assert(anim.frames and #anim.frames > 0, 'empty frames: ' .. name)
 end
 ```
 
-代价是启动变慢一点，收益是错误信息带上了动画名，排查时间从几分钟降到几秒。自检要放在构造函数之后、第一次 `changeState` 之前，否则报错会晚一步。
+代价是启动慢一点，收益是错误信息带上动画名。自检要放在构造函数之后、第一次 `changeState` 之前。

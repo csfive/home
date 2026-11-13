@@ -5,8 +5,6 @@ description: 哈佛 CS50G Week 6 · 相机与坐标
 
 # 相机与坐标
 
-物理世界用一套坐标，屏幕用另一套。相机只是在 `render` 时给绘制加偏移，物理本身完全不动。
-
 ## 两套坐标
 
 Box2D 的 body 坐标是世界坐标，单位像素，原点在关卡左上角。屏幕坐标是 640×360 的虚拟分辨率，再经 `push` 缩放到窗口。
@@ -97,13 +95,3 @@ self.camX = self.camX + (targetX - self.camX) * math.min(1, 8 * dt)
 
 - 缩放用 `love.graphics.scale(s, s)`，通常放在 `translate` 之后；鼠标坐标要除以 `s`
 - hump 的 `camera` 用 `attach` / `detach` 包住绘制，仍然只影响绘制
-
-## 常见坑
-
-- 在 `update` 里调用 `translate`，什么都没发生
-- 平移后没恢复，UI 跟着关卡滚动
-- 把相机偏移加到 body 坐标，物理世界被移动两次
-- 偏移不取整，像素画面抖动
-- 边界没钳制，相机滚出地面
-- 背景和地图同速，失去纵深
-- 鼠标坐标忘了减相机，点击错位

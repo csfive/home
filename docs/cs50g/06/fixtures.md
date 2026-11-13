@@ -5,8 +5,6 @@ description: 哈佛 CS50G Week 6 · Shape 与 Fixture
 
 # Shape 与 Fixture
 
-body 只有位置，没有边界。fixture 把 shape 钉到 body 上，同时定义密度、摩擦、弹性和类型标签。
-
 ## 三层结构
 
 ```mermaid
@@ -91,13 +89,3 @@ local wheelA = love.physics.newFixture(body, love.physics.newCircleShape(10), 1)
 这些 fixture 共享同一个 body 的位置和旋转，但不会相对转动。真正的车轮需要独立的 body 加关节，见「关节」一页。
 
 同一个 shape 也可以传给多个 fixture；Box2D 会把顶点数据复制到各自的 body，之后互不影响。
-
-## 常见坑
-
-- 只创建 body 不创建 fixture，物体穿过一切
-- 把矩形宽高当成半宽半高，碰撞盒大一倍
-- 用 circle 的直径当半径
-- 碰撞盒远大于贴图，看起来像隔空碰撞
-- 忘记给地面 fixture 设 `userData`，回调里认不出
-- 以为 sensor 会挡住物体，结果直接穿过
-- 密度设得极端，碰撞表现失真
