@@ -5,7 +5,7 @@ description: MIT Missing Semester 第 1 讲 · argv 与选项约定
 
 # 参数与 flag
 
-程序收到的永远是一个字符串数组，选项和路径怎么解释，全靠约定。
+程序收到的是一个字符串数组，选项和路径怎么解释全靠约定。
 
 ## argv
 
@@ -64,7 +64,7 @@ while [[ $# -gt 0 ]]; do
 done
 ```
 
-复杂参数不要手写：Python 用 `argparse`，Go 用 `flag`，Rust 用 `clap`。
+复杂参数用现成的解析器：Python 用 `argparse`，Go 用 `flag`，Rust 用 `clap`。
 
 ## glob 在启动前展开
 

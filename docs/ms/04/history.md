@@ -15,7 +15,7 @@ git log --oneline -- main.c
 git log -p --follow src/app.py
 ```
 
-带 `--graph` 才看得出分叉与合并，`--decorate` 标出分支和 tag 的位置。这两个参数值得配成别名。
+带 `--graph` 才看得出分叉与合并，`--decorate` 标出分支和 tag 的位置。
 
 ```bash
 git config --global alias.graph "log --all --graph --decorate --oneline"

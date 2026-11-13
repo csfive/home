@@ -22,7 +22,7 @@ description: MIT Missing Semester 第 4 讲 · 容易混淆的问题
 
 ## 两个补充
 
-**`git commit` 只提交索引。** 忘记 `git add` 时新文件不会进提交，`git status` 里仍是未跟踪。这是初学者最常见的「提交了但没提交」。
+**`git commit` 只提交索引。** 忘记 `git add` 时新文件不会进提交，`git status` 里仍是未跟踪。
 
 **`reset --hard` 不删对象。** 它只让分支后退，提交仍可通过 `git reflog` 找回。真正危险的是 `git clean`，未跟踪文件不在对象库里，删掉没有任何退路。
 

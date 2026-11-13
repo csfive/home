@@ -36,7 +36,6 @@ ASan 能抓堆、栈、全局变量的越界，以及 use-after-free、use-after
 - 分配位置：这块内存是谁申请的
 - 释放位置：谁先 `free` 的
 
-- 这三段分别对应谁用、谁分配、谁释放
 - 报告里的地址是虚拟地址，直接看行号
 - 全是 `??` 说明缺少符号化工具
 - 装 `llvm-symbolizer` 并设置 `ASAN_SYMBOLIZER_PATH`
@@ -81,7 +80,7 @@ Valgrind 的 `definitely lost` 是确定泄漏，`still reachable` 通常是全�
 
 ## 把检查放进流程
 
-内存错误越晚发现越贵。常见做法：
+常见做法：
 
 - 开发时用 `-fsanitize=address,undefined` 构建
 - CI 单独跑一遍 sanitizer 构建
@@ -98,7 +97,6 @@ Valgrind 的 `definitely lost` 是确定泄漏，`still reachable` 通常是全�
 - 用 `-O2` 加 sanitizer，优化把越界访问消掉，问题不再出现
 - 把 `still reachable` 当成泄漏，花时间清理无害的全局对象
 - 修复后不补回归测试，同样的越界换个输入又回来
-- 把触发错误的用例留作回归测试，防止再次引入
 - 把 ASan 当生产工具，运行时开销和内存占用都不可接受
 - 临时关掉泄漏检查用 `ASAN_OPTIONS=detect_leaks=0`，只在确认误报时用
 - 在 macOS 上默认工具链没有 LSan，泄漏检测要换平台
