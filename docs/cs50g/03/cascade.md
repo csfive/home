@@ -93,15 +93,12 @@ flowchart TD
 
 列优先还有一层好处：新块生成也能按列计数。哪一列缺几格，就在这一列的顶部循环几次，不用维护全局的「剩余空位数」。
 
-## 补间表为什么用 Tile 当 key
+## 补间表用 Tile 当 key
 
-`tweens` 是 `[tile] = { y = 目标 }` 的形式，而不是数组。原因是 `Timer.tween` 的定义表本来就以对象为 key，直接把 `getFallingTiles` 的返回值喂进去，中间不需要任何转换。
+`tweens` 写成 `[tile] = { y = 目标 }` 而不是数组，因为 `Timer.tween` 的定义表本来就以对象为 key，`getFallingTiles()` 的返回值可以直接喂进去：
 
 ```lua
-local tilesToFall = self.board:getFallingTiles()
-Timer.tween(0.25, tilesToFall):finish(function()
+Timer.tween(0.25, self.board:getFallingTiles()):finish(function()
     self:calculateMatches()
 end)
 ```
-
-如果换成 `{ {tile = ..., y = ...}, ... }` 的数组，调用方就得再拼一次定义表。让数据结构直接对齐下游 API，能省掉一整层胶水代码——这也是 Lua 里 table 可作 key 带来的最大便利。
