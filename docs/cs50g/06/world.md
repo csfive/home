@@ -5,8 +5,6 @@ description: 哈佛 CS50G Week 6 · 物理世界
 
 # 物理世界
 
-Box2D 把所有刚体的运动与碰撞交给一个 `world` 统一计算。你不写重力、不写反弹，只负责创建物体并推进时间。
-
 ## 世界是容器
 
 `world` 不是场景，也不负责绘制。它持有 body、joint 和接触信息，`world:update(dt)` 时执行碰撞检测、求解约束、更新位置。
@@ -83,12 +81,3 @@ flowchart LR
 一个关卡一个 world，换关就重建。body 创建时绑定 world，之后不能搬到另一个世界。销毁用 `body:destroy()`，挂在上面的 fixture 与 joint 一起失效。
 
 不要在 `beginContact` 里改世界。Box2D 在回调期间锁定世界，增加或删除对象会崩溃。把要删的 body 收集起来，等 `world:update` 返回后再处理。
-
-## 常见坑
-
-- 把重力写成 `9.8`，物体几乎不动
-- 忘记调用 `world:update`，所有物体停在原地
-- 在 `love.draw` 里推进物理，速度由帧率决定
-- 把 world 当成渲染层级，试图往里面塞精灵
-- 关卡切换后复用旧 body，旧世界残留
-- 累加器不设上限，掉帧后连续补步雪崩
