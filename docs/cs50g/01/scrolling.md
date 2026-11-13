@@ -71,4 +71,6 @@ love.graphics.draw(background, background:getWidth() - backgroundScroll, 0)
 
 这样只要 `图片宽 ≥ 屏宽` 就无缝，回绕点可以等于图片宽，代价是每帧多一次 `draw`。
 
+结算页要停滚，就跳过整段累加而不是把速度设 0；相机按系数取偏移（`cameraX = scroll * 0.5`），新增图层只改系数，不必再算一遍回绕。
+
 浮点偏移还有个副作用：绘制坐标带小数时，`nearest` 过滤会让像素逐帧抖一下。`math.floor` 取整再取负，像素画就稳了，代价是滚动变成整像素跳格，60 像素/秒下每秒跳 60 次，肉眼看不出来。

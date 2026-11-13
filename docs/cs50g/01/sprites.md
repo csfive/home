@@ -36,6 +36,8 @@ end
 
 绘制顺序就是图层次序，后画的盖住先画的：Flappy Bird 固定为背景、管道对、鸟、地面。
 
+`newImage` 每次调用都会新建一份，重复加载同一张图等于把显存占两遍。`love.graphics.getStats()` 里的 `texturecount`、`texturememory` 能自查：进出状态几轮之后这两个数还在涨，就是漏了。
+
 ## 用 Class 封装
 
 `Bird = Class{}` 之后，`Bird()` 新建表并调用 `Bird:init()`。图片、坐标挂在 `self` 上，`main.lua` 只调 `bird:update(dt)` 和 `bird:render()`。
