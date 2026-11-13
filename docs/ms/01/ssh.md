@@ -33,7 +33,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub alice@host
 | 主机指纹    | 首次连接写入 `known_hosts`    |
 | passphrase  | 用 `ssh-agent` 缓存           |
 
-权限或指纹检查不通过时，ssh 会直接拒绝连接，不会降级成警告。私钥不设 passphrase 等于把登录凭据明文放在磁盘上，任何能读到该文件的程序都能直接用它登录。
+权限或指纹检查不通过时，ssh 会直接拒绝连接，不会降级成警告。
 
 ## config
 
@@ -63,8 +63,6 @@ Host vm
 | `scp`   | 简单，整文件复制     |
 | `rsync` | 增量、可续传、可排除 |
 | `mosh`  | 断线恢复，UDP        |
-
-传目录和传文件只差一个结尾的斜杠，但结果完全不同。
 
 ```bash
 rsync -av --partial src/ host:/srv/app/

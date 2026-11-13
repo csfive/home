@@ -63,7 +63,6 @@ sudo bpftrace -e 'tracepoint:syscalls:sys_enter_* /comm == "bash"/ { @[probe] = 
 
 需要「谁在这个目录下打开了什么」这类全系统问题时，`bpftrace` 更合适。`bcc` 把常见需求封装成了命令，例如 `opensnoop` 列出所有打开的文件，`biosnoop` 打印块设备 I/O 延迟。
 
-- 单行脚本适合临时排查
 - 长期使用把探针写成文件，加上过滤和退出条件
 - 高频事件不加聚合，输出量会打满终端和磁盘
 

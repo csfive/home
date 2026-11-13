@@ -18,7 +18,7 @@ git merge --no-ff feature  # 保留分支形状，强制合并提交
 git merge-base main feature
 ```
 
-`--no-ff` 在团队里常用：即使可以快进，也留下一个合并节点，让「这个特性从哪里进来」在图上可见。
+`--no-ff` 即使可以快进，也留下一个合并节点，让「这个特性从哪里进来」在图上可见。
 
 ```mermaid
 flowchart RL
@@ -66,7 +66,7 @@ flowchart RL
 
 `git mergetool` 可以调出 vimdiff 或图形工具，三栏对比省去来回翻文件。配置 `merge.tool` 后每遇到一个冲突文件会自动打开。
 
-提交之前一定要构建一次。冲突标记删错、括号少一半这类问题，编译器比人眼可靠。
+冲突标记删错、括号少一半这类问题，编译器比人眼可靠。
 
 ## 延伸：ours 与 theirs 会反过来
 

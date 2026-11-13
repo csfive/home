@@ -69,7 +69,7 @@ def load(path):
 
 ## hyperfine
 
-比较两个实现，不要靠一次 `time`。
+比较两个实现不能只跑一次 `time`。
 
 ```bash
 hyperfine --warmup 3 'fd -e jpg' 'find . -iname "*.jpg"'
@@ -84,9 +84,9 @@ hyperfine --warmup 3 --runs 20 --prepare 'sync' './build/a' './build/b'
 | `--shell=none`  | 跳过 shell，减少启动开销 |
 | `--export-json` | 导出结果做后续分析       |
 
-输出包含均值、标准差、最小值和最大值。标准差很大时，先查环境噪声，不要急着下结论。
+输出包含均值、标准差、最小值和最大值。
 
-`hyperfine` 会给两个命令做统计比较，但样本量小的时候，几毫秒的差距可能没有意义。跑之前先估计「多大的差异才算重要」，再看结果是否超过这个阈值。
+`hyperfine` 会给两个命令做统计比较，但样本量小的时候，几毫秒的差距可能没有意义。
 
 - `--prepare 'sync'` 清掉页缓存，适合测冷启动
 - 测热路径时要故意不清理缓存

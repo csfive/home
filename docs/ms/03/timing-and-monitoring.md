@@ -5,7 +5,7 @@ description: MIT Missing Semester 第 3 讲 · 计时与资源监控
 
 # 计时与资源监控
 
-程序慢，先分清是 CPU 算得慢、I/O 等得久，还是根本没在跑。计时和监控给出第一手证据。
+程序慢，先分清是 CPU 算得慢、I/O 等得久，还是根本没在跑。
 
 ## real、user、sys
 

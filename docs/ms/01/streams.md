@@ -5,7 +5,7 @@ description: MIT Missing Semester 第 1 讲 · stdin、stdout、stderr 与缓冲
 
 # 流与管道
 
-三个流是进程和外界通信的默认通道，管道把它们接起来，让多个程序同时干活。
+三个流是进程和外界通信的默认通道，管道把它们接起来。
 
 ## 三个流
 

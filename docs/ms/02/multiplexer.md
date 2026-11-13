@@ -48,7 +48,7 @@ tmux split-window -h -t dev:1         # 脚本里直接分屏
 
 `send-keys` 的 `C-m` 代表回车。这个能力让 tmux 可以当轻量调度器：一条命令拉起「编辑、测试、日志」三个窗格，顺序固定，不用每天手点。
 
-在 tmux 里按 `<C-b> :` 输入 `setw synchronize-panes on`，可以把键盘输入同步到当前窗口所有窗格，适合一次在五台机器上敲同一条命令。用完记得关掉。
+在 tmux 里按 `<C-b> :` 输入 `setw synchronize-panes on`，可以把键盘输入同步到当前窗口所有窗格，适合一次在五台机器上敲同一条命令。
 
 ## 断线与长任务
 
@@ -61,7 +61,7 @@ tmux split-window -h -t dev:1         # 脚本里直接分屏
 | `tmux`        | 有   | 有   | 有     | 留在 pane 里可翻 |
 | `systemd-run` | 无   | 无   | 无     | `journalctl`     |
 
-跑训练任务、长时间编译、需要中途输入密码的命令，选 tmux。真正无人值守的守护进程应该交给 systemd 或容器编排，而不是 tmux。
+跑训练任务、长时间编译、需要中途输入密码的命令，选 tmux。
 
 ## 配置与嵌套
 
