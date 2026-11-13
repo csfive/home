@@ -5,8 +5,6 @@ description: MIT Missing Semester 第 0 讲 · grep、sed、find、awk
 
 # 常用文本工具
 
-这些工具都很小，组合起来却能完成很复杂的文本处理。记它们的输入输出比记选项更重要。
-
 ## 工具速查
 
 | 工具             | 用途         | 常见写法               |
@@ -22,8 +20,6 @@ description: MIT Missing Semester 第 0 讲 · grep、sed、find、awk
 | `find`           | 按条件找文件 | `find . -name '*.py'`  |
 | `awk`            | 按列处理     | `awk -F, '{print $2}'` |
 | `jq`             | 处理 JSON    | `jq '.items[].name'`   |
-
-单条命令解决不了的问题，通常是把其中三四个接成管道。
 
 ## 组合套路
 
@@ -68,10 +64,6 @@ ssh myserver 'journalctl -u sshd -b-1 | grep "Disconnected from"' \
 
 - 远端：取日志、过滤行
 - 本地：抽取用户名、排序、计数
-
-每一段只做一件事，失败时也容易单独调试。
-
-换现代工具之前，先确认目标机器上装得上；很多服务器只保证 POSIX 那套。
 
 ## 现代替代
 

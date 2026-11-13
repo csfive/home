@@ -11,141 +11,103 @@ description: 哈佛 CS50G Week 1 主题清单
 
 ## [精灵](/cs50g/01/sprites)
 
-- 精灵就是会移动的图片
-- `love.graphics.newImage(path)` 把图片读进内存
-- `love.graphics.draw(image, x, y)` 贴到屏幕
-- `image:getWidth()` 与 `image:getHeight()`
-- 用图片尺寸算布局，不写死数字
-- `setDefaultFilter('nearest', 'nearest')` 保住像素边缘
+- `love.graphics.newImage(path)`
+- `love.graphics.draw(image, x, y)`
+- `image:getWidth()` / `image:getHeight()` / `getDimensions()`
+- 尺寸从图片取，不写死
+- `setDefaultFilter('nearest', 'nearest')`
 - 滤镜必须在建图片、字体之前设
-- `Class{}` 定义 `Bird`，`init` 当构造函数
-- `bird:update(dt)` 的冒号是隐式 `self`
-- 冒号等价于 `Bird.update(bird, dt)`
-- `bird:render()` 只画自己，不碰别人的坐标
+- `Class{}` 定义 `Bird`
+- `bird:update(dt)` 的冒号等价于 `Bird.update(bird, dt)`
+- `setColor` 是乘算色，画完要复位
 - 绘制顺序就是图层次序
 
 ## [无限滚动与视差](/cs50g/01/scrolling)
 
-- 滚动量是一路累加的偏移值
-- 速度乘 `dt` 才与帧率无关
-- 背景 30、地面 60，视差由此产生
-- 移动慢的图层看起来更远
-- `%` 取模把偏移绕回 0
-- 回绕点要选图案重复的位置
-- 背景回绕点 413，地面用屏宽
-- 绘制时把偏移取负，才是向左滚
-- 地面贴在 `VIRTUAL_HEIGHT - 16`
-- 图片宽度要大于屏宽加回绕点
-- 回绕瞬间断层就是没选对周期
+- 偏移量累加再对回绕点取模
+- 视差来自两层速度差：背景 30、地面 60
+- 回绕点取图案重复的周期：背景 413、地面用屏宽
+- 绘制时偏移取负
+- 地面贴 `VIRTUAL_HEIGHT - 16`
+- 图片宽要大于屏宽加回绕点
 - `push.start` / `push.finish` 包住整场
-- 鸟的 `x` 不变，前进是滚动错觉
 
 ## [重力与跳跃](/cs50g/01/gravity)
 
-- `GRAVITY` 是每秒钟加给速度的量
-- `dy = dy + GRAVITY * dt` 先加速度
-- `y = y + dy * dt` 再加速度到位置
-- 跳跃是直接把 `dy` 赋成负数
-- 赋值而不是累减，手感才干脆
-- 跳跃速度是负数常量，单位与重力自洽
-- `love.keypressed` 只能写在 `main.lua`
-- 自建 `love.keyboard.keysPressed = {}`
-- `love.keyboard.wasPressed(key)` 查本帧
-- 每帧末尾把按键表清空
-- 不清空就会每帧都触发跳跃
-- `love.mousepressed(x, y, button)` 取左键
-- 自建 `mouse.buttonsPressed` 表
-- 键盘与鼠标任一命中就跳
-- 鸟落在地面高度即判死
+- 半隐式欧拉：先 `dy = dy + GRAVITY * dt`，再 `y = y + dy * dt`
+- 跳跃是 `dy = -300` 赋值，不是累减
+- `GRAVITY` / `FLAP_VELOCITY` 的单位是每秒
+- `love.keypressed` 只能定义在 `main.lua`
+- 自建 `love.keyboard.keysPressed` 表
+- `love.keyboard.wasPressed(key)`
+- 每帧末清空按键表
+- `love.mouse.wasPressed(1)` 与键盘并联
+- `dt` 封顶防止穿透
 
 ## [管道生成](/cs50g/01/pipes)
 
-- 计时器累加 `dt`，到点生成
-- `table.insert(pipes, PipePair(y))` 追加
-- 生成的是一对管，不是一个
-- 管道图片定义在类外，只加载一次
-- `PIPE_WIDTH` / `PIPE_HEIGHT` 是共享常量
-- 上管 Y 直接给，下管再偏移
-- 下管 Y = 上管 Y + 管高 + 缺口
-- `GAP_HEIGHT` 是难度旋钮
-- 上管用 `scaleY = -1` 翻转
-- 翻转后要补一个 `PIPE_HEIGHT` 才不动位
-- 新管 Y 基于上一个 Y 加抖动
+- 计时器累加 `dt` 到点生成
+- `table.insert(pipePairs, PipePair(y))`
+- `PIPE_WIDTH` / `PIPE_HEIGHT` / `GAP_HEIGHT`
+- 下管 Y = 上管 Y + `PIPE_HEIGHT` + `GAP_HEIGHT`
+- 上管用 `scaleY = -1` 翻转，补 `PIPE_HEIGHT` 回到原位
+- 新管 Y 在上一对 Y 附近抖动
 - `math.max` / `math.min` 夹住生成范围
-- 完全随机会生成通不过的断崖
-- 出屏不立刻删，先置 `remove`
-- 迭代中删表会跳过下一个元素
-- 从后往前删可以就地移除
+- 出屏先置 `remove`，遍历结束再删
+- 倒序 `for i = #t, 1, -1` 就地删除
 
 ## [碰撞检测](/cs50g/01/collision)
 
-- AABB 即轴对齐包围盒
-- 两边 X 区间有交集才算可能相撞
-- 再判 Y 区间，全满足才碰撞
-- 鸟按矩形近似，不管翅膀形状
+- AABB 两次区间比较：X 与 Y 都无间隙才算撞
 - 碰撞盒四边各内缩 2 像素
-- 内缩是给玩家的容错
-- 每个管道对要判上下两根
-- 命中后 `return`，避免重复切状态
-- 碰撞判定放在 `update` 而不是 `draw`
-- 速度太快会穿过物体，即穿透
-- 鸟撞地面用另一条判定
+- `Bird:collides(pipe)` 同时判上下两根管
+- 命中后 `return` 避免重复切状态
+- 落地判定 `y + height > VIRTUAL_HEIGHT - 16`
+- 判定放在 `update`，不放 `render`
+- `line` 模式画碰撞盒调试
 
 ## [状态机](/cs50g/01/state-machine)
 
-- 一串 `if gameState == 'play'` 会越长越乱
-- 状态做成类，每个状态自己管实体
-- `StateMachine` 存一张 `states` 表
-- `current` 指向当前状态实例
-- `change(name, params)` 做三步切换
-- 先 `exit`，再新建实例，最后 `enter`
-- 状态表里放返回新实例的匿名函数
-- 每次进入都是干净状态
-- `BaseState` 给全套空方法当契约
+- 状态即类，每个状态自己持有实体
+- `StateMachine` 的 `states` 表存构造函数
+- `change(name, params)`：`exit` → 新实例 → `enter`
+- `BaseState` 提供空方法
 - `Class{__includes = BaseState}` 继承
-- `assert` 拦住拼错的状态名
-- `gStateMachine` 全局，任何状态都能切
-- 所有状态共用的绘制留在 `main.lua`
+- `assert(self.states[name])` 拦住拼错
+- 跨状态共用逻辑留在 `main.lua`
 - `love.load` 预建四档字体
 
 ## [计分与倒计时](/cs50g/01/scoring)
 
 - 分数是 `PlayState` 的字段
-- 鸟越过管右缘才加一分
-- `pair.scored` 标记防止反复加分
-- 判定 `pair.x + PIPE_WIDTH < bird.x`
-- 死亡时 `change('score', { score = n })`
-- `ScoreState:enter(params)` 接住数据
-- 状态之间靠 `params` 表传值
+- 过管条件 `pair.x + PIPE_WIDTH < bird.x`
+- `pair.scored` 防止重复加分
+- `change('score', { score = n })` 传值
+- `ScoreState:enter(params)` 接住参数
 - 倒计时 3、2、1，每个 0.75 秒
-- 计时器超过阈值就减一
-- 计时器用取模留下余数，别清零
-- 倒计时结束才进 `play`
+- 计时器取模而非清零
+- `love.filesystem` 存最高分
 
 ## [音效与音乐](/cs50g/01/audio)
 
 - `love.audio.newSource(path, 'static')`
-- 短音效用 `static`，长音乐用 `stream`
+- 短音效 `static`，长音乐 `stream`
 - `sounds` 表按事件名索引
-- 全局表统一加 `g` 前缀
-- `sounds['jump']:play()` 播一次
-- 音乐 `setLooping(true)` 后 `play()`
-- 同一个 source 重播会打断上一次
-- 要叠音就 `source:clone()`
-- 撞管同时播爆炸与受伤两轨
-- `:pause()` / `:resume()` 控制长音轨
+- `source:play()` / `pause()` / `resume()` / `stop()`
+- `setLooping(true)` 循环背景音乐
+- 同一 source 重播会打断上一次
+- 叠音用 `source:clone()`
 - `love.audio.setVolume` 调总音量
-- BFXR、ChipTone 能直接生成素材
+- [BFXR](https://www.bfxr.net/) 与 [ChipTone](https://sfbgames.itch.io/chiptone)
 
 ## [容易混淆的问题](/cs50g/01/pitfalls)
 
-- 滚动为什么必须取模
-- 回绕点与图片宽度是什么关系
-- 跳跃为什么要直接赋值 `dy`
-- 帧末不清空按键表会怎样
+- `wasPressed` 还是 `isDown`
+- 跳跃为什么是赋值不是累减
+- 位置项漏乘 `dt` 会怎样
+- 取模为什么不能换成清零
 - 上管翻转为什么还要加高度
-- 为什么出屏不直接 `table.remove`
+- 出屏为什么不直接 `table.remove`
 - `pairs` 与 `ipairs` 该用哪个
-- `exit` 和 `enter` 分别在什么时候跑
-- 分数为什么要用 `scored` 标记
-- 音效为什么有时听不到第二声
+- `init` 与 `enter` 分别在什么时候跑
+- `scored` 与 `remove` 两个标记

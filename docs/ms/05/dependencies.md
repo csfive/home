@@ -5,7 +5,7 @@ description: MIT Missing Semester 第 5 讲 · 依赖与环境
 
 # 依赖与环境
 
-`ModuleNotFoundError` 说明解释器在当前搜索路径里没找到这个包。依赖管理要先回答「装到哪」，再回答「装什么版本」。
+`ModuleNotFoundError` 说明解释器在当前搜索路径里没找到这个包。
 
 ## 依赖是一张图
 
@@ -30,7 +30,7 @@ Successfully installed certifi-2024.8.30 charset-normalizer-3.4.0 idna-3.10 requ
 | `pandas==1.2.0`   | `>=1.16.5`         | `>=1.16.5,<1.19.0` |
 | 另一个包          | `>=1.19`           | 空集，冲突         |
 
-冲突无解时，升级任意一个包都无法调和，这类局面叫依赖地狱。隔离是唯一通用的解法。
+冲突无解时，升级任意一个包都无法调和，这类局面叫依赖地狱。
 
 还有两个容易忽略的细节。安装名和导入名不必相同：`pip install pyyaml` 之后 `import yaml`，`pip install pillow` 之后 `import PIL`，报错信息里出现的是后者。索引也不必唯一：`--index-url` 换源、`--extra-index-url` 追加备用源，企业内网常见这种配置，代价是信任边界变模糊。
 
@@ -57,15 +57,13 @@ deactivate
 
 系统的 Python 可能被包管理器或 OS 自身使用，改它等于赌系统不会坏。
 
-一个项目一个环境，别搞一个万能环境装所有东西。两个项目的版本要求迟早会撞，撞的时候你只能二选一。
+一个项目一个环境，两个项目的版本要求迟早会撞，撞的时候只能二选一。
 
 虚拟环境目录里存的是绝对路径：`pyvenv.cfg` 和 `bin/` 下的脚本都指向创建时的位置。把整个目录拷到别的机器、别的路径，多半直接坏掉。正确做法是把依赖声明提交到仓库，到新机器上重建。
 
 ```bash
 rm -rf venv && python -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 ```
-
-环境是一次性的，声明文件才是资产。这条心态差别，决定了项目在别人机器上能不能十分钟跑起来。
 
 还有些进程不跟着 `activate` 走：Jupyter 内核、编辑器的 LSP、pytest 的插件各自绑定某个解释器。装完包却仍然 import 失败时，先打印 `sys.executable`，看它到底在哪个环境里。
 
@@ -89,7 +87,7 @@ uv pip freeze
 | 列已安装   | `pip list`       | `uv pip list`           |
 | 导出精确版 | `pip freeze`     | `uv pip freeze`         |
 
-两者写的是同一套 `site-packages` 布局，可以混用，但不要在同一环境里来回切换工具，容易对不上元数据。
+两者写的是同一套 `site-packages` 布局，可以混用；同一环境里来回切换工具容易对不上元数据。
 
 `uv` 有两层接口，别混。`uv pip install` 是 `pip` 的替代品，你手动管依赖；`uv add` 与 `uv sync` 是项目模式，读 `pyproject.toml`、写 `uv.lock`、顺手建 `.venv`。做应用用项目模式，做一次性实验用 `uv pip`。
 

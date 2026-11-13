@@ -5,7 +5,7 @@ description: MIT Missing Semester 第 2 讲 · dotfiles 与配置同步
 
 # dotfiles 与配置同步
 
-点开头的文件默认不显示，`ls -a` 才看得见；开发环境有一半活在这些文件里。
+点开头的文件默认不显示，`ls -a` 才看得见。
 
 ## 谁在读这些文件
 
@@ -25,7 +25,7 @@ Shell 的启动文件按「登录与否」「交互与否」分岔。macOS 的 T
 
 `~/.config` 是 XDG 规范的位置，设了 `$XDG_CONFIG_HOME` 就得换成它。macOS 上 VS Code 的设置文件在 `~/Library/Application Support/Code/User/`，同目录还有 `keybindings.json`，改快捷键不必点图形界面。
 
-`~/.zshenv` 连非交互脚本都会读，把耗时命令写进去会拖慢每一次 `zsh -c`。环境变量放这里，别放 `echo` 和 `source`。
+`~/.zshenv` 连非交互脚本都会读，把耗时命令写进去会拖慢每一次 `zsh -c`。
 
 ## 放进仓库
 
@@ -68,7 +68,7 @@ dotfiles add ~/.zshrc && dotfiles commit -m "add zshrc"
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 ```
 
-配置文件里永远不写 token 和私钥。凭据放 `~/.ssh`、系统钥匙串或环境变量，仓库只存读取它们的代码。把 `.env` 加进 `.gitignore` 只是最低要求，历史提交里的密钥仍然要当作已泄露。
+凭据放 `~/.ssh`、系统钥匙串或环境变量，仓库只存读取它们的代码。把 `.env` 加进 `.gitignore` 只是最低要求，历史提交里的密钥仍然要当作已泄露。
 
 ## 改了不生效
 

@@ -7,7 +7,7 @@ description: MIT Missing Semester 第 1 讲 · dotfile、PATH 与历史
 
 定制的目标是让环境在每台机器上都一样，并且启动不要太慢。
 
-## 启动文件
+## 启动文件与 PATH
 
 | 模式       | 读取的文件                                       |
 | ---------- | ------------------------------------------------ |
@@ -20,21 +20,14 @@ description: MIT Missing Semester 第 1 讲 · dotfile、PATH 与历史
 ```bash
 bash -l   # 登录模式
 bash -i   # 交互模式
-```
-
-## PATH
-
-```bash
 export PATH="$PATH:$HOME/.local/bin"
 ```
 
-- 从左到右查找，前面的优先
-- 重复执行会累积重复项
-- `type -a` 看所有候选
+`PATH` 从左到右查找，前面的优先；重复执行会累积重复项，`type -a` 看所有候选。
 
 ## 提示符
 
-`PS1` 决定提示符怎么渲染，bash 里 `\u`、`\h`、`\w`、`\$` 分别是用户名、主机名、当前路径和权限符号，root 会显示 `#`。
+`PS1` 决定提示符怎么组成，bash 里 `\u`、`\h`、`\w`、`\$` 分别是用户名、主机名、当前路径和权限符号，root 会显示 `#`。
 
 ```bash
 PS1='\u@\h \w \$ '
@@ -75,7 +68,7 @@ unalias ll
 3. 写 `install.sh`，用 `ln -sf` 链回 home
 4. 换机器：clone、跑脚本
 
-`curl ... | bash` 会直接执行没看过的代码，先下载再读一遍更稳妥。
+`curl ... | bash` 会直接执行没看过的代码，先下载下来读一遍。
 
 ## 工具与终端
 
@@ -88,4 +81,4 @@ unalias ll
 | 插件     | 语法高亮、自动建议、补全      |
 | 终端     | Alacritty、Ghostty，GPU 渲染  |
 
-框架省事但拖慢启动，只装真正用到的插件更快。启动耗时可以用 `time bash -i -c exit` 量。
+框架省事但拖慢启动，启动耗时可以用 `time bash -i -c exit` 量。

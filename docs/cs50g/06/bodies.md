@@ -5,8 +5,6 @@ description: 哈佛 CS50G Week 6 · 刚体
 
 # 刚体
 
-body 是 Box2D 里唯一有位置和速度的东西。它本身没有形状，也画不出来；碰撞边界靠 fixture 挂上去。
-
 ## 创建
 
 ```lua
@@ -88,12 +86,3 @@ love.graphics.draw(
 ```
 
 最后两个参数是绘制原点，传纹理一半宽高，旋转才会绕中心。直接用 `body:setPosition` 是瞬移，会跳过路径上的碰撞；想让物体移动，改速度或施加冲量。
-
-## 常见坑
-
-- 把左上角坐标传给 `newBody`，物体整体偏移半个尺寸
-- 用 `static` 做会动的平台，怎么设速度都不动
-- 给 `kinematic` 期待重力，它永远不会下落
-- 每帧 `setPosition` 做移动，碰撞被完全绕过
-- 忘记 `setFixedRotation`，角色撞一下就倒地
-- 在回调里销毁 body，触发世界锁定错误

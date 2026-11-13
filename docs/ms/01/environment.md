@@ -5,7 +5,7 @@ description: MIT Missing Semester 第 1 讲 · 赋值、引号与替换
 
 # 变量与环境
 
-Shell 变量全是字符串。赋值、引号、替换、作用域四件事决定了它们怎么工作。
+Shell 变量全是字符串。
 
 ## 赋值
 
@@ -52,7 +52,7 @@ diff <(ls src) <(ls docs)
 | `TZ=Asia/Tokyo date` | 只对这条命令生效     |
 | `env -i`             | 清空环境再执行       |
 
-大写命名只是约定。`$HOME`、`$PATH` 说明环境变量的价值：隐式配置，不需要额外参数；代价是隐式依赖。
+大写命名只是约定，`$HOME`、`$PATH` 这类变量由 Shell 和程序隐式读取。
 
 ## 作用域
 

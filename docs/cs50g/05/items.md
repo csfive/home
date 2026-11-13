@@ -5,8 +5,6 @@ description: 哈佛 CS50G Week 5 · 道具、库存与存档
 
 # 道具、库存与存档
 
-罐子从装饰变成武器，掉落物把血量接回去，宝箱把回旋镖写进库存。三者共用一套 `GameObject`，区别只在回调与附加状态。
-
 ## 罐子：从障碍到武器
 
 罐子是一张定义表加一个坐标，关键是把"能挡住人"和"能被举起来"两件事分开做。
@@ -132,21 +130,17 @@ end
 
 追踪要现算，不能记住出发时的坐标，否则玩家一移动就接不到。旋转用 `love.graphics.draw` 的角度参数，每帧累加即可。
 
-## 延伸：把进度写进文件
-
-讲义没有存档，但状态已经是纯数据，序列化很直接。要存的是房间坐标、血量、库存，外加随机种子。
+讲义没有存档，但状态已经是纯数据，序列化很直接：房间坐标、血量、库存，外加随机种子。
 
 ```lua
 local data = string.format(
-    'return { roomX = %d, roomY = %d, health = %d, boomerang = %s, seed = %d }',
-    dungeon.currentRoom.x, dungeon.currentRoom.y,
-    player.health, tostring(player.hasBoomerang), seed)
+    'return { roomX = %d, roomY = %d, health = %d, seed = %d }',
+    dungeon.currentRoom.x, dungeon.currentRoom.y, player.health, seed)
 love.filesystem.write('save.lua', data)
 
-local chunk = love.filesystem.load('save.lua')
-local saved = chunk and chunk()
+if love.filesystem.getInfo('save.lua') then
+    saved = love.filesystem.load('save.lua')()
+end
 ```
 
-`love.filesystem` 只能读写游戏自己的存档目录，路径由 LÖVE 决定，`love.filesystem.getSaveDirectory()` 能打印出来。写之前用 `love.filesystem.getInfo('save.lua')` 判断是否存在，避免第一次启动读到空串。
-
-只存房间坐标不够：地牢每次重新随机生成，读档后那间房可能根本不存在。所以要把 `math.randomseed` 用的种子一起存，启动时先设种子再生成，房间布局才能复现。
+只存房间坐标不够：地牢每次重新随机生成，读档后那间房可能根本不存在。所以要把 `math.randomseed` 用的种子一起存，启动时先设种子再生成，布局才能复现。

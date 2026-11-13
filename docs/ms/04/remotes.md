@@ -37,7 +37,7 @@ git pull --rebase
 
 `fetch` 只更新 `origin/*`，不动工作区，这是它安全的原因。`pull` 等于 `fetch` 加 `merge`，把远端改动直接并进来；加 `--rebase` 则改成变基，历史更直但会重写本地提交。
 
-想固定默认行为可以设 `git config --global pull.rebase true`，省得每次纠结。多人共用分支时，`pull --rebase` 通常比默认的合并提交干净。
+`git config --global pull.rebase true` 可以固定默认行为。多人共用分支时，`pull --rebase` 通常比默认的合并提交干净。
 
 ## 推送与 upstream
 

@@ -19,8 +19,6 @@ description: MIT Missing Semester 第 2 讲 主题清单
 - GUI 优势：开箱即用、AI 补全集成好
 - 终端优势：轻量，无 GUI 也能干活
 - 装不了软件的机器上只剩终端
-- 建议两者都熟，至少精通一个
-- 没有偏好时从 VS Code 起步
 - Vim mode 在编辑器、Shell、AI 工具里都有
 - 终端侧工具：`ruff`、`mypy`、`gopls`
 - 编辑器不负责构建、运行与部署
@@ -99,8 +97,6 @@ description: MIT Missing Semester 第 2 讲 主题清单
 - Copilot 与 Cursor 是常见入口
 - 学生和开源维护者可免费使用 Copilot
 - 补全常把 `import` 塞进函数体
-- 生成结果要逐行读一遍
-- 不要把密钥贴进对话
 - 生成代码的来源与许可证要确认
 
 ## [dotfiles 与配置同步](/ms/02/dotfiles)
@@ -117,7 +113,6 @@ description: MIT Missing Semester 第 2 讲 主题清单
 - chezmoi 处理模板与机器差异
 - bare repo：`git --git-dir=$HOME/.dotfiles`
 - `.gitignore` 排掉机器私有配置
-- 配置文件里不要写 token
 - 改完要 `source ~/.zshrc` 才生效
 - 有的程序保存配置会替换软链
 

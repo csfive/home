@@ -19,7 +19,7 @@ description: MIT Missing Semester 第 4 讲 · 撤销与恢复
 | `git reset --hard HEAD~1`            | 是       | 是     | 是           | 完全丢弃               |
 | `git revert <rev>`                   | 是       | 是     | 是（新提交） | 反转已推送的改动       |
 
-`--hard` 会直接覆盖未提交的修改，执行前先确认 `git status` 里没有想留的东西。它不会删掉提交对象，只会让引用后退。
+`--hard` 会直接覆盖未提交的修改。它不会删掉提交对象，只会让引用后退。
 
 ```mermaid
 flowchart LR
@@ -80,4 +80,4 @@ git clean -fd         # 删文件与目录
 git clean -fdx        # 连 .gitignore 里的也删
 ```
 
-`-n` 是唯一的安全网，养成先看后删的习惯。`-x` 会删掉构建产物和本地配置，多数时候并不想要。
+`-n` 是唯一的安全网。`-x` 会删掉构建产物和本地配置。

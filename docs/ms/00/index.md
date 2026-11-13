@@ -109,8 +109,6 @@ description: MIT Missing Semester 第 0 讲 主题清单
 - `find`
 - `awk`
 
-[modern-unix](https://github.com/ibraheemdev/modern-unix '常见 Unix 命令的现代替代品合集')
-
 ## [容易混淆的问题](/ms/00/pitfalls)
 
 - `$SHELL`、`$0` 与 `ps -p $$`
