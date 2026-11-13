@@ -43,6 +43,7 @@ description: MIT Missing Semester 第 2 讲 主题清单
 - `f{char}`、`t{char}` 行内查找，`;`、`,` 重复
 - `/{regex}` 搜索，`n`、`N` 前后跳
 - Caps Lock 映射成 Escape
+- `vimtutor` 自带教程，VimGolf 练手
 
 ## [Vim 的编辑语法](/ms/02/vim-editing)
 
@@ -61,7 +62,6 @@ description: MIT Missing Semester 第 2 讲 主题清单
 - `.` 重复上一次修改
 - `:%s/old/new/g` 全文替换
 - 宏：`q` 录制，`@` 回放
-- `vimtutor` 自带教程，VimGolf 练手
 
 ## [代码智能与语言服务器](/ms/02/language-servers)
 
