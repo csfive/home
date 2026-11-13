@@ -91,6 +91,8 @@ function BaseState:render() end
 
 子状态写 `Class{__includes = BaseState}`，只覆盖需要的回调，`victory` 没有 `exit`、`high-scores` 没有 `init` 都不报错。`__includes` 只在 metatable 上挂 `__index`，覆盖逐方法生效，字段仍要靠自己的 `init` 建。
 
+文件级 `local` 与 `init` 里的字段寿命不同：前者在 `require` 时执行一次，所有实例共用；后者每次 `change` 新建，换状态就重置。
+
 ## 暂停
 
 暂停没有新增状态。`PlayState` 用 `self.paused` 标记，暂停时 `update` 提前返回，只保留恢复按键的分支。

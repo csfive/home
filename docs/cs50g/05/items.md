@@ -137,7 +137,10 @@ local data = string.format(
     'return { roomX = %d, roomY = %d, health = %d, seed = %d }',
     dungeon.currentRoom.x, dungeon.currentRoom.y, player.health, seed)
 love.filesystem.write('save.lua', data)
-local saved = love.filesystem.load('save.lua')()
+
+if love.filesystem.getInfo('save.lua') then
+    saved = love.filesystem.load('save.lua')()
+end
 ```
 
 只存房间坐标不够：地牢每次重新随机生成，读档后那间房可能根本不存在。所以要把 `math.randomseed` 用的种子一起存，启动时先设种子再生成，布局才能复现。

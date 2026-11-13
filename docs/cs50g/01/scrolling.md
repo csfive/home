@@ -24,6 +24,8 @@ description: 哈佛 CS50G Week 1 · 背景滚动与无缝回绕
 
 ```lua
 local BACKGROUND_LOOPING_POINT = 413
+local BACKGROUND_SCROLL_SPEED = 30
+local GROUND_SCROLL_SPEED = 60
 
 function love.update(dt)
     backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt)
@@ -32,7 +34,7 @@ function love.update(dt)
 end
 ```
 
-`413 % 413` 得 0，尾数正好丢掉，画面从回绕点弹回原点。`dt` 让位移与帧率无关：144 帧的机器每帧走得少，一秒走的总量相同。
+`413 % 413` 得 0，因为整除没有余数，画面从回绕点弹回原点。`dt` 让位移与帧率无关：144 帧的机器每帧走得少，一秒走的总量相同。
 
 Lua 的 `%` 结果符号跟随除数，正数取模永远落在 `[0, 除数)`；`math.fmod` 保留被除数符号，两者在偏移为负时结果不同。
 
