@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { linkCard } from './plugins/link-card.ts'
@@ -19,7 +20,7 @@ export default defineConfig({
   },
 
   markdown: {
-    theme: { light: 'vitesse-light', dark: 'vitesse-dark' },
+    theme: { light: 'github-light', dark: 'github-dark' },
     config(md) {
       md.use(mermaid)
       md.use(linkCard)
@@ -29,6 +30,7 @@ export default defineConfig({
 
   vite: {
     plugins: [
+      tailwindcss(),
       groupIconVitePlugin({
         customIcon: {
           '.sh': 'logos:bash-icon',
@@ -39,6 +41,8 @@ export default defineConfig({
   },
 
   themeConfig: {
+    nav: [],
+
     sidebar,
 
     logo: '/logo.svg',

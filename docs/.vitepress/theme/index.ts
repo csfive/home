@@ -1,5 +1,8 @@
-import DefaultTheme from 'vitepress/theme'
+import type { Theme } from 'vitepress'
 import 'virtual:group-icons.css'
-import './custom.css'
+import Layout from './Layout.vue'
+import './style.css'
 
-export default DefaultTheme
+export default {
+  Layout,
+} satisfies Theme
