@@ -419,16 +419,23 @@ html:not(.dark) .vp-doc .shiki span {
 }
 
 .vp-doc .header-anchor {
+  display: none;
   position: absolute;
   top: 0;
-  left: -1.125rem;
-  width: 1.125rem;
+  right: 100%;
+  padding-right: 0.625rem;
   opacity: 0;
   font-weight: 400;
   color: var(--muted-foreground);
   text-decoration: none !important;
   user-select: none;
   transition: opacity 0.15s ease;
+}
+
+@media (min-width: 40rem) {
+  .vp-doc .header-anchor {
+    display: block;
+  }
 }
 
 .vp-doc .header-anchor::before {

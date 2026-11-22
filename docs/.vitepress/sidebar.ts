@@ -4,7 +4,7 @@ export const sidebar: DefaultTheme.SidebarMulti = {
   '/': [
     {
       text: 'Overview',
-      items: [{ text: '关于与路线图', link: '/' }],
+      items: [{ text: '开始', link: '/' }],
     },
   ],
 }
