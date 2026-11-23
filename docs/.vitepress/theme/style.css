@@ -239,7 +239,8 @@ html.mac .kbd-mod::before {
 .coss-scroll,
 .vp-doc [class*='language-'] pre,
 .vp-doc .vp-table-scroll,
-.pele-diagram {
+.pele-diagram,
+.cs-diagram {
   scrollbar-width: thin;
   scrollbar-color: color-mix(in srgb, var(--foreground) 20%, transparent) transparent;
 }
@@ -247,7 +248,8 @@ html.mac .kbd-mod::before {
 .coss-scroll::-webkit-scrollbar,
 .vp-doc [class*='language-'] pre::-webkit-scrollbar,
 .vp-doc .vp-table-scroll::-webkit-scrollbar,
-.pele-diagram::-webkit-scrollbar {
+.pele-diagram::-webkit-scrollbar,
+.cs-diagram::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
@@ -255,14 +257,16 @@ html.mac .kbd-mod::before {
 .coss-scroll::-webkit-scrollbar-track,
 .vp-doc [class*='language-'] pre::-webkit-scrollbar-track,
 .vp-doc .vp-table-scroll::-webkit-scrollbar-track,
-.pele-diagram::-webkit-scrollbar-track {
+.pele-diagram::-webkit-scrollbar-track,
+.cs-diagram::-webkit-scrollbar-track {
   background: transparent;
 }
 
 .coss-scroll::-webkit-scrollbar-thumb,
 .vp-doc [class*='language-'] pre::-webkit-scrollbar-thumb,
 .vp-doc .vp-table-scroll::-webkit-scrollbar-thumb,
-.pele-diagram::-webkit-scrollbar-thumb {
+.pele-diagram::-webkit-scrollbar-thumb,
+.cs-diagram::-webkit-scrollbar-thumb {
   background-color: color-mix(in srgb, var(--foreground) 18%, transparent);
   border-radius: 9999px;
 }
@@ -270,7 +274,8 @@ html.mac .kbd-mod::before {
 .coss-scroll::-webkit-scrollbar-thumb:hover,
 .vp-doc [class*='language-'] pre::-webkit-scrollbar-thumb:hover,
 .vp-doc .vp-table-scroll::-webkit-scrollbar-thumb:hover,
-.pele-diagram::-webkit-scrollbar-thumb:hover {
+.pele-diagram::-webkit-scrollbar-thumb:hover,
+.cs-diagram::-webkit-scrollbar-thumb:hover {
   background-color: color-mix(in srgb, var(--foreground) 32%, transparent);
 }
 
@@ -473,7 +478,8 @@ html:not(.dark) .vp-doc .shiki span {
     .custom-block,
     .cs-link-card,
     .cs-link-cards,
-    .pele-diagram
+    .pele-diagram,
+    .cs-diagram
   ) {
   margin-top: 0;
 }
@@ -971,4 +977,18 @@ html:not(.dark) .vp-doc .shiki span {
   .pele-diagram .pele {
     min-width: 0;
   }
+}
+
+/* Custom Theme-Adaptive SVG Diagrams (docs/.vitepress/plugins/svg-diagram.ts) */
+.cs-diagram {
+  margin: 1.875rem 0;
+  overflow-x: auto;
+}
+
+.cs-diagram svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  font-family: var(--font-sans);
 }

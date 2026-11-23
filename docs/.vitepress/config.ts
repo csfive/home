@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { linkCard } from './plugins/link-card.ts'
 import { mermaid } from './plugins/mermaid.ts'
+import { svgDiagram } from './plugins/svg-diagram.ts'
 import { sidebar } from './sidebar.ts'
 
 export default defineConfig({
@@ -23,6 +24,7 @@ export default defineConfig({
     theme: { light: 'github-light', dark: 'github-dark' },
     config(md) {
       md.use(mermaid)
+      md.use(svgDiagram)
       md.use(linkCard)
       md.use(groupIconMdPlugin)
     },
