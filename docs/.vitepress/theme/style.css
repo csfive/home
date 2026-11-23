@@ -613,12 +613,6 @@ html:not(.dark) .vp-doc .shiki span {
   color: var(--code-foreground);
 }
 
-.vp-doc [class*='language-'] code .line {
-  display: inline-block;
-  width: 100%;
-  min-height: 1rem;
-}
-
 .vp-doc [class*='language-'] code .highlighted {
   display: inline-block;
   width: calc(100% + 2.5rem);

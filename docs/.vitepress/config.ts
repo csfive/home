@@ -43,7 +43,33 @@ export default defineConfig({
   },
 
   themeConfig: {
-    nav: [],
+    nav: [
+      {
+        text: 'Foundations',
+        items: [
+          {
+            text: 'CS50x · 计算机科学导论',
+            link: '/cs50x/c',
+            activeMatch: '^/cs50x(/|$)',
+          },
+          {
+            text: 'Missing Semester · 缺失的一课',
+            link: '/missing-semester/',
+            activeMatch: '^/missing-semester(/|$)',
+          },
+          {
+            text: 'CS50P · Python 编程导论',
+            link: '/cs50p/',
+            activeMatch: '^/cs50p(/|$)',
+          },
+          {
+            text: 'CS50G · 游戏开发导论',
+            link: '/cs50g/',
+            activeMatch: '^/cs50g(/|$)',
+          },
+        ],
+      },
+    ],
 
     sidebar,
 
