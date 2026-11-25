@@ -66,7 +66,7 @@ export default defineConfig({
         items: [
           {
             text: 'CS50x · 计算机科学导论',
-            link: '/cs50x/c',
+            link: '/cs50x/setup',
             activeMatch: '^/cs50x(/|$)',
           },
           {

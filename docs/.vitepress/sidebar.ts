@@ -9,7 +9,7 @@ export const sidebar: DefaultTheme.SidebarMulti = {
     {
       text: 'Foundations',
       items: [
-        { text: 'CS50x · 计算机科学导论', link: '/cs50x/c' },
+        { text: 'CS50x · 计算机科学导论', link: '/cs50x/setup' },
         { text: 'Missing Semester · 缺失的一课', link: '/missing-semester/' },
         { text: 'CS50P · Python 编程导论', link: '/cs50p/' },
         { text: 'CS50G · 游戏开发导论', link: '/cs50g/' },
@@ -20,7 +20,6 @@ export const sidebar: DefaultTheme.SidebarMulti = {
     {
       text: 'C',
       items: [
-        { text: 'C 语言是怎么运行的', link: '/cs50x/c' },
         { text: '怎么设置本地运行环境', link: '/cs50x/setup' },
         { text: '怎么写 Makefile', link: '/cs50x/makefile' },
       ],

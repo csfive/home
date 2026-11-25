@@ -40,5 +40,5 @@ bun run check    # format:check + build
 
 ## 当前进度锚点
 
-- **CS50x**：跳过 Week 0，进入 Week 1（C）且讲义底稿已落盘到 `CS50x/notes/week1-c.md`；Pset 1 已完成 `world`、`me`（本地提交 `ecee97f`，待 Week 1 全刷完再 push），待做 `mario-less`、`mario-more`、`cash`、`credit`。
-- **csfive-home**：已按 `Foundations` 建好导航与占位（`origin/main` `383b18c`），待 Week 1 刷完题后一起讨论撰写 `docs/cs50x/c.md`、`docs/cs50x/setup.md`、`docs/cs50x/makefile.md` 等主题短文。
+- **CS50x**：跳过 Week 0，Week 1（C）全部 6 题已完成并 `submit50` 提交（`world`、`me`、`mario-less`、`mario-more`、`cash`、`credit`，均已推送至 `origin/main` `1e3c1fd`，课前底稿在 `CS50x/notes/week1-c.md`），待进入 Week 2（Arrays）或先沉淀 Week 1 笔记。
+- **csfive-home**：`CS50x / C` 下已调整为 `docs/cs50x/setup.md`、`docs/cs50x/makefile.md`（本地有未推送提交 `90e3c40` 及工作区修改，尚未 push 至 `origin/main` `6cfe49e`），待整理发布后继续补充后续主题短文。

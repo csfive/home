@@ -56,7 +56,7 @@ DESTDIR=/opt/homebrew make -C libcs50 install
 
 ## `.clang-format` 与 `style50`
 
-看 `style50` 的 [源码](https://github.com/cs50/style50/blob/main/style50/languages.py#L14-L21) 会发现，它只是把标准 `clang-format` 包了一层，又补上了字符级 diff、打分和注释统计。把其中的 [`C.styleConfig`](https://github.com/cs50/style50/blob/main/style50/languages.py#L18) 放进 `.clang-format`，保存时就能和 `style50` 对齐：
+看 `style50` 的 [源码](https://github.com/cs50/style50/blob/main/style50/languages.py#L14-L21) 会发现，它只是把标准 `clang-format` 包了一层，又补上了字符级 diff、打分和注释统计。把其中的 [`C.styleConfig`](https://github.com/cs50/style50/blob/main/style50/languages.py#L18) 放进 `.clang-format`，格式化时就能和 `style50` 对齐：
 
 ```yaml [.clang-format]
 BasedOnStyle: LLVM
@@ -92,11 +92,12 @@ CompileFlags:
 
 这里不加 `-Werror` 和 `-fsanitize=...`，避免写到一半编辑器满屏红线干扰节奏，留到终端编译时再拦就行。
 
-编辑器配置固定调用系统自带的 `/usr/bin/clangd`，并传入三个参数：
+编辑器配置固定调用系统自带的 `/usr/bin/clangd`，传入三个参数并开启 C 文件保存自动格式化：
 
 - `--background-index`：后台建立代码索引，跳转定义和查找引用更快
 - `--clang-tidy`：开启静态分析，提前提示常见写法问题
 - `--header-insertion=never`：禁止补全函数时自动插入 macOS 内部头文件
+- `[c]`：指定 C 文件默认用 `clangd` 格式化，并在保存时自动触发
 
 ```json [.vscode/settings.json]
 {
