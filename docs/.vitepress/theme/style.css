@@ -464,6 +464,7 @@ html:not(.dark) .vp-doc .shiki span {
     blockquote,
     table,
     div[class*='language-'],
+    .vp-code-block-title,
     .vp-code-group,
     .custom-block,
     .cs-link-card,
@@ -673,6 +674,51 @@ html:not(.dark) .vp-doc .shiki span {
 .vp-doc [class*='language-'] > button.copy.copied::after {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+
+/* Code Block Titles (vitepress-plugin-group-icons) */
+.vp-doc .vp-code-block-title {
+  margin: 1.625rem 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background-color: var(--code);
+}
+
+.vp-doc .vp-code-block-title-bar {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.4375rem 1.25rem;
+  border-radius: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 64%, transparent);
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono);
+  font-size: 0.78125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.vp-doc .vp-code-block-title-text {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.vp-doc .vp-code-block-title [data-title]::before {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.vp-doc .vp-code-block-title > div[class*='language-'] {
+  margin: 0 !important;
+  border: none;
+  border-radius: 0 !important;
 }
 
 /* Code Groups */
