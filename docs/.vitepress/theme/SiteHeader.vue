@@ -123,7 +123,7 @@ function toggleTheme() {
 
         <a
           :href="withBase('/')"
-          class="flex shrink-0 items-center gap-2 font-display text-lg font-bold tracking-tight text-foreground no-underline sm:text-xl"
+          class="flex shrink-0 items-center gap-2 font-heading text-lg font-bold tracking-tight text-foreground no-underline sm:text-xl"
         >
           <img
             v-if="theme.logo"

@@ -3,14 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face {
-  font-family: 'Cal Sans';
-  src: url('/fonts/CalSansVF.woff2') format('woff2');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 @theme inline {
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 2000px;
@@ -18,7 +10,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
-  --font-display: var(--font-display);
   --font-mono: var(--font-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -71,7 +62,6 @@
   --font-heading:
     -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Hiragino Sans GB',
     'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  --font-display: 'Cal Sans', var(--font-heading);
   --font-mono:
     ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'PingFang SC',
     'Hiragino Sans GB', monospace;
@@ -961,16 +951,6 @@ html:not(.dark) .vp-doc .shiki span {
 .pele-diagram {
   overflow-x: auto;
   margin: 1.875rem 0;
-}
-
-.pele-diagram .pele {
-  min-width: 560px;
-}
-
-@media (max-width: 640px) {
-  .pele-diagram .pele {
-    min-width: 0;
-  }
 }
 
 /* Custom Theme-Adaptive SVG Diagrams (docs/.vitepress/plugins/svg-diagram.ts) */

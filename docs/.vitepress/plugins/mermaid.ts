@@ -21,7 +21,7 @@ export function mermaid(md: MarkdownIt) {
     }
 
     try {
-      const { svg } = render(token.content)
+      const { svg } = render(token.content, { fontSize: 13 })
       const escaped = md.utils.escapeHtml(JSON.stringify(svg))
       return `<div class="pele-diagram" v-html="${escaped}"></div>\n`
     } catch (error) {
