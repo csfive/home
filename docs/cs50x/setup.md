@@ -50,13 +50,13 @@ DESTDIR=/opt/homebrew make -C libcs50 install
 
 ## VS Code 扩展
 
-- **必装 `clangd`**（`llvm-vs-code-extensions.vscode-clangd`）：提供代码补全、悬停文档与实时诊断，并自带 `clang-format` 格式化。
-- **推荐 `CodeLLDB`**（`vadimcn.vscode-lldb`）：Apple Silicon 原生断点调试器，后续排查指针与内存越界很顺手。
-- **不要装微软的 `C/C++`**（`ms-vscode.cpptools`）：与 `clangd` 功能重叠、体量大，混装会互相抢接语言服务。
+- **必装 `clangd`**（`llvm-vs-code-extensions.vscode-clangd`）：提供代码补全、悬停文档、实时诊断和 `clang-format` 格式化
+- **推荐 `CodeLLDB`**（`vadimcn.vscode-lldb`）：断点调试器，后面查指针和内存越界很顺手
+- **不要装微软的 `C/C++`**（`ms-vscode.cpptools`）：和 `clangd` 功能重叠，混装会互相抢语言服务
 
 ## `.clang-format` 与 `style50`
 
-翻看 `style50` [源码](https://github.com/cs50/style50/blob/main/style50/languages.py#L14-L21) 会发现，它对 C 语言并没有另写解析器，而是把标准 `clang-format` 包了一层，再补上字符级 diff、打分和注释统计。把里面硬编码的 [`C.styleConfig`](https://github.com/cs50/style50/blob/main/style50/languages.py#L18) 直接放进 `.clang-format`，保存时就能和 `style50` 完全对齐：
+看 `style50` 的 [源码](https://github.com/cs50/style50/blob/main/style50/languages.py#L14-L21) 会发现，它只是把标准 `clang-format` 包了一层，又补上了字符级 diff、打分和注释统计。把其中的 [`C.styleConfig`](https://github.com/cs50/style50/blob/main/style50/languages.py#L18) 放进 `.clang-format`，保存时就能和 `style50` 对齐：
 
 ```yaml [.clang-format]
 BasedOnStyle: LLVM
@@ -78,7 +78,7 @@ TabWidth: 4
 
 ## `.clangd` 与编辑器配置
 
-`.clangd` 负责把 `/opt/homebrew/include` 喂给语言服务，让 `#include <cs50.h>` 不报红，同时开启 `-Wshadow` 提前标出外内层变量遮蔽：
+`.clangd` 用来把 `/opt/homebrew/include` 加进头文件搜索路径，让 `#include <cs50.h>` 不报红，顺便开 `-Wshadow` 提醒内外层变量遮蔽：
 
 ```yaml [.clangd]
 CompileFlags:
@@ -90,9 +90,13 @@ CompileFlags:
     - -Wshadow
 ```
 
-这里刻意不加 `-Werror` 和 `-fsanitize=...`——写到一半时编辑器满屏红线很干扰节奏，把强拦截留给终端编译阶段即可。
+这里不加 `-Werror` 和 `-fsanitize=...`，避免写到一半编辑器满屏红线干扰节奏，留到终端编译时再拦就行。
 
-编辑器配置固定调用系统自带的 `/usr/bin/clangd`，并加上 `--header-insertion=never`，防止补全函数时擅自插入 macOS 内部头文件：
+编辑器配置固定调用系统自带的 `/usr/bin/clangd`，并传入三个参数：
+
+- `--background-index`：后台建立代码索引，跳转定义和查找引用更快
+- `--clang-tidy`：开启静态分析，提前提示常见写法问题
+- `--header-insertion=never`：禁止补全函数时自动插入 macOS 内部头文件
 
 ```json [.vscode/settings.json]
 {
@@ -107,19 +111,19 @@ CompileFlags:
 
 ## `check50` 与本地差异
 
-顺着 `check50` 的 [交互调度](https://github.com/cs50/check50/blob/main/check50/_api.py#L10) 与 [C 编译源码](https://github.com/cs50/check50/blob/main/check50/c.py#L10-L16) 看下来，它的本地运行机制很清晰：
+顺着 `check50` 的 [交互调度](https://github.com/cs50/check50/blob/main/check50/_api.py#L10) 和 [C 编译源码](https://github.com/cs50/check50/blob/main/check50/c.py#L10-L16) 看下来，运行机制还是很清晰的：
 
-- 用 Python 的 `pexpect` 开伪终端模拟输入，再比对 `stdout` 与退出码；
-- 测试用例保存在 [cs50/problems](https://github.com/cs50/problems/tree/2026/x) 对应分支里，跑过一次 `--local` 后会缓存到 `~/.local/share/check50/cs50/problems`，之后加 **`--offline`** 就能完全断网秒测；
-- `check50.c.compile()` 内部直接调用 `clang -std=c11 -ggdb -lm -lcs50`，不会自动追加 Homebrew 路径，需要靠环境变量注入（见 [怎么写 Makefile](/cs50x/makefile) 中的 `export` 写法）。
+- 用 Python 的 `pexpect` 开伪终端模拟输入，再比对 `stdout` 和退出码
+- 测试用例在 [cs50/problems](https://github.com/cs50/problems/tree/2026/x) 对应分支里，跑过一次 `--local` 缓存到 `~/.local/share/check50/cs50/problems` 后，加 **`--offline`** 就能断网秒测
+- `check50.c.compile()` 直接调用 `clang -std=c11 -ggdb -lm -lcs50`，不会带 Homebrew 路径，需要靠环境变量注入（见 [怎么写 Makefile](/cs50x/makefile) 的 `export` 写法）
 
-| 差异点                 | `cs50.dev` 云端（Linux）                                                        | macOS 本地（Apple Silicon）                                                                     |
-| ---------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| **头/库路径**          | 默认位于 `/usr/include`、`/usr/lib`                                             | 装在 `/opt/homebrew`，由 `Makefile` 注入 `C_INCLUDE_PATH` / `LIBRARY_PATH`（不污染 `~/.zshrc`） |
-| **加密库 `-lcrypt`**   | `make` 默认会追加 `-lcrypt`                                                     | macOS 已合进系统库，加上反而报 `library 'crypt' not found`，需去掉                              |
-| **内存越界与泄漏检查** | 后端跑 [`valgrind`](https://github.com/cs50/check50/blob/main/check50/c.py#L75) | 不支持 `valgrind`，平时编译改开 `-fsanitize=address,undefined`（ASan + UBSan）                  |
+| 差异点                 | `cs50.dev` 云端（Linux）                                                        | macOS 本地（Apple Silicon）                                                    |
+| ---------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **头/库路径**          | 默认位于 `/usr/include`、`/usr/lib`                                             | 装在 `/opt/homebrew`，由 `Makefile` 注入 `C_INCLUDE_PATH` / `LIBRARY_PATH`     |
+| **加密库 `-lcrypt`**   | `make` 默认会追加 `-lcrypt`                                                     | macOS 已合进系统库，不用加                                                     |
+| **内存越界与泄漏检查** | 后端跑 [`valgrind`](https://github.com/cs50/check50/blob/main/check50/c.py#L75) | 不支持 `valgrind`，平时编译改开 `-fsanitize=address,undefined`（ASan + UBSan） |
 
 ## `submit50` 与目录结构
 
-- 在 GitHub 添加 `~/.ssh/id_ed25519.pub` 公钥并用 `ssh -T git@github.com` 验通后，到 [submit.cs50.io](https://submit.cs50.io) 完成一次账号授权，即可免密走 SSH 提交。
-- 从题库的 [`.cs50.yml`](https://github.com/cs50/problems/blob/2026/x/mario/less/.cs50.yml#L1-L7) 可以看到：`submit50` 与 `check50` 共用同一份 `!exclude "*"` / `!require <文件名>` 规则，**只检查当前目录下的目标文件**（例如 `mario.c`），外层按周建成 `01-c/mario-less/` 完全兼容。
+- 在 GitHub 配好 SSH 公钥（`ssh -T git@github.com` 能通），再到 [submit.cs50.io](https://submit.cs50.io) 授权一次账号，就能正常使用在线 `check50` 和 `submit50`
+- 看题库的 [`.cs50.yml`](https://github.com/cs50/problems/blob/2026/x/mario/less/.cs50.yml#L1-L7) 可知，`check50` 和 `submit50` **只检查当前目录下的目标文件**（如 `mario.c`），所以外层目录随便怎么分层（比如按周放 `01-c/mario-less/`）都没影响
