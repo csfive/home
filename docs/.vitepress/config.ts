@@ -27,6 +27,23 @@ export default defineConfig({
       md.use(svgDiagram)
       md.use(linkCard)
       md.use(groupIconMdPlugin)
+
+      const defaultCodeInline = md.renderer.rules.code_inline
+      md.renderer.rules.code_inline = (tokens, idx, options, env, self) => {
+        const html = defaultCodeInline
+          ? defaultCodeInline(tokens, idx, options, env, self)
+          : `<code${self.renderAttrs(tokens[idx])}>${md.utils.escapeHtml(tokens[idx].content)}</code>`
+        const content = tokens[idx].content
+        if (content.length < 12) return html
+        const match = html.match(/^(<code[^>]*>)([\s\S]*)(<\/code>)$/)
+        if (!match) return html
+        const [, open, inner, close] = match
+        const pattern =
+          content.length >= 18
+            ? /(?<=[^\s/])\/(?=\S)|(?<=[^\s])(?:[.,=]|-(?!-))(?=\S)/g
+            : /(?<=[^\s/])\/(?=\S)/g
+        return `${open}${inner.replace(pattern, '$&<wbr>')}${close}`
+      }
     },
   },
 

@@ -56,7 +56,7 @@ DESTDIR=/opt/homebrew make -C libcs50 install
 
 ## `.clang-format` 与 `style50`
 
-翻看 `style50` [源码](https://github.com/cs50/style50/blob/main/style50/languages.py#L14-L21)会发现，它对 C 语言并没有另写解析器，而是把标准 `clang-format` 包了一层，再补上字符级 diff、打分和注释统计。把里面硬编码的 [`C.styleConfig`](https://github.com/cs50/style50/blob/main/style50/languages.py#L18) 直接放进 `.clang-format`，保存时就能和 `style50` 完全对齐：
+翻看 `style50` [源码](https://github.com/cs50/style50/blob/main/style50/languages.py#L14-L21) 会发现，它对 C 语言并没有另写解析器，而是把标准 `clang-format` 包了一层，再补上字符级 diff、打分和注释统计。把里面硬编码的 [`C.styleConfig`](https://github.com/cs50/style50/blob/main/style50/languages.py#L18) 直接放进 `.clang-format`，保存时就能和 `style50` 完全对齐：
 
 ```yaml [.clang-format]
 BasedOnStyle: LLVM
@@ -107,7 +107,7 @@ CompileFlags:
 
 ## `check50` 与本地差异
 
-顺着 `check50` 的[交互调度](https://github.com/cs50/check50/blob/main/check50/_api.py#L10)与 [C 编译源码](https://github.com/cs50/check50/blob/main/check50/c.py#L10-L16)看下来，它的本地运行机制很清晰：
+顺着 `check50` 的 [交互调度](https://github.com/cs50/check50/blob/main/check50/_api.py#L10) 与 [C 编译源码](https://github.com/cs50/check50/blob/main/check50/c.py#L10-L16) 看下来，它的本地运行机制很清晰：
 
 - 用 Python 的 `pexpect` 开伪终端模拟输入，再比对 `stdout` 与退出码；
 - 测试用例保存在 [cs50/problems](https://github.com/cs50/problems/tree/2026/x) 对应分支里，跑过一次 `--local` 后会缓存到 `~/.local/share/check50/cs50/problems`，之后加 **`--offline`** 就能完全断网秒测；
