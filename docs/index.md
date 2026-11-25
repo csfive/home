@@ -13,20 +13,13 @@ AI 时代，很多东西一行提示词就能写出来。从零开始学计算�
 
 ```mermaid
 flowchart TD
-      A[Harvard CS50x] --> B[MIT Missing Semester]
-
-      B --> C[Harvard CS50P]
-
-      C --> E[UCB CS61A]
-      D[Harvard CS50G] --> E
-
-      E --> Z[Helsinki Haskell MOOC]
-      Z --> Y[Cornell CS3110]
-
-      E --> F[UCB CS61B]
-      E --> I[Nand2Tetris]
-
-      I --> H[UCB CS61C]
-      G[HUST CPU] --> H
-      F --> H
+  subgraph Foundations
+    CS50x["Harvard CS50x<br/>计算机科学导论"]
+    MS["MIT Missing Semester<br/>缺失的一课"]
+    CS50P["Harvard CS50P<br/>Python 编程导论"]
+    CS50G["Harvard CS50G<br/>游戏开发导论"]
+    CS50x -. 伴随 .-> MS
+    CS50x -->|主线| CS50P
+    CS50x -. 支线 .-> CS50G
+  end
 ```
