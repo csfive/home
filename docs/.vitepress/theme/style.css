@@ -68,7 +68,7 @@
 
   --background: var(--color-white);
   --foreground: var(--color-neutral-800);
-  --doc-text: color-mix(in srgb, var(--foreground) 86%, var(--background));
+  --doc-text: color-mix(in srgb, var(--foreground) 75%, var(--background));
   --card: var(--color-white);
   --card-foreground: var(--color-neutral-800);
   --popover: var(--color-white);
@@ -110,7 +110,7 @@
 .dark {
   --background: color-mix(in srgb, var(--color-neutral-950) 96%, var(--color-white));
   --foreground: var(--color-neutral-100);
-  --doc-text: color-mix(in srgb, var(--foreground) 84%, var(--background));
+  --doc-text: color-mix(in srgb, var(--foreground) 68%, var(--background));
   --card: color-mix(in srgb, var(--background) 98%, var(--color-white));
   --card-foreground: var(--color-neutral-100);
   --popover: color-mix(in srgb, var(--background) 96%, var(--color-white));
@@ -378,6 +378,18 @@ html:not(.dark) .vp-doc .shiki span {
   }
 }
 
+.vp-doc h1:has(+ p:not(:has(+ p))) {
+  margin-bottom: 0.625rem;
+}
+
+.vp-doc h1 + p:not(:has(+ p)) {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+  font-size: 1.0625rem;
+  line-height: 1.78;
+  color: var(--doc-text);
+}
+
 .vp-doc h2 {
   margin: 3rem 0 1.125rem;
   font-size: 1.375rem;
@@ -476,21 +488,26 @@ html:not(.dark) .vp-doc .shiki span {
 }
 
 .vp-doc strong {
-  font-weight: 600;
+  font-weight: 500;
   color: var(--foreground);
+}
+
+.vp-doc :is(h1, h2, h3, h4, h5, h6) strong {
+  font-weight: inherit;
 }
 
 .vp-doc a:not(.header-anchor):not(.cs-link-card) {
   font-weight: 500;
   color: var(--foreground);
   text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: color-mix(in srgb, var(--foreground) 35%, transparent);
-  transition: text-decoration-color 0.15s ease;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: opacity 0.15s ease;
 }
 
 .vp-doc a:not(.header-anchor):not(.cs-link-card):hover {
-  text-decoration-color: var(--foreground);
+  opacity: 0.75;
 }
 
 .vp-doc ul,
@@ -561,16 +578,20 @@ html:not(.dark) .vp-doc .shiki span {
 /* Inline Code */
 .vp-doc :not(pre) > code {
   position: relative;
-  margin: 0 0.16em;
-  border-radius: 0.3125rem;
-  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
-  background-color: color-mix(in srgb, var(--foreground) 4.5%, transparent);
-  padding: 0.12em 0.38em;
+  border-radius: var(--radius-md);
+  background-color: var(--muted);
+  padding: 0.15rem 0.32rem;
   font-family: var(--font-mono);
-  font-size: 0.84em;
+  font-size: 0.8125rem;
   letter-spacing: 0;
-  color: var(--foreground);
+  color: inherit;
   word-break: break-word;
+}
+
+.vp-doc :is(h1, h2, h3, h4, h5, h6) > code {
+  padding: 0.06em 0.28em;
+  font-size: 0.92em;
+  font-weight: inherit;
 }
 
 /* Code Blocks */
@@ -598,8 +619,8 @@ html:not(.dark) .vp-doc .shiki span {
   min-width: 100%;
   padding: 0 1.25rem;
   font-family: var(--font-mono);
-  font-size: 0.84375rem;
-  line-height: 1.75;
+  font-size: 0.8125rem;
+  line-height: 1.65;
   letter-spacing: 0;
   color: var(--code-foreground);
 }
@@ -678,6 +699,7 @@ html:not(.dark) .vp-doc .shiki span {
 
 /* Code Block Titles (vitepress-plugin-group-icons) */
 .vp-doc .vp-code-block-title {
+  position: relative;
   margin: 1.625rem 0;
   overflow: hidden;
   border-radius: var(--radius-xl);
@@ -688,16 +710,17 @@ html:not(.dark) .vp-doc .shiki span {
 .vp-doc .vp-code-block-title-bar {
   display: flex;
   align-items: center;
+  min-height: 2.5rem;
   margin: 0;
-  padding: 0.4375rem 1.25rem;
+  padding: 0.5rem 3rem 0.5rem 1.25rem;
   border-radius: 0;
   border-bottom: 1px solid color-mix(in srgb, var(--border) 64%, transparent);
   background-color: transparent;
   box-shadow: none;
   color: var(--muted-foreground);
   font-family: var(--font-mono);
-  font-size: 0.78125rem;
-  font-weight: 500;
+  font-size: 0.8125rem;
+  font-weight: 400;
   line-height: 1.5;
   overflow-x: auto;
   white-space: nowrap;
@@ -716,13 +739,22 @@ html:not(.dark) .vp-doc .shiki span {
 }
 
 .vp-doc .vp-code-block-title > div[class*='language-'] {
+  position: static;
   margin: 0 !important;
   border: none;
   border-radius: 0 !important;
 }
 
+.vp-doc .vp-code-block-title > div[class*='language-'] > button.copy {
+  top: 0.375rem;
+  right: 0.5rem;
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
 /* Code Groups */
 .vp-doc .vp-code-group {
+  position: relative;
   margin: 1.625rem 0;
   overflow: hidden;
   border-radius: var(--radius-xl);
@@ -734,7 +766,8 @@ html:not(.dark) .vp-doc .shiki span {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.375rem 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.375rem 3rem 0.375rem 0.5rem;
   border-bottom: 1px solid color-mix(in srgb, var(--border) 64%, transparent);
   overflow-x: auto;
 }
@@ -780,6 +813,17 @@ html:not(.dark) .vp-doc .shiki span {
   border-radius: 0;
 }
 
+.vp-doc .vp-code-group .blocks > div[class*='language-'] {
+  position: static;
+}
+
+.vp-doc .vp-code-group .blocks > div[class*='language-'] > button.copy {
+  top: 0.375rem;
+  right: 0.5rem;
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
 .vp-doc .vp-code-group .blocks > div[class*='language-'].active,
 .vp-doc .vp-code-group .blocks > .vp-block.active {
   display: block;
@@ -808,7 +852,7 @@ html:not(.dark) .vp-doc .shiki span {
 .vp-doc th {
   padding: 0.75rem 1rem;
   text-align: left;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--foreground);
   border: none;
   background-color: transparent;
@@ -858,7 +902,7 @@ html:not(.dark) .vp-doc .shiki span {
   margin: 0.75rem 0 0;
   font-size: 0.90625rem;
   line-height: 1.78;
-  color: color-mix(in srgb, var(--doc-text) 92%, transparent);
+  color: var(--doc-text);
 }
 
 .vp-doc .custom-block .custom-block-title + p,

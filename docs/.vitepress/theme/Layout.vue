@@ -61,7 +61,7 @@ const showFooter = computed(() => {
                   showFooter ? 'rounded-t-2xl rounded-b-xl' : 'rounded-2xl',
                 ]"
               >
-                <div class="flex-1 px-5 py-8 sm:px-9 sm:py-10 lg:px-14 lg:py-12">
+                <div class="flex-1 px-5 py-7 sm:px-7 sm:py-8 lg:px-10 lg:py-9">
                   <div class="mx-auto w-full max-w-[45rem]">
                     <div v-if="page.isNotFound" class="flex flex-col items-start gap-3 py-12">
                       <p class="text-xs font-medium text-muted-foreground">404</p>
@@ -92,7 +92,7 @@ const showFooter = computed(() => {
               <!-- Lower CardFrame Tray: borderless Prev/Next directly inside tray -->
               <footer
                 v-if="showFooter"
-                class="relative z-1 px-5 py-5 sm:px-9 lg:rounded-b-2xl lg:px-14"
+                class="relative z-1 px-5 py-5 sm:px-7 lg:rounded-b-2xl lg:px-10"
               >
                 <nav
                   class="mx-auto grid w-full max-w-[45rem] grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-8"

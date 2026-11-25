@@ -138,7 +138,7 @@ onBeforeUnmount(() => {
               class="relative py-1 text-[.8125rem] leading-5 text-sidebar-foreground no-underline transition-colors before:absolute before:inset-y-px before:-left-3.25 before:w-px before:rounded-full hover:text-foreground data-[active=true]:text-foreground data-[active=true]:before:w-0.5 data-[active=true]:before:bg-primary data-[depth=3]:ps-3.5"
               @click="activeId = item.id"
             >
-              <span class="block truncate">{{ item.title }}</span>
+              <span class="block break-words">{{ item.title }}</span>
             </a>
           </div>
         </nav>

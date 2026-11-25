@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
               :data-active="isActivePath(item.link, route.path)"
               :aria-current="isActivePath(item.link, route.path) ? 'page' : undefined"
               class="flex h-8 w-full items-center rounded-lg pe-2 text-sm text-sidebar-foreground no-underline select-none hover:text-sidebar-accent-foreground data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground"
-              :style="{ paddingInlineStart: `${14 + item.depth * 12}px` }"
+              :style="{ paddingInlineStart: `${8 + item.depth * 12}px` }"
             >
               <span class="truncate">{{ item.text }}</span>
             </a>
