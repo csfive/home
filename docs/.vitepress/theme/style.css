@@ -871,7 +871,7 @@ html:not(.dark) .vp-doc .shiki span {
   display: block;
 }
 
-/* Tables (borderless hairline style from mdx-components.tsx) */
+/* Tables (borderless hairline style) */
 .vp-doc table {
   width: 100%;
   margin: 1.625rem 0;
@@ -885,6 +885,14 @@ html:not(.dark) .vp-doc .shiki span {
   margin: 0;
   border-bottom: 1px solid var(--border);
   background-color: transparent;
+}
+
+.vp-doc tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.vp-doc tbody tr:hover {
+  background-color: color-mix(in srgb, var(--foreground) 2.5%, transparent);
 }
 
 .vp-doc tbody tr:last-child {
@@ -910,6 +918,7 @@ html:not(.dark) .vp-doc .shiki span {
 .vp-doc th:first-child,
 .vp-doc td:first-child {
   padding-left: 0;
+  white-space: nowrap;
 }
 
 .vp-doc th:last-child,
