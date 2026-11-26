@@ -84,7 +84,7 @@ TabWidth: 4
 CompileFlags:
   Add:
     - -I/opt/homebrew/include
-    - -std=c11
+    - -std=c23
     - -Wall
     - -Wextra
     - -Wshadow
@@ -118,11 +118,11 @@ CompileFlags:
 - 测试用例在 [cs50/problems](https://github.com/cs50/problems/tree/2026/x) 对应分支里，跑过一次 `--local` 缓存到 `~/.local/share/check50/cs50/problems` 后，加 **`--offline`** 就能断网秒测
 - `check50.c.compile()` 直接调用 `clang -std=c11 -ggdb -lm -lcs50`，不会带 Homebrew 路径，需要靠环境变量注入（见 [怎么写 Makefile](/cs50x/makefile) 的 `export` 写法）
 
-| 差异点                 | `cs50.dev` 云端（Linux）                                                        | macOS 本地（Apple Silicon）                                                    |
-| ---------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| **头/库路径**          | 默认位于 `/usr/include`、`/usr/lib`                                             | 装在 `/opt/homebrew`，由 `Makefile` 注入 `C_INCLUDE_PATH` / `LIBRARY_PATH`     |
-| **加密库 `-lcrypt`**   | `make` 默认会追加 `-lcrypt`                                                     | macOS 已合进系统库，不用加                                                     |
-| **内存越界与泄漏检查** | 后端跑 [`valgrind`](https://github.com/cs50/check50/blob/main/check50/c.py#L75) | 不支持 `valgrind`，平时编译改开 `-fsanitize=address,undefined`（ASan + UBSan） |
+| 差异点                       | `cs50.dev` 云端（Linux）                                                        | macOS 本地（Apple Silicon）                                                    |
+| ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **头/库路径**                | 默认位于 `/usr/include`、`/usr/lib`                                             | 装在 `/opt/homebrew`，由 `Makefile` 注入 `C_INCLUDE_PATH` / `LIBRARY_PATH`     |
+| **系统库 `-lcrypt` / `-lm`** | `make` 默认会追加 `-lcrypt -lm`                                                 | macOS 已合进系统库，不用加                                                     |
+| **内存越界与泄漏检查**       | 后端跑 [`valgrind`](https://github.com/cs50/check50/blob/main/check50/c.py#L75) | 不支持 `valgrind`，平时编译改开 `-fsanitize=address,undefined`（ASan + UBSan） |
 
 ## `submit50` 与目录结构
 
