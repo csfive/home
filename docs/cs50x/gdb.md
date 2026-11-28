@@ -131,4 +131,4 @@ gdb --args ./caesar 13
 
 - **`cs50.dev` 云端**：`debug50 ./buggy` 其实就是把 GDB 包进了 VS Code 界面，行号左侧点红点对应 `b`，Step Over 对应 `n`，Step Into 对应 `s`，Continue 对应 `c`
 - **macOS 本地**：Apple Silicon 上没有原生 `gdb`，系统自带的是 `lldb`，启动命令换成 `lldb -- ./buggy`（带参数写 `lldb -- ./caesar 13`），进去之后上面的 `b`、`r`、`n`、`s`、`p`、`l`、`c`、`q` 完全通用
-- **图形化断点**：如果平时习惯在编辑器里点红点看侧边栏变量，装好 [怎么设置本地运行环境](/cs50x/setup) 里提到的 `CodeLLDB` 扩展即可，底层调用的同样是 `lldb`
+- **图形化断点**：习惯在编辑器里点红点看变量的，装好 [怎么设置本地运行环境](/cs50x/setup) 里提到的 `CodeLLDB` 扩展，再配上 [`tasks.json`](https://github.com/csfive/CS50x/blob/main/.vscode/tasks.json) 与 [`launch.json`](https://github.com/csfive/CS50x/blob/main/.vscode/launch.json) 即可在集成终端里一键调试

@@ -40,5 +40,5 @@ bun run check    # format:check + build
 
 ## 当前进度锚点
 
-- **CS50x**：跳过 Week 0，Week 1（C，6 题：`world`、`me`、`mario-less`、`mario-more`、`cash`、`credit`）与 Week 2（Arrays，4 题：`scrabble`、`readability`、`caesar`、`substitution`）已全部完成并 `submit50` 提交，均已推送至 `origin/main` `65211db`（课前底稿在 `CS50x/notes/week1-c.md`、`week2-arrays.md`；`Makefile` 已支持 `make r` 传参），待进入 Week 3（Algorithms）或先沉淀前两周主题短文。
-- **csfive-home**：`CS50x / C` 下已发布 `setup.md`、`makefile.md`（已同步 `make r` 传参）、`c.md`、`numbers.md`、`gdb.md`，后续进入 Week 3（Algorithms）后再按需沉淀新主题。
+- **CS50x**：跳过 Week 0，Week 1（C，6 题：`world`、`me`、`mario-less`、`mario-more`、`cash`、`credit`）、Week 2（Arrays，4 题：`scrabble`、`readability`、`caesar`、`substitution`）与 Week 3（Algorithms，4 题：`sort`、`plurality`、`runoff`、`tideman`）均已完成并 `submit50` 提交，已推送至 `origin/main` `cb59db6`（课前底稿在 `CS50x/notes/week1-c.md`、`week2-arrays.md`、`week3-algorithms.md`；已配齐 `Makefile` 传参与 VS Code `CodeLLDB` 调试），待进入 Week 4（Memory）。
+- **csfive-home**：`CS50x / C` 下已发布 `index.md`、`setup.md`、`makefile.md`、`c.md`、`numbers.md`、`gdb.md`（已补 `CodeLLDB` 配置链接），后续进入 Week 4（Memory）后再按需沉淀新主题。
