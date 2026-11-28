@@ -1,6 +1,6 @@
 # 怎么设置本地运行环境
 
-脱离云端 `cs50.dev`，在 macOS 上搭一套对齐官方规则、支持离线评测与提交的本地 C 环境。
+脱离云端 `cs50.dev`，在 macOS 本地配齐编译、风格检查、离线评测和提交环境。
 
 ```svg-diagram
 <svg viewBox="0 0 680 226" role="img" aria-label="macOS 本地 C 开发环境三层架构底座" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,6 @@
 # 怎么使用 GDB 进行调试
 
-与其靠满屏 `printf` 猜结果，不如用 GDB 在指定代码行暂停程序，单步跟踪并随时查看变量值。
+代码能编译但结果不对时，不用满屏塞 `printf`，用 GDB 打断点、单步执行就能直接看清变量的变化。
 
 ```svg-diagram
 <svg viewBox="0 0 680 226" role="img" aria-label="GDB 调试器断点暂停与变量监视示意图" xmlns="http://www.w3.org/2000/svg">
