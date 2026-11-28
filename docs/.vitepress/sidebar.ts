@@ -4,7 +4,7 @@ export const sidebar: DefaultTheme.SidebarMulti = {
   '/': [
     {
       text: 'Overview',
-      items: [{ text: '开始', link: '/' }],
+      items: [{ text: '指北', link: '/' }],
     },
     {
       text: 'Foundations',
@@ -19,7 +19,7 @@ export const sidebar: DefaultTheme.SidebarMulti = {
   '/cs50x/': [
     {
       text: 'CS50x',
-      items: [{ text: '概览', link: '/cs50x/' }],
+      items: [{ text: '索引', link: '/cs50x/' }],
     },
     {
       text: 'C',
@@ -35,19 +35,19 @@ export const sidebar: DefaultTheme.SidebarMulti = {
   '/missing-semester/': [
     {
       text: 'Missing Semester',
-      items: [{ text: '概览', link: '/missing-semester/' }],
+      items: [{ text: '索引', link: '/missing-semester/' }],
     },
   ],
   '/cs50p/': [
     {
       text: 'CS50P',
-      items: [{ text: '概览', link: '/cs50p/' }],
+      items: [{ text: '索引', link: '/cs50p/' }],
     },
   ],
   '/cs50g/': [
     {
       text: 'CS50G',
-      items: [{ text: '概览', link: '/cs50g/' }],
+      items: [{ text: '索引', link: '/cs50g/' }],
     },
   ],
 }
