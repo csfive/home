@@ -1,6 +1,6 @@
 # 怎么写 Makefile
 
-对照云端 `cs50.dev` 的默认编译配置，在本地用一份根目录 `Makefile` 统一接管编译、运行、风格检查、离线评测和提交。
+对照 `cs50.dev` 的默认编译配置，用一份根目录 `Makefile` 统一接管编译、运行、检查和提交。
 
 ```svg-diagram
 <svg viewBox="0 0 680 232" role="img" aria-label="根目录 Makefile 命令行拆解与参数分发" xmlns="http://www.w3.org/2000/svg">
