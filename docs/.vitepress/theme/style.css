@@ -1107,3 +1107,14 @@ html:not(.dark) .vp-doc .shiki span {
   height: auto;
   font-family: var(--font-sans);
 }
+
+/* MathJax SVG (VitePress markdown.math) */
+.vp-doc mjx-container > svg {
+  display: inline-block;
+}
+
+.vp-doc mjx-container[display='true'] {
+  display: block;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}

@@ -6,6 +6,7 @@
     "@tailwindcss/vite": "^4.3.5",
     "@types/markdown-it": "^14.2.0",
     "@types/node": "^26.6.5",
+    "markdown-it-mathjax3": "^4",
     "pele": "^1.8.0",
     "prettier": "^3.9.5",
     "tailwindcss": "^4.3.5",
