@@ -91,13 +91,11 @@ clang hello.c -o hello
 
 如果代码里引入了 `<cs50.h>` 并调用了 `get_string`，还需要额外加 `-lcs50` 告诉编译器去链接 CS50 库；平时敲的 `make` 本质上就是自动帮你拼好这一串 `clang` 参数（细节见 [怎么写 Makefile](/cs50x/makefile)）。
 
-## 编译背后的四个阶段
+## 编译四阶段
 
 敲下一条 `clang hello.c -o hello`，编译器背后其实依次完成了四步。用不同参数可以让它停在任意一步，亲眼看到中间产物。
 
-### 1. 预处理（Preprocessing）
-
-处理所有以 `#` 开头的指令。看到 `#include <stdio.h>` 时，预处理器会直接把 `stdio.h` 里的函数声明复制粘贴到你的源码顶部，同时删掉所有注释。
+**1. 预处理（Preprocessing）**：处理所有以 `#` 开头的指令。看到 `#include <stdio.h>` 时，预处理器会直接把 `stdio.h` 里的函数声明复制粘贴到你的源码顶部，同时删掉所有注释。
 
 ```bash
 clang -E hello.c | tail -n 20
@@ -106,9 +104,7 @@ clang -E hello.c | tail -n 20
 - `-E`：只执行预处理，把展开后的结果输出到终端
 - `tail -n 20`：因为 `stdio.h` 展开后有几百行，这里只看最后 20 行
 
-### 2. 编译（Compiling）
-
-检查语法和类型，把预处理后的 C 代码翻译成更贴近硬件的**汇编代码**（Assembly Code）。漏分号、变量没声明类型、调用了未声明的函数，都会在这一步被拦下来。
+**2. 编译（Compiling）**：检查语法和类型，把预处理后的 C 代码翻译成更贴近硬件的**汇编代码**（Assembly Code）。漏分号、变量没声明类型、调用了未声明的函数，都会在这一步被拦下来。
 
 ```bash
 clang -S hello.c
@@ -116,9 +112,7 @@ clang -S hello.c
 
 - `-S`：停在编译阶段，在当前目录生成文本文件 `hello.s`
 
-### 3. 汇编（Assembling）
-
-由汇编器把 `hello.s` 里的汇编指令逐条翻译成 CPU 能执行的二进制机器码，产出**目标文件**（Object File，`hello.o`）。
+**3. 汇编（Assembling）**：由汇编器把 `hello.s` 里的汇编指令逐条翻译成 CPU 能执行的二进制机器码，产出**目标文件**（Object File，`hello.o`）。
 
 ```bash
 clang -c hello.c
@@ -128,11 +122,9 @@ clang -c hello.c
 
 此时的 `hello.o` 还不能直接运行，因为它只包含你写的 `main`，里面调用的 `printf` 还没有接上真正的实现代码。
 
-### 4. 链接（Linking）
+**4. 链接（Linking）**：链接器把 `hello.o` 和系统标准库（以及 `-lcs50` 等第三方库）里早已编好的机器码拼在一起，补齐 `printf`、`get_string` 这些函数的真正地址，最终生成可以直接运行的 `hello`。
 
-链接器把 `hello.o` 和系统标准库（以及 `-lcs50` 等第三方库）里早已编好的机器码拼在一起，补齐 `printf`、`get_string` 这些函数的真正地址，最终生成可以直接运行的 `hello`。
-
-## 报错落在哪一阶段
+## 报错阶段对照
 
 分清四个阶段后，看到报错信息就能很快判断问题出在哪：
 
@@ -144,7 +136,7 @@ clang -c hello.c
 | `undefined symbols` / `undefined reference`       | 链接     | 写了 `#include <cs50.h>` 但编译命令漏了 `-lcs50` |
 | 编译通过但输出不对，或运行中报 `AddressSanitizer` | 运行     | 逻辑错误、数组越界或除零，需靠调试定位           |
 
-## 运行时与退出码
+## 运行与退出码
 
 敲下 `./hello` 后，操作系统会把可执行文件读进内存，找到 `main` 作为唯一入口开始执行，遇到 `return` 时结束程序，并把返回值交给终端当作**退出状态码**（Exit Status）：
 

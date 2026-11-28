@@ -53,7 +53,7 @@
 </svg>
 ```
 
-## `cs50.dev` 的默认配置
+## `cs50.dev` 默认配置
 
 在 `cs50.dev` 里写 `01-c/me/hello.c`，目录里不用放 `Makefile`，直接敲两条命令就能编译运行：
 
@@ -121,7 +121,7 @@ clean:
 - **Tab 缩进**：规则下的命令行必须用真正的 Tab 开头，写成空格会直接报 `missing separator`
 - `.PHONY: clean`：声明伪目标，免得目录里碰巧有同名文件 `clean` 时 `make clean` 被当成已是最新而跳过
 
-## 根目录统一 Makefile
+## 根目录 Makefile
 
 第一周就有 6 个题目目录，每个目录各放一份 `Makefile` 既重复又难同步。干脆只在仓库根目录放一份，把编译、运行、`style50`、`check50`、`submit50` 和清理全收进来，日常只用敲这几条命令：
 
@@ -153,7 +153,7 @@ YEAR    ?= 2026
 - `CFLAGS` 与 `LDLIBS`：保留云端 `cli.sh` 的全部编译参数，叠上三项 sanitizer 检查，库只留 `-lcs50`
 - `YEAR ?= 2026`：条件赋值，未指定时默认 `2026`，跑往年题库时传 `YEAR=2025` 就能覆盖
 
-### 解析动作、题名与运行参数
+### 解析动作与参数
 
 ```makefile
 ACTIONS := b r s c sub build run style check submit

@@ -21,24 +21,31 @@ bun run check    # format:check + build
 ## 三步学习协作流
 
 1. **课前消化**：每周开工前，先把该周官方讲义（Notes）+ 视频演示脉络 + Shorts 浓缩成一篇详细、面向零基础、配齐完整可运行 C/Python 代码示例与常见报错对照的 Markdown 放进代码仓 `notes/`，作为用户刷题时的手边参考底稿。
-2. **全题实战**：用户在 IDE 写完该周全部作业并自测，过程中随时抛出真实卡点、底层好奇或工具链问题。
-3. **主题沉淀**：只挑真正有回看价值的问题发散深挖，写成 `csfive-home` 的独立主题短文，不在公开站堆砌泛泛语法速查。
+2. **全题实战**：用户在 IDE 写完该周全部作业并自测，过程中随时抛出真实卡点、底层好奇或工具链问题；协助排错和优化代码时严格使用当前已学周数的知识，优先直白清晰、贴合题目假设，不做过度防御或炫技式微优化。
+3. **主题沉淀**：只挑真正有回看价值的问题发散深挖，写成 `csfive-home` 的独立主题短文，不在公开站堆砌课上已讲透的泛泛语法或伪代码速查。
 
 ## 笔记站写作与验收规范
 
-- **图先于字，拒绝教材味**：
+- **图先于字，拒绝模板趋同**：
   - 全站只使用 Mermaid（` ```mermaid `）与浅深色自适应定制 SVG 示意图（` ```svg-diagram `，配色使用站点 CSS 变量），不做实机截图或 GIF。
-  - 配极简代码对比，直奔机制与真问题，不铺陈冗长背景，不写入门语法水文。
+  - 每篇的 SVG 必须按主题设计不同视觉结构（如架构栈、命令行拆解、文件蜕变链、数轴与圆环、调试窗口、调用阶梯），避免多篇文章套用趋同的「框 + 箭头」模板。
   - **不写自测题、复习检查清单或考题式追问**，只追求短小清晰、让人愿意反复点开重看。
-- **行文克制，说人话**：
-  - 直述结论与实际用法，避免 AI 套话（如「并不是 A，而是 B」）、生造词、破折号 `——` 及无关的括号补充；语序顺着阅读逻辑写，不压缩硬拼。
+- **行文平实，去 AI 味**：
+  - 循序渐进、不堆砌复杂底层细节；直述结论与实际用法，避免 AI 套话（如「并不是 A，而是 B」）、生造对称词与口诀式表达（如「去程压栈、回程恢复」「只盯两件事」）、说教腔、破折号 `——` 及无关的括号补充。
+  - 尽量只使用 `##` 二级标题，仅在确实需要分层的大节里保留少量 `###`；标题简短直观，直接写具体内容本身，不加序号前缀、英文括号或冗长长句。
   - 事实与限定词要准确，贴出的配置或命令中每个关键参数都简要交代用途，不挑着解释。
+- **代码、公式与外部配置**：
+  - 完整可运行程序才写 `#include`、`main` 与 `[filename.c]` 标签；局部函数片段只贴函数本身，不带多余头文件或伪文件名。
+  - 较长的本地辅助配置（如 `.vscode/` 调试配置）直接给 GitHub 仓库链接，不在正文里大段贴代码。
+  - 本站已开启 VitePress 内置 `markdown.math`（`markdown-it-mathjax3`），幂次、公式与复杂度可直接使用 LaTeX `$...$` / `$$...$$` 书写。
+- **开篇导语与索引卡片严格对齐**：
+  - 每篇文章 H1 下第一段收成一句话导语；对应课程 `index.md` 里的卡片链接描述必须与文章第一句**逐字一致**（仅去掉行内反引号）。
 - **列表与行内排版**：
   - `- ` 无序列表每项尽量收成一句话，且**末尾不带标点**（不加句号、分号）。
   - 正文中的 Markdown 链接左右留空格（紧邻中文全角标点或单元格边界除外）；GitHub 链接已由样式自动带前置图标。
-- **站点同步与检查**：新增或调整文章时同步更新 `docs/.vitepress/sidebar.ts` 与 `docs/.vitepress/config.ts` 的 `nav`；修改后运行 `bun run format && bun run check`。
+- **站点同步与检查**：新增或调整文章时同步更新 `docs/<course>/index.md`、`docs/.vitepress/sidebar.ts` 与 `docs/.vitepress/config.ts` 的 `nav`；修改后运行 `bun run format && bun run check`。
 
 ## 当前进度锚点
 
 - **CS50x**：跳过 Week 0，Week 1（C，6 题：`world`、`me`、`mario-less`、`mario-more`、`cash`、`credit`）、Week 2（Arrays，4 题：`scrabble`、`readability`、`caesar`、`substitution`）与 Week 3（Algorithms，4 题：`sort`、`plurality`、`runoff`、`tideman`）均已完成并 `submit50` 提交，已推送至 `origin/main` `cb59db6`（课前底稿在 `CS50x/notes/week1-c.md`、`week2-arrays.md`、`week3-algorithms.md`；已配齐 `Makefile` 传参与 VS Code `CodeLLDB` 调试），待进入 Week 4（Memory）。
-- **csfive-home**：`CS50x / C` 下已发布 `index.md`、`setup.md`、`makefile.md`、`c.md`、`numbers.md`、`gdb.md`（已补 `CodeLLDB` 配置链接），后续进入 Week 4（Memory）后再按需沉淀新主题。
+- **csfive-home**：`CS50x / C` 下已发布 `index.md`、`setup.md`、`makefile.md`、`c.md`、`numbers.md`、`gdb.md`、`recursion.md`，后续进入 Week 4（Memory）后再按需沉淀新主题。
