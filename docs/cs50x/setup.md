@@ -101,9 +101,15 @@ CompileFlags:
     - -Wall
     - -Wextra
     - -Wshadow
+---
+If:
+  PathMatch: .*\.h
+CompileFlags:
+  Add:
+    - -xc-header
 ```
 
-这里不加 `-Werror` 和 `-fsanitize=...`，避免写到一半编辑器满屏红线干扰节奏，留到终端编译时再拦就行。
+后半段用来避免 macOS 下 `clangd` 默认把 `.h` 当成 Objective-C++ 解析而与 `-std=c23` 冲突。这里不加 `-Werror` 和 `-fsanitize=...`，避免写到一半编辑器满屏红线干扰节奏，留到终端编译时再拦就行。
 
 编辑器配置固定调用系统自带的 `/usr/bin/clangd`，传入三个参数并开启 C 文件保存自动格式化：
 
