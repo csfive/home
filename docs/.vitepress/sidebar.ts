@@ -22,6 +22,9 @@ export const sidebar: DefaultTheme.SidebarMulti = {
       items: [
         { text: '怎么设置本地运行环境', link: '/cs50x/setup' },
         { text: '怎么写 Makefile', link: '/cs50x/makefile' },
+        { text: 'C 语言怎么运行的', link: '/cs50x/c' },
+        { text: '溢出、截断和浮点误差', link: '/cs50x/numbers' },
+        { text: '怎么使用 GDB 进行调试', link: '/cs50x/gdb' },
       ],
     },
   ],

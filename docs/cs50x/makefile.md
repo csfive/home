@@ -3,27 +3,53 @@
 对照云端 `cs50.dev` 的默认编译配置，在本地用一份根目录 `Makefile` 统一接管编译、运行、风格检查、离线评测和提交。
 
 ```svg-diagram
-<svg viewBox="0 0 680 200" role="img" aria-label="CS50x 根目录 Makefile 参数解析与命令分发" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 680 232" role="img" aria-label="根目录 Makefile 命令行拆解与参数分发" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <marker id="cs50-mk-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M 0 0.7 L 6.5 3.5 L 0 6.3 z" fill="var(--info)" />
+    <marker id="cs50-mk-info" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M 0 0.6 L 5.5 3 L 0 5.4 z" fill="var(--info)" />
+    </marker>
+    <marker id="cs50-mk-success" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M 0 0.6 L 5.5 3 L 0 5.4 z" fill="var(--success)" />
+    </marker>
+    <marker id="cs50-mk-warn" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M 0 0.6 L 5.5 3 L 0 5.4 z" fill="var(--warning)" />
     </marker>
   </defs>
 
-  <rect x="16" y="16" width="312" height="70" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
-  <text x="172" y="45" text-anchor="middle" font-size="13.5" font-weight="600" fill="var(--foreground)">参数解析 · MAKECMDGOALS</text>
-  <text x="172" y="66" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--muted-foreground)">make &lt;b|r|s|c|sub&gt; &lt;name&gt;</text>
+  <rect x="16" y="16" width="648" height="46" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="40" y="44" font-size="13" font-family="var(--font-mono)" fill="var(--muted-foreground)">$</text>
+  <text x="64" y="44" font-size="13" font-family="var(--font-mono)" fill="var(--foreground)">make</text>
 
-  <rect x="352" y="16" width="312" height="70" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
-  <text x="508" y="45" text-anchor="middle" font-size="13.5" font-weight="600" fill="var(--foreground)">环境注入 · export</text>
-  <text x="508" y="66" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--muted-foreground)">C_INCLUDE_PATH · LIBRARY_PATH</text>
+  <rect x="128" y="26" width="52" height="26" rx="6" fill="var(--background)" stroke="var(--info)" stroke-width="1.2" />
+  <text x="154" y="44" text-anchor="middle" font-size="13" font-weight="600" font-family="var(--font-mono)" fill="var(--info)">r</text>
 
-  <line x1="172" y1="86" x2="172" y2="116" stroke="var(--info)" stroke-width="1.6" marker-end="url(#cs50-mk-arrow)" />
-  <line x1="508" y1="86" x2="508" y2="116" stroke="var(--info)" stroke-width="1.6" marker-end="url(#cs50-mk-arrow)" />
+  <rect x="296" y="26" width="88" height="26" rx="6" fill="var(--background)" stroke="var(--success)" stroke-width="1.2" />
+  <text x="340" y="44" text-anchor="middle" font-size="13" font-weight="600" font-family="var(--font-mono)" fill="var(--success)">caesar</text>
 
-  <rect x="16" y="118" width="648" height="66" rx="10" fill="var(--sidebar)" stroke="var(--success)" stroke-width="1.2" />
-  <text x="340" y="145" text-anchor="middle" font-size="13.5" font-weight="600" fill="var(--foreground)">定位源码目录并分发执行</text>
-  <text x="340" y="166" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">0*-*/&lt;name&gt;/*.c → clang (+ ASan/UBSan) · style50 · check50 --offline · submit50</text>
+  <rect x="498" y="26" width="128" height="26" rx="6" fill="var(--background)" stroke="var(--warning)" stroke-width="1.2" />
+  <text x="562" y="44" text-anchor="middle" font-size="12.5" font-weight="600" font-family="var(--font-mono)" fill="var(--warning)">13 / ARGS</text>
+
+  <line x1="154" y1="52" x2="154" y2="88" stroke="var(--info)" stroke-width="1.5" marker-end="url(#cs50-mk-info)" />
+  <line x1="340" y1="52" x2="340" y2="88" stroke="var(--success)" stroke-width="1.5" marker-end="url(#cs50-mk-success)" />
+  <line x1="562" y1="52" x2="562" y2="88" stroke="var(--warning)" stroke-width="1.5" marker-end="url(#cs50-mk-warn)" />
+
+  <rect x="16" y="90" width="204" height="74" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="118" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="var(--foreground)">动作分发 · ACTIONS</text>
+  <text x="118" y="136" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--info)">b · r · s · c · sub</text>
+  <text x="118" y="154" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">编译 / 运行 / 风格 / 评测 / 提交</text>
+
+  <rect x="238" y="90" width="204" height="74" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="340" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="var(--foreground)">定位源码 · NAME</text>
+  <text x="340" y="136" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--success)">0*-*/caesar/*.c</text>
+  <text x="340" y="154" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">自动映射 -less / -more 题库</text>
+
+  <rect x="460" y="90" width="204" height="74" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="562" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="var(--foreground)">运行参数 · RUN_ARGS</text>
+  <text x="562" y="136" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--warning)">wordlist 3..N + ARGS</text>
+  <text x="562" y="154" text-anchor="middle" font-size="10.5" fill="var(--muted-foreground)">注册伪目标并透传给 ./$(BIN)</text>
+
+  <rect x="16" y="178" width="648" height="38" rx="8" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" stroke-dasharray="4 3" />
+  <text x="340" y="201" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">全局注入 <tspan font-family="var(--font-mono)" fill="var(--foreground)">export C_INCLUDE_PATH · LIBRARY_PATH</tspan> → clang 与 check50 直接找到 libcs50</text>
 </svg>
 ```
 
@@ -99,13 +125,14 @@ clean:
 
 第一周就有 6 个题目目录，每个目录各放一份 `Makefile` 既重复又难同步。干脆只在仓库根目录放一份，把编译、运行、`style50`、`check50`、`submit50` 和清理全收进来，日常只用敲这几条命令：
 
-| 命令                | 作用                                                           |
-| ------------------- | -------------------------------------------------------------- |
-| `make r me`         | 编译并运行 `01-c/me/hello.c`                                   |
-| `make s mario-less` | 对 `01-c/mario-less/mario.c` 运行 `style50`                    |
-| `make c mario-less` | 离线运行 `check50` 评测 `mario/less`（加 `UPDATE=1` 联网更新） |
-| `make sub credit`   | 提交 `01-c/credit/credit.c` 到 CS50                            |
-| `make clean`        | 清理所有 `.c` 对应的可执行文件和 `.dSYM` 目录                  |
+| 命令                | 作用                                                                 |
+| ------------------- | -------------------------------------------------------------------- |
+| `make r me`         | 编译并运行 `01-c/me/hello.c`                                         |
+| `make r caesar 13`  | 编译并传参运行 `02-arrays/caesar/caesar.c`（特殊参数用 `ARGS="-1"`） |
+| `make s mario-less` | 对 `01-c/mario-less/mario.c` 运行 `style50`                          |
+| `make c mario-less` | 离线运行 `check50` 评测 `mario/less`（加 `UPDATE=1` 联网更新）       |
+| `make sub credit`   | 提交 `01-c/credit/credit.c` 到 CS50                                  |
+| `make clean`        | 清理所有 `.c` 对应的可执行文件和 `.dSYM` 目录                        |
 
 ### 环境注入与编译参数
 
@@ -126,7 +153,7 @@ YEAR    ?= 2026
 - `CFLAGS` 与 `LDLIBS`：保留云端 `cli.sh` 的全部编译参数，叠上三项 sanitizer 检查，库只留 `-lcs50`
 - `YEAR ?= 2026`：条件赋值，未指定时默认 `2026`，跑往年题库时传 `YEAR=2025` 就能覆盖
 
-### 解析动作与题名
+### 解析动作、题名与运行参数
 
 ```makefile
 ACTIONS := b r s c sub build run style check submit
@@ -136,13 +163,18 @@ ifeq ($(filter $(firstword $(MAKECMDGOALS)),$(ACTIONS)),$(firstword $(MAKECMDGOA
     $(eval .PHONY: $(NAME))
     $(eval $(NAME):;@:)
   endif
+  ifeq ($(filter $(firstword $(MAKECMDGOALS)),r run),$(firstword $(MAKECMDGOALS)))
+    RUN_ARGS := $(wordlist 3,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+    $(foreach a,$(filter-out $(ACTIONS) $(NAME) help clean,$(sort $(RUN_ARGS))),$(eval .PHONY: $(a))$(eval $(a):;@:))
+  endif
 endif
 ```
 
-敲 `make r mario-less` 时，`make` 默认会把 `r` 和 `mario-less` 当成两个依次构建的目标。这里顺手把第二个词拦下来当题名参数：
+敲 `make r caesar 13` 时，`make` 默认会把 `r`、`caesar` 和 `13` 当成三个依次构建的目标。这里把第二个词拦下来当题名，执行 `r` 或 `run` 时再把第三个词往后全部收作运行参数：
 
 - `MAKECMDGOALS` 与 `filter`：拿到命令行传入的目标列表，确认第一个词在 `ACTIONS` 里后，把第二个词存进 `NAME`
-- `$(eval ...)`：在解析阶段把 `NAME` 注册成执行静默空命令 `@:` 的伪目标，免得跑完动作后报错找不到 `mario-less` 规则
+- `wordlist` 与 `RUN_ARGS`：仅在动作是 `r` 或 `run` 时截取第 3 个词往后的位置参数，供运行阶段原样传给程序
+- `sort`、`filter-out` 与 `$(foreach ...)`：把这些参数去重并排除已有目标名后，用 `$(eval ...)` 注册成执行静默空命令 `@:` 的伪目标，免得 `make` 报错找不到对应规则或报重复定义警告
 
 ### 定位源码与映射题库
 
@@ -173,7 +205,7 @@ b:
 	@if [ -f "$(DIR)/Makefile" ]; then $(MAKE) -C "$(DIR)"; else $(CC) $(CFLAGS) $(SRC) -o $(BIN) $(LDLIBS); fi
 
 r: b
-	./$(BIN)
+	./$(BIN)$(if $(RUN_ARGS), $(RUN_ARGS))$(if $(ARGS), $(ARGS))
 
 c:
 	@test -n "$(NAME)" || { echo "Usage: make c <name> (e.g. make c me)"; exit 1; }
@@ -186,6 +218,7 @@ clean:
 
 - `.DEFAULT_GOAL := help`：直接敲 `make` 不带参数时打印用法说明
 - `@test -n`：`@` 用来隐藏命令回显，先确认题名和目录都存在，缺参直接提示用法并退出
-- `b` 与 `r`：遇到后面自带官方 `Makefile` 的多文件作业，自动用 `$(MAKE) -C` 进子目录编译，单文件题直接调 `clang`，`r` 把 `b` 设为依赖，编完就会直接运行
+- `b`：遇到自带官方 `Makefile` 的多文件作业自动用 `$(MAKE) -C` 进子目录编译，单文件题直接调 `clang`
+- `r`：把 `b` 设为依赖，编完直接运行并拼接 `RUN_ARGS` 与 `ARGS`，以 `-` 开头或含空格的特殊参数改走 `ARGS="-1"` 避免被 `make` 提前解析
 - `s`、`c` 与 `sub`：做完同样的校验后分别跑 `style50`、`check50` 和 `submit50`，评测和提交前先 `cd $(DIR)` 确保只检查当前目录
 - `clean`：macOS 开 `-ggdb3` 会在可执行文件旁生成 `.dSYM` 调试目录，扫描 4 层内的 `.c` 文件并用 Shell 参数展开 `${f%.c}` 把可执行文件和 `.dSYM` 一并删掉（`$$` 用来把 `$` 转义留给 Shell）

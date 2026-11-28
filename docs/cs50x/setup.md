@@ -3,27 +3,40 @@
 脱离云端 `cs50.dev`，在 Apple Silicon macOS 上搭一套与官方风格、编译和评测规则对齐，同时支持离线秒测与直接提交的本地 C 开发环境。
 
 ```svg-diagram
-<svg viewBox="0 0 680 200" role="img" aria-label="CS50x macOS 本地开发环境三层结构" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="cs50-setup-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M 0 0.7 L 6.5 3.5 L 0 6.3 z" fill="var(--info)" />
-    </marker>
-  </defs>
+<svg viewBox="0 0 680 226" role="img" aria-label="macOS 本地 C 开发环境三层架构底座" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="648" height="54" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="36" y="48" font-size="13" font-weight="600" fill="var(--foreground)">编辑与补全</text>
+  <line x1="142" y1="28" x2="142" y2="58" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="160" y="30" width="80" height="26" rx="6" fill="var(--background)" stroke="var(--border)" stroke-width="1" />
+  <text x="200" y="47" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--foreground)">VS Code</text>
+  <rect x="252" y="30" width="76" height="26" rx="6" fill="var(--background)" stroke="var(--info)" stroke-width="1" />
+  <text x="290" y="47" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--info)">clangd</text>
+  <rect x="340" y="30" width="116" height="26" rx="6" fill="var(--background)" stroke="var(--border)" stroke-width="1" />
+  <text x="398" y="47" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--muted-foreground)">.clang-format</text>
+  <rect x="468" y="30" width="78" height="26" rx="6" fill="var(--background)" stroke="var(--border)" stroke-width="1" />
+  <text x="507" y="47" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--muted-foreground)">.clangd</text>
+  <rect x="558" y="30" width="88" height="26" rx="6" fill="var(--background)" stroke="var(--border)" stroke-width="1" />
+  <text x="602" y="47" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--muted-foreground)">CodeLLDB</text>
 
-  <rect x="16" y="16" width="312" height="70" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
-  <text x="172" y="45" text-anchor="middle" font-size="13.5" font-weight="600" fill="var(--foreground)">编辑器层 · VS Code</text>
-  <text x="172" y="66" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--muted-foreground)">vscode-clangd · .clangd · .clang-format</text>
+  <rect x="16" y="82" width="648" height="54" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
+  <text x="36" y="114" font-size="13" font-weight="600" fill="var(--foreground)">评测与提交</text>
+  <line x1="142" y1="94" x2="142" y2="124" stroke="var(--border)" stroke-width="1.2" />
+  <rect x="160" y="96" width="80" height="26" rx="6" fill="var(--background)" stroke="var(--border)" stroke-width="1" />
+  <text x="200" y="113" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--muted-foreground)">uv tool</text>
+  <rect x="252" y="96" width="82" height="26" rx="6" fill="var(--background)" stroke="var(--border)" stroke-width="1" />
+  <text x="293" y="113" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--foreground)">style50</text>
+  <rect x="346" y="96" width="146" height="26" rx="6" fill="var(--background)" stroke="var(--info)" stroke-width="1" />
+  <text x="419" y="113" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--info)">check50 --offline</text>
+  <rect x="504" y="96" width="90" height="26" rx="6" fill="var(--background)" stroke="var(--border)" stroke-width="1" />
+  <text x="549" y="113" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--foreground)">submit50</text>
 
-  <rect x="352" y="16" width="312" height="70" rx="10" fill="var(--sidebar)" stroke="var(--border)" stroke-width="1.2" />
-  <text x="508" y="45" text-anchor="middle" font-size="13.5" font-weight="600" fill="var(--foreground)">CLI 评测层 · uv 工具集</text>
-  <text x="508" y="66" text-anchor="middle" font-size="10.5" font-family="var(--font-mono)" fill="var(--muted-foreground)">style50 · check50 --offline · submit50</text>
-
-  <line x1="172" y1="86" x2="172" y2="116" stroke="var(--info)" stroke-width="1.6" marker-end="url(#cs50-setup-arrow)" />
-  <line x1="508" y1="86" x2="508" y2="116" stroke="var(--info)" stroke-width="1.6" marker-end="url(#cs50-setup-arrow)" />
-
-  <rect x="16" y="118" width="648" height="66" rx="10" fill="var(--sidebar)" stroke="var(--success)" stroke-width="1.2" />
-  <text x="340" y="145" text-anchor="middle" font-size="13.5" font-weight="600" fill="var(--foreground)">macOS 本地工具链底座</text>
-  <text x="340" y="166" text-anchor="middle" font-size="11" fill="var(--muted-foreground)">Xcode CLT（clang · clangd · libc）+ /opt/homebrew（libcs50 · clang-format · uv）</text>
+  <rect x="16" y="148" width="648" height="62" rx="10" fill="var(--sidebar)" stroke="var(--success)" stroke-width="1.2" />
+  <text x="36" y="184" font-size="13" font-weight="600" fill="var(--foreground)">macOS 底座</text>
+  <line x1="142" y1="160" x2="142" y2="198" stroke="var(--border)" stroke-width="1.2" />
+  <text x="160" y="173" font-size="11" font-family="var(--font-mono)" fill="var(--foreground)">Xcode CLT</text>
+  <text x="248" y="173" font-size="11" fill="var(--muted-foreground)">clang · clangd · make · lldb · libc</text>
+  <text x="160" y="195" font-size="11" font-family="var(--font-mono)" fill="var(--success)">/opt/homebrew</text>
+  <text x="268" y="195" font-size="11" fill="var(--muted-foreground)">libcs50 (include / lib) · clang-format · uv</text>
 </svg>
 ```
 
